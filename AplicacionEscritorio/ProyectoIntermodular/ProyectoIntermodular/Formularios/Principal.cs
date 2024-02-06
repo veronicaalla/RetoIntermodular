@@ -10,9 +10,15 @@ using System.Windows.Forms;
 
 namespace ProyectoIntermodular
 {
+<<<<<<<< HEAD:AplicacionEscritorio/ProyectoIntermodular/ProyectoIntermodular/Formularios/Principal.cs
     public partial class Principal : Form
     {
         public Principal()
+========
+    public partial class Inicial : Form
+    {
+        public Inicial()
+>>>>>>>> main:AplicacionEscritorio/ProyectoIntermodular/ProyectoIntermodular/Formularios/Inicial.cs
         {
             InitializeComponent();
         }
