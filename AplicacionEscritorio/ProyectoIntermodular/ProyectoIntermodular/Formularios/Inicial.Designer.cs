@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIntermodular
 {
-    partial class Form1
+    partial class Inicial
     {
         /// <summary>
         /// Variable del diseñador necesaria.
