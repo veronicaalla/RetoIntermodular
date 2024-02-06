@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.nombreApp = new System.Windows.Forms.Label();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -74,6 +75,15 @@
 
         private System.Windows.Forms.Label nombreApp;
         private System.Windows.Forms.Button btnIniciar;
+=======
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "Form1";
+        }
+
+        #endregion
+>>>>>>> main
     }
 }
 

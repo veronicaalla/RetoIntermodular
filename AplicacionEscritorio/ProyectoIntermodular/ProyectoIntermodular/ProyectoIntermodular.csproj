@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Formularios\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +58,13 @@
     </Compile>
     <Compile Include="Formularios\CrearIncidencia.Designer.cs">
       <DependentUpon>CrearIncidencia.cs</DependentUpon>
+=======
+    <Compile Include="Formularios\Incidencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Incidencia.Designer.cs">
+      <DependentUpon>Incidencia.cs</DependentUpon>
+>>>>>>> main
     </Compile>
     <Compile Include="Formularios\Inicial.cs">
       <SubType>Form</SubType>
@@ -64,6 +72,7 @@
     <Compile Include="Formularios\Inicial.Designer.cs">
       <DependentUpon>Inicial.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Formularios\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +92,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
+=======
+    <Compile Include="Formularios\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Incidencia.resx">
+      <DependentUpon>Incidencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+>>>>>>> main
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
