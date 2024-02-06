@@ -8,13 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoIntermodular
+namespace ProyectoIntermodular.Formularios
 {
-    public partial class Form1 : Form
+    public partial class Usuarios : Form
     {
-        public Form1()
+        public Usuarios()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            this.Hide();
+            admin.Show();
         }
     }
 }
