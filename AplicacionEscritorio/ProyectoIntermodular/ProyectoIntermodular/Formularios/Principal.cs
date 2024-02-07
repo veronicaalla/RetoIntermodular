@@ -24,5 +24,12 @@ namespace ProyectoIntermodular
             this.Hide();
             crearIncidencia.Show();
         }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            Incidencia incidencia = new Incidencia();
+            this.Hide();
+            incidencia.Show();
+        }
     }
 }

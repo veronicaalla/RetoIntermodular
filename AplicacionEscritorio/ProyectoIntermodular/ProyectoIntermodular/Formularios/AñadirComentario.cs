@@ -39,5 +39,15 @@ namespace ProyectoIntermodular.Formularios
                 tbxComentario.ForeColor = SystemColors.GrayText;
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

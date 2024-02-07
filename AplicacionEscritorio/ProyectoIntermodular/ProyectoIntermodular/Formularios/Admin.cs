@@ -19,9 +19,9 @@ namespace ProyectoIntermodular.Formularios
 
         private void btnIncidencias_Click(object sender, EventArgs e)
         {
-            Incidencia incidencia = new Incidencia();
+            Principal principal = new Principal();
             this.Hide();
-            incidencia.Show();
+            principal.Show();
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)

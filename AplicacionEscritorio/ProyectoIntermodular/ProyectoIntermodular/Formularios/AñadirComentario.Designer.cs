@@ -73,6 +73,7 @@
             this.btnAñadir.TabIndex = 38;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // btnVolver
             // 
@@ -82,6 +83,7 @@
             this.btnVolver.TabIndex = 39;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // AñadirComentario
             // 

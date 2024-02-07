@@ -72,6 +72,7 @@
             this.btnSeleccionar.TabIndex = 1;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // btnCrear
             // 

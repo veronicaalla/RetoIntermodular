@@ -72,6 +72,7 @@
             this.btnVolver.TabIndex = 42;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // checkBoxFechaCierre
             // 

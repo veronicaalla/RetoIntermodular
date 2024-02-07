@@ -15,6 +15,8 @@ namespace ProyectoIntermodular.Formularios
         public Incidencia()
         {
             InitializeComponent();
+
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -26,8 +28,17 @@ namespace ProyectoIntermodular.Formularios
         {
             AñadirComentario childForm = new AñadirComentario();
 
+
+
             childForm.ShowDialog();
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Principal principal = new Principal();
+            this.Close();
+            principal.Show();
         }
     }
 }
