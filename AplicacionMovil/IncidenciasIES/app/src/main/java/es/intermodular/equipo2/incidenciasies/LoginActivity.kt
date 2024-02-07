@@ -7,25 +7,41 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import es.intermodular.equipo2.incidenciasies.databinding.ActivityLogginBinding
+import es.intermodular.equipo2.incidenciasies.databinding.ActivityLoginBinding
 
 import java.util.Locale
 
 class LoginActivity : AppCompatActivity() {
 
     // Variable utilizada para acceder a las vistas del layout de la actividad mediante View Binding
-    private lateinit var binding: ActivityLogginBinding
+    private lateinit var binding: ActivityLoginBinding
 
     // Objeto utilizado para almacenar datos de manera persistente, como las preferencias del usuario
     private lateinit var sharedPref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLogginBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Inicialización de SharedPreferences para guardar datos persistentes
         sharedPref = getSharedPreferences("pref", MODE_PRIVATE)
+
+        // Configurar el OnClickListener para el TextView textViewOlvideContr
+        binding.textViewOlvideContr.setOnClickListener {
+            // Obtener el idioma actual desde SharedPreferences
+            val currentLanguage = sharedPref.getString("language", "es") ?: "es"
+
+            // Definir el mensaje según el idioma actual
+            val message = if (currentLanguage == "es") {
+                "Por favor, pongase en contacto con su coordinador TIC"
+            } else {
+                "Please contact your ICT coordinator"
+            }
+
+            // Mostrar el mensaje utilizando un Toast
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        }
 
         // Obtener el idioma actual almacenado en SharedPreferences, por defecto es español
         val currentLanguage = sharedPref.getString("language", "es") ?: "es"
@@ -108,7 +124,7 @@ class LoginActivity : AppCompatActivity() {
 
     // Método para validar el formato del usuario
     private fun validateUser(usuario: String): Boolean {
-        val regex = Regex("^[a-zA-Z0-9._%+-]+@(educantabria\\.es|iesmiguelherrero\\.com)$")
+        val regex = Regex("^[a-zA-Z0-9._%+-]+@(educantabria\\.es)$")
         return regex.matches(usuario)
     }
 
@@ -141,5 +157,7 @@ class LoginActivity : AppCompatActivity() {
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
+
+
 
 }
