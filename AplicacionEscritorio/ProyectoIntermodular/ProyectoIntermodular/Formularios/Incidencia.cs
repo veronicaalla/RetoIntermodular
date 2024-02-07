@@ -21,5 +21,13 @@ namespace ProyectoIntermodular.Formularios
         {
 
         }
+
+        private void btnComentar_Click(object sender, EventArgs e)
+        {
+            AñadirComentario childForm = new AñadirComentario();
+
+            childForm.ShowDialog();
+
+        }
     }
 }
