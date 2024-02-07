@@ -1,7 +1,6 @@
 package es.intermodular.equipo2.incidenciasies
 
 import android.content.Intent
-import android.media.MediaPlayer
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -30,7 +29,7 @@ class SplashScreen : AppCompatActivity() {
             //Al ser la ventana inicial, donde el usuario no tiene que interactuar
             //Sino que solamente debe de esperar, le quitaremos la animacion que hay
             //Entre ventanas
-            val flagIntent = Intent(this, LogginActivity::class.java)
+            val flagIntent = Intent(this, LoginActivity::class.java)
             flagIntent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
             startActivity(flagIntent)
 
