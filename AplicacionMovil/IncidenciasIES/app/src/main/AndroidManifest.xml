@@ -13,6 +13,9 @@
         android:theme="@style/Theme.IncidenciasIES"
         tools:targetApi="31">
         <activity
+            android:name=".SpecificListIncidents"
+            android:exported="false" />
+        <activity
             android:name=".ListaConcretaIncidencias"
             android:exported="false" />
         <activity
