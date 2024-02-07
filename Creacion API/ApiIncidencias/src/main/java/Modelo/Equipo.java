@@ -2,6 +2,14 @@ package Modelo;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +20,6 @@ import java.util.List;
  */
 @Entity
 @Table(name="equipos")
-@NamedQuery(name="Equipo.findAll", query="SELECT e FROM Equipo e")
 public class Equipo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -21,12 +28,12 @@ public class Equipo implements Serializable {
 
 	private byte baja;
 
-	@Lob
+	
 	private String descripcion;
 
 	private String etiqueta;
 
-	@Temporal(TemporalType.DATE)
+	
 	@Column(name="fecha_adquisicion")
 	private Date fechaAdquisicion;
 

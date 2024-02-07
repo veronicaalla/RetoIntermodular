@@ -2,6 +2,9 @@ package Modelo;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import jakarta.persistence.Entity;
+
 import java.util.Date;
 import java.util.List;
 

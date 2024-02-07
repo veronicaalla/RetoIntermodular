@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="AlejandroPenilHaya" transaction-type="RESOURCE_LOCAL">
+		<class>Modelo.Aula</class>
+		<class>Modelo.Comentario</class>
+		<class>Modelo.Departamento</class>
+		<class>Modelo.Equipo</class>
+		<class>Modelo.Incidencia</class>
+		<class>Modelo.IncidenciasSubtipo</class>
+		<class>Modelo.Perfiles</class>
+		<class>Modelo.Personal</class>
+	<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/incidencias"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="mysql"/>
+		</properties>
+	</persistence-unit>
+</persistence>
