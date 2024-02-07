@@ -16,12 +16,6 @@
             android:name=".ListaConcretaIncidencias"
             android:exported="false" />
         <activity
-            android:name=".PlantillaListaIncidencias"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="false"
-            android:label="@string/title_activity_plantilla_lista_incidencias"
-            android:theme="@style/Theme.IncidenciasIES.Fullscreen" />
-        <activity
             android:name=".Principal"
             android:exported="false" />
         <activity

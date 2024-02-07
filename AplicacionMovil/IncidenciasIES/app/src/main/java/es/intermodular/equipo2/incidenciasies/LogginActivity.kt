@@ -8,12 +8,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityLogginBinding
+
 import java.util.Locale
 
 class LogginActivity : AppCompatActivity() {
 
     // Variable utilizada para acceder a las vistas del layout de la actividad mediante View Binding
     private lateinit var binding: ActivityLogginBinding
+
     // Objeto utilizado para almacenar datos de manera persistente, como las preferencias del usuario
     private lateinit var sharedPref: SharedPreferences
 
@@ -34,19 +36,28 @@ class LogginActivity : AppCompatActivity() {
 
         // Configurar el OnClickListener para el botón de inicio de sesión
         binding.btnIniciarSesion.setOnClickListener {
+            // Obtener el texto ingresado en los campos de usuario y contraseña
             val usuario = binding.EditTextUsuario.text.toString()
             val contrasenia = binding.EditTextContrasenia.text.toString()
 
-            // Validar el usuario y la contraseña ingresados
-            if (validarUsuario(usuario) && contrasenia == "123") {
-                // Mostrar un mensaje de bienvenida según el idioma actual y redirigir a la actividad principal
-                val welcomeMessage = if (currentLanguage == "es") "¡Bienvenido!" else "Welcome!"
-                showToast(welcomeMessage)
-                startActivity(Intent(this, Principal::class.java))
-            } else {
-                // Mostrar un mensaje de error según el idioma actual
-                val errorMessage = if (currentLanguage == "es") "¡Usuario o contraseña incorrectos!" else "Invalid username or password!"
+            // Verificar si ambos campos están vacíos
+            if (usuario.isEmpty() || contrasenia.isEmpty()) {
+                // Mostrar mensaje de error dependiendo del idioma actual
+                val errorMessage = if (currentLanguage == "es") "¡Por favor, rellene ambos campos!" else "Please fill in both fields!"
                 showToast(errorMessage)
+            } else {
+                // Si ambos campos tienen datos, continuar con la lógica de inicio de sesión
+                if (validateUser(usuario) && contrasenia == "123") {
+                    // Mensaje de bienvenida
+                    val welcomeMessage = if (currentLanguage == "es") "¡Bienvenido!" else "Welcome!"
+                    showToast(welcomeMessage)
+                    // Iniciar actividad principal
+                    startActivity(Intent(this, Principal::class.java))
+                } else {
+                    // Mensaje de error de inicio de sesión
+                    val errorMessage = if (currentLanguage == "es") "¡Usuario o contraseña incorrectos!" else "Invalid username or password!"
+                    showToast(errorMessage)
+                }
             }
         }
 
@@ -96,7 +107,7 @@ class LogginActivity : AppCompatActivity() {
     }
 
     // Método para validar el formato del usuario
-    private fun validarUsuario(usuario: String): Boolean {
+    private fun validateUser(usuario: String): Boolean {
         val regex = Regex("^[a-zA-Z0-9._%+-]+@(educantabria\\.es|iesmiguelherrero\\.com)$")
         return regex.matches(usuario)
     }
