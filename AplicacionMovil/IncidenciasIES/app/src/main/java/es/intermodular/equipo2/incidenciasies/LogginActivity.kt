@@ -38,7 +38,7 @@ class LogginActivity : AppCompatActivity() {
             val contrasenia = binding.EditTextContrasenia.text.toString()
 
             // Validar el usuario y la contraseña ingresados
-            if (validarUsuario(usuario) && contrasenia == "123") {
+            if (validateUser(usuario) && contrasenia == "123") {
                 // Mostrar un mensaje de bienvenida según el idioma actual y redirigir a la actividad principal
                 val welcomeMessage = if (currentLanguage == "es") "¡Bienvenido!" else "Welcome!"
                 showToast(welcomeMessage)
@@ -96,7 +96,7 @@ class LogginActivity : AppCompatActivity() {
     }
 
     // Método para validar el formato del usuario
-    private fun validarUsuario(usuario: String): Boolean {
+    private fun validateUser(usuario: String): Boolean {
         val regex = Regex("^[a-zA-Z0-9._%+-]+@(educantabria\\.es|iesmiguelherrero\\.com)$")
         return regex.matches(usuario)
     }
