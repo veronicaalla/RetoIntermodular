@@ -11,7 +11,7 @@ import es.intermodular.equipo2.incidenciasies.databinding.ActivityLogginBinding
 
 import java.util.Locale
 
-class LogginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     // Variable utilizada para acceder a las vistas del layout de la actividad mediante View Binding
     private lateinit var binding: ActivityLogginBinding
