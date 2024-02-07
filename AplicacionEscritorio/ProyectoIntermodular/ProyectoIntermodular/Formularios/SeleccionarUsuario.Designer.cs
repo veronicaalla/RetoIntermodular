@@ -50,7 +50,7 @@
             this.btnModificar.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnModificar.Location = new System.Drawing.Point(241, 246);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(75, 30);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -61,7 +61,7 @@
             this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnVolver.Location = new System.Drawing.Point(151, 246);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(75, 30);
             this.btnVolver.TabIndex = 3;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -70,9 +70,9 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnEliminar.Location = new System.Drawing.Point(339, 246);
+            this.btnEliminar.Location = new System.Drawing.Point(334, 246);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 30);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
