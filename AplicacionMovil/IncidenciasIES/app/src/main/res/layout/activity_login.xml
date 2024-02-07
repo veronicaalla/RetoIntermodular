@@ -67,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="51dp"
         android:layout_marginTop="32dp"
-        android:backgroundTint="#5F8722"
+        android:backgroundTint="@color/theme1"
         android:text="@string/login_button"
         android:textSize="20dp" />
 
@@ -78,7 +78,7 @@
         android:layout_marginTop="40dp"
         android:text="@string/forgot_password"
         android:textAlignment="center"
-        android:textColor="#5F8722"
+        android:textColor="@color/theme2"
         android:textSize="16dp"
         android:textStyle="bold" />
 
