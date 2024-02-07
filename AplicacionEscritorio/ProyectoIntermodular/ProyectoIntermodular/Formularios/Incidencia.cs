@@ -15,11 +15,30 @@ namespace ProyectoIntermodular.Formularios
         public Incidencia()
         {
             InitializeComponent();
+
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnComentar_Click(object sender, EventArgs e)
+        {
+            AñadirComentario childForm = new AñadirComentario();
+
+
+
+            childForm.ShowDialog();
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Principal principal = new Principal();
+            this.Close();
+            principal.Show();
         }
     }
 }
