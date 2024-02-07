@@ -5,6 +5,11 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
 
 /**
  * The persistent class for the aulas database table.
@@ -12,7 +17,6 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="aulas")
-@NamedQuery(name="Aula.findAll", query="SELECT a FROM Aula a")
 public class Aula implements Serializable {
 	private static final long serialVersionUID = 1L;
 

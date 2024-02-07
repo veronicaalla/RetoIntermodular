@@ -2,6 +2,13 @@ package Modelo;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
 import java.util.Date;
 
 
@@ -11,21 +18,19 @@ import java.util.Date;
  */
 @Entity
 @Table(name="comentarios")
-@NamedQuery(name="Comentario.findAll", query="SELECT c FROM Comentario c")
 public class Comentario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	private int id;
 
-	@Lob
 	@Column(name="adjunto_url")
 	private String adjuntoUrl;
 
-	@Temporal(TemporalType.TIMESTAMP)
+
 	private Date fechahora;
 
-	@Lob
+
 	private String texto;
 
 	//bi-directional many-to-one association to Incidencia

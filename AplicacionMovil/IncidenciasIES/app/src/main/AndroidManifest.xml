@@ -13,7 +13,10 @@
         android:theme="@style/Theme.IncidenciasIES"
         tools:targetApi="31">
         <activity
-            android:name=".NotificationsActivity"
+            android:name=".CrearModificarIncidencia.SelectTypeIncidents"
+            android:exported="false" />
+        <activity
+            android:name=".CrearModificarIncidencia.EditIncident"
             android:exported="false" />
         <activity
             android:name=".DetailsIncidenciaActivity"

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoIntermodular.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace ProyectoIntermodular
         public Principal()
         {
             InitializeComponent();
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            CrearIncidencia crearIncidencia = new CrearIncidencia();
+            this.Hide();
+            crearIncidencia.Show();
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            Incidencia incidencia = new Incidencia();
+            this.Hide();
+            incidencia.Show();
         }
     }
 }

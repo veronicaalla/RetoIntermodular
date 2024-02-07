@@ -5,12 +5,15 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
+import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
 import java.util.Locale
 
 class Principal : AppCompatActivity() {
 
     private lateinit var binding: ActivityPrincipalBinding
+    var recyclerView: RecyclerView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -74,6 +77,12 @@ class Principal : AppCompatActivity() {
             intent.putExtra("EXTRA_TYPE_INCIDENTS", "Cerradas")
             //We pass a certain list
 
+            startActivity(intent)
+        }
+
+        //Damos funcionalidad al boton de añadir
+        binding.btnAddIncidencias.setOnClickListener {
+            val intent = Intent(this, SelectTypeIncidents::class.java)
             startActivity(intent)
         }
     }

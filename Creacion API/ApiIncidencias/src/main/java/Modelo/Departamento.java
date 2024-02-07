@@ -3,6 +3,14 @@ package Modelo;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
 import java.util.List;
 
 
@@ -12,7 +20,6 @@ import java.util.List;
  */
 @Entity
 @Table(name="departamentos")
-@NamedQuery(name="Departamento.findAll", query="SELECT d FROM Departamento d")
 public class Departamento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
