@@ -13,6 +13,9 @@
         android:theme="@style/Theme.IncidenciasIES"
         tools:targetApi="31">
         <activity
+            android:name=".DetailsIncidenciaActivity"
+            android:exported="false" />
+        <activity
             android:name=".SpecificListIncidents"
             android:exported="false" />
         <activity
@@ -22,7 +25,7 @@
             android:name=".Principal"
             android:exported="false" />
         <activity
-            android:name=".LogginActivity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
