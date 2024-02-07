@@ -23,3 +23,11 @@ D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\ob
 D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.pdb
 D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearIncidencia.resources
 D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearUsuario.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Admin.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ControlUsuarios.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearIncidencia.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearUsuario.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Incidencia.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Inicial.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Principal.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.AñadirComentario.resources

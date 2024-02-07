@@ -52,6 +52,12 @@
     <Compile Include="Formularios\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\AñadirComentario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AñadirComentario.Designer.cs">
+      <DependentUpon>AñadirComentario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ControlUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AñadirComentario.resx">
+      <DependentUpon>AñadirComentario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ControlUsuarios.resx">
       <DependentUpon>ControlUsuarios.cs</DependentUpon>
