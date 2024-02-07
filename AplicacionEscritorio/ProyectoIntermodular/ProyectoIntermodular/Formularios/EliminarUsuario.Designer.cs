@@ -40,6 +40,7 @@
             // 
             // cajaUsuario
             // 
+            this.cajaUsuario.Enabled = false;
             this.cajaUsuario.Location = new System.Drawing.Point(172, 42);
             this.cajaUsuario.Name = "cajaUsuario";
             this.cajaUsuario.Size = new System.Drawing.Size(100, 22);
@@ -94,7 +95,7 @@
             this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnVolver.Location = new System.Drawing.Point(85, 156);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(75, 28);
             this.btnVolver.TabIndex = 6;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -105,7 +106,7 @@
             this.btnEliminar.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnEliminar.Location = new System.Drawing.Point(177, 156);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 28);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;

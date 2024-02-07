@@ -57,10 +57,11 @@
             // 
             this.btnModificar.Location = new System.Drawing.Point(168, 79);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(117, 34);
+            this.btnModificar.Size = new System.Drawing.Size(117, 27);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar usuario";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // ControlUsuarios
             // 

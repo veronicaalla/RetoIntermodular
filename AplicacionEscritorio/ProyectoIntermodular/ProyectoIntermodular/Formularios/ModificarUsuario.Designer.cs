@@ -47,6 +47,8 @@
             this.lblApellido1 = new System.Windows.Forms.Label();
             this.cajaNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxDepartamento
@@ -212,12 +214,36 @@
             this.lblNombre.TabIndex = 21;
             this.lblNombre.Text = "Nombre";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnVolver.Location = new System.Drawing.Point(213, 245);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 30);
+            this.btnVolver.TabIndex = 40;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnFinalizar.Location = new System.Drawing.Point(332, 245);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(75, 30);
+            this.btnFinalizar.TabIndex = 41;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
             // ModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(626, 310);
+            this.Controls.Add(this.btnFinalizar);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.comboBoxDepartamento);
             this.Controls.Add(this.lblDepartamento);
             this.Controls.Add(this.checkBoxActivo);
@@ -265,5 +291,7 @@
         private System.Windows.Forms.Label lblApellido1;
         private System.Windows.Forms.TextBox cajaNombre;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnFinalizar;
     }
 }

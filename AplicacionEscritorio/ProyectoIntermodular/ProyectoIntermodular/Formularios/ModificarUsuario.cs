@@ -16,5 +16,18 @@ namespace ProyectoIntermodular.Formularios
         {
             InitializeComponent();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            SeleccionarUsuario se =new SeleccionarUsuario();
+            this.Hide();
+            se.Show();
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("El usuario ha sido modificado correctamente.", "Usuario modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }

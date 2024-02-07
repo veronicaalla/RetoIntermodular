@@ -42,5 +42,12 @@ namespace ProyectoIntermodular.Formularios
         {
 
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            SeleccionarUsuario seleccionar=new SeleccionarUsuario();
+            this.Hide();
+            seleccionar.Show();
+        }
     }
 }
