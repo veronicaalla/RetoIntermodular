@@ -70,11 +70,23 @@
     <Compile Include="Formularios\CrearIncidencia.Designer.cs">
       <DependentUpon>CrearIncidencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\CrearPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CrearPerfil.Designer.cs">
+      <DependentUpon>CrearPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\CrearUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\CrearUsuario.Designer.cs">
       <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\EliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\EliminarUsuario.Designer.cs">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Incidencia.cs">
       <SubType>Form</SubType>
@@ -88,11 +100,23 @@
     <Compile Include="Formularios\Inicial.Designer.cs">
       <DependentUpon>Inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ModificarUsuario.Designer.cs">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\SeleccionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\SeleccionarUsuario.Designer.cs">
+      <DependentUpon>SeleccionarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,8 +132,14 @@
     <EmbeddedResource Include="Formularios\CrearIncidencia.resx">
       <DependentUpon>CrearIncidencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CrearPerfil.resx">
+      <DependentUpon>CrearPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CrearUsuario.resx">
       <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\EliminarUsuario.resx">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Incidencia.resx">
       <DependentUpon>Incidencia.cs</DependentUpon>
@@ -117,8 +147,14 @@
     <EmbeddedResource Include="Formularios\Inicial.resx">
       <DependentUpon>Inicial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\SeleccionarUsuario.resx">
+      <DependentUpon>SeleccionarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
