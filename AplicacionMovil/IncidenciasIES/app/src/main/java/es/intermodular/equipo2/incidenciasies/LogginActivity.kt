@@ -7,21 +7,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import es.intermodular.equipo2.incidenciasies.databinding.ActivityLogginBinding
+import es.intermodular.equipo2.incidenciasies.databinding.ActivityLoginBinding
 
 import java.util.Locale
 
 class LogginActivity : AppCompatActivity() {
 
     // Variable utilizada para acceder a las vistas del layout de la actividad mediante View Binding
-    private lateinit var binding: ActivityLogginBinding
+    private lateinit var binding: ActivityLoginBinding
 
     // Objeto utilizado para almacenar datos de manera persistente, como las preferencias del usuario
     private lateinit var sharedPref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLogginBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Inicialización de SharedPreferences para guardar datos persistentes

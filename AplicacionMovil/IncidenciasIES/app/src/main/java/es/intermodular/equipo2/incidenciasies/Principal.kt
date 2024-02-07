@@ -10,7 +10,7 @@ import java.util.Locale
 
 class Principal : AppCompatActivity() {
 
-    private lateinit var binding : ActivityPrincipalBinding
+    private lateinit var binding: ActivityPrincipalBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -46,6 +46,8 @@ class Principal : AppCompatActivity() {
             //We pass the type of incident
             intent.putExtra("EXTRA_TYPE_INCIDENTS", "Asignadas")
             //We pass a certain list
+
+            startActivity(intent)
         }
 
         binding.btnEnProceso.setOnClickListener {
@@ -53,6 +55,8 @@ class Principal : AppCompatActivity() {
             //We pass the type of incident
             intent.putExtra("EXTRA_TYPE_INCIDENTS", "En Proceso")
             //We pass a certain list
+
+            startActivity(intent)
         }
 
         binding.btnResueltas.setOnClickListener {
@@ -60,6 +64,8 @@ class Principal : AppCompatActivity() {
             //We pass the type of incident
             intent.putExtra("EXTRA_TYPE_INCIDENTS", "Resueltas")
             //We pass a certain list
+
+            startActivity(intent)
         }
 
         binding.btnCerradas.setOnClickListener {
@@ -67,6 +73,8 @@ class Principal : AppCompatActivity() {
             //We pass the type of incident
             intent.putExtra("EXTRA_TYPE_INCIDENTS", "Cerradas")
             //We pass a certain list
+
+            startActivity(intent)
         }
     }
 }
