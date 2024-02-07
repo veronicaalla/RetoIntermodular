@@ -48,7 +48,7 @@
             // 
             this.btnIncidencias.Location = new System.Drawing.Point(109, 156);
             this.btnIncidencias.Name = "btnIncidencias";
-            this.btnIncidencias.Size = new System.Drawing.Size(95, 23);
+            this.btnIncidencias.Size = new System.Drawing.Size(95, 32);
             this.btnIncidencias.TabIndex = 1;
             this.btnIncidencias.Text = "Incidencias";
             this.btnIncidencias.UseVisualStyleBackColor = true;
@@ -58,7 +58,7 @@
             // 
             this.btnUsuarios.Location = new System.Drawing.Point(268, 156);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(95, 23);
+            this.btnUsuarios.Size = new System.Drawing.Size(95, 32);
             this.btnUsuarios.TabIndex = 2;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;

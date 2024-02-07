@@ -31,8 +31,61 @@ namespace ProyectoIntermodular.Formularios
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El usuario ha sido creado con éxito.", "Usuario creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPerfil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblContraseña_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEducantabria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDominio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            CrearPerfil crearPerfil = new CrearPerfil();
+            this.Hide();
+            crearPerfil.Show();
+        }
+
+        private void btnVolver_Click_1(object sender, EventArgs e)
+        {
+            ControlUsuarios controlUsuarios = new ControlUsuarios();
+            this.Hide();
+            controlUsuarios.Show();
         }
     }
 }

@@ -10,37 +10,32 @@ using System.Windows.Forms;
 
 namespace ProyectoIntermodular.Formularios
 {
-    public partial class ControlUsuarios : Form
+    public partial class SeleccionarUsuario : Form
     {
-        public ControlUsuarios()
+        public SeleccionarUsuario()
         {
             InitializeComponent();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin();
+            ControlUsuarios controlUsuarios = new ControlUsuarios();
             this.Hide();
-            admin.Show();
+            controlUsuarios.Show();
         }
 
-        private void btnCrear_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            CrearUsuario crearUsuario = new CrearUsuario();
+            ModificarUsuario modificarUsuario   = new ModificarUsuario();
             this.Hide();
-            crearUsuario.Show();
+            modificarUsuario.Show();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            EliminarUsuario eliminarUsuario= new EliminarUsuario();
+            EliminarUsuario eliminarUsuario = new EliminarUsuario();
             this.Hide();
             eliminarUsuario.Show();
-        }
-
-        private void ControlUsuarios_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
