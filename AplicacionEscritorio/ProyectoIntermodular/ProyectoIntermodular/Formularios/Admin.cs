@@ -17,11 +17,18 @@ namespace ProyectoIntermodular.Formularios
             InitializeComponent();
         }
 
+        private void btnIncidencias_Click(object sender, EventArgs e)
+        {
+            Incidencia incidencia = new Incidencia();
+            this.Hide();
+            incidencia.Show();
+        }
+
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            Usuarios usuarios = new Usuarios();
+            ControlUsuarios controlUsuarios = new ControlUsuarios();
             this.Hide();
-            usuarios.Show();
+            controlUsuarios.Show();
         }
     }
 }

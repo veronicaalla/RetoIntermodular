@@ -17,17 +17,25 @@ namespace ProyectoIntermodular.Formularios
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void checkBoxResponsable_CheckedChanged(object sender, EventArgs e)
         {
-
+            comboBoxResponsable.Enabled = true;
+            if (!checkBoxResponsable.Checked)
+            {
+                comboBoxResponsable.Enabled = false;
+            }
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
+        private void checkBoxFechaCierre_CheckedChanged(object sender, EventArgs e)
         {
-
+            dateFechaCierre.Enabled = true;
+            if (!checkBoxFechaCierre.Checked)
+            {
+                dateFechaCierre.Enabled = false;
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnCrear_Click(object sender, EventArgs e)
         {
 
         }

@@ -28,234 +28,260 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxTipo = new System.Windows.Forms.ComboBox();
-            this.comboBoxSubtipo = new System.Windows.Forms.ComboBox();
-            this.dateTimePickerFechaCreacion = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerFechaCierre = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaCreacion = new System.Windows.Forms.Label();
-            this.lblFechaCierre = new System.Windows.Forms.Label();
-            this.lblTipo = new System.Windows.Forms.Label();
-            this.lblSubtipo = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.lblEstado = new System.Windows.Forms.Label();
-            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.btnCrear = new System.Windows.Forms.Button();
-            this.lblCreador = new System.Windows.Forms.Label();
-            this.txtCreador = new System.Windows.Forms.TextBox();
-            this.btnSubirArchivo = new System.Windows.Forms.Button();
-            this.lblArchivo = new System.Windows.Forms.Label();
-            this.lblResponsable = new System.Windows.Forms.Label();
-            this.comboBoxResponsable = new System.Windows.Forms.ComboBox();
-            this.lblEquipo = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.checkBoxFechaCierre = new System.Windows.Forms.CheckBox();
+            this.checkBoxResponsable = new System.Windows.Forms.CheckBox();
             this.comboBoxEquipo = new System.Windows.Forms.ComboBox();
+            this.lblEquipo = new System.Windows.Forms.Label();
+            this.comboBoxResponsable = new System.Windows.Forms.ComboBox();
+            this.lblResponsable = new System.Windows.Forms.Label();
+            this.lblArchivo = new System.Windows.Forms.Label();
+            this.btnAñadirArchivo = new System.Windows.Forms.Button();
+            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.cajaCreador = new System.Windows.Forms.TextBox();
+            this.lblCreador = new System.Windows.Forms.Label();
+            this.lblFechaCierre = new System.Windows.Forms.Label();
+            this.dateFechaCierre = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaCreacion = new System.Windows.Forms.Label();
+            this.dateFechaCreacion = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxSubtipo = new System.Windows.Forms.ComboBox();
+            this.lblSubtipo = new System.Windows.Forms.Label();
+            this.comboBoxTipo = new System.Windows.Forms.ComboBox();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // comboBoxTipo
-            // 
-            this.comboBoxTipo.FormattingEnabled = true;
-            this.comboBoxTipo.Location = new System.Drawing.Point(111, 64);
-            this.comboBoxTipo.Name = "comboBoxTipo";
-            this.comboBoxTipo.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxTipo.TabIndex = 0;
-            // 
-            // comboBoxSubtipo
-            // 
-            this.comboBoxSubtipo.FormattingEnabled = true;
-            this.comboBoxSubtipo.Location = new System.Drawing.Point(111, 94);
-            this.comboBoxSubtipo.Name = "comboBoxSubtipo";
-            this.comboBoxSubtipo.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxSubtipo.TabIndex = 1;
-            this.comboBoxSubtipo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // dateTimePickerFechaCreacion
-            // 
-            this.dateTimePickerFechaCreacion.Location = new System.Drawing.Point(386, 32);
-            this.dateTimePickerFechaCreacion.MaxDate = new System.DateTime(2024, 2, 6, 0, 0, 0, 0);
-            this.dateTimePickerFechaCreacion.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerFechaCreacion.Name = "dateTimePickerFechaCreacion";
-            this.dateTimePickerFechaCreacion.Size = new System.Drawing.Size(268, 22);
-            this.dateTimePickerFechaCreacion.TabIndex = 2;
-            this.dateTimePickerFechaCreacion.Value = new System.DateTime(2024, 2, 6, 0, 0, 0, 0);
-            // 
-            // dateTimePickerFechaCierre
-            // 
-            this.dateTimePickerFechaCierre.Location = new System.Drawing.Point(386, 64);
-            this.dateTimePickerFechaCierre.MaxDate = new System.DateTime(2100, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerFechaCierre.MinDate = new System.DateTime(2024, 2, 6, 0, 0, 0, 0);
-            this.dateTimePickerFechaCierre.Name = "dateTimePickerFechaCierre";
-            this.dateTimePickerFechaCierre.Size = new System.Drawing.Size(268, 22);
-            this.dateTimePickerFechaCierre.TabIndex = 3;
-            this.dateTimePickerFechaCierre.Value = new System.DateTime(2024, 2, 6, 0, 0, 0, 0);
-            // 
-            // lblFechaCreacion
-            // 
-            this.lblFechaCreacion.AutoSize = true;
-            this.lblFechaCreacion.Location = new System.Drawing.Point(261, 36);
-            this.lblFechaCreacion.Name = "lblFechaCreacion";
-            this.lblFechaCreacion.Size = new System.Drawing.Size(119, 16);
-            this.lblFechaCreacion.TabIndex = 4;
-            this.lblFechaCreacion.Text = "Fecha de creación";
-            // 
-            // lblFechaCierre
-            // 
-            this.lblFechaCierre.AutoSize = true;
-            this.lblFechaCierre.Location = new System.Drawing.Point(261, 67);
-            this.lblFechaCierre.Name = "lblFechaCierre";
-            this.lblFechaCierre.Size = new System.Drawing.Size(101, 16);
-            this.lblFechaCierre.TabIndex = 5;
-            this.lblFechaCierre.Text = "Fecha de cierre";
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(46, 67);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(35, 16);
-            this.lblTipo.TabIndex = 6;
-            this.lblTipo.Text = "Tipo";
-            // 
-            // lblSubtipo
-            // 
-            this.lblSubtipo.AutoSize = true;
-            this.lblSubtipo.Location = new System.Drawing.Point(46, 97);
-            this.lblSubtipo.Name = "lblSubtipo";
-            this.lblSubtipo.Size = new System.Drawing.Size(53, 16);
-            this.lblSubtipo.TabIndex = 7;
-            this.lblSubtipo.Text = "Subtipo";
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Location = new System.Drawing.Point(264, 228);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
-            this.btnVolver.TabIndex = 8;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(46, 129);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(50, 16);
-            this.lblEstado.TabIndex = 10;
-            this.lblEstado.Text = "Estado";
-            // 
-            // comboBoxEstado
-            // 
-            this.comboBoxEstado.FormattingEnabled = true;
-            this.comboBoxEstado.Location = new System.Drawing.Point(111, 126);
-            this.comboBoxEstado.Name = "comboBoxEstado";
-            this.comboBoxEstado.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxEstado.TabIndex = 9;
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(345, 228);
+            this.btnCrear.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnCrear.Location = new System.Drawing.Point(643, 280);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(75, 23);
-            this.btnCrear.TabIndex = 11;
+            this.btnCrear.Size = new System.Drawing.Size(116, 23);
+            this.btnCrear.TabIndex = 43;
             this.btnCrear.Text = "Crear";
-            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // lblCreador
+            // btnVolver
             // 
-            this.lblCreador.AutoSize = true;
-            this.lblCreador.Location = new System.Drawing.Point(46, 39);
-            this.lblCreador.Name = "lblCreador";
-            this.lblCreador.Size = new System.Drawing.Size(56, 16);
-            this.lblCreador.TabIndex = 12;
-            this.lblCreador.Text = "Creador";
+            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnVolver.Location = new System.Drawing.Point(506, 280);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(116, 23);
+            this.btnVolver.TabIndex = 42;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
             // 
-            // txtCreador
+            // checkBoxFechaCierre
             // 
-            this.txtCreador.Enabled = false;
-            this.txtCreador.Location = new System.Drawing.Point(111, 33);
-            this.txtCreador.Name = "txtCreador";
-            this.txtCreador.Size = new System.Drawing.Size(121, 22);
-            this.txtCreador.TabIndex = 13;
-            this.txtCreador.Text = "Pepito";
+            this.checkBoxFechaCierre.AutoSize = true;
+            this.checkBoxFechaCierre.Location = new System.Drawing.Point(308, 67);
+            this.checkBoxFechaCierre.Name = "checkBoxFechaCierre";
+            this.checkBoxFechaCierre.Size = new System.Drawing.Size(18, 17);
+            this.checkBoxFechaCierre.TabIndex = 41;
+            this.checkBoxFechaCierre.UseVisualStyleBackColor = true;
+            this.checkBoxFechaCierre.CheckedChanged += new System.EventHandler(this.checkBoxFechaCierre_CheckedChanged);
             // 
-            // btnSubirArchivo
+            // checkBoxResponsable
             // 
-            this.btnSubirArchivo.Location = new System.Drawing.Point(264, 95);
-            this.btnSubirArchivo.Name = "btnSubirArchivo";
-            this.btnSubirArchivo.Size = new System.Drawing.Size(102, 23);
-            this.btnSubirArchivo.TabIndex = 14;
-            this.btnSubirArchivo.Text = "Subir archivo";
-            this.btnSubirArchivo.UseVisualStyleBackColor = true;
-            // 
-            // lblArchivo
-            // 
-            this.lblArchivo.AutoSize = true;
-            this.lblArchivo.Location = new System.Drawing.Point(383, 98);
-            this.lblArchivo.Name = "lblArchivo";
-            this.lblArchivo.Size = new System.Drawing.Size(235, 16);
-            this.lblArchivo.TabIndex = 15;
-            this.lblArchivo.Text = "No se ha seleccionado ningun archivo";
-            this.lblArchivo.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblResponsable
-            // 
-            this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(261, 129);
-            this.lblResponsable.Name = "lblResponsable";
-            this.lblResponsable.Size = new System.Drawing.Size(89, 16);
-            this.lblResponsable.TabIndex = 17;
-            this.lblResponsable.Text = "Responsable";
-            // 
-            // comboBoxResponsable
-            // 
-            this.comboBoxResponsable.FormattingEnabled = true;
-            this.comboBoxResponsable.Location = new System.Drawing.Point(386, 126);
-            this.comboBoxResponsable.Name = "comboBoxResponsable";
-            this.comboBoxResponsable.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxResponsable.TabIndex = 16;
-            // 
-            // lblEquipo
-            // 
-            this.lblEquipo.AutoSize = true;
-            this.lblEquipo.Location = new System.Drawing.Point(46, 163);
-            this.lblEquipo.Name = "lblEquipo";
-            this.lblEquipo.Size = new System.Drawing.Size(50, 16);
-            this.lblEquipo.TabIndex = 19;
-            this.lblEquipo.Text = "Equipo";
+            this.checkBoxResponsable.AutoSize = true;
+            this.checkBoxResponsable.Location = new System.Drawing.Point(42, 190);
+            this.checkBoxResponsable.Name = "checkBoxResponsable";
+            this.checkBoxResponsable.Size = new System.Drawing.Size(18, 17);
+            this.checkBoxResponsable.TabIndex = 40;
+            this.checkBoxResponsable.UseVisualStyleBackColor = true;
+            this.checkBoxResponsable.CheckedChanged += new System.EventHandler(this.checkBoxResponsable_CheckedChanged);
             // 
             // comboBoxEquipo
             // 
             this.comboBoxEquipo.FormattingEnabled = true;
-            this.comboBoxEquipo.Location = new System.Drawing.Point(111, 160);
+            this.comboBoxEquipo.Location = new System.Drawing.Point(161, 226);
             this.comboBoxEquipo.Name = "comboBoxEquipo";
             this.comboBoxEquipo.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxEquipo.TabIndex = 18;
+            this.comboBoxEquipo.TabIndex = 39;
+            // 
+            // lblEquipo
+            // 
+            this.lblEquipo.AutoSize = true;
+            this.lblEquipo.Location = new System.Drawing.Point(62, 229);
+            this.lblEquipo.Name = "lblEquipo";
+            this.lblEquipo.Size = new System.Drawing.Size(50, 16);
+            this.lblEquipo.TabIndex = 38;
+            this.lblEquipo.Text = "Equipo";
+            // 
+            // comboBoxResponsable
+            // 
+            this.comboBoxResponsable.Enabled = false;
+            this.comboBoxResponsable.FormattingEnabled = true;
+            this.comboBoxResponsable.Location = new System.Drawing.Point(161, 187);
+            this.comboBoxResponsable.Name = "comboBoxResponsable";
+            this.comboBoxResponsable.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxResponsable.TabIndex = 37;
+            // 
+            // lblResponsable
+            // 
+            this.lblResponsable.AutoSize = true;
+            this.lblResponsable.Location = new System.Drawing.Point(62, 190);
+            this.lblResponsable.Name = "lblResponsable";
+            this.lblResponsable.Size = new System.Drawing.Size(89, 16);
+            this.lblResponsable.TabIndex = 36;
+            this.lblResponsable.Text = "Responsable";
+            // 
+            // lblArchivo
+            // 
+            this.lblArchivo.AutoSize = true;
+            this.lblArchivo.Location = new System.Drawing.Point(465, 106);
+            this.lblArchivo.Name = "lblArchivo";
+            this.lblArchivo.Size = new System.Drawing.Size(177, 16);
+            this.lblArchivo.TabIndex = 35;
+            this.lblArchivo.Text = "No se añadió ningún archivo";
+            // 
+            // btnAñadirArchivo
+            // 
+            this.btnAñadirArchivo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAñadirArchivo.Location = new System.Drawing.Point(332, 103);
+            this.btnAñadirArchivo.Name = "btnAñadirArchivo";
+            this.btnAñadirArchivo.Size = new System.Drawing.Size(116, 23);
+            this.btnAñadirArchivo.TabIndex = 34;
+            this.btnAñadirArchivo.Text = "Añadir archivo";
+            this.btnAñadirArchivo.UseVisualStyleBackColor = false;
+            // 
+            // comboBoxEstado
+            // 
+            this.comboBoxEstado.FormattingEnabled = true;
+            this.comboBoxEstado.Location = new System.Drawing.Point(161, 146);
+            this.comboBoxEstado.Name = "comboBoxEstado";
+            this.comboBoxEstado.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxEstado.TabIndex = 33;
+            this.comboBoxEstado.Text = "Abierta";
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(62, 149);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(50, 16);
+            this.lblEstado.TabIndex = 32;
+            this.lblEstado.Text = "Estado";
+            // 
+            // cajaCreador
+            // 
+            this.cajaCreador.Enabled = false;
+            this.cajaCreador.Location = new System.Drawing.Point(161, 29);
+            this.cajaCreador.Name = "cajaCreador";
+            this.cajaCreador.Size = new System.Drawing.Size(121, 22);
+            this.cajaCreador.TabIndex = 31;
+            this.cajaCreador.Text = "Pepito";
+            // 
+            // lblCreador
+            // 
+            this.lblCreador.AutoSize = true;
+            this.lblCreador.Location = new System.Drawing.Point(62, 29);
+            this.lblCreador.Name = "lblCreador";
+            this.lblCreador.Size = new System.Drawing.Size(56, 16);
+            this.lblCreador.TabIndex = 30;
+            this.lblCreador.Text = "Creador";
+            // 
+            // lblFechaCierre
+            // 
+            this.lblFechaCierre.AutoSize = true;
+            this.lblFechaCierre.Location = new System.Drawing.Point(329, 68);
+            this.lblFechaCierre.Name = "lblFechaCierre";
+            this.lblFechaCierre.Size = new System.Drawing.Size(101, 16);
+            this.lblFechaCierre.TabIndex = 29;
+            this.lblFechaCierre.Text = "Fecha de cierre";
+            // 
+            // dateFechaCierre
+            // 
+            this.dateFechaCierre.Enabled = false;
+            this.dateFechaCierre.Location = new System.Drawing.Point(468, 68);
+            this.dateFechaCierre.MinDate = new System.DateTime(2024, 2, 7, 0, 0, 0, 0);
+            this.dateFechaCierre.Name = "dateFechaCierre";
+            this.dateFechaCierre.Size = new System.Drawing.Size(265, 22);
+            this.dateFechaCierre.TabIndex = 28;
+            // 
+            // lblFechaCreacion
+            // 
+            this.lblFechaCreacion.AutoSize = true;
+            this.lblFechaCreacion.Location = new System.Drawing.Point(329, 29);
+            this.lblFechaCreacion.Name = "lblFechaCreacion";
+            this.lblFechaCreacion.Size = new System.Drawing.Size(119, 16);
+            this.lblFechaCreacion.TabIndex = 27;
+            this.lblFechaCreacion.Text = "Fecha de creación";
+            // 
+            // dateFechaCreacion
+            // 
+            this.dateFechaCreacion.Location = new System.Drawing.Point(468, 29);
+            this.dateFechaCreacion.MaxDate = new System.DateTime(2024, 2, 7, 0, 0, 0, 0);
+            this.dateFechaCreacion.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dateFechaCreacion.Name = "dateFechaCreacion";
+            this.dateFechaCreacion.Size = new System.Drawing.Size(265, 22);
+            this.dateFechaCreacion.TabIndex = 26;
+            this.dateFechaCreacion.Value = new System.DateTime(2024, 2, 7, 0, 0, 0, 0);
+            // 
+            // comboBoxSubtipo
+            // 
+            this.comboBoxSubtipo.FormattingEnabled = true;
+            this.comboBoxSubtipo.Location = new System.Drawing.Point(161, 103);
+            this.comboBoxSubtipo.Name = "comboBoxSubtipo";
+            this.comboBoxSubtipo.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxSubtipo.TabIndex = 25;
+            // 
+            // lblSubtipo
+            // 
+            this.lblSubtipo.AutoSize = true;
+            this.lblSubtipo.Location = new System.Drawing.Point(62, 106);
+            this.lblSubtipo.Name = "lblSubtipo";
+            this.lblSubtipo.Size = new System.Drawing.Size(53, 16);
+            this.lblSubtipo.TabIndex = 24;
+            this.lblSubtipo.Text = "Subtipo";
+            // 
+            // comboBoxTipo
+            // 
+            this.comboBoxTipo.FormattingEnabled = true;
+            this.comboBoxTipo.Location = new System.Drawing.Point(161, 64);
+            this.comboBoxTipo.Name = "comboBoxTipo";
+            this.comboBoxTipo.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxTipo.TabIndex = 23;
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(62, 67);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(35, 16);
+            this.lblTipo.TabIndex = 22;
+            this.lblTipo.Text = "Tipo";
             // 
             // CrearIncidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(711, 268);
-            this.Controls.Add(this.lblEquipo);
-            this.Controls.Add(this.comboBoxEquipo);
-            this.Controls.Add(this.lblResponsable);
-            this.Controls.Add(this.comboBoxResponsable);
-            this.Controls.Add(this.lblArchivo);
-            this.Controls.Add(this.btnSubirArchivo);
-            this.Controls.Add(this.txtCreador);
-            this.Controls.Add(this.lblCreador);
+            this.ClientSize = new System.Drawing.Size(800, 333);
             this.Controls.Add(this.btnCrear);
-            this.Controls.Add(this.lblEstado);
-            this.Controls.Add(this.comboBoxEstado);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.lblSubtipo);
-            this.Controls.Add(this.lblTipo);
+            this.Controls.Add(this.checkBoxFechaCierre);
+            this.Controls.Add(this.checkBoxResponsable);
+            this.Controls.Add(this.comboBoxEquipo);
+            this.Controls.Add(this.lblEquipo);
+            this.Controls.Add(this.comboBoxResponsable);
+            this.Controls.Add(this.lblResponsable);
+            this.Controls.Add(this.lblArchivo);
+            this.Controls.Add(this.btnAñadirArchivo);
+            this.Controls.Add(this.comboBoxEstado);
+            this.Controls.Add(this.lblEstado);
+            this.Controls.Add(this.cajaCreador);
+            this.Controls.Add(this.lblCreador);
             this.Controls.Add(this.lblFechaCierre);
+            this.Controls.Add(this.dateFechaCierre);
             this.Controls.Add(this.lblFechaCreacion);
-            this.Controls.Add(this.dateTimePickerFechaCierre);
-            this.Controls.Add(this.dateTimePickerFechaCreacion);
+            this.Controls.Add(this.dateFechaCreacion);
             this.Controls.Add(this.comboBoxSubtipo);
+            this.Controls.Add(this.lblSubtipo);
             this.Controls.Add(this.comboBoxTipo);
+            this.Controls.Add(this.lblTipo);
             this.Name = "CrearIncidencia";
             this.Text = "CrearIncidencia";
             this.ResumeLayout(false);
@@ -265,25 +291,27 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBoxTipo;
-        private System.Windows.Forms.ComboBox comboBoxSubtipo;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFechaCreacion;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFechaCierre;
-        private System.Windows.Forms.Label lblFechaCreacion;
-        private System.Windows.Forms.Label lblFechaCierre;
-        private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.Label lblSubtipo;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.ComboBox comboBoxEstado;
         private System.Windows.Forms.Button btnCrear;
-        private System.Windows.Forms.Label lblCreador;
-        private System.Windows.Forms.TextBox txtCreador;
-        private System.Windows.Forms.Button btnSubirArchivo;
-        private System.Windows.Forms.Label lblArchivo;
-        private System.Windows.Forms.Label lblResponsable;
-        private System.Windows.Forms.ComboBox comboBoxResponsable;
-        private System.Windows.Forms.Label lblEquipo;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.CheckBox checkBoxFechaCierre;
+        private System.Windows.Forms.CheckBox checkBoxResponsable;
         private System.Windows.Forms.ComboBox comboBoxEquipo;
+        private System.Windows.Forms.Label lblEquipo;
+        private System.Windows.Forms.ComboBox comboBoxResponsable;
+        private System.Windows.Forms.Label lblResponsable;
+        private System.Windows.Forms.Label lblArchivo;
+        private System.Windows.Forms.Button btnAñadirArchivo;
+        private System.Windows.Forms.ComboBox comboBoxEstado;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.TextBox cajaCreador;
+        private System.Windows.Forms.Label lblCreador;
+        private System.Windows.Forms.Label lblFechaCierre;
+        private System.Windows.Forms.DateTimePicker dateFechaCierre;
+        private System.Windows.Forms.Label lblFechaCreacion;
+        private System.Windows.Forms.DateTimePicker dateFechaCreacion;
+        private System.Windows.Forms.ComboBox comboBoxSubtipo;
+        private System.Windows.Forms.Label lblSubtipo;
+        private System.Windows.Forms.ComboBox comboBoxTipo;
+        private System.Windows.Forms.Label lblTipo;
     }
 }

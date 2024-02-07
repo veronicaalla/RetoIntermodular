@@ -33,23 +33,23 @@
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnEli = new System.Windows.Forms.Button();
             this.gbxCriterios = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.cbxProfesor = new System.Windows.Forms.CheckBox();
-            this.cmxProfesor = new System.Windows.Forms.ComboBox();
-            this.cmxAula = new System.Windows.Forms.ComboBox();
-            this.cbxAula = new System.Windows.Forms.CheckBox();
-            this.cmxEstado = new System.Windows.Forms.ComboBox();
-            this.cbxEstado = new System.Windows.Forms.CheckBox();
-            this.cmxTipo = new System.Windows.Forms.ComboBox();
-            this.cbxTipo = new System.Windows.Forms.CheckBox();
-            this.cbxFecha = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.lblDesde = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.cmxSub = new System.Windows.Forms.ComboBox();
             this.cbxSub = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblDesde = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbxFecha = new System.Windows.Forms.CheckBox();
+            this.cmxTipo = new System.Windows.Forms.ComboBox();
+            this.cbxTipo = new System.Windows.Forms.CheckBox();
+            this.cmxEstado = new System.Windows.Forms.ComboBox();
+            this.cbxEstado = new System.Windows.Forms.CheckBox();
+            this.cmxAula = new System.Windows.Forms.ComboBox();
+            this.cbxAula = new System.Windows.Forms.CheckBox();
+            this.cmxProfesor = new System.Windows.Forms.ComboBox();
+            this.cbxProfesor = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxCriterios.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,7 @@
             this.btnCrear.TabIndex = 3;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // btnEli
             // 
@@ -117,77 +118,67 @@
             this.gbxCriterios.TabStop = false;
             this.gbxCriterios.Text = "Criterios";
             // 
-            // button1
+            // cmxSub
             // 
-            this.button1.Location = new System.Drawing.Point(911, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmxSub.FormattingEnabled = true;
+            this.cmxSub.Location = new System.Drawing.Point(271, 124);
+            this.cmxSub.Name = "cmxSub";
+            this.cmxSub.Size = new System.Drawing.Size(183, 24);
+            this.cmxSub.TabIndex = 22;
+            this.cmxSub.Text = "Subtipo";
             // 
-            // button2
+            // cbxSub
             // 
-            this.button2.Location = new System.Drawing.Point(828, 124);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 27);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cbxSub.AutoSize = true;
+            this.cbxSub.Location = new System.Drawing.Point(237, 128);
+            this.cbxSub.Name = "cbxSub";
+            this.cbxSub.Size = new System.Drawing.Size(18, 17);
+            this.cbxSub.TabIndex = 21;
+            this.cbxSub.UseVisualStyleBackColor = true;
             // 
-            // cbxProfesor
+            // label1
             // 
-            this.cbxProfesor.AutoSize = true;
-            this.cbxProfesor.Location = new System.Drawing.Point(7, 33);
-            this.cbxProfesor.Name = "cbxProfesor";
-            this.cbxProfesor.Size = new System.Drawing.Size(18, 17);
-            this.cbxProfesor.TabIndex = 8;
-            this.cbxProfesor.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(670, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 16);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Hasta:";
             // 
-            // cmxProfesor
+            // lblDesde
             // 
-            this.cmxProfesor.FormattingEnabled = true;
-            this.cmxProfesor.Location = new System.Drawing.Point(41, 29);
-            this.cmxProfesor.Name = "cmxProfesor";
-            this.cmxProfesor.Size = new System.Drawing.Size(413, 24);
-            this.cmxProfesor.TabIndex = 9;
-            this.cmxProfesor.Text = "Profesor";
+            this.lblDesde.AutoSize = true;
+            this.lblDesde.Location = new System.Drawing.Point(670, 38);
+            this.lblDesde.Name = "lblDesde";
+            this.lblDesde.Size = new System.Drawing.Size(51, 16);
+            this.lblDesde.TabIndex = 19;
+            this.lblDesde.Text = "Desde:";
             // 
-            // cmxAula
+            // dateTimePicker2
             // 
-            this.cmxAula.FormattingEnabled = true;
-            this.cmxAula.Location = new System.Drawing.Point(41, 74);
-            this.cmxAula.Name = "cmxAula";
-            this.cmxAula.Size = new System.Drawing.Size(183, 24);
-            this.cmxAula.TabIndex = 11;
-            this.cmxAula.Text = "Aula";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(749, 34);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.TabIndex = 18;
             // 
-            // cbxAula
+            // dateTimePicker1
             // 
-            this.cbxAula.AutoSize = true;
-            this.cbxAula.Location = new System.Drawing.Point(7, 78);
-            this.cbxAula.Name = "cbxAula";
-            this.cbxAula.Size = new System.Drawing.Size(18, 17);
-            this.cbxAula.TabIndex = 10;
-            this.cbxAula.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(749, 76);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 17;
             // 
-            // cmxEstado
+            // cbxFecha
             // 
-            this.cmxEstado.FormattingEnabled = true;
-            this.cmxEstado.Location = new System.Drawing.Point(41, 124);
-            this.cmxEstado.Name = "cmxEstado";
-            this.cmxEstado.Size = new System.Drawing.Size(183, 24);
-            this.cmxEstado.TabIndex = 13;
-            this.cmxEstado.Text = "Estado";
-            // 
-            // cbxEstado
-            // 
-            this.cbxEstado.AutoSize = true;
-            this.cbxEstado.Location = new System.Drawing.Point(7, 128);
-            this.cbxEstado.Name = "cbxEstado";
-            this.cbxEstado.Size = new System.Drawing.Size(18, 17);
-            this.cbxEstado.TabIndex = 12;
-            this.cbxEstado.UseVisualStyleBackColor = true;
+            this.cbxFecha.AutoSize = true;
+            this.cbxFecha.Location = new System.Drawing.Point(567, 36);
+            this.cbxFecha.Name = "cbxFecha";
+            this.cbxFecha.Size = new System.Drawing.Size(74, 20);
+            this.cbxFecha.TabIndex = 16;
+            this.cbxFecha.Text = "Fechas";
+            this.cbxFecha.UseVisualStyleBackColor = true;
             // 
             // cmxTipo
             // 
@@ -207,67 +198,77 @@
             this.cbxTipo.TabIndex = 14;
             this.cbxTipo.UseVisualStyleBackColor = true;
             // 
-            // cbxFecha
+            // cmxEstado
             // 
-            this.cbxFecha.AutoSize = true;
-            this.cbxFecha.Location = new System.Drawing.Point(567, 36);
-            this.cbxFecha.Name = "cbxFecha";
-            this.cbxFecha.Size = new System.Drawing.Size(74, 20);
-            this.cbxFecha.TabIndex = 16;
-            this.cbxFecha.Text = "Fechas";
-            this.cbxFecha.UseVisualStyleBackColor = true;
+            this.cmxEstado.FormattingEnabled = true;
+            this.cmxEstado.Location = new System.Drawing.Point(41, 124);
+            this.cmxEstado.Name = "cmxEstado";
+            this.cmxEstado.Size = new System.Drawing.Size(183, 24);
+            this.cmxEstado.TabIndex = 13;
+            this.cmxEstado.Text = "Estado";
             // 
-            // dateTimePicker1
+            // cbxEstado
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(749, 76);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 17;
+            this.cbxEstado.AutoSize = true;
+            this.cbxEstado.Location = new System.Drawing.Point(7, 128);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(18, 17);
+            this.cbxEstado.TabIndex = 12;
+            this.cbxEstado.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker2
+            // cmxAula
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(749, 34);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker2.TabIndex = 18;
+            this.cmxAula.FormattingEnabled = true;
+            this.cmxAula.Location = new System.Drawing.Point(41, 74);
+            this.cmxAula.Name = "cmxAula";
+            this.cmxAula.Size = new System.Drawing.Size(183, 24);
+            this.cmxAula.TabIndex = 11;
+            this.cmxAula.Text = "Aula";
             // 
-            // lblDesde
+            // cbxAula
             // 
-            this.lblDesde.AutoSize = true;
-            this.lblDesde.Location = new System.Drawing.Point(670, 38);
-            this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(51, 16);
-            this.lblDesde.TabIndex = 19;
-            this.lblDesde.Text = "Desde:";
+            this.cbxAula.AutoSize = true;
+            this.cbxAula.Location = new System.Drawing.Point(7, 78);
+            this.cbxAula.Name = "cbxAula";
+            this.cbxAula.Size = new System.Drawing.Size(18, 17);
+            this.cbxAula.TabIndex = 10;
+            this.cbxAula.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // cmxProfesor
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(670, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 16);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Hasta:";
+            this.cmxProfesor.FormattingEnabled = true;
+            this.cmxProfesor.Location = new System.Drawing.Point(41, 29);
+            this.cmxProfesor.Name = "cmxProfesor";
+            this.cmxProfesor.Size = new System.Drawing.Size(413, 24);
+            this.cmxProfesor.TabIndex = 9;
+            this.cmxProfesor.Text = "Profesor";
             // 
-            // cmxSub
+            // cbxProfesor
             // 
-            this.cmxSub.FormattingEnabled = true;
-            this.cmxSub.Location = new System.Drawing.Point(271, 124);
-            this.cmxSub.Name = "cmxSub";
-            this.cmxSub.Size = new System.Drawing.Size(183, 24);
-            this.cmxSub.TabIndex = 22;
-            this.cmxSub.Text = "Subtipo";
+            this.cbxProfesor.AutoSize = true;
+            this.cbxProfesor.Location = new System.Drawing.Point(7, 33);
+            this.cbxProfesor.Name = "cbxProfesor";
+            this.cbxProfesor.Size = new System.Drawing.Size(18, 17);
+            this.cbxProfesor.TabIndex = 8;
+            this.cbxProfesor.UseVisualStyleBackColor = true;
             // 
-            // cbxSub
+            // button2
             // 
-            this.cbxSub.AutoSize = true;
-            this.cbxSub.Location = new System.Drawing.Point(237, 128);
-            this.cbxSub.Name = "cbxSub";
-            this.cbxSub.Size = new System.Drawing.Size(18, 17);
-            this.cbxSub.TabIndex = 21;
-            this.cbxSub.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(828, 124);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(67, 27);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Limpiar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(911, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(67, 27);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Principal
             // 

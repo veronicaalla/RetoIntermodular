@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe.config
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.pdb
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.AssemblyReference.cache
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Properties.Resources.resources
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.GenerateResource.cache
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CoreCompileInputs.cache
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.exe
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.pdb
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Inicial.resources
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Admin.resources
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Usuarios.resources
-=======
 C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe.config
 C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe
 C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.pdb
@@ -21,4 +7,19 @@ C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoI
 C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CoreCompileInputs.cache
 C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.exe
 C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.pdb
->>>>>>> main
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe.config
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.pdb
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.AssemblyReference.cache
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Admin.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ControlUsuarios.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Incidencia.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Inicial.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Principal.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Properties.Resources.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.GenerateResource.cache
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CoreCompileInputs.cache
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.exe
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.pdb
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearIncidencia.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearUsuario.resources
