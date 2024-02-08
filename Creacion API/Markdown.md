@@ -61,3 +61,9 @@ ___Texto negrita y cursiva___
 ![Imagen](ruta)
 
 <www.google.com>
+
+Tabla
+|Columna 1|Columna 2|
+|--------|--------|
+|    A    |    B    |
+|    C    |    D    |
