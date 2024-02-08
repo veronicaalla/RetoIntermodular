@@ -47,16 +47,22 @@ namespace ProyectoIntermodular.Clases
 
     public enum TipoIncidencia
     {
-        Tipo1,
-        Tipo2,
-        Tipo3
+        EQUIPOS,
+        CUENTAS,
+        WIFI,
+        INTERNET,
+        SOFTWARE
+
     }
 
     public enum EstadoIncidencia
     {
-        Abierta,
-        EnProceso,
-        Cerrada
+        ABIERTA,
+        ASIGNADA,
+        ENPROCESO,
+        ENVIADA_INFORTEC,
+        RESUELTA,
+        CERRADA
     }
 }
 
