@@ -2,8 +2,8 @@ package es.intermodular.equipo2.incidenciasies.modelo
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
-import java.sql.Date
 
+/*
 data class Incidencia(
 
     @SerializedName("num")
@@ -19,12 +19,37 @@ data class Incidencia(
     val estado: String,
 
     @SerializedName("fechaCierre")
-    val fechaCierre: Date,
+    val fechaCierre: java.util.Date,
 
     @SerializedName("fechaCreacion")
-    val fechaCreacion: Date,
+    val fechaCreacion: java.util.Date,
 
     @SerializedName("tipo")
+    val tipo: String
+
+) : Serializable
+*/
+
+data class Incidencia(
+
+
+    val idIncidencia: Int,
+
+
+    val adjunto_url: String,
+
+
+    val descripcion: String,
+
+
+    val estado: String,
+
+
+    val fechaCierre: java.util.Date,
+
+
+    val fechaCreacion: java.util.Date,
+
     val tipo: String
 
 ) : Serializable
