@@ -24,6 +24,7 @@ class EditIncident : AppCompatActivity() {
         val actuallyDate = LocalDateTime.now()
             .format(DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a"))
 
+
         binding.editTextFechaCreacion.setText(actuallyDate)
 
 
