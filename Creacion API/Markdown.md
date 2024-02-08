@@ -61,3 +61,6 @@ ___Texto negrita y cursiva___
 ![Imagen](ruta)
 
 <www.google.com>
+
+[ ] Lista no verificada
+[x] Lista verificada
