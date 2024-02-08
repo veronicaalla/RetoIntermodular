@@ -61,7 +61,3 @@ ___Texto negrita y cursiva___
 ![Imagen](ruta)
 
 <www.google.com>
-
-[ ] A
-[X] B
-[ ] C
