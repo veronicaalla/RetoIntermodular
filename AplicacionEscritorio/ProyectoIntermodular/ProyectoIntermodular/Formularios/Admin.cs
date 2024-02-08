@@ -15,6 +15,7 @@ namespace ProyectoIntermodular.Formularios
         public Admin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnIncidencias_Click(object sender, EventArgs e)
@@ -29,6 +30,11 @@ namespace ProyectoIntermodular.Formularios
             ControlUsuarios controlUsuarios = new ControlUsuarios();
             this.Hide();
             controlUsuarios.Show();
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

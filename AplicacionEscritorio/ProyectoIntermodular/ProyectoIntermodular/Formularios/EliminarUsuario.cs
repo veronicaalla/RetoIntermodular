@@ -15,18 +15,19 @@ namespace ProyectoIntermodular.Formularios
         public EliminarUsuario()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            ControlUsuarios controlUsuarios = new ControlUsuarios();
+            SeleccionarUsuario controlUsuarios = new SeleccionarUsuario();
             this.Hide();
             controlUsuarios.Show();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Seguro que desea eliminar?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("¿Seguro que desea eliminar?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Comprobar la respuesta del usuario
             if (result == DialogResult.Yes)

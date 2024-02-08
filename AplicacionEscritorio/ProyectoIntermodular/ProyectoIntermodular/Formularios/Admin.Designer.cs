@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.btnIncidencias = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
@@ -36,17 +37,17 @@
             // lblBienvenido
             // 
             this.lblBienvenido.AutoSize = true;
-            this.lblBienvenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenido.Location = new System.Drawing.Point(43, 47);
+            this.lblBienvenido.Font = new System.Drawing.Font("TF2 Build", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.Location = new System.Drawing.Point(12, 43);
             this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(134, 29);
+            this.lblBienvenido.Size = new System.Drawing.Size(263, 43);
             this.lblBienvenido.TabIndex = 0;
             this.lblBienvenido.Text = "Bienvenido";
             this.lblBienvenido.UseMnemonic = false;
             // 
             // btnIncidencias
             // 
-            this.btnIncidencias.Location = new System.Drawing.Point(109, 156);
+            this.btnIncidencias.Location = new System.Drawing.Point(141, 156);
             this.btnIncidencias.Name = "btnIncidencias";
             this.btnIncidencias.Size = new System.Drawing.Size(95, 32);
             this.btnIncidencias.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(268, 156);
+            this.btnUsuarios.Location = new System.Drawing.Point(300, 156);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(95, 32);
             this.btnUsuarios.TabIndex = 2;
@@ -69,13 +70,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(471, 234);
+            this.ClientSize = new System.Drawing.Size(531, 234);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnIncidencias);
             this.Controls.Add(this.lblBienvenido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Admin";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.Admin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

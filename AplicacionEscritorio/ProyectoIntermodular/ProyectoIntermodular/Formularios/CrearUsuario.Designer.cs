@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearUsuario));
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -255,6 +256,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnVolver);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CrearUsuario";
             this.Text = "CrearUsuario";
             this.Load += new System.EventHandler(this.CrearUsuario_Load);
