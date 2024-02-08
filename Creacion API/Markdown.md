@@ -62,5 +62,6 @@ ___Texto negrita y cursiva___
 
 <www.google.com>
 
-[ ] Lista no verificada
-[x] Lista verificada
+[ ] A
+[X] B
+[ ] C
