@@ -1,0 +1,4 @@
+img[src$='#alignleft'] {
+	float: left;
+  margin: 1rem;
+}
