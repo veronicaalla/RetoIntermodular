@@ -4,13 +4,13 @@ ___
 Esta sera la primera pagina que aparecera tras haber iniciado la aplicación y mostrar un nombre y un solo boton llamado *INICIAR* con la unica funcion de llevar a la pagina de *Admin*.
 ___
 ## Admin
-Esta sera la pagina de bienvenida, en ella tendremos 2 opciones: Incidencias y Usuarios
+Esta sera la pagina de bienvenida, en ella tendremos 2 botones.
 
 - **Incidencias**: Al pulsar este boton nos llevara a la pagina de incidencias.
 - **Usuarios**: Al pulsar este boton nos llevara a la pagina de control de usuarios.
-
+___
 ## Principal
-Esta pagina sera en la que se realizaran la mayoria de tareas principales. Cuenta con un buscador muy avanzado para buscar por varias propiedades si existen o no ya sea por: Profesor, Aula, Estado de la incidencia, Subtipo de incidencia, Tipo de incidencia, fecha. Contara con un visor que mostrara los datos de las incidencias encontradas. Y por ultimo con 7 botones.	
+Esta pagina sera en la que se realizaran la mayoria de tareas principales. Cuenta con un buscador muy avanzado para buscar por varias propiedades si existen o no, ya sea por: Profesor, Aula, Estado de la incidencia, Subtipo de incidencia, Tipo de incidencia, fecha. Contara con un visor que mostrara los datos de las incidencias encontradas. Y por ultimo cuenta con 7 botones.	
 
 - **Limpiar**: Al pulsar este boton dejara los valores del buscador a sus valores por defecto.
 - **Buscar**: Al pulsar este boton en el visor se mostraran las posibles coincidencias de inicidencias.
@@ -24,6 +24,32 @@ Esta pagina sera en la que se realizaran la mayoria de tareas principales. Cuent
 Nota: Los botones de *Volver* y **Salir* dependen del usuario:
 - **Admin**: Se muestra *Volver* pero no *Salir*.
 - **Otro**: Se muestra *Salir* pero no *Volver*.
+___
+## Incidencia
+Esta pagina sera en la que se realizaran las funciones de edición y asignación de incidencias (la opcion de edicion estara deshabiltada). Cuenta con un editor muy avanzado para editar por varias propiedades si existen o no, ya sea por: Profesor, Aula, Estado de la incidencia, Subtipo de incidencia, Tipo de incidencia, fecha. Contara con un visor que mostrara los datos de todas las incidencias (Solo se podra editar la incidencia si ya habia sido seleccionada). Y por ultimo cuenta con 4 botones. 	
+
+- **Asignar**: Al pulsar este boton se asignan una incidencia ya seleccionada a otra.
+- **Confirmar**: Al pulsar este boton, si ya habias hecho cambios, confirmas los nuevos cambios y guardas la incidencia.
+- **Salir**: Al pulsar este boton nos lleva de vuelta a la pagina principal.
+- **Añadir comentario**: Al pulsar este boton nos llevara a la pagina de añadir comentario.
+___
+## AñadirComentario
+Esta pagina sera en la que se crearan y asignaran comentarios. Cuenta con un buscador de archivos y un cuadro de texto para escribir cualquier texto. Y por ultimo con 3 botones.
+
+- **Añadir archivo**: Al pulsar este boton nos mostrar un Explorador de archivos para asignar una ruta.
+- **Volver**: Al pulsar este boton nos llevara de vuelta a la pagina de incidencias.
+- **Añadir**: Al pulsar este boton nos guardara el nuevo comentario y nos llevara de vuelta a la pagina de incidencias.
+___
+## Crear Incidencia
+Esta pagina sera en la que se realizaran las funciones de creacion de incidencias. Cuanta con varias cuadros de texto ya sea: nombre del creador, tipo de incidencia, subtipo de incidencia, estado de incidencia, nombre de responsable si tuviera, nombre de equipo, fecha de creacion, fecha de cierre si tuviera y un buscador de archivo. Y por ultimo cuenta con 3 botones.
+
+- **Añadir archivo**: Al pulsar este boton nos mostrar un Explorador de archivos para asignar una ruta.
+- **Volver**: Al pulsar este boton nos llevara de vuelta a la pagina principal.
+- **Añadir**: Al pulsar este boton nos guardara la nueva incidencia y nos llevara de vuelta a la pagina principal.
+___
+## Control Usuarios
+Esta sera la pagina en la que se realizaran las opciones relacionadas con los usuarios, en ella tendremos 2 botones.
+
 
 
 # Encabezado1
