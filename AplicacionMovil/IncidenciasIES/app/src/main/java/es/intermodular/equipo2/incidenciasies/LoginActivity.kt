@@ -27,27 +27,6 @@ class LoginActivity : AppCompatActivity() {
         // Inicialización de SharedPreferences para guardar datos persistentes
         sharedPref = getSharedPreferences("pref", MODE_PRIVATE)
 
-        // Configurar el OnClickListener para el TextView textViewOlvideContr
-        binding.textViewOlvideContr.setOnClickListener {
-            // Obtener el idioma actual desde SharedPreferences
-            val currentLanguage = sharedPref.getString("language", "es") ?: "es"
-
-            // Definir el mensaje según el idioma actual
-            val message = if (currentLanguage == "es") {
-                "Por favor, pongase en contacto con su coordinador TIC"
-            } else {
-                "Please contact your ICT coordinator"
-            }
-
-            // Mostrar el mensaje utilizando un Toast
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-        }
-
-        // Obtener el idioma actual almacenado en SharedPreferences, por defecto es español
-        val currentLanguage = sharedPref.getString("language", "es") ?: "es"
-        // Configurar el idioma de la aplicación según el idioma almacenado
-        setAppLanguage(currentLanguage)
-
         val checkBoxRecordarme = binding.checkBoxRecordarme
 
         // Configurar el OnClickListener para el botón de inicio de sesión
@@ -58,21 +37,18 @@ class LoginActivity : AppCompatActivity() {
 
             // Verificar si ambos campos están vacíos
             if (usuario.isEmpty() || contrasenia.isEmpty()) {
-                // Mostrar mensaje de error dependiendo del idioma actual
-                val errorMessage = if (currentLanguage == "es") "¡Por favor, rellene ambos campos!" else "Please fill in both fields!"
-                showToast(errorMessage)
+                // Mostrar mensaje de error
+                showToast("¡Por favor, rellene ambos campos!")
             } else {
                 // Si ambos campos tienen datos, continuar con la lógica de inicio de sesión
                 if (validateUser(usuario) && contrasenia == "123") {
                     // Mensaje de bienvenida
-                    val welcomeMessage = if (currentLanguage == "es") "¡Bienvenido!" else "Welcome!"
-                    showToast(welcomeMessage)
+                    showToast("¡Bienvenido!")
                     // Iniciar actividad principal
                     startActivity(Intent(this, Principal::class.java))
                 } else {
                     // Mensaje de error de inicio de sesión
-                    val errorMessage = if (currentLanguage == "es") "¡Usuario o contraseña incorrectos!" else "Invalid username or password!"
-                    showToast(errorMessage)
+                    showToast("¡Usuario o contraseña incorrectos!")
                 }
             }
         }
@@ -128,36 +104,9 @@ class LoginActivity : AppCompatActivity() {
         return regex.matches(usuario)
     }
 
-    // Método para cambiar el idioma de la aplicación
-    fun changeLanguage(view: View) {
-        // Obtener el idioma actual almacenado en SharedPreferences
-        val currentLanguage = sharedPref.getString("language", "es") ?: "es"
-        // Cambiar el idioma actual a inglés si era español, o viceversa
-        val newLanguage = if (currentLanguage == "es") "en" else "es"
-        // Configurar el nuevo idioma y guardarlo en SharedPreferences
-        setAppLanguage(newLanguage)
-        with(sharedPref.edit()) {
-            putString("language", newLanguage)
-            apply()
-        }
-        // Recrear la actividad para aplicar los cambios de idioma
-        recreate()
-    }
-
-    // Método para configurar el idioma de la aplicación
-    private fun setAppLanguage(language: String) {
-        val locale = Locale(language)
-        Locale.setDefault(locale)
-        val configuration = Configuration()
-        configuration.setLocale(locale)
-        resources.updateConfiguration(configuration, baseContext.resources.displayMetrics)
-    }
-
     // Método para mostrar un mensaje Toast
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-
-
 
 }

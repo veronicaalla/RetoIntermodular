@@ -88,16 +88,4 @@ class Principal : AppCompatActivity() {
         }
     }
 
-    // Cambiar el idioma de la aplicación aquí
-    fun changeLanguage(languageCode: String) {
-        val locale = Locale(languageCode)
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.locale = locale
-        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
-
-        // Reiniciar la actividad para aplicar el cambio de idioma
-        recreate()
-    }
-
 }
