@@ -5,12 +5,23 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
+import es.intermodular.equipo2.incidenciasies.modelo.Incidencia
+import es.intermodular.equipo2.incidenciasies.recyclerIncidencias.IncidenciaAdapter
+import java.util.Date
 import java.util.Locale
 
 class Principal : AppCompatActivity() {
 
     private lateinit var binding: ActivityPrincipalBinding
+    var recyclerView: RecyclerView? = null
+
+
+    var adapter: RecyclerView.Adapter<*>? = null
+    var layoutManager: RecyclerView.LayoutManager? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -76,5 +87,19 @@ class Principal : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+        //Damos funcionalidad al boton de añadir
+        binding.btnAddIncidencias.setOnClickListener {
+            val intent = Intent(this, SelectTypeIncidents::class.java)
+            startActivity(intent)
+        }
+
+        //Damos funcionalidad a los botones del ToolBar
+        binding.menuNotificaciones.setOnClickListener {
+            val intent = Intent(this, NotificationsActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 }
