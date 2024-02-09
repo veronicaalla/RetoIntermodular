@@ -21,7 +21,13 @@ class SelectTypeIncidents : AppCompatActivity() {
         binding = ActivitySelectTypeIncidentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //En la inicializacion, no se debe ver
+        //--------------- DAMOS FUNCIONALIDAD AL TOOL BAR ----------------
+        binding.menuAtras.setOnClickListener {
+            finish()
+        }
+
+
+        //-------------- AJUSTAMOS LA VISUALIZACION INICIAL ------------
         val spinnerSubSub = binding.spinnerSubSubTipo
         spinnerSubSub.visibility = View.GONE
         binding.txtSubSubTipo.visibility = View.GONE
@@ -30,7 +36,11 @@ class SelectTypeIncidents : AppCompatActivity() {
         var TipoDeIncidenciaSeleccionada: String = " "
         val spinnerTipoIncidencia = binding.spinnerTipoIncidencia
 
-        //Cada vez que se modifique el valor....
+
+
+        //------------------- CREAMOS LA FUNCIONALIDAD DE LOS SPINNERS ----------------
+        //Controlamos el constante cambio de valores
+
         spinnerTipoIncidencia.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>, view: View,
@@ -97,6 +107,7 @@ class SelectTypeIncidents : AppCompatActivity() {
             intent.putExtra("tipo", tipo)
             startActivity(intent)
         }
+
 
     }
 

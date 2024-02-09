@@ -21,5 +21,9 @@ class SpecificListIncidents : AppCompatActivity() {
         val typeOfIncidents = intent.extras?.getString("EXTRA_TYPE_INCIDENTS").orEmpty()
 
         binding.tituloIncidencias.text = "Indicencias $typeOfIncidents"
+
+        binding.menuAtras.setOnClickListener {
+            finish()
+        }
     }
 }

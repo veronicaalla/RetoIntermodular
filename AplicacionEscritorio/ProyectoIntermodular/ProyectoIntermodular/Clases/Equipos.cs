@@ -44,8 +44,12 @@ namespace ProyectoIntermodular.Clases
 
     public enum TipoEquipo
     {
-        Tipo1,
-        Tipo2,
-        Tipo3
+        PC,
+        PROYECTOR,
+        IMPRESORA,
+        PANTALLA,
+        TECLADO,
+        RATON,
+        OTROS
     }
 }

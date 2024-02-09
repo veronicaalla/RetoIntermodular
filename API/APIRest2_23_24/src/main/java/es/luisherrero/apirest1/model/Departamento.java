@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class Departamento implements Serializable{
 	private static final long serialVersionUID=1;
 	@Id
-	@Column(name="int")
+	@Column(name="id")
 	private int int_;
 
 	private byte activo;

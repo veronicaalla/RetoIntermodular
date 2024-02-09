@@ -3,22 +3,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+
+
+        <ImageView
+            android:id="@+id/menuAtras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingRight="20dp"
+            android:src="@drawable/baseline_arrow_back_ios_new_24" />
+
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/merriweather_bold"
+            android:text="@string/acerca_de"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
     <TextView
-        android:id="@+id/textCreators"
+        android:id="@+id/txtCreadoPor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/textAbout"
+        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="430dp"
-        android:text="Esta aplicación ha sido desarrollada por:\n
-        \nVerónica Álvarez Lavín,
-        \nVladyslav Golovatyi Tsymbal,
-        \nJosé David Casas Gómez,
-        \nIván Díaz Fernández,
-        \nAlejandro Peñil Haya,
-        \nVíctor Cuevas Martínez."
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="480dp"
+        android:text="@string/explicacion"
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/txtCreadores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="191dp"
+        android:layout_marginEnd="85dp"
+        android:fontFamily="@font/merriweather_bold"
+        android:gravity="center"
+        android:text="@string/desarrolladores" />
+
+    <ImageView
+        android:id="@+id/logoApp"
+        android:layout_width="228dp"
+        android:layout_height="203dp"
+        android:layout_below="@+id/txtCreadores"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="151dp"
+        android:src="@drawable/logo_claro" />
 
     <TextView
         android:id="@+id/textAbout"
@@ -27,7 +81,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
-        android:text="© 2024 IES Miguel Herrero Pereda.\nTodos los derechos han sido reservados."
+        android:gravity="center"
+        android:text="@string/copy_right"
         android:textSize="16sp" />
 
 </RelativeLayout>
