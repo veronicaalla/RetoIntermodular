@@ -1,4 +1,5 @@
-﻿using ProyectoIntermodular.Formularios;
+﻿using ProyectoIntermodular.Clases;
+using ProyectoIntermodular.Formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,23 @@ namespace ProyectoIntermodular
 {
     public partial class Principal : Form
     {
+        
         public Principal()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
+
+            if (perfiles.perfil==PerfilEnum.ADMIN)
+            {
+                btnVolver.Show();
+                btnSalir.Hide();
+            }
+            else
+            {
+                btnVolver.Hide();
+                btnSalir.Show();
+            }
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
@@ -49,6 +63,18 @@ namespace ProyectoIntermodular
                 // Si el usuario elige "No" o cierra el cuadro de mensaje, cancelar la acción
                 MessageBox.Show("Operación cancelada.", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            //Admin admin=new Admin();
+            this.Hide();
+            //admin.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

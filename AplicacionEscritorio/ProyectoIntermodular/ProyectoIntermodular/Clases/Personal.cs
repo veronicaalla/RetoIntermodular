@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoIntermodular.Clases
 {
-    internal class Personal
+    public class Personal
     {
 
         public int id { get; set; }

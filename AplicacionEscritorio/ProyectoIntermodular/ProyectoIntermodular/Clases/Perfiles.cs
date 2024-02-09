@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoIntermodular.Clases
 {
-    internal class Perfiles
+    public class Perfiles
     {
 
         public int personal_id { get; set; }  
@@ -20,8 +20,12 @@ namespace ProyectoIntermodular.Clases
         {
             
         }
+        public Perfiles(PerfilEnum perfil)
+        {
+            this.perfil = perfil; 
+        }
 
-        
+
         public Perfiles(int personal_id, string dominio, string educantabria, char password, PerfilEnum perfil)
         {
             this.personal_id = personal_id;
@@ -35,9 +39,8 @@ namespace ProyectoIntermodular.Clases
   
     public enum PerfilEnum
     {
-        Tipo1,
-        Tipo2,
-        Tipo3
+        ADMIN,
+        PROFESOR
     }
 }
 
