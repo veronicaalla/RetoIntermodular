@@ -10,12 +10,11 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-
 @jakarta.persistence.Entity
-@Table(name="incidencias")
-public class Incidencia implements Serializable{
-	private static final long serialVersionUID=1;
-	
+@Table(name = "incidencias")
+public class Incidencia implements Serializable {
+	private static final long serialVersionUID = 1;
+
 	@Id
 	private int num;
 
@@ -31,23 +30,20 @@ public class Incidencia implements Serializable{
 
 	private String tipo;
 
-	//private List<Comentario> comentarios;
+	// private List<Comentario> comentarios;
 
-	//@ManyToOne
+	// @ManyToOne
 	@Column(name = "equipo_id")
 	private Equipo equipo;
 
-	@Column(name="subtipo_id")
+	@Column(name = "subtipo_id")
 	private int incidenciasSubtipo;
 
-	//@ManyToOne
-	@Column(name="creador_id")
-    @JoinColumn(name="creador_id")
-	private Personal personal1;
+	@ManyToOne
+	private Personal creador;
 
-	@Column(name="responsable_id")
-    @JoinColumn(name="responsable_id")
-	private Personal personal2;
+	@ManyToOne
+	private Personal responsable;
 
 	public Incidencia() {
 	}
@@ -108,27 +104,22 @@ public class Incidencia implements Serializable{
 		this.tipo = tipo;
 	}
 
-	/*public List<Comentario> getComentarios() {
-		return this.comentarios;
-	}
-
-	public void setComentarios(List<Comentario> comentarios) {
-		this.comentarios = comentarios;
-	}
-
-	public Comentario addComentario(Comentario comentario) {
-		getComentarios().add(comentario);
-		comentario.setIncidencia(this);
-
-		return comentario;
-	}
-
-	public Comentario removeComentario(Comentario comentario) {
-		getComentarios().remove(comentario);
-		comentario.setIncidencia(null);
-
-		return comentario;
-	*/
+	/*
+	 * public List<Comentario> getComentarios() { return this.comentarios; }
+	 * 
+	 * public void setComentarios(List<Comentario> comentarios) { this.comentarios =
+	 * comentarios; }
+	 * 
+	 * public Comentario addComentario(Comentario comentario) {
+	 * getComentarios().add(comentario); comentario.setIncidencia(this);
+	 * 
+	 * return comentario; }
+	 * 
+	 * public Comentario removeComentario(Comentario comentario) {
+	 * getComentarios().remove(comentario); comentario.setIncidencia(null);
+	 * 
+	 * return comentario;
+	 */
 	public Equipo getEquipo() {
 		return this.equipo;
 	}
@@ -145,20 +136,19 @@ public class Incidencia implements Serializable{
 		this.incidenciasSubtipo = incidenciasSubtipo;
 	}
 
-	public Personal getPersonal1() {
-		return this.personal1;
+	public Personal getCreador() {
+		return this.creador;
 	}
 
-	public void setPersonal1(Personal personal1) {
-		this.personal1 = personal1;
+	public void setCreador(Personal creador) {
+		this.creador = creador;
 	}
 
-	public Personal getPersonal2() {
-		return this.personal2;
+	public Personal getResponsable() {
+		return this.responsable;
 	}
 
-	public void setPersonal2(Personal personal2) {
-		this.personal2 = personal2;
+	public void setResponsable(Personal creador) {
+		this.responsable = creador;
 	}
 }
-

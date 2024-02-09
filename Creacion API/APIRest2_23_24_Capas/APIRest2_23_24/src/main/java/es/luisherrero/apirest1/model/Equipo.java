@@ -26,12 +26,12 @@ public class Equipo implements Serializable{
 
 	private int puesto;
 	
-	//@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.STRING)
 	@Column(name="tipo_equipo")
-	private String tipoEquipo;
+	private TipoEquipo tipoEquipo;
 
-	@Column(name = "aula_num")
-	private int aula;
+	@ManyToOne
+	private Aula aula;
 
 	public Equipo() {
 	}
@@ -100,19 +100,19 @@ public class Equipo implements Serializable{
 		this.puesto = puesto;
 	}
 
-	public String getTipoEquipo() {
+	public TipoEquipo getTipoEquipo() {
 		return this.tipoEquipo;
 	}
 
-	public void setTipoEquipo(String tipoEquipo) {
+	public void setTipoEquipo(TipoEquipo tipoEquipo) {
 		this.tipoEquipo = tipoEquipo;
 	}
 
-	public int getAula() {
+	public Aula getAula() {
 		return this.aula;
 	}
 
-	public void setAula(int aula) {
+	public void setAula(Aula aula) {
 		this.aula = aula;
 	}
 }
