@@ -20,6 +20,8 @@ namespace ProyectoIntermodular.Formularios
             lblPrueba.Text = inicial.admin.perfil.ToString();
         }
 
+      
+
         private void btnIncidencias_Click(object sender, EventArgs e)
         {
             Principal principal = new Principal();
