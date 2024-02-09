@@ -3,7 +3,7 @@
 ## Inicial
 Esta sera la primera pagina que aparecera tras haber iniciado la aplicación y mostrar un nombre y un solo boton llamado *INICIAR* con la unica funcion de llevar a la pagina de *Admin*.
 
-![Imagen](Python/Inicial.PNG)
+![Imagen](Python/Inicial.PNG#aligncenter)
 ___
 ## Admin
 Esta sera la pagina de bienvenida, en ella tendremos 2 botones.
