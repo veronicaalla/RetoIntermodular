@@ -15,11 +15,13 @@ namespace ProyectoIntermodular.Formularios
         public ControlUsuarios()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin();
+            Inicial inicial=new Inicial();
+            Admin admin = new Admin(inicial);
             this.Hide();
             admin.Show();
         }

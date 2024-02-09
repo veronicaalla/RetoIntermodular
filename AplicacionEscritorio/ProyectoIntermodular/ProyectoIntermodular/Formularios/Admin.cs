@@ -12,10 +12,15 @@ namespace ProyectoIntermodular.Formularios
 {
     public partial class Admin : Form
     {
-        public Admin()
+        public Admin(Inicial inicial)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+        
+            lblPrueba.Text = inicial.admin.perfil.ToString();
         }
+
+      
 
         private void btnIncidencias_Click(object sender, EventArgs e)
         {
@@ -29,6 +34,11 @@ namespace ProyectoIntermodular.Formularios
             ControlUsuarios controlUsuarios = new ControlUsuarios();
             this.Hide();
             controlUsuarios.Show();
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

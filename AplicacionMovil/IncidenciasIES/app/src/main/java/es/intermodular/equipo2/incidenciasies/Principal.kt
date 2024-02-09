@@ -29,19 +29,6 @@ class Principal : AppCompatActivity() {
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        fun changeLanguage(view: View) {
-            // Cambiar el idioma de la aplicación aquí
-            // Por ejemplo, para cambiar al inglés:
-            val locale = Locale("en")
-            Locale.setDefault(locale)
-            val config = Configuration()
-            config.locale = locale
-            baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
-
-            // Reiniciar la actividad para aplicar el cambio de idioma
-            recreate()
-        }
-
         //We give functionality to the buttons
         binding.btnAbiertas.setOnClickListener {
             val intent = Intent(this, SpecificListIncidents::class.java)
@@ -99,7 +86,6 @@ class Principal : AppCompatActivity() {
             val intent = Intent(this, NotificationsActivity::class.java)
             startActivity(intent)
         }
-
-
     }
+
 }

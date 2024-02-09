@@ -15,6 +15,7 @@ namespace ProyectoIntermodular.Formularios
         public CrearIncidencia()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void checkBoxResponsable_CheckedChanged(object sender, EventArgs e)
@@ -37,6 +38,7 @@ namespace ProyectoIntermodular.Formularios
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("La incidencia ha sido creada con éxito.", "Incidencia creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -46,5 +48,28 @@ namespace ProyectoIntermodular.Formularios
             this.Close();
             principal.Show();
         }
+
+        private void btnAñadirArchivo_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+           
+            openFileDialog.Title = "Seleccionar archivo";
+            openFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
+            openFileDialog.Multiselect = false; 
+
+            
+            DialogResult result = openFileDialog.ShowDialog();
+
+            
+            if (result == DialogResult.OK)
+            {
+                
+                string archivoSeleccionado = openFileDialog.FileName;
+                lblArchivo.Text = archivoSeleccionado;
+            }
+        }
     }
 }
+    

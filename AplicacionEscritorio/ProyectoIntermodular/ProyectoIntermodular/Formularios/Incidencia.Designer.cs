@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Incidencia));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cbxEditar = new System.Windows.Forms.CheckBox();
             this.gbxEdit = new System.Windows.Forms.GroupBox();
@@ -103,21 +104,23 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button1.Location = new System.Drawing.Point(768, 125);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 27);
             this.button1.TabIndex = 39;
             this.button1.Text = "Asignar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // btnConfirm
             // 
+            this.btnConfirm.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnConfirm.Location = new System.Drawing.Point(870, 125);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(83, 27);
             this.btnConfirm.TabIndex = 38;
             this.btnConfirm.Text = "Confirmar";
-            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.UseVisualStyleBackColor = false;
             // 
             // cmxSub
             // 
@@ -255,34 +258,38 @@
             // 
             // btnComentar
             // 
+            this.btnComentar.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnComentar.Location = new System.Drawing.Point(976, 505);
             this.btnComentar.Name = "btnComentar";
             this.btnComentar.Size = new System.Drawing.Size(111, 50);
             this.btnComentar.TabIndex = 39;
             this.btnComentar.Text = "Añadir comentario";
-            this.btnComentar.UseVisualStyleBackColor = true;
+            this.btnComentar.UseVisualStyleBackColor = false;
             this.btnComentar.Click += new System.EventHandler(this.btnComentar_Click);
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnSalir.Location = new System.Drawing.Point(835, 505);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(111, 50);
             this.btnSalir.TabIndex = 40;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Incidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1099, 567);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnComentar);
             this.Controls.Add(this.gbxEdit);
             this.Controls.Add(this.cbxEditar);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Incidencia";
             this.Text = "Incidencia";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
