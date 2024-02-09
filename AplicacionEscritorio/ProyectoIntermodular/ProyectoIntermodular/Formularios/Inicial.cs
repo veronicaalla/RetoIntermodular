@@ -16,8 +16,8 @@ namespace ProyectoIntermodular
     public partial class Inicial : Form
     {
 
-        Perfiles profesor=new Perfiles();
-        Perfiles admin=new Perfiles();
+        public Perfiles profesor=new Perfiles();
+        public Perfiles admin =new Perfiles();
         public Inicial()
         {
             profesor.perfil = PerfilEnum.PROFESOR;
@@ -63,7 +63,7 @@ namespace ProyectoIntermodular
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin();
+            Admin admin = new Admin(this);
             this.Hide();
             admin.Show();
         }

@@ -17,7 +17,7 @@ namespace ProyectoIntermodular.Formularios
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         
-            //lblPrueba.Text = 
+            lblPrueba.Text = inicial.admin.perfil.ToString();
         }
 
         private void btnIncidencias_Click(object sender, EventArgs e)
