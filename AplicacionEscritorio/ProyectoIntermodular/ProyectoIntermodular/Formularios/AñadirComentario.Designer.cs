@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AñadirComentario));
             this.tbxComentario = new System.Windows.Forms.TextBox();
             this.lblArchivo = new System.Windows.Forms.Label();
             this.btnAñadirArchivo = new System.Windows.Forms.Button();
@@ -64,37 +65,42 @@
             this.btnAñadirArchivo.TabIndex = 36;
             this.btnAñadirArchivo.Text = "Añadir archivo";
             this.btnAñadirArchivo.UseVisualStyleBackColor = false;
+            this.btnAñadirArchivo.Click += new System.EventHandler(this.btnAñadirArchivo_Click);
             // 
             // btnAñadir
             // 
+            this.btnAñadir.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAñadir.Location = new System.Drawing.Point(553, 246);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(75, 23);
             this.btnAñadir.TabIndex = 38;
             this.btnAñadir.Text = "Añadir";
-            this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.UseVisualStyleBackColor = false;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // btnVolver
             // 
+            this.btnVolver.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVolver.Location = new System.Drawing.Point(448, 246);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
             this.btnVolver.TabIndex = 39;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // AñadirComentario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(655, 293);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.lblArchivo);
             this.Controls.Add(this.btnAñadirArchivo);
             this.Controls.Add(this.tbxComentario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AñadirComentario";
             this.Text = "AñadirComentario";
             this.ResumeLayout(false);

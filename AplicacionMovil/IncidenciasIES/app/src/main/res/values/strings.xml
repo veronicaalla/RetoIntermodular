@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">IncidenciasIES</string>
+    <string name="app_name">MyApp</string>
     <string name="hello">¡Hola!</string>
     <string name="username_hint">Usuario</string>
     <string name="password_hint">Contraseña</string>
@@ -7,7 +7,10 @@
     <string name="login_button">Iniciar sesión</string>
     <string name="forgot_password">¿Has olvidado tu contraseña?</string>
     <string name="login_error_message">¡Error, usuario o contraseña incorrectos!</string>
-
+    <string name="resumen_incidencias">Resumen de incidencias</string>
+    <string name="indicencias_totales">50\nIndicendias</string>
+    <string name="ultimas_incidencias">Últimas incidencias</string>
+    
     <string-array name="TiposIncidencias">
         <item>EQUIPOS</item>
         <item>CUENTAS</item>

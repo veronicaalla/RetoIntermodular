@@ -15,6 +15,7 @@ namespace ProyectoIntermodular.Formularios
         public Incidencia()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
 
         }

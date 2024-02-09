@@ -51,7 +51,6 @@
                     android:textColor="@color/white"
                     android:textSize="30dp" />
 
-
                 <ImageView
                     android:id="@+id/menuAjustes"
                     android:layout_width="wrap_content"
@@ -75,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="Resumen de incidencias"
+                android:text="@string/resumen_incidencias"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -92,7 +91,7 @@
                 android:layout_margin="15dp"
                 android:backgroundTint="@color/black"
                 android:clickable="false"
-                android:text="50\nIndicendias"
+                android:text="@string/indicencias_totales"
                 android:textSize="20dp"
                 android:textStyle="normal" />
 
@@ -156,7 +155,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="Ultimas incidencias "
+                android:text="@string/ultimas_incidencias"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 

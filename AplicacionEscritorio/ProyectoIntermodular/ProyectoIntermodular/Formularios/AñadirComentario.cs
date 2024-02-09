@@ -16,6 +16,7 @@ namespace ProyectoIntermodular.Formularios
         public AñadirComentario()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void tbxComentario_TextChanged(object sender, EventArgs e)
@@ -48,6 +49,27 @@ namespace ProyectoIntermodular.Formularios
         private void btnAñadir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAñadirArchivo_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+
+            openFileDialog.Title = "Seleccionar archivo";
+            openFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
+            openFileDialog.Multiselect = false;
+
+
+            DialogResult result = openFileDialog.ShowDialog();
+
+
+            if (result == DialogResult.OK)
+            {
+
+                string archivoSeleccionado = openFileDialog.FileName;
+                lblArchivo.Text = archivoSeleccionado;
+            }
         }
     }
 }
