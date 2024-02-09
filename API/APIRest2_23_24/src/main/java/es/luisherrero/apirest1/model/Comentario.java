@@ -2,9 +2,8 @@ package es.luisherrero.apirest1.model;
 
 import java.io.Serializable;
 import java.util.Date;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @jakarta.persistence.Entity
@@ -20,11 +19,13 @@ public class Comentario implements Serializable{
 	private Date fechahora;
 
 	private String texto;
-
-	@Column(name="incidencia_num")
+	
+	@ManyToOne
+	//@Column(name="incidencia_num")
 	private Incidencia incidencia;
 
-	@Column(name="personal_id")
+	@ManyToOne
+	//@Column(name="personal_id")
 	private Personal personal;
 
 	public Comentario() {
