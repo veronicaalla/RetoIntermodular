@@ -82,7 +82,7 @@ ___
 Esta pagina sera en la que se realizaran las funciones de eliminacion de usuarios. Cuenta con varios cuadros de texto ya sea: nombre de usuario, nombre de admin y contraseña. Por ultimo cuenta con 2 botones.
 
 - **Volver**: Al pulsar este boton nos llevara de vuelta a la pagina de seleccion de usuarios.
-- **Finalizar**: Al pulsar este boton nos eliminara el usuario seleccionado y nos llevara de vuelta a la pagina de seleccion de usuarios.
+- **Eliminar**: Al pulsar este boton nos eliminara el usuario seleccionado y nos llevara de vuelta a la pagina de seleccion de usuarios.
 
 # Encabezado1
 ## Encabezado2
