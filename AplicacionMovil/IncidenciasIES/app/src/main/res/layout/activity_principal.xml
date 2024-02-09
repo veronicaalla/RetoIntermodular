@@ -47,7 +47,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:fontFamily="@font/merriweather_bold"
-                    android:text="Mis incidencias"
+                    android:text="@string/mis_incidencias"
                     android:textColor="@color/white"
                     android:textSize="30dp" />
 
@@ -111,21 +111,21 @@
                         android:layout_width="117dp"
                         android:layout_height="59dp"
                         android:backgroundTint="@color/colorEnAbierto"
-                        android:text="12\nAbiertas" />
+                        android:text="@string/_12_nabiertas" />
 
                     <Button
                         android:id="@+id/btnAsignadas"
                         android:layout_width="117dp"
                         android:layout_height="59dp"
                         android:backgroundTint="@color/colorAsignado"
-                        android:text="12\nAsignadas" />
+                        android:text="@string/_12_nasignadas" />
 
                     <Button
                         android:id="@+id/btnEnProceso"
                         android:layout_width="120dp"
                         android:layout_height="59dp"
                         android:backgroundTint="@color/colorEnProceso"
-                        android:text="12\nEn proceso" />
+                        android:text="@string/_12_nen_proceso" />
                 </TableRow>
 
                 <TableRow
@@ -139,14 +139,14 @@
                         android:layout_width="117dp"
                         android:layout_height="59dp"
                         android:backgroundTint="@color/colorResuelto"
-                        android:text="12\nResueltas" />
+                        android:text="@string/_12_nresueltas" />
 
                     <Button
                         android:id="@+id/btnCerradas"
                         android:layout_width="117dp"
                         android:layout_height="59dp"
                         android:backgroundTint="@color/colorCerrado"
-                        android:text="12\nCerradas" />
+                        android:text="@string/_12_ncerradas" />
                 </TableRow>
             </TableLayout>
 
