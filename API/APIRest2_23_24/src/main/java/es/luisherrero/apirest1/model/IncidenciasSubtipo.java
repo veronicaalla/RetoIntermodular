@@ -1,11 +1,11 @@
 package es.luisherrero.apirest1.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @jakarta.persistence.Entity
@@ -22,7 +22,8 @@ public class IncidenciasSubtipo implements Serializable{
 	@Column(name="subtipo_nombre")
 	private String subtipoNombre;
 
-	private String tipo;
+	@Enumerated(EnumType.STRING)
+	private Tipo_Incidencias tipo;
 
 	public IncidenciasSubtipo() {
 	}
@@ -51,11 +52,11 @@ public class IncidenciasSubtipo implements Serializable{
 		this.subtipoNombre = subtipoNombre;
 	}
 
-	public String getTipo() {
+	public Tipo_Incidencias getTipo() {
 		return this.tipo;
 	}
 
-	public void setTipo(String tipo) {
+	public void setTipo(Tipo_Incidencias tipo) {
 		this.tipo = tipo;
 	}
 }

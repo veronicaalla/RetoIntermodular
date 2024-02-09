@@ -35,9 +35,9 @@ public class AulaController {
 	
 	
 	@GetMapping("/aula/{num}")
-	public ResponseEntity<?> obtenerUno(@PathVariable Integer id)
+	public ResponseEntity<?> obtenerUno(@PathVariable Integer num)
 	{
-		Aula coche = cocheRepository.findById(id).orElse(null); 
+		Aula coche = cocheRepository.findById(num).orElse(null); 
 		if(coche==null) 
 			return ResponseEntity.notFound().build(); 
 		else 

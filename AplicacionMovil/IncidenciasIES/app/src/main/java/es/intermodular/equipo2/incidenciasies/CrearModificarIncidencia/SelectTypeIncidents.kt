@@ -37,8 +37,10 @@ class SelectTypeIncidents : AppCompatActivity() {
         val spinnerTipoIncidencia = binding.spinnerTipoIncidencia
 
 
+
         //------------------- CREAMOS LA FUNCIONALIDAD DE LOS SPINNERS ----------------
         //Controlamos el constante cambio de valores
+
         spinnerTipoIncidencia.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>, view: View,

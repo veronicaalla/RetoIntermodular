@@ -1,8 +1,6 @@
 package es.luisherrero.apirest1.model;
 
 import java.io.Serializable;
-import java.util.List;
-
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 

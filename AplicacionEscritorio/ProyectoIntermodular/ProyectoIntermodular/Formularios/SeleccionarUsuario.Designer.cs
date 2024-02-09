@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeleccionarUsuario));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPerfiles = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,13 +40,13 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvPerfiles
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPerfiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Apellidos,
             this.DNI,
@@ -54,12 +54,12 @@
             this.Localidad,
             this.CP,
             this.Tlfno});
-            this.dataGridView1.Location = new System.Drawing.Point(21, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(553, 431);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvPerfiles.Location = new System.Drawing.Point(21, 21);
+            this.dgvPerfiles.Name = "dgvPerfiles";
+            this.dgvPerfiles.RowHeadersWidth = 51;
+            this.dgvPerfiles.RowTemplate.Height = 24;
+            this.dgvPerfiles.Size = new System.Drawing.Size(553, 431);
+            this.dgvPerfiles.TabIndex = 5;
             // 
             // Nombre
             // 
@@ -157,20 +157,20 @@
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(596, 549);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPerfiles);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnVolver);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SeleccionarUsuario";
             this.Text = "SeleccionarUsuario";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPerfiles;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnEliminar;
