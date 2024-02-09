@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearIncidencia));
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.checkBoxFechaCierre = new System.Windows.Forms.CheckBox();
@@ -147,6 +148,7 @@
             this.btnAñadirArchivo.TabIndex = 34;
             this.btnAñadirArchivo.Text = "Añadir archivo";
             this.btnAñadirArchivo.UseVisualStyleBackColor = false;
+            this.btnAñadirArchivo.Click += new System.EventHandler(this.btnAñadirArchivo_Click);
             // 
             // comboBoxEstado
             // 
@@ -283,6 +285,7 @@
             this.Controls.Add(this.lblSubtipo);
             this.Controls.Add(this.comboBoxTipo);
             this.Controls.Add(this.lblTipo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CrearIncidencia";
             this.Text = "CrearIncidencia";
             this.ResumeLayout(false);

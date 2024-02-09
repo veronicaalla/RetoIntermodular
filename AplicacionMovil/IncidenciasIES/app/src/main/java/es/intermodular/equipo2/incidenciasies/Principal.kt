@@ -5,6 +5,9 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
+import android.widget.PopupMenu
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
@@ -28,19 +31,6 @@ class Principal : AppCompatActivity() {
         //Inflamos la vista
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        fun changeLanguage(view: View) {
-            // Cambiar el idioma de la aplicación aquí
-            // Por ejemplo, para cambiar al inglés:
-            val locale = Locale("en")
-            Locale.setDefault(locale)
-            val config = Configuration()
-            config.locale = locale
-            baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
-
-            // Reiniciar la actividad para aplicar el cambio de idioma
-            recreate()
-        }
 
         //We give functionality to the buttons
         binding.btnAbiertas.setOnClickListener {
@@ -100,6 +90,47 @@ class Principal : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val menuAjustes = findViewById<ImageView>(R.id.menuAjustes)
 
+        // Configurar el OnClickListener para el ícono de ajustes
+        menuAjustes.setOnClickListener { view ->
+            // Crear un objeto PopupMenu asociado con el ícono de ajustes
+            val popupMenu = PopupMenu(this@Principal, view)
+
+            // Inflar el menú desde el archivo XML
+            popupMenu.menuInflater.inflate(R.menu.menu_settings, popupMenu.menu)
+
+            // Configurar el Listener para manejar las acciones del menú
+            popupMenu.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.action_help -> {
+                        // Lógica para el elemento "Ayuda"
+                        true
+                    }
+
+                    R.id.action_about -> {
+                        // Lógica para el elemento "Acerca de"
+                        mostrarLayoutAcercaDe()
+                        true
+                    }
+
+                    else -> false
+                }
+            }
+
+            // Mostrar el menú desplegable
+            popupMenu.show()
+        }
     }
+
+    private fun mostrarLayoutAcercaDe() {
+        // Inflar el layout activity_about.xml
+        val aboutView = layoutInflater.inflate(R.layout.activity_about, null)
+
+        // Configurar el contenido de la vista
+
+        // Añadir la vista a tu layout principal
+        setContentView(aboutView)
+    }
+
 }

@@ -15,6 +15,7 @@ namespace ProyectoIntermodular.Formularios
         public CrearPerfil()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
