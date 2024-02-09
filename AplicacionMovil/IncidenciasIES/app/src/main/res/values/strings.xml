@@ -45,6 +45,7 @@
     <string name="explicacion">Esta aplicación ha sido desarrollada por:</string>
     <string name="desarrolladores">Verónica Álvarez Lavín \nVladyslav Golovatyi Tsymbal \nJosé David Casas Gómez \nIván Díaz Fernández \nAlejandro Peñil Haya \nVíctor Cuevas Martínez</string>
     <string name="copy_right">© 2024 IES Miguel Herrero Pereda.\nTodos los derechos han sido reservados.</string>
+    <string name="ayuda">Ayuda</string>
 
     <string-array name="TiposIncidencias">
         <item>EQUIPOS</item>

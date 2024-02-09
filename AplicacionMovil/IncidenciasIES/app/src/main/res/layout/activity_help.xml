@@ -3,22 +3,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary">
+
+            <ImageView
+                android:id="@+id/menuAtras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:paddingRight="20dp"
+                android:onClick="volverAtras"
+                android:src="@drawable/baseline_arrow_back_ios_new_24" />
+
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/merriweather_bold"
+                android:text="@string/ayuda"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
         <!-- Texto de bienvenida -->
+
+        <!-- Título "Mis incidencias" -->
         <TextView
             android:id="@+id/textWelcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="75dp"
             android:layout_marginEnd="16dp"
             android:text="Bienvenido a la aplicación de seguimiento de incidencias. A continuación, te presentamos una guía básica para su uso."
             android:textSize="18sp" />
 
-        <!-- Título "Mis incidencias" -->
         <TextView
             android:id="@+id/textMisIncidencias"
             android:layout_width="wrap_content"
@@ -236,6 +268,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:paddingBottom="80dp"
             android:text="- Haz clic en 'Guardar' para actualizar la incidencia."
             android:textSize="14sp" />
     </RelativeLayout>

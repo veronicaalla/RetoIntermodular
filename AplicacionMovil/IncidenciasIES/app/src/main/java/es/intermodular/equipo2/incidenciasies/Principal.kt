@@ -129,9 +129,9 @@ class Principal : AppCompatActivity() {
         val helpView = layoutInflater.inflate(R.layout.activity_help, null)
 
         // Configurar el contenido de la vista
-
         // Añadir la vista a tu layout principal
         setContentView(helpView)
+
     }
 
     private fun mostrarLayoutAcercaDe() {
@@ -142,6 +142,8 @@ class Principal : AppCompatActivity() {
 
         // Añadir la vista a tu layout principal
         setContentView(aboutView)
+
+
     }
 
 }
