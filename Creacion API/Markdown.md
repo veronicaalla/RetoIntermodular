@@ -3,11 +3,11 @@
 
  
 ## Admin
-    Esta sera la pagina de bienvenida, en ella tendremos 2 opciones: *Incidencias* y *Usuarios*
+    Esta sera la pagina de bienvenida, en ella tendremos 2 opciones: **Incidencias** y **Usuarios**
 
-- *Incidencias*:
+- **Incidencias**:
     Al pulsar este boton nos llevara a la pagina principal.
-- *Usuarios*:
+- **Usuarios**:
     Al pulsar este boton nos llevara a la pagina de control de usuarios.
 
 # Encabezado1
