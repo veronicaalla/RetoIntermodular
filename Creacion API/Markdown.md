@@ -1,3 +1,15 @@
+# Proyecto Intermodular
+
+
+ 
+## Pagina de inicio
+    Esta sera la pagina de bienvenida, en ella tendremos 2 opciones: Incidencias y usuarios
+
+- Incidencias:
+    Al pulsar este boton nos llevara a la pagina principal.
+- Usuarios:
+    Al pulsar este boton nos llevara a la pagina de control de usuarios.
+
 # Encabezado1
 ## Encabezado2
 ### Encabezado3
