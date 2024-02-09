@@ -105,6 +105,7 @@ class Principal : AppCompatActivity() {
                 when (item.itemId) {
                     R.id.action_help -> {
                         // Lógica para el elemento "Ayuda"
+                        mostrarLayoutAyuda()
                         true
                     }
 
@@ -121,6 +122,16 @@ class Principal : AppCompatActivity() {
             // Mostrar el menú desplegable
             popupMenu.show()
         }
+    }
+
+    private fun mostrarLayoutAyuda() {
+        // Inflar el layout activity_about.xml
+        val helpView = layoutInflater.inflate(R.layout.activity_help, null)
+
+        // Configurar el contenido de la vista
+
+        // Añadir la vista a tu layout principal
+        setContentView(helpView)
     }
 
     private fun mostrarLayoutAcercaDe() {
