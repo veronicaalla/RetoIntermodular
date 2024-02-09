@@ -15,15 +15,18 @@ class EditIncident : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_incident)
+        //setContentView(R.layout.activity_edit_incident)
 
+        binding = ActivityEditIncidentBinding.inflate(layoutInflater)
+        setContentView(binding.root
+        )
         //Recogemos el tipo de incidencia que se ha pasado mediante un Intent
-        val typeOfIncidents = intent.extras?.getString("EXTRA_TYPE_INCIDENTS").orEmpty()
+        val tipo = intent.extras?.getString("tipo").orEmpty()
+        binding.txtTipoIncidencia.text = tipo
 
         //El campo -> Fecha de creacion se autocompleta con la fecha actual siempre y cuando el ID incidencia sea 0
         val actuallyDate = LocalDateTime.now()
-            .format(DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a"))
-
+            .format(DateTimeFormatter.ofPattern("MMM dd yyyy"))
 
         binding.editTextFechaCreacion.setText(actuallyDate)
 
