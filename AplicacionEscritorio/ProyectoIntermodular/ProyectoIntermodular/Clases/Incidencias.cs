@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoIntermodular.Clases
 {
-    internal class Incidencias
+    public class Incidencias
     {
 
         

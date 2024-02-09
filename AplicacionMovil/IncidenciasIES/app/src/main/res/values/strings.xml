@@ -7,4 +7,53 @@
     <string name="login_button">Iniciar sesión</string>
     <string name="forgot_password">¿Has olvidado tu contraseña?</string>
     <string name="login_error_message">¡Error, usuario o contraseña incorrectos!</string>
+
+    <string-array name="TiposIncidencias">
+        <item>EQUIPOS</item>
+        <item>CUENTAS</item>
+        <item>WIFI</item>
+        <item>INTERNET</item>
+    </string-array>
+
+    <string-array name="IncidenciaEquipos">
+        <item>PC</item>
+        <item>ALTAVOZ</item>
+        <item>MONITOR</item>
+        <item>PROYECTOR</item>
+        <item>PANTALLA</item>
+        <item>PORTATIL</item>
+        <item>IMPRESORA</item>
+    </string-array>
+
+    <string-array name="IncidenciaEquiposPc">
+        <item>ORDENADOR</item>
+        <item>RATÓN</item>
+        <item>TECLADO</item>
+    </string-array>
+
+    <string-array name="IncidenciaEquiposPortatil">
+        <item>PROPORCIONADO POR CONSERJERGÍA</item>
+        <item>DE AULA</item>
+        <item>TECLADO</item>
+    </string-array>
+
+
+    <string-array name="IncidenciaCuentas">
+        <item>EDUCANTABRIA</item>
+        <item>GOOGLE CLASSROOM</item>
+        <item>DOMINIO</item>
+        <item>YEDRA</item>
+    </string-array>
+
+    <string-array name="IncidenciaWIFI">
+        <item>iesmiguelherrero</item>
+        <item>WIECAN</item>
+    </string-array>
+
+    <string-array name="IncidenciaInternet">
+        <item>INSTALACIÓN</item>
+        <item>ACTUALIZACIÓN</item>
+    </string-array>
+
 </resources>
+

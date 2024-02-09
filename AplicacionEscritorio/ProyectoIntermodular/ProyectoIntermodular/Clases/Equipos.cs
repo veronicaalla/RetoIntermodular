@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoIntermodular.Clases
 {
-    internal class Equipos
+    public class Equipos
     {
 
         public int id { get; set; } 

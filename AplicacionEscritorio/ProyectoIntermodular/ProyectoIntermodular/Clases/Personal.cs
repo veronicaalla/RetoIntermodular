@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoIntermodular.Clases
 {
-    internal class Personal
+    public class Personal
     {
 
         public int id { get; set; }
@@ -17,16 +17,16 @@ namespace ProyectoIntermodular.Clases
         public string localidad { get; set; }
         public string cp { get; set; }
         public string tlf { get; set; }
+        public string dni { get; set; }  
         public bool activo { get; set; }
         public int departamento_id { get; set; }
 
-        
         public Personal()
         {
-           
+
         }
 
-        public Personal(int id, string nombre, string apellido1, string apellido2, string direccion, string localidad, string cp, string tlf, bool activo, int departamento_id)
+        public Personal(int id, string nombre, string apellido1, string apellido2, string direccion, string localidad, string cp, string tlf, string dni, bool activo, int departamento_id)
         {
             this.id = id;
             this.nombre = nombre;
@@ -36,10 +36,9 @@ namespace ProyectoIntermodular.Clases
             this.localidad = localidad;
             this.cp = cp;
             this.tlf = tlf;
+            this.dni = dni;  
             this.activo = activo;
             this.departamento_id = departamento_id;
         }
-
-
     }
 }

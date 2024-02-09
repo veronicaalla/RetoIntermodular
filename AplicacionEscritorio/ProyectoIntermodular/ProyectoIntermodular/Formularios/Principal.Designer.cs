@@ -51,6 +51,8 @@
             this.cbxProfesor = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxCriterios.SuspendLayout();
             this.SuspendLayout();
@@ -278,12 +280,36 @@
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnVolver.Location = new System.Drawing.Point(111, 512);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(93, 41);
+            this.btnVolver.TabIndex = 6;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnSalir.Location = new System.Drawing.Point(111, 512);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(93, 41);
+            this.btnSalir.TabIndex = 7;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1028, 565);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbxCriterios);
             this.Controls.Add(this.btnEli);
             this.Controls.Add(this.btnCrear);
@@ -323,5 +349,7 @@
         private System.Windows.Forms.CheckBox cbxFecha;
         private System.Windows.Forms.ComboBox cmxSub;
         private System.Windows.Forms.CheckBox cbxSub;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

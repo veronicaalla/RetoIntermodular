@@ -20,7 +20,8 @@ namespace ProyectoIntermodular.Formularios
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin();
+            Inicial inicial=new Inicial();
+            Admin admin = new Admin(inicial);
             this.Hide();
             admin.Show();
         }
