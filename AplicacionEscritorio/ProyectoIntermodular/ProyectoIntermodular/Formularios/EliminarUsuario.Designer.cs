@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarUsuario));
             this.cajaUsuario = new System.Windows.Forms.TextBox();
             this.cajaContraseña = new System.Windows.Forms.TextBox();
             this.cajaAdmin = new System.Windows.Forms.TextBox();
@@ -126,6 +127,7 @@
             this.Controls.Add(this.cajaAdmin);
             this.Controls.Add(this.cajaContraseña);
             this.Controls.Add(this.cajaUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EliminarUsuario";
             this.Text = "EliminarUsuario";
             this.ResumeLayout(false);
