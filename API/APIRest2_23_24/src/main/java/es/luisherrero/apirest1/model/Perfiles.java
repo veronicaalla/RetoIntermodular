@@ -3,8 +3,9 @@ package es.luisherrero.apirest1.model;
 import java.io.Serializable;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @jakarta.persistence.Entity
@@ -13,7 +14,7 @@ public class Perfiles implements Serializable{
 	private static final long serialVersionUID=1;
 	@Id
 	@Column(name="personal_id")
-	private int perfiles_id; 
+	private int personal_id; 
 	
 	private String dominio;
 
@@ -21,11 +22,8 @@ public class Perfiles implements Serializable{
 
 	private String password;
 
-	private String perfil;
-
-	//bi-directional many-to-one association to Personal
-	/*@ManyToOne
-	private Personal personal;*/
+	@Enumerated(EnumType.STRING)
+	private Tipo_Perfil perfil;
 
 	public Perfiles() {
 	}
@@ -54,11 +52,11 @@ public class Perfiles implements Serializable{
 		this.password = password;
 	}
 
-	public String getPerfil() {
+	public Tipo_Perfil getPerfil() {
 		return this.perfil;
 	}
 
-	public void setPerfil(String perfil) {
+	public void setPerfil(Tipo_Perfil perfil) {
 		this.perfil = perfil;
 	}
 
@@ -71,10 +69,10 @@ public class Perfiles implements Serializable{
 	}*/
 
 	public int getPersonal_id() {
-		return perfiles_id;
+		return personal_id;
 	}
 
 	public void setPersonal_id(int personal_id) {
-		this.perfiles_id = personal_id;
+		this.personal_id = personal_id;
 	}
 }

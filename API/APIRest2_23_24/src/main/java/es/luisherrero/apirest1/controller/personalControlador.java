@@ -16,13 +16,13 @@ import es.luisherrero.apirest1.model.Personal;
 import es.luisherrero.apirest1.repository.PersonalRepository;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/personal")
 public class personalControlador {
 
     @Autowired
     private PersonalRepository personalRepository;
 
-    @GetMapping("/personal")
+    @GetMapping
     public List<Personal> obtenerTodoPersonal() {
         return personalRepository.findAll();
     }

@@ -1,10 +1,11 @@
 package es.luisherrero.apirest1.model;
 
 import java.io.Serializable;
+import java.sql.Time;
 import java.util.Date;
-import java.util.List;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -22,22 +23,27 @@ public class Incidencia implements Serializable {
 
 	private String descripcion;
 
-	private String estado;
+	@Enumerated(EnumType.STRING)
+	private Estado_Incidencia estado;
 
 	private Date fechaCierre;
 
 	private Date fechaCreacion;
 
-	private String tipo;
+	private Time tiempo_dec;
+	
+	@Enumerated(EnumType.STRING)
+	private Tipo_Incidencias tipo;
 
 	// private List<Comentario> comentarios;
 
-	// @ManyToOne
-	@Column(name = "equipo_id")
+	@ManyToOne
+	//@Column(name = "equipo_id")
 	private Equipo equipo;
 
-	@Column(name = "subtipo_id")
-	private int incidenciasSubtipo;
+	@ManyToOne
+	@JoinColumn(name="subtipo_id")
+	private IncidenciasSubtipo incidenciasSubtipo;
 
 	@ManyToOne
 	private Personal creador;
@@ -72,11 +78,11 @@ public class Incidencia implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public String getEstado() {
+	public Estado_Incidencia getEstado() {
 		return this.estado;
 	}
 
-	public void setEstado(String estado) {
+	public void setEstado(Estado_Incidencia estado) {
 		this.estado = estado;
 	}
 
@@ -96,11 +102,11 @@ public class Incidencia implements Serializable {
 		this.fechaCreacion = fechaCreacion;
 	}
 
-	public String getTipo() {
+	public Tipo_Incidencias getTipo() {
 		return this.tipo;
 	}
 
-	public void setTipo(String tipo) {
+	public void setTipo(Tipo_Incidencias tipo) {
 		this.tipo = tipo;
 	}
 
@@ -128,11 +134,11 @@ public class Incidencia implements Serializable {
 		this.equipo = equipo;
 	}
 
-	public int getIncidenciasSubtipo() {
+	public IncidenciasSubtipo getIncidenciasSubtipo() {
 		return this.incidenciasSubtipo;
 	}
 
-	public void setIncidenciasSubtipo(int incidenciasSubtipo) {
+	public void setIncidenciasSubtipo(IncidenciasSubtipo incidenciasSubtipo) {
 		this.incidenciasSubtipo = incidenciasSubtipo;
 	}
 
@@ -151,4 +157,14 @@ public class Incidencia implements Serializable {
 	public void setResponsable(Personal creador) {
 		this.responsable = creador;
 	}
+
+	public Time getTiempo_dec() {
+		return tiempo_dec;
+	}
+
+	public void setTiempo_dec(Time tiempo_dec) {
+		this.tiempo_dec = tiempo_dec;
+	}
+	
+	
 }
