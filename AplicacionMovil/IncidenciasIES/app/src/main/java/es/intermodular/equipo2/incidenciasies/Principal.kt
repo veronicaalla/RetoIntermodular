@@ -1,21 +1,13 @@
 package es.intermodular.equipo2.incidenciasies
 
 import android.content.Intent
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
 import android.widget.PopupMenu
-import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
-import es.intermodular.equipo2.incidenciasies.modelo.Incidencia
-import es.intermodular.equipo2.incidenciasies.recyclerIncidencias.IncidenciaAdapter
-import java.util.Date
-import java.util.Locale
 
 class Principal : AppCompatActivity() {
 
