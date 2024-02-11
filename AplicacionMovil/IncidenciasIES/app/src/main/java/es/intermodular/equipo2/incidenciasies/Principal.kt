@@ -122,23 +122,46 @@ class Principal : AppCompatActivity() {
             // Mostrar el menú desplegable
             popupMenu.show()
         }
+
     }
 
     private fun mostrarLayoutAyuda() {
-        // Inflar el layout activity_about.xml
+        // Inflar el layout activity_help.xml
         val helpView = layoutInflater.inflate(R.layout.activity_help, null)
 
-        // Configurar el contenido de la vista
+        // Encontrar el botón de retroceso en el layout inflado
+        val menuAtras = helpView.findViewById<ImageView>(R.id.menuAtras)
+
+        // Configurar el OnClickListener para el botón de retroceso
+        menuAtras.setOnClickListener {
+            // Crear un intent para iniciar la actividad Principal
+            val intent = Intent(this, Principal::class.java)
+            // Iniciar la actividad Principal
+            startActivity(intent)
+            // Cerrar la actividad actual si es necesario
+            finish()
+        }
+
         // Añadir la vista a tu layout principal
         setContentView(helpView)
-
     }
 
     private fun mostrarLayoutAcercaDe() {
         // Inflar el layout activity_about.xml
         val aboutView = layoutInflater.inflate(R.layout.activity_about, null)
 
-        // Configurar el contenido de la vista
+        // Encontrar el botón de retroceso en el layout inflado
+        val menuAtras = aboutView.findViewById<ImageView>(R.id.menuAtras)
+
+        // Configurar el OnClickListener para el botón de retroceso
+        menuAtras.setOnClickListener {
+            // Crear un intent para iniciar la actividad Principal
+            val intent = Intent(this, Principal::class.java)
+            // Iniciar la actividad Principal
+            startActivity(intent)
+            // Cerrar la actividad actual si es necesario
+            finish()
+        }
 
         // Añadir la vista a tu layout principal
         setContentView(aboutView)
