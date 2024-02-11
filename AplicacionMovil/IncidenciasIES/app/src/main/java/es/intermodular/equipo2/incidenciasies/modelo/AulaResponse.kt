@@ -1,6 +1,5 @@
 package es.intermodular.equipo2.incidenciasies.modelo
 
-import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class AulaResponse(
