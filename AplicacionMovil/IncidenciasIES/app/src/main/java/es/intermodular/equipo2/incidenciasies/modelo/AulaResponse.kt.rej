@@ -1,8 +1,0 @@
-diff a/AplicacionMovil/IncidenciasIES/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/AulaResponse.kt b/AplicacionMovil/IncidenciasIES/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/AulaResponse.kt	(rejected hunks)
-@@ -1,5 +1,6 @@
- package es.intermodular.equipo2.incidenciasies.modelo
- 
-+import com.google.gson.annotations.SerializedName
- import java.io.Serializable
- 
- data class AulaResponse(
