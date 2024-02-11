@@ -19,11 +19,18 @@ data class IncidenciaResponse(
     @SerializedName("fechaCreacion")
     val fechaCreacion: java.util.Date,
     @SerializedName("tiempo_dec")
-    val tiempoDesc:Time,
+    val tiempoDesc: Time,
     @SerializedName("tipo")
     val tipo: String,
     @SerializedName("equipo")
-    val equipo: EquipoResponse
+    val equipo: EquipoResponse,
+    @SerializedName("incidenciasSubtipo")
+    val tipoIncidencia: IncidenciasSubtipoResponse,
+    @SerializedName("creador")
+    val creador: PerfilResponse,
+    @SerializedName("responsable")
+    val responsable: PerfilResponse
+
 
 ) : Serializable
 
