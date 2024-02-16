@@ -42,7 +42,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:fontFamily="@font/merriweather_bold"
-                    android:text="Notificaciones"
+                    android:text="@string/notificaciones"
                     android:textColor="@color/white"
                     android:textSize="30dp" />
 

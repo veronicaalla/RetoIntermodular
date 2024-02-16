@@ -1,21 +1,13 @@
 package es.intermodular.equipo2.incidenciasies
 
 import android.content.Intent
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
 import android.widget.PopupMenu
-import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
-import es.intermodular.equipo2.incidenciasies.modelo.Incidencia
-import es.intermodular.equipo2.incidenciasies.recyclerIncidencias.IncidenciaAdapter
-import java.util.Date
-import java.util.Locale
 
 class Principal : AppCompatActivity() {
 
@@ -105,6 +97,7 @@ class Principal : AppCompatActivity() {
                 when (item.itemId) {
                     R.id.action_help -> {
                         // Lógica para el elemento "Ayuda"
+                        mostrarLayoutAyuda()
                         true
                     }
 
@@ -121,16 +114,51 @@ class Principal : AppCompatActivity() {
             // Mostrar el menú desplegable
             popupMenu.show()
         }
+
+    }
+
+    private fun mostrarLayoutAyuda() {
+        // Inflar el layout activity_help.xml
+        val helpView = layoutInflater.inflate(R.layout.activity_help, null)
+
+        // Encontrar el botón de retroceso en el layout inflado
+        val menuAtras = helpView.findViewById<ImageView>(R.id.menuAtras)
+
+        // Configurar el OnClickListener para el botón de retroceso
+        menuAtras.setOnClickListener {
+            // Crear un intent para iniciar la actividad Principal
+            val intent = Intent(this, Principal::class.java)
+            // Iniciar la actividad Principal
+            startActivity(intent)
+            // Cerrar la actividad actual si es necesario
+            finish()
+        }
+
+        // Añadir la vista a tu layout principal
+        setContentView(helpView)
     }
 
     private fun mostrarLayoutAcercaDe() {
         // Inflar el layout activity_about.xml
         val aboutView = layoutInflater.inflate(R.layout.activity_about, null)
 
-        // Configurar el contenido de la vista
+        // Encontrar el botón de retroceso en el layout inflado
+        val menuAtras = aboutView.findViewById<ImageView>(R.id.menuAtras)
+
+        // Configurar el OnClickListener para el botón de retroceso
+        menuAtras.setOnClickListener {
+            // Crear un intent para iniciar la actividad Principal
+            val intent = Intent(this, Principal::class.java)
+            // Iniciar la actividad Principal
+            startActivity(intent)
+            // Cerrar la actividad actual si es necesario
+            finish()
+        }
 
         // Añadir la vista a tu layout principal
         setContentView(aboutView)
+
+
     }
 
 }
