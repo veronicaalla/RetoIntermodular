@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.luisherrero.apirest1.model.Incidencia;
+import es.luisherrero.apirest1.model.Personal;
 import es.luisherrero.apirest1.repository.IncidenciaRepository;
+import es.luisherrero.apirest1.repository.PersonalRepository;
 
 @RestController
 @RequestMapping("/api/incidencias")
@@ -21,10 +23,19 @@ public class incidenciaControlador {
 
     @Autowired
     private IncidenciaRepository incidenciaRepository;
+    
+    @Autowired
+    private PersonalRepository personalRepository;
 
     @GetMapping
     public List<Incidencia> obtenerIncidencias() {
         return incidenciaRepository.findAll();
+    }
+    
+    @GetMapping("/{creador}")
+    public List<Incidencia> obtenerIncidenciasPorPersona(@PathVariable Personal creador) {
+    	Personal persona = personalRepository.findByNombre(creador.getNombre());
+        return incidenciaRepository.findByCreador(persona);
     }
 
     @GetMapping("/{num}")
