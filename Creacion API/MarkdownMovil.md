@@ -24,8 +24,10 @@ ___
 
 ## Ayuda
 Esta ventana seria una pequeña guia de como funciona la aplicacion. Cuenta con una flecha que nos devuelve a _Mis incidencias_.
-# Imagen necesaria ???
 
+|[Imagen](Python/Ayuda.png)
+
+___
 
 ## Notificaciones
 Esta es la ventana encarga de las notificaciones en ella se muestra una lista de notificaciones, asi como una flecha para volver a la ventana _Mis incidencias_ y la lista con las opciones de _Ayuda_ y _Acerca de_.
