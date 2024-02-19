@@ -14,25 +14,25 @@ Seria, por asi decirlo, la ventana principal que muestra un resumen de las incid
 - __Ayuda__: Al pulsar esta opcion nos llevara a la ventana de _Ayuda_.
 - __Acerca de__: Al pulsar esta opcion nos llevara a la ventana _Acerca de_.
 
-![Imagen](Python/Mis_incidencias.png)
+![Imagen](Python_e_imagenes/Aplicacion_Movil/Mis_incidencias.png)
 
 ### Ejemplo de ventana
 
-![Imagen](Python/Incidencias_abiertas.png)
+![Imagen](Python_e_imagenes/Aplicacion_Movil/Incidencia_abiertas.png)
 
 ___
 
 ## Ayuda
 Esta ventana seria una pequeña guia de como funciona la aplicacion. Cuenta con una flecha que nos devuelve a _Mis incidencias_.
 
-![Imagen](Python/Ayuda.png)
+![Imagen](Python_e_imagenes/Aplicacion_Movil/Ayuda.png)
 
 ___
 
 ## Notificaciones
 Esta es la ventana encarga de las notificaciones en ella se muestra una lista de notificaciones, asi como una flecha para volver a la ventana _Mis incidencias_ y la lista con las opciones de _Ayuda_ y _Acerca de_.
 
-![Imagen](Python/Notificaciones.png)
+![Imagen](Python_e_imagenes/Aplicacion_Movil/Notificaciones.png)
 
 ___
 
@@ -43,7 +43,7 @@ Se seria una parte de la creacion de incidencias. Cuenta con una flecha que nos 
 - __Selector 2__: Seleccionar subtipo de incidencia de la lista.
 - __Selector 3__: Seleccionar otro dato de la lista.
 
-![Imagen](Python/Tipo_incidencia.png)
+![Imagen](Python_e_imagenes/Aplicacion_Movil/Tipo_incidencia.png)
 
 ___
 
@@ -53,11 +53,11 @@ Seria la continuacion de la ventana _Tipo de incidencia_ que cuenta con muchos m
 - __Cancelar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_.
 - __Aceptar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_ pero con la nueva incidencia ya añadida.
 
-![Imagen](Python/IncidenciaID.png)
+![Imagen](Python_e_imagenes/Aplicacion_Movil/IncidenciaID.png)
 
 ___
 
 ## Acerca de
 Esta ventana solo seria un resumen, cuenta con una flecha que nos devuelve a la venta _Mis incidencias_. Muestra los nombres de sus desarrolladores, un logo y un texto de copyright con año actual.
 
-![Imagen](Python/Acerca_de.png)
+![Imagen](Python_e_imagenes/Aplicacion_Movil/Acerca_de.png)
