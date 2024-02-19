@@ -11,8 +11,8 @@ class IncidenciaAdapter(
     private val onItemSelect: (String) -> Unit
 ) : RecyclerView.Adapter<IncidenciaViewHolder>() {
 
-    fun updateList(list: List<IncidenciaResponse>) {
-        listaIncidencias = list
+    fun setIncidencias(incidencias: List<IncidenciaResponse>) {
+        listaIncidencias = incidencias
         notifyDataSetChanged()
     }
 
@@ -22,11 +22,9 @@ class IncidenciaAdapter(
         )
     }
 
-
     override fun onBindViewHolder(holder: IncidenciaViewHolder, position: Int) {
         holder.bind(listaIncidencias[position], onItemSelect)
     }
-
 
     override fun getItemCount() = listaIncidencias.size
 }

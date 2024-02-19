@@ -4,20 +4,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.PopupMenu
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
-import es.intermodular.equipo2.incidenciasies.datos.IncidenciaApiService
 import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
+import es.intermodular.equipo2.incidenciasies.datos.incidencias.IncidenciaApiService
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 import es.intermodular.equipo2.incidenciasies.recyclerIncidencias.IncidenciaAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
 import retrofit2.Response
 import retrofit2.Retrofit
 
@@ -25,10 +23,8 @@ class Principal : AppCompatActivity() {
 
     private lateinit var binding: ActivityPrincipalBinding
     private lateinit var retrofit: Retrofit
-    var adapter: RecyclerView.Adapter<*>? = null
+    private lateinit var adapter: IncidenciaAdapter
 
-    var recyclerView: RecyclerView? = null
-    var layoutManager: RecyclerView.LayoutManager? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -128,8 +124,6 @@ class Principal : AppCompatActivity() {
         }
 
         initUI()
-
-
     }
 
     private fun initUI() {
@@ -147,7 +141,17 @@ class Principal : AppCompatActivity() {
         binding.rvIncidencias.adapter = adapter
 
         //Mostramos los items
+        CoroutineScope(Dispatchers.IO).launch {
+            val myResponse: Response<List<IncidenciaResponse>> =
+                retrofit.create(IncidenciaApiService::class.java).getIncidencias()
 
+            if (myResponse.isSuccessful) {
+                val listIncidencias: List<IncidenciaResponse>? = myResponse.body()
+                if (listIncidencias != null) {
+                    adapter.setIncidencias(listIncidencias)
+                }
+            }
+        }
     }
 
     private fun mostrarLayoutAyuda() {
@@ -168,12 +172,7 @@ class Principal : AppCompatActivity() {
         }
 
         // Añadir la vista a tu layout principal
-        CoroutineScope(Dispatchers.IO).launch {
-            val myResponse: List<IncidenciaResponse> =
-                retrofit.create(IncidenciaApiService::class.java).getIncidencias()
-
-            //if (myResponse.isSu)
-        }
+        setContentView(helpView)
     }
 
     private fun mostrarLayoutAcercaDe() {
@@ -192,11 +191,8 @@ class Principal : AppCompatActivity() {
             // Cerrar la actividad actual si es necesario
             finish()
         }
-
         // Añadir la vista a tu layout principal
         setContentView(aboutView)
-
-
     }
 
 }
