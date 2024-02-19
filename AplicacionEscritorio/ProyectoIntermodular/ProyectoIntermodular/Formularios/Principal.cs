@@ -77,5 +77,61 @@ namespace ProyectoIntermodular
         {
             this.Close();
         }
+
+        private void cbxProfesor_CheckedChanged(object sender, EventArgs e)
+        {
+            cmxProfesor.Enabled = true;
+            if (!cbxProfesor.Checked)
+            {
+                cmxProfesor.Enabled = false;
+            }
+        }
+
+        private void cbxAula_CheckedChanged(object sender, EventArgs e)
+        {
+            cmxAula.Enabled = true;
+            if (!cbxAula.Checked)
+            {
+                cmxAula.Enabled = false;
+            }
+        }
+
+        private void cbxTipo_CheckedChanged(object sender, EventArgs e)
+        {
+            cmxTipo.Enabled = true;
+            if (!cbxTipo.Checked)
+            {
+                cmxTipo.Enabled = false;
+            }
+        }
+
+        private void cbxEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            cmxEstado.Enabled = true;
+            if (!cbxEstado.Checked)
+            {
+                cmxEstado.Enabled = false;
+            }
+        }
+
+        private void cbxSub_CheckedChanged(object sender, EventArgs e)
+        {
+            cmxSub.Enabled = true;
+            if (!cbxSub.Checked)
+            {
+                cmxSub.Enabled = false;
+            }
+        }
+
+        private void cbxFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            dateTimePicker1.Enabled = true;
+            dateTimePicker2.Enabled = true;
+            if (!cbxFecha.Checked)
+            {
+                dateTimePicker1.Enabled = false;
+                dateTimePicker2.Enabled = false;
+            }
+        }
     }
 }

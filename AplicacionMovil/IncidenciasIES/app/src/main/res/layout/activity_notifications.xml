@@ -26,6 +26,14 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary">
 
+                <ImageView
+                    android:id="@+id/menuAtras"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:paddingRight="20dp"
+                    android:src="@drawable/baseline_arrow_back_ios_new_24" />
+
 
                 <TextView
                     android:id="@+id/toolbar_title"
@@ -34,7 +42,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:fontFamily="@font/merriweather_bold"
-                    android:text="Notificaciones"
+                    android:text="@string/notificaciones"
                     android:textColor="@color/white"
                     android:textSize="30dp" />
 

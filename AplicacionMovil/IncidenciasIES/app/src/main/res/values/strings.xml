@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">IncidenciasIES</string>
+    <string name="app_name">MyApp</string>
     <string name="hello">¡Hola!</string>
     <string name="username_hint">Usuario</string>
     <string name="password_hint">Contraseña</string>
@@ -7,6 +7,45 @@
     <string name="login_button">Iniciar sesión</string>
     <string name="forgot_password">¿Has olvidado tu contraseña?</string>
     <string name="login_error_message">¡Error, usuario o contraseña incorrectos!</string>
+    <string name="resumen_incidencias">Resumen de incidencias</string>
+    <string name="indicencias_totales">50\nIndicendias</string>
+    <string name="ultimas_incidencias">Últimas incidencias</string>
+    <string name="descripcion_scrollView">Este componente sirve para poder scrollear la app</string>
+    <string name="tipo_de_incidencia">Tipo de Incidencia</string>
+    <string name="subtipo_incidencias">Subtipo</string>
+    <string name="sub_subTipo">Otro dato más:</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="mis_incidencias">Mis incidencias</string>
+    <string name="_12_nabiertas">12\nAbiertas</string>
+    <string name="_12_nasignadas">12\nAsignadas</string>
+    <string name="_12_nen_proceso">12\nEn proceso</string>
+    <string name="_12_nresueltas">12\nResueltas</string>
+    <string name="_12_ncerradas">12\nCerradas</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="incidencia_id">Incidencia #ID</string>
+    <string name="tipo_de_incidencia_edit">Tipo de incidencia:</string>
+    <string name="ejemplo_incidencia">Equipos Pc Ordenador</string>
+    <string name="fecha_de_creaci_n">Fecha de creación:</string>
+    <string name="descripcion">Descripción:</string>
+    <string name="escribir">Escribir...</string>
+    <string name="equipo_id">Equipo Id</string>
+    <string name="equipo_incidencia">Equipo Incidencia</string>
+    <string name="estado">Estado</string>
+    <string name="prueba_estado">Abierta</string>
+    <string name="fecha_cierre">Fecha cierre:</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="fecha_prueba">1/02/2022</string>
+    <string name="ejemplo_descripcion">El ordeandor .... no funciona</string>
+    <string name="if_02">IF-02</string>
+    <string name="fecha_cierre_prueba">20/02/2022</string>
+    <string name="volver">Volver</string>
+    <string name="modificar">Modificar</string>
+    <string name="acerca_de">Acerca de...</string>
+    <string name="explicacion">Esta aplicación ha sido desarrollada por:</string>
+    <string name="desarrolladores">Verónica Álvarez Lavín \nVladyslav Golovatyi Tsymbal \nJosé David Casas Gómez \nIván Díaz Fernández \nAlejandro Peñil Haya \nVíctor Cuevas Martínez</string>
+    <string name="copy_right">© 2024 IES Miguel Herrero Pereda.\nTodos los derechos han sido reservados.</string>
+    <string name="ayuda">Ayuda</string>
 
     <string-array name="TiposIncidencias">
         <item>EQUIPOS</item>
