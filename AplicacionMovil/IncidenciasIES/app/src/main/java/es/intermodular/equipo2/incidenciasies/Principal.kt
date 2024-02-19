@@ -10,17 +10,21 @@ import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
 import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
+import es.intermodular.equipo2.incidenciasies.datos.incidencias.IncidenciaApiService
+import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 import es.intermodular.equipo2.incidenciasies.recyclerIncidencias.IncidenciaAdapter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Response
 import retrofit2.Retrofit
 
 class Principal : AppCompatActivity() {
 
     private lateinit var binding: ActivityPrincipalBinding
     private lateinit var retrofit: Retrofit
-    var adapter: RecyclerView.Adapter<*>? = null
+    private lateinit var adapter: IncidenciaAdapter
 
-    var recyclerView: RecyclerView? = null
-    var layoutManager: RecyclerView.LayoutManager? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -120,8 +124,6 @@ class Principal : AppCompatActivity() {
         }
 
         initUI()
-
-
     }
 
     private fun initUI() {
@@ -139,7 +141,17 @@ class Principal : AppCompatActivity() {
         binding.rvIncidencias.adapter = adapter
 
         //Mostramos los items
+        CoroutineScope(Dispatchers.IO).launch {
+            val myResponse: Response<List<IncidenciaResponse>> =
+                retrofit.create(IncidenciaApiService::class.java).getIncidencias()
 
+            if (myResponse.isSuccessful) {
+                val listIncidencias: List<IncidenciaResponse>? = myResponse.body()
+                if (listIncidencias != null) {
+                    adapter.setIncidencias(listIncidencias)
+                }
+            }
+        }
     }
 
     private fun mostrarLayoutAyuda() {
@@ -161,8 +173,6 @@ class Principal : AppCompatActivity() {
 
         // Añadir la vista a tu layout principal
         setContentView(helpView)
-
-        // Lógica adicional para mostrar la ayuda
     }
 
     private fun mostrarLayoutAcercaDe() {
