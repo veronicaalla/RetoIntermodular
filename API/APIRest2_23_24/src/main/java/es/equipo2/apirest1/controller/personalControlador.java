@@ -31,6 +31,24 @@ public class personalControlador {
     public Personal obtenerPersonalPorId(@PathVariable int id) {
         return personalRepository.findById(id).orElse(null);
     }
+    
+    // Método para filtrar personal por nombre
+    @GetMapping("/nombre/{nombre}")
+    public List<Personal> filtrarPorNombre(@PathVariable String nombre) {
+        return personalRepository.findByNombre(nombre);
+    }
+
+    // Método para filtrar personal por apellido1
+    @GetMapping("/apellido1/{apellido}")
+    public List<Personal> filtrarPorApellido1(@PathVariable String apellido) {
+        return personalRepository.findByApellido1(apellido);
+    }
+
+    // Método para filtrar personal por apellido2
+    @GetMapping("/apellido2/{apellido}")
+    public List<Personal> filtrarPorApellido2(@PathVariable String apellido) {
+        return personalRepository.findByApellido2(apellido);
+    }
 
     @PostMapping
     public Personal nuevoPersonal(@RequestBody Personal nuevoPersonal) {
