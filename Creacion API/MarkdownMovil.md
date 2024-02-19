@@ -22,6 +22,10 @@ Seria, por asi decirlo, la ventana principal que muestra un resumen de las incid
 
 ___
 
+## Ayuda
+Esta ventana seria una pequeña guia de como funciona la aplicacion. Cuenta con una flecha que nos devuelve a _Mis incidencias_.
+# Imagen necesaria
+
 
 ## Notificaciones
 Esta es la ventana encarga de las notificaciones en ella se muestra una lista de notificaciones, asi como una flecha para volver a la ventana _Mis incidencias_ y la lista con las opciones de _Ayuda_ y _Acerca de_.
@@ -45,7 +49,7 @@ ___
 Seria la continuacion de la ventana _Tipo de incidencia_ que cuenta con muchos mas datos que añadir: Tipo de incidencia (por defecto lo que estaba en los selectores 1 y 2 de la anterior), fecha de creacion, posible descripcion, identificador de equipo, estado (por defecto Abierto), fecha de cierre. Asi como 2 botones:
 
 - __Cancelar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_.
-- __Aceptar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_ pero con la nueva incidencia añadida.
+- __Aceptar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_ pero con la nueva incidencia ya añadida.
 
 ![Imagen](Python/IncidenciaID.png)
 
