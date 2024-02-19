@@ -168,12 +168,9 @@ class Principal : AppCompatActivity() {
         }
 
         // Añadir la vista a tu layout principal
-        CoroutineScope(Dispatchers.IO).launch {
-            val myResponse: List<IncidenciaResponse> =
-                retrofit.create(IncidenciaApiService::class.java).getIncidencias()
+        setContentView(helpView)
 
-            //if (myResponse.isSu)
-        }
+        // Lógica adicional para mostrar la ayuda
     }
 
     private fun mostrarLayoutAcercaDe() {
@@ -192,11 +189,8 @@ class Principal : AppCompatActivity() {
             // Cerrar la actividad actual si es necesario
             finish()
         }
-
         // Añadir la vista a tu layout principal
         setContentView(aboutView)
-
-
     }
 
 }
