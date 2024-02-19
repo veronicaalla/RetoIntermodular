@@ -48,7 +48,7 @@ Se seria una parte de la creacion de incidencias. Cuenta con una flecha que nos 
 ___
 
 ## Incidencia#ID
-Seria la continuacion de la ventana _Tipo de incidencia_ que cuenta con muchos mas datos que añadir: Tipo de incidencia (por defecto lo que estaba en los selectores 1 y 2 de la anterior), fecha de creacion, posible descripcion, identificador de equipo, estado (Abierto, Asignado, En proceso, Envia a Infortec, Resuelta, Cerrado), fecha de cierre. Asi como 2 botones:
+Seria la continuacion de la ventana _Tipo de incidencia_ que cuenta con muchos mas datos que añadir: Tipo de incidencia (por defecto lo que estaba en los selectores 1 y 2 de la anterior), fecha de creacion, posible descripcion, identificador de equipo, estado (Abierto, Asignado, En proceso, Resuelta, Cerrado), fecha de cierre. Asi como 2 botones:
 
 - __Cancelar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_.
 - __Aceptar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_ pero con la nueva incidencia ya añadida.
