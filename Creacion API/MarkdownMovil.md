@@ -1,7 +1,7 @@
 # Proyecto Intermodular
 
 ## Login
-Esta pagina sera la que aparecera tras abrir la aplicacion contara con 2 cuadros de texto en los cuales se escribira: nombre de usuario y contraseña. Tambien contara con un checkbox para recordarme si la contraseña. Tambien contara con un enlace por si has olvidado la contraseña para cambiarla o no. Por ultimo un boton de inicio de sesion que verifica si puedes entrar o no, si da fallo significa que el usuario y/o la contraseña no son correctos. Si es correcto todo te lleva a la ventana de _Mis_incidencias_.
+Esta pagina sera la que aparecera tras abrir la aplicacion contara con un logo y 2 cuadros de texto en los cuales se escribira: nombre de usuario y contraseña. Tambien contara con un checkbox para recordarme la contraseña. Tambien contara con un enlace por si has olvidado la contraseña para cambiarla o no. Por ultimo un boton de inicio de sesion que verifica si puedes entrar o no, si da fallo significa que el usuario y/o la contraseña no son correctos. Si es correcto todo te lleva a la ventana de _Mis_incidencias_.
 
 ![Imagen](Python/Login.png)
 
