@@ -26,10 +26,6 @@ class Principal : AppCompatActivity() {
     private lateinit var binding: ActivityPrincipalBinding
     private lateinit var retrofit: Retrofit
     private lateinit var adapter: IncidenciaAdapter
-    //var adapter: RecyclerView.Adapter<*>? = null
-
-    //var recyclerView: RecyclerView? = null
-    //var layoutManager: RecyclerView.LayoutManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
