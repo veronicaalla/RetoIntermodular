@@ -39,7 +39,7 @@ Se seria una parte de la creacion de incidencias. Cuenta con una flecha que nos 
 
 - __Selector 1__: Seleccionar nombre de equipo de la lista.
 - __Selector 2__: Seleccionar subtipo de incidencia de la lista.
-- __Selector 3__: Seleccionar otor dato de la lista.
+- __Selector 3__: Seleccionar otro dato de la lista.
 
 ![Imagen](Python/Tipo_incidencia.png)
 
