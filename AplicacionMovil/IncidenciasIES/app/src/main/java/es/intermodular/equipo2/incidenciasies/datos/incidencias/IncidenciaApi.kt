@@ -1,4 +1,6 @@
-package es.intermodular.equipo2.incidenciasies.datos
+package es.intermodular.equipo2.incidenciasies.datos.incidencias
+
+import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
 
 object IncidenciaApi {
 
