@@ -58,6 +58,6 @@ Seria la continuacion de la ventana _Tipo de incidencia_ que cuenta con muchos m
 ___
 
 ## Acerca de
-Esta ventana solo seria un resumen, cuenta con una flecha que nos devuelve a la venta _Mis incidencias_. Muestra los nombres de sus desarrolladores, un logo y un copyright con año actual.
+Esta ventana solo seria un resumen, cuenta con una flecha que nos devuelve a la venta _Mis incidencias_. Muestra los nombres de sus desarrolladores, un logo y un texto de copyright con año actual.
 
 ![Imagen](Python/Acerca_de.png)
