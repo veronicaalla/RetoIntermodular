@@ -9,9 +9,9 @@ ___
 ## Mis incidencias
 Seria, por asi decirlo, la ventana principal que muestra un resumen de las incidencias agrupadas por tipo (Abiertas, Asignadas, En proceso, Resueltas, Cerradas), asi como un lista de las ultimas incidencias añadidas. Tiene un boton para cada una que nos llevara a una ventana con una lista de las incidencias de ese tipo, y al hacerlo se cambia el color del fondo del titulo. Tambien tiene un boton para añadir nuevas incidencias abajo a la derecha que nos llevara a la ventana _Incidencia#ID_. Arriba a la derecha cuenta con 3 opciones mas:
 
-- *Añadir notificacion(Campana)*: Nos lleva a la ventana de _Notificiaciones_.
-- *Ayuda*: Nos lleva a la ventana de _Ayuda_.
-- *Acerca de*: Nos lleva a la ventana _Acerca de_.
+- __Añadir notificacion(Campana)__: Nos lleva a la ventana de _Notificiaciones_.
+- __Ayuda__: Nos lleva a la ventana de _Ayuda_.
+- __Acerca de__: Nos lleva a la ventana _Acerca de_.
 
 ![Imagen](Python/Inicial.PNG)
 ___
