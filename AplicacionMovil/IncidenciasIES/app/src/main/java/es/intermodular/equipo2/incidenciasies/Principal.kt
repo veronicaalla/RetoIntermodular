@@ -25,10 +25,8 @@ class Principal : AppCompatActivity() {
 
     private lateinit var binding: ActivityPrincipalBinding
     private lateinit var retrofit: Retrofit
-    var adapter: RecyclerView.Adapter<*>? = null
+    private lateinit var adapter: IncidenciaAdapter
 
-    var recyclerView: RecyclerView? = null
-    var layoutManager: RecyclerView.LayoutManager? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -126,10 +124,7 @@ class Principal : AppCompatActivity() {
             // Mostrar el menú desplegable
             popupMenu.show()
         }
-
         initUI()
-
-
     }
 
     private fun initUI() {
@@ -146,8 +141,20 @@ class Principal : AppCompatActivity() {
         binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         binding.rvIncidencias.adapter = adapter
 
+        /*
         //Mostramos los items
+        CoroutineScope(Dispatchers.IO).launch {
+            val myResponse: Response<List<IncidenciaResponse>> =
+                retrofit.create(IncidenciaApiService::class.java).getIncidencias()
 
+            if (myResponse.isSuccessful) {
+                val listIncidencias: List<IncidenciaResponse>? = myResponse.body()
+                if (listIncidencias != null) {
+                    adapter.setIncidencias(listIncidencias)
+                }
+            }
+        }
+        */
     }
 
     private fun mostrarLayoutAyuda() {
@@ -168,12 +175,7 @@ class Principal : AppCompatActivity() {
         }
 
         // Añadir la vista a tu layout principal
-        CoroutineScope(Dispatchers.IO).launch {
-            val myResponse: List<IncidenciaResponse> =
-                retrofit.create(IncidenciaApiService::class.java).getIncidencias()
-
-            //if (myResponse.isSu)
-        }
+        setContentView(helpView)
     }
 
     private fun mostrarLayoutAcercaDe() {
@@ -192,11 +194,8 @@ class Principal : AppCompatActivity() {
             // Cerrar la actividad actual si es necesario
             finish()
         }
-
         // Añadir la vista a tu layout principal
         setContentView(aboutView)
-
-
     }
 
 }
