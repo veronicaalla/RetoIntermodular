@@ -5,13 +5,13 @@ import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.databinding.ItemIncidenciasBinding
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 
-class IncidenciaViewHolder (view:View): RecyclerView.ViewHolder(view){
+class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemIncidenciasBinding.bind(view)
 
-    fun bind (incidenciasResponse:IncidenciaResponse, onItemSelected:(String) -> Unit){
+    fun bind(incidenciasResponse: IncidenciaResponse, onItemSelected: (String) -> Unit) {
         binding.txtFecha.text = incidenciasResponse.fechaCreacion.toString()
-
+        //binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia) }
     }
 }
 

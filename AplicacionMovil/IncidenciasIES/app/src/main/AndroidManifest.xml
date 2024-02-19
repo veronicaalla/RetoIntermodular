@@ -5,7 +5,10 @@
     <!-- Damos permiso a internet para poder acceder a la api -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- deshabilitamos la política de seguridad de red de Android para permitir conexiones no seguras  Linea 11-->
+
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
