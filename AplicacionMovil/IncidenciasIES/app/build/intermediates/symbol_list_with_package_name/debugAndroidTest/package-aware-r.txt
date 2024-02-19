@@ -1,3 +1,0 @@
-es.intermodular.equipo2.incidenciasies.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme
