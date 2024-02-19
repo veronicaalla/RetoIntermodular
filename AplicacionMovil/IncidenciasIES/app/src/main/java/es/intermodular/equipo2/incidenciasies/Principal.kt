@@ -4,18 +4,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.PopupMenu
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
+import es.intermodular.equipo2.incidenciasies.datos.IncidenciaApiService
 import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
-import es.intermodular.equipo2.incidenciasies.datos.incidencias.IncidenciaApiService
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 import es.intermodular.equipo2.incidenciasies.recyclerIncidencias.IncidenciaAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import okhttp3.Dispatcher
 import retrofit2.Response
 import retrofit2.Retrofit
 
@@ -122,7 +124,6 @@ class Principal : AppCompatActivity() {
             // Mostrar el menú desplegable
             popupMenu.show()
         }
-
         initUI()
     }
 
@@ -140,7 +141,8 @@ class Principal : AppCompatActivity() {
         binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         binding.rvIncidencias.adapter = adapter
 
-      /*  //Mostramos los items
+        /*
+        //Mostramos los items
         CoroutineScope(Dispatchers.IO).launch {
             val myResponse: Response<List<IncidenciaResponse>> =
                 retrofit.create(IncidenciaApiService::class.java).getIncidencias()
@@ -151,7 +153,8 @@ class Principal : AppCompatActivity() {
                     adapter.setIncidencias(listIncidencias)
                 }
             }
-        }*/
+        }
+        */
     }
 
     private fun mostrarLayoutAyuda() {

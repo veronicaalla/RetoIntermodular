@@ -10,66 +10,13 @@
           <theme>@style/Theme.IncidenciasIES</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_details_incidencia.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_help.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_principal.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_select_type_incidents.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_specific_list_incidents.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_incidencias.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_notificaciones.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_settings.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
     </layouts>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40545a9b-a1e0-41e6-a320-2b280e02f8bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/Principal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/Principal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaRepository.kt" afterDir="false" />
-    </list>
+    <list default="true" id="be700724-fc9b-4456-8b03-03170b575062" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,42 +69,25 @@
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="valueResourceFile" />
-        <option value="resourceFile" />
-        <option value="layoutResourceFile" />
-        <option value="Kotlin Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="2c0sYnmAioEmJV7FaUxmy2ZL0eZ" />
+  <component name="ProjectId" id="2capbsFM6ncO8NGJPj7MN0D8Gzm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Vlady",
-    "last_opened_file_path": "C:/Users/Vladyslav/Desktop/DAM 2/PMDM/Unidad 2/Prueba API/Prueba/Android-Expert-main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Vlady&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vladyslav/Desktop/RETO Intermodular/RetoIntermodular/AplicacionMovil/IncidenciasIES&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="android.template.-1370614430">
-      <recent name="es.intermodular.equipo2.incidenciasies" />
-    </key>
-  </component>
+}</component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="IncidenciasIES.app.main" />
@@ -230,11 +160,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="40545a9b-a1e0-41e6-a320-2b280e02f8bd" name="Changes" comment="" />
-      <created>1707259881963</created>
+      <changelist id="be700724-fc9b-4456-8b03-03170b575062" name="Changes" comment="" />
+      <created>1708359617863</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1707259881963</updated>
+      <updated>1708359617863</updated>
     </task>
     <servers />
   </component>

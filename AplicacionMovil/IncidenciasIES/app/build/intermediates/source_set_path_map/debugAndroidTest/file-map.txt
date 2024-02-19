@@ -1,6 +1,0 @@
-es.intermodular.equipo2.incidenciasies.test.app-annotation-experimental-1.3.0-0 C:\Users\Vladyslav\.gradle\caches\transforms-3\228863afcbb817ea985f101a96bc5f44\transformed\annotation-experimental-1.3.0\res
-es.intermodular.equipo2.incidenciasies.test.app-core-1.5.0-1 C:\Users\Vladyslav\.gradle\caches\transforms-3\71764765634c9f3de0b92de86ebba26a\transformed\core-1.5.0\res
-es.intermodular.equipo2.incidenciasies.test.app-androidTest-2 C:\Users\Vladyslav\Desktop\RETO Intermodular\RetoIntermodular\AplicacionMovil\IncidenciasIES\app\build\generated\res\resValues\androidTest\debug
-es.intermodular.equipo2.incidenciasies.test.app-mergeDebugAndroidTestResources-3 C:\Users\Vladyslav\Desktop\RETO Intermodular\RetoIntermodular\AplicacionMovil\IncidenciasIES\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-es.intermodular.equipo2.incidenciasies.test.app-mergeDebugAndroidTestResources-4 C:\Users\Vladyslav\Desktop\RETO Intermodular\RetoIntermodular\AplicacionMovil\IncidenciasIES\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-es.intermodular.equipo2.incidenciasies.test.app-merged_res-5 C:\Users\Vladyslav\Desktop\RETO Intermodular\RetoIntermodular\AplicacionMovil\IncidenciasIES\app\build\intermediates\merged_res\debugAndroidTest

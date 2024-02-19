@@ -72,7 +72,7 @@
             this.btnSeleccionar.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnSeleccionar.Location = new System.Drawing.Point(12, 512);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(93, 41);
+            this.btnSeleccionar.Size = new System.Drawing.Size(116, 41);
             this.btnSeleccionar.TabIndex = 1;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
@@ -128,6 +128,7 @@
             // 
             // cmxSub
             // 
+            this.cmxSub.Enabled = false;
             this.cmxSub.FormattingEnabled = true;
             this.cmxSub.Location = new System.Drawing.Point(271, 124);
             this.cmxSub.Name = "cmxSub";
@@ -143,6 +144,7 @@
             this.cbxSub.Size = new System.Drawing.Size(18, 17);
             this.cbxSub.TabIndex = 21;
             this.cbxSub.UseVisualStyleBackColor = true;
+            this.cbxSub.CheckedChanged += new System.EventHandler(this.cbxSub_CheckedChanged);
             // 
             // label1
             // 
@@ -164,6 +166,7 @@
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.Enabled = false;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(749, 34);
             this.dateTimePicker2.Name = "dateTimePicker2";
@@ -172,6 +175,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(749, 76);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -187,9 +191,11 @@
             this.cbxFecha.TabIndex = 16;
             this.cbxFecha.Text = "Fechas";
             this.cbxFecha.UseVisualStyleBackColor = true;
+            this.cbxFecha.CheckedChanged += new System.EventHandler(this.cbxFecha_CheckedChanged);
             // 
             // cmxTipo
             // 
+            this.cmxTipo.Enabled = false;
             this.cmxTipo.FormattingEnabled = true;
             this.cmxTipo.Location = new System.Drawing.Point(271, 74);
             this.cmxTipo.Name = "cmxTipo";
@@ -205,9 +211,11 @@
             this.cbxTipo.Size = new System.Drawing.Size(18, 17);
             this.cbxTipo.TabIndex = 14;
             this.cbxTipo.UseVisualStyleBackColor = true;
+            this.cbxTipo.CheckedChanged += new System.EventHandler(this.cbxTipo_CheckedChanged);
             // 
             // cmxEstado
             // 
+            this.cmxEstado.Enabled = false;
             this.cmxEstado.FormattingEnabled = true;
             this.cmxEstado.Location = new System.Drawing.Point(41, 124);
             this.cmxEstado.Name = "cmxEstado";
@@ -223,9 +231,11 @@
             this.cbxEstado.Size = new System.Drawing.Size(18, 17);
             this.cbxEstado.TabIndex = 12;
             this.cbxEstado.UseVisualStyleBackColor = true;
+            this.cbxEstado.CheckedChanged += new System.EventHandler(this.cbxEstado_CheckedChanged);
             // 
             // cmxAula
             // 
+            this.cmxAula.Enabled = false;
             this.cmxAula.FormattingEnabled = true;
             this.cmxAula.Location = new System.Drawing.Point(41, 74);
             this.cmxAula.Name = "cmxAula";
@@ -241,9 +251,11 @@
             this.cbxAula.Size = new System.Drawing.Size(18, 17);
             this.cbxAula.TabIndex = 10;
             this.cbxAula.UseVisualStyleBackColor = true;
+            this.cbxAula.CheckedChanged += new System.EventHandler(this.cbxAula_CheckedChanged);
             // 
             // cmxProfesor
             // 
+            this.cmxProfesor.Enabled = false;
             this.cmxProfesor.FormattingEnabled = true;
             this.cmxProfesor.Location = new System.Drawing.Point(41, 29);
             this.cmxProfesor.Name = "cmxProfesor";
@@ -259,6 +271,7 @@
             this.cbxProfesor.Size = new System.Drawing.Size(18, 17);
             this.cbxProfesor.TabIndex = 8;
             this.cbxProfesor.UseVisualStyleBackColor = true;
+            this.cbxProfesor.CheckedChanged += new System.EventHandler(this.cbxProfesor_CheckedChanged);
             // 
             // button2
             // 
@@ -283,7 +296,7 @@
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnVolver.Location = new System.Drawing.Point(111, 512);
+            this.btnVolver.Location = new System.Drawing.Point(134, 512);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(93, 41);
             this.btnVolver.TabIndex = 6;
@@ -294,7 +307,7 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSalir.Location = new System.Drawing.Point(111, 512);
+            this.btnSalir.Location = new System.Drawing.Point(134, 512);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(93, 41);
             this.btnSalir.TabIndex = 7;
