@@ -3,6 +3,8 @@
 ## Login
 Esta pagina sera la que aparecera tras abrir la aplicacion contara con 2 cuadros de texto en los cuales se escribira: nombre de usuario y contraseña. Tambien contara con un checkbox para recordarme si la contraseña. Tambien contara con un enlace por si has olvidado la contraseña para cambiarla o no. Por ultimo un boton de inicio de sesion que verifica si puedes entrar o no, si da fallo significa que el usuario y/o la contraseña no son correctos. Si es correcto todo te lleva a la ventana de _Mis_incidencias_.
 
+![Imagen](Python/Login.png)
+
 ___
 
 ## Mis incidencias
@@ -12,14 +14,19 @@ Seria, por asi decirlo, la ventana principal que muestra un resumen de las incid
 - __Ayuda__: Al pulsar esta opcion nos llevara a la ventana de _Ayuda_.
 - __Acerca de__: Al pulsar esta opcion nos llevara a la ventana _Acerca de_.
 
+![Imagen](Python/Mis_incidencias.png)
 
 ### Ejemplo de ventana
+
+![Imagen](Python/Incidencias_Abiertas.png)
 
 ___
 
 
 ## Notificaciones
 Esta es la ventana encarga de las notificaciones en ella se muestra una lista de notificaciones, asi como una flecha para volver a la ventana _Mis incidencias_ y la lista con las opciones de _Ayuda_ y _Acerca de_.
+
+![Imagen](Python/Notificaciones.png)
 
 ___
 
@@ -29,6 +36,9 @@ Se seria una parte de la creacion de incidencias. Cuenta con una flecha que nos 
 -__Selector 1__: Seleccionar nombre de equipo de la lista.
 -__Selector 2__: Seleccionar subtipo de incidencia de la lista.
 -__Selector 3__: Seleccionar otor dato de la lista.
+
+![Imagen](Python/Tipo_incidencia.png)
+
 ___
 
 ## Incidencia#ID
@@ -37,31 +47,14 @@ Seria la continuacion de la ventana _Tipo de incidencia_ que cuenta con muchos m
 -__Cancelar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_.
 -__Aceptar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_ pero con la nueva incidencia añadida.
 
+![Imagen](Python/IncidenciaID.png)
+
 ___
 
 ## Acerca de
 Esta ventana solo seria un resumen, cuenta con una flecha que nos devuelve a la venta _Mis incidencias_. Muestra los nombres de sus desarrolladores, un logo y un copyright con año actual.
 
-___
-
-## Login
-E
-
-___
-
-## Login
-E
-
-
-
-
-
-
-
-
-
-
-
+![Imagen](Python/Acerca_de.png)
 
 
 # Encabezado1
