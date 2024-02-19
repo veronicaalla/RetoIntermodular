@@ -24,7 +24,7 @@ Esta pagina sera en la que se realizaran la mayoria de tareas principales. Cuent
 - **Eliminar**: Al pulsar este boton si ya habias seleccionado una incidencia nos la eliminara abriendo una ventana de confirmacion o denegacion. 
 - **Crear**: Al pulsar este boton nos llevara a la pagina de creación de incidencias.
 
-Nota: Los botones de *Volver* y **Salir* dependen del usuario:
+Nota: Los botones de *Volver* y *Salir* dependen del usuario:
 - **Admin**: Se muestra *Volver* pero no *Salir*.
 - **Otro**: Se muestra *Salir* pero no *Volver*.
 
