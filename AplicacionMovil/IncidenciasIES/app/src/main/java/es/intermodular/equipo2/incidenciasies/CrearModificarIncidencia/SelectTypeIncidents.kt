@@ -1,5 +1,6 @@
 package es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import es.intermodular.equipo2.incidenciasies.R
+import es.intermodular.equipo2.incidenciasies.SpecificListIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivitySelectTypeIncidentsBinding
 
 class SelectTypeIncidents : AppCompatActivity() {
@@ -19,14 +21,25 @@ class SelectTypeIncidents : AppCompatActivity() {
         binding = ActivitySelectTypeIncidentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //En la inicializacion, no se debe ver
+        //--------------- DAMOS FUNCIONALIDAD AL TOOL BAR ----------------
+        binding.menuAtras.setOnClickListener {
+            finish()
+        }
+
+
+        //-------------- AJUSTAMOS LA VISUALIZACION INICIAL ------------
         val spinnerSubSub = binding.spinnerSubSubTipo
         spinnerSubSub.visibility = View.GONE
         binding.txtSubSubTipo.visibility = View.GONE
 
 
-        var TipoDeIncidenciaSeleccionada: String //EN el almacenaremos una cad con el texto total
+        var TipoDeIncidenciaSeleccionada: String = " "
         val spinnerTipoIncidencia = binding.spinnerTipoIncidencia
+
+
+
+        //------------------- CREAMOS LA FUNCIONALIDAD DE LOS SPINNERS ----------------
+        //Controlamos el constante cambio de valores
 
         spinnerTipoIncidencia.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -36,6 +49,7 @@ class SelectTypeIncidents : AppCompatActivity() {
                 // Aquí puedes realizar las modificaciones que necesites
                 // Por ejemplo, puedes obtener el valor seleccionado con:
                 val selectedValue = parent.getItemAtPosition(position)
+                TipoDeIncidenciaSeleccionada = "${selectedValue.toString()} "
                 // Luego, puedes realizar las modificaciones que necesites con el valor seleccionado
                 actualizacionSubSpinners(selectedValue)
             }
@@ -56,6 +70,7 @@ class SelectTypeIncidents : AppCompatActivity() {
                 // Por ejemplo, puedes obtener el valor seleccionado con:
                 val selectedValue = parent.getItemAtPosition(position)
                 // Luego, puedes realizar las modificaciones que necesites con el valor seleccionado
+                TipoDeIncidenciaSeleccionada += "${selectedValue.toString()} "
                 actualizacionSubSub(selectedValue)
             }
 
@@ -64,6 +79,35 @@ class SelectTypeIncidents : AppCompatActivity() {
                 // Aquí puedes realizar las modificaciones que necesites en caso de que no se seleccione ningún elemento
             }
         }
+
+        spinnerSubSub.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>, view: View,
+                position: Int, id: Long
+            ) {
+                // Aquí puedes realizar las modificaciones que necesites
+                // Por ejemplo, puedes obtener el valor seleccionado con:
+                val selectedValue = parent.getItemAtPosition(position)
+                // Luego, puedes realizar las modificaciones que necesites con el valor seleccionado
+                TipoDeIncidenciaSeleccionada += "${selectedValue.toString()} "
+
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Este método se llama cuando no se selecciona ningún elemento del Spinner
+                // Aquí puedes realizar las modificaciones que necesites en caso de que no se seleccione ningún elemento
+            }
+        }
+
+        //Damos funcionalidad al boton siguiente
+        binding.btnSiguiente.setOnClickListener {
+            val tipo = TipoDeIncidenciaSeleccionada.toString()
+            val intent = Intent(this, EditIncident::class.java)
+            intent.putExtra("tipo", tipo)
+            startActivity(intent)
+        }
+
 
     }
 
@@ -80,7 +124,7 @@ class SelectTypeIncidents : AppCompatActivity() {
             )
             binding.spinnerSubSubTipo.adapter = adapter
 
-        }else if (selectedValue.equals("ALTAVOZ")) {
+        } else if (selectedValue.equals("ALTAVOZ")) {
 
             binding.spinnerSubSubTipo.visibility = View.VISIBLE
             binding.txtSubSubTipo.visibility = View.VISIBLE
@@ -93,7 +137,7 @@ class SelectTypeIncidents : AppCompatActivity() {
 
             binding.spinnerSubSubTipo.adapter = adapter
 
-        }else{
+        } else {
             binding.spinnerSubSubTipo.visibility = View.GONE
             binding.txtSubSubTipo.visibility = View.GONE
         }
