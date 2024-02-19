@@ -1,12 +1,21 @@
 package es.equipo2.apirest1.repository;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import es.equipo2.apirest1.model.Estado_Incidencia;
 import es.equipo2.apirest1.model.Incidencia;
 import es.equipo2.apirest1.model.Personal;
+import es.equipo2.apirest1.model.Tipo_Incidencias;
 
 public interface IncidenciaRepository extends JpaRepository<Incidencia, Integer> {
-	List<Incidencia> findByCreador(Personal creador);
+	 List<Incidencia> findByCreadorId(int idPersonal);
+	 List<Incidencia> findByresponsableId(int idPersonal);
+	 List<Incidencia> findByEstado(Estado_Incidencia estado);
+	 List<Incidencia> findByTipo(Tipo_Incidencias tipo);
+	 List<Incidencia> findByFechaCreacion(Date fechaCreacion);
+	 List<Incidencia> findByFechaCierre(Date fechaCreacion);
 }
