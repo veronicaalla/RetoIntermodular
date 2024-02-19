@@ -25,7 +25,7 @@ ___
 ## Ayuda
 Esta ventana seria una pequeña guia de como funciona la aplicacion. Cuenta con una flecha que nos devuelve a _Mis incidencias_.
 
-|[Imagen](Python/Ayuda.png)
+![Imagen](Python/Ayuda.png)
 
 ___
 
