@@ -1,7 +1,7 @@
 # Proyecto Intermodular
 
 ## Login
-Esta pagina sera la que aparecera tras abrir la aplicacion contara con un logo y 2 cuadros de texto en los cuales se escribira: nombre de usuario y contraseña. Tambien contara con un checkbox para recordarme la contraseña. Tambien contara con un enlace por si has olvidado la contraseña para cambiarla o no. Por ultimo un boton de inicio de sesion que verifica si puedes entrar o no, si da fallo significa que el usuario y/o la contraseña no son correctos. Si es correcto todo te lleva a la ventana de _Mis_incidencias_.
+Esta pagina sera la que aparecera tras abrir la aplicacion contara con un logo y 2 cuadros de texto en los cuales se escribira: nombre de usuario y contraseña. Tambien contara con un opcion que podemos marcar o no para recordar la contraseña. Tambien contara con un enlace por si has olvidado la contraseña para cambiarla o no. Por ultimo un boton de inicio de sesion que verifica si puedes entrar o no, si da fallo significa que el usuario y/o la contraseña no son correctos. Si es correcto todo te lleva a la ventana de _Mis_incidencias_.
 
 ![Imagen](Python/Login.png)
 
@@ -48,7 +48,7 @@ Se seria una parte de la creacion de incidencias. Cuenta con una flecha que nos 
 ___
 
 ## Incidencia#ID
-Seria la continuacion de la ventana _Tipo de incidencia_ que cuenta con muchos mas datos que añadir: Tipo de incidencia (por defecto lo que estaba en los selectores 1 y 2 de la anterior), fecha de creacion, posible descripcion, identificador de equipo, estado (por defecto Abierto), fecha de cierre. Asi como 2 botones:
+Seria la continuacion de la ventana _Tipo de incidencia_ que cuenta con muchos mas datos que añadir: Tipo de incidencia (por defecto lo que estaba en los selectores 1 y 2 de la anterior), fecha de creacion, posible descripcion, identificador de equipo, estado (Abierto, Asignado, En proceso, Envia a Infortec, Resuelta, Cerrado), fecha de cierre. Asi como 2 botones:
 
 - __Cancelar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_.
 - __Aceptar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_ pero con la nueva incidencia ya añadida.
