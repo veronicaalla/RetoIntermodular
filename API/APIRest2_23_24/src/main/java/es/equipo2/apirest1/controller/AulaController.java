@@ -19,12 +19,12 @@ import es.equipo2.apirest1.repository.AulaRepository;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/aula")
 public class AulaController {
 	@Autowired
 	private AulaRepository cocheRepository;
 	
-	@GetMapping("/aula")
+	@GetMapping
 	public ResponseEntity<?> obtenerCoches(){
 		List<Aula> coches=cocheRepository.findAll();
 		if(coches.isEmpty())
@@ -33,8 +33,7 @@ public class AulaController {
 			return ResponseEntity.ok(coches);
 	}
 	
-	
-	@GetMapping("/aula/{num}")
+	@GetMapping("/{num}")
 	public ResponseEntity<?> obtenerUno(@PathVariable Integer num)
 	{
 		Aula coche = cocheRepository.findById(num).orElse(null); 
@@ -43,6 +42,11 @@ public class AulaController {
 		else 
 			return ResponseEntity.ok(coche);
 	}
+	
+	@GetMapping("/planta/{planta}")
+    public List<Aula> obtenerAulasPorPlanta(@PathVariable int planta) {
+        return cocheRepository.findByPlanta(planta);
+    }
 	
 	@PostMapping("/aula")
 	public ResponseEntity<Aula> nuevoCoche(@RequestBody Aula nuevo)

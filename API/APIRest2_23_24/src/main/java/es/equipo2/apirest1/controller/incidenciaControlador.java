@@ -1,6 +1,7 @@
 package es.equipo2.apirest1.controller;
 
 import java.sql.Date;
+import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.equipo2.apirest1.model.Estado_Incidencia;
@@ -85,6 +87,16 @@ public class incidenciaControlador {
         return incidenciaRepository.findByFechaCierre(fechaCierreSql);
     }
 
+    @GetMapping("/buscar")
+    public List<Incidencia> buscarIncidencias(@RequestParam(required = false) String descripcion,
+                                               @RequestParam(required = false) Estado_Incidencia estado,
+                                               @RequestParam(required = false) Date fechaCreacion,
+                                               @RequestParam(required = false) Date fechaCierre,
+                                               @RequestParam(required = false) Tipo_Incidencias tipo,
+                                               @RequestParam(required = false) Integer creadorId,
+                                               @RequestParam(required = false) Integer responsableId) {
+        return incidenciaRepository.findByDescripcionContainingAndEstadoAndFechaCreacionAndFechaCierreAndTipoAndCreadorIdAndResponsableId(descripcion, estado, fechaCreacion, fechaCierre, tipo, creadorId, responsableId);
+    }
     @PostMapping
     public Incidencia nuevaIncidencia(@RequestBody Incidencia nuevaIncidencia) {
         return incidenciaRepository.save(nuevaIncidencia);

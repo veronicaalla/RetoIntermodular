@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import es.equipo2.apirest1.model.Incidencia;
 import es.equipo2.apirest1.model.IncidenciasSubtipo;
+import es.equipo2.apirest1.model.Tipo_Incidencias;
 import es.equipo2.apirest1.repository.IncidenciaSubtipoRepository;
 
 @RestController
@@ -30,6 +32,11 @@ public class incidenciasSubtipoControlador {
     @GetMapping("/{id}")
     public IncidenciasSubtipo obtenerIncidenciaSubtipoPorId(@PathVariable int id) {
         return incidenciasSubtipoRepository.findById(id).orElse(null);
+    }
+    
+    @GetMapping("/tipo/{tipo}")
+    public List<IncidenciasSubtipo> buscarPorTipo(@PathVariable Tipo_Incidencias tipo) {
+        return incidenciasSubtipoRepository.findByTipo(tipo);
     }
 
     @PostMapping

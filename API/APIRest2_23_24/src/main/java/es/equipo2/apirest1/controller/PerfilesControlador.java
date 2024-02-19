@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.equipo2.apirest1.model.Perfiles;
+import es.equipo2.apirest1.model.Tipo_Perfil;
 import es.equipo2.apirest1.repository.PerfilesRepository;
 
 @RestController
@@ -30,6 +31,16 @@ public class PerfilesControlador {
     @GetMapping("/{id}")
     public Perfiles obtenerPerfilPorId(@PathVariable int id) {
         return perfilesRepository.findById(id).orElse(null);
+    }
+    
+    @GetMapping("/tipo/{perfil}")
+    public List<Perfiles> obtenerPerfilPorTipo(@PathVariable Tipo_Perfil perfil) {
+        return perfilesRepository.findByPerfil(perfil);
+    }
+    
+    @GetMapping("/dominio/{dominio}")
+    public List<Perfiles> obtenerPerfilPorDominio(@PathVariable String dominio) {
+        return perfilesRepository.findByDominio(dominio);
     }
 
     @PostMapping
