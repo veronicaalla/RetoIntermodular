@@ -18,7 +18,7 @@ Seria, por asi decirlo, la ventana principal que muestra un resumen de las incid
 
 ### Ejemplo de ventana
 
-![Imagen](Python/Incidencias_Abiertas.png)
+![Imagen](Python/Incidencias_abiertas.png)
 
 ___
 
