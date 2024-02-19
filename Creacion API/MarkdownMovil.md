@@ -33,9 +33,9 @@ ___
 ## Tipo de Incidencia
 Se seria una parte de la creacion de incidencias. Cuenta con una flecha que nos devuelve a _Mis incidencias_, un boton de siguiente que nos lleva a la ventana _Incidencia#ID_ y 3 selectores.
 
--__Selector 1__: Seleccionar nombre de equipo de la lista.
--__Selector 2__: Seleccionar subtipo de incidencia de la lista.
--__Selector 3__: Seleccionar otor dato de la lista.
+- __Selector 1__: Seleccionar nombre de equipo de la lista.
+- __Selector 2__: Seleccionar subtipo de incidencia de la lista.
+- __Selector 3__: Seleccionar otor dato de la lista.
 
 ![Imagen](Python/Tipo_incidencia.png)
 
@@ -44,8 +44,8 @@ ___
 ## Incidencia#ID
 Seria la continuacion de la ventana _Tipo de incidencia_ que cuenta con muchos mas datos que añadir: Tipo de incidencia (por defecto lo que estaba en los selectores 1 y 2 de la anterior), fecha de creacion, posible descripcion, identificador de equipo, estado (por defecto Abierto), fecha de cierre. Asi como 2 botones:
 
--__Cancelar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_.
--__Aceptar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_ pero con la nueva incidencia añadida.
+- __Cancelar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_.
+- __Aceptar__: Al pulsar esta opcion nos llevara a la ventana de _Mis incidencias_ pero con la nueva incidencia añadida.
 
 ![Imagen](Python/IncidenciaID.png)
 
