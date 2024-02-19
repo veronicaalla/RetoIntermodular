@@ -124,10 +124,7 @@ class Principal : AppCompatActivity() {
             // Mostrar el menú desplegable
             popupMenu.show()
         }
-
         initUI()
-
-
     }
 
     private fun initUI() {

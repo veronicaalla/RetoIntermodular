@@ -16,6 +16,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="be700724-fc9b-4456-8b03-03170b575062" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -23,6 +24,9 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
+=======
+    <list default="true" id="be700724-fc9b-4456-8b03-03170b575062" name="Changes" comment="" />
+>>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
