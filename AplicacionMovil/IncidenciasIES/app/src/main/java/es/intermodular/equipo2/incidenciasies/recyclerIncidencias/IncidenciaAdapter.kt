@@ -1,13 +1,33 @@
 package es.intermodular.equipo2.incidenciasies.recyclerIncidencias
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import es.intermodular.equipo2.incidenciasies.R
-import es.intermodular.equipo2.incidenciasies.modelo.Incidencia
+import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 
-class IncidenciaAdapter {
+class IncidenciaAdapter(
+    var listaIncidencias: List<IncidenciaResponse> = emptyList(),
+    private val onItemSelect: (String) -> Unit
+) : RecyclerView.Adapter<IncidenciaViewHolder>() {
+
+    fun setIncidencias(incidencias: List<IncidenciaResponse>) {
+        listaIncidencias = incidencias
+        notifyDataSetChanged()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IncidenciaViewHolder {
+        return IncidenciaViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_incidencias, parent, false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: IncidenciaViewHolder, position: Int) {
+        holder.bind(listaIncidencias[position], onItemSelect)
+    }
+
+    override fun getItemCount() = listaIncidencias.size
 }
+
+
 

@@ -32,10 +32,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/theme1"
-                android:hint="Incidencia #ID"
+                android:hint="@string/incidencia_id"
                 android:padding="10sp"
-                android:text="Incidencia #ID"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -50,14 +50,14 @@
                         android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tipo de incidencia: "
+                        android:text="@string/tipo_de_incidencia_edit"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/txtTipoIncidencia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Equipos Pc Ordenador" />
+                        android:text="@string/ejemplo_incidencia" />
                 </TableRow>
 
 
@@ -70,15 +70,15 @@
                         android:id="@+id/textView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fecha de creación: "
+                        android:text="@string/fecha_de_creaci_n"
                         android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/editTextFechaCreacion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:enabled="false"
                         android:ems="10"
+                        android:enabled="false"
                         android:inputType="date" />
 
                 </TableRow>
@@ -93,7 +93,7 @@
                         android:id="@+id/textView7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Descripción: "
+                        android:text="@string/descripcion"
                         android:textStyle="bold" />
 
 
@@ -105,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="start|top"
-                    android:hint="Escribir..."
+                    android:hint="@string/escribir"
                     android:inputType="textMultiLine" />
 
                 <TableRow
@@ -117,7 +117,7 @@
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Equipo Id "
+                        android:text="@string/equipo_id"
                         android:textStyle="bold" />
 
                     <EditText
@@ -125,7 +125,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Equipo Incidencia"
+                        android:hint="@string/equipo_incidencia"
                         android:inputType="text" />
 
                 </TableRow>
@@ -139,7 +139,7 @@
                         android:id="@+id/textView9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Estado "
+                        android:text="@string/estado"
                         android:textStyle="bold" />
 
                     <Button
@@ -147,7 +147,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:clickable="false"
-                        android:text="Abierta" />
+                        android:text="@string/prueba_estado" />
 
 
                 </TableRow>
@@ -161,7 +161,7 @@
                         android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fecha cierre: "
+                        android:text="@string/fecha_cierre"
                         android:textStyle="bold" />
 
                     <EditText
@@ -184,14 +184,14 @@
                         android:id="@+id/btnCancelar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cancelar" />
+                        android:text="@string/cancelar" />
 
                     <Button
                         android:id="@+id/btnAceptar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="Aceptar" />
+                        android:text="@string/aceptar" />
                 </TableRow>
 
             </TableLayout>
