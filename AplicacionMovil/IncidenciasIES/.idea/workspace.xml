@@ -17,17 +17,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be700724-fc9b-4456-8b03-03170b575062" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/LoginActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/Principal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/Principal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/datos/IncidenciaApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/datos/IncidenciaApiService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/SpecificListIncidents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/SpecificListIncidents.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +31,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Vladyslav\.android\avd\Medium_Phone_API_34.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\User\.android\avd\Medium_Phone_API_34.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
