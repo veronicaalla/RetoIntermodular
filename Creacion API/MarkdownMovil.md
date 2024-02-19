@@ -10,7 +10,7 @@ ___
 ## Mis incidencias
 Seria, por asi decirlo, la ventana principal que muestra un resumen de las incidencias agrupadas por estado (Abiertas, Asignadas, En proceso, Resueltas, Cerradas), asi como un lista de las ultimas incidencias añadidas. Tiene un boton para cada una que nos llevara a una ventana con una lista de las incidencias de ese estado, y al hacerlo se cambia el color del fondo del titulo. Tambien tiene un boton para añadir nuevas incidencias abajo a la derecha que nos llevara a la ventana _Tipo de Incidencia_. Arriba a la derecha cuenta con 3 opciones mas(2 ocultas tras un boton de 3 lineas):
 
-- __Añadir notificación(Campana)__: Al pulsar esta opcion nos llevara a la ventana de _Notificiaciones_.
+- __Añadir notificación(Campana)__: Al pulsar esta opcion nos llevara a la ventana de _Notificaciones_.
 - __Ayuda__: Al pulsar esta opcion nos llevara a la ventana de _Ayuda_.
 - __Acerca de__: Al pulsar esta opcion nos llevara a la ventana _Acerca de_.
 
