@@ -80,6 +80,11 @@ class LoginActivity : AppCompatActivity() {
             binding.EditTextContrasenia.setText(contraseniaGuardada)
             checkBoxRecordarme.isChecked = true
         }
+        // Configurar el OnClickListener para el TextView de olvidé contraseña
+        binding.textViewOlvideContr.setOnClickListener {
+            // Mostrar mensaje de olvidé contraseña
+            showToast("Por favor, póngase en contacto con su coordinador TIC")
+        }
     }
 
     override fun onStop() {
