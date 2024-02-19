@@ -1,0 +1,37 @@
+es.intermodular.equipo2.incidenciasies.app-core-1.12.0-0 C:\Users\Vladyslav\.gradle\caches\transforms-3\0a992fb69dfaf79798dac4d49b167158\transformed\core-1.12.0\res
+es.intermodular.equipo2.incidenciasies.app-drawerlayout-1.1.1-1 C:\Users\Vladyslav\.gradle\caches\transforms-3\116e1cc5538cb0b696b9ac611100f1df\transformed\drawerlayout-1.1.1\res
+es.intermodular.equipo2.incidenciasies.app-lifecycle-livedata-2.7.0-2 C:\Users\Vladyslav\.gradle\caches\transforms-3\11977f88365a873507c6859f579197ba\transformed\lifecycle-livedata-2.7.0\res
+es.intermodular.equipo2.incidenciasies.app-cardview-1.0.0-3 C:\Users\Vladyslav\.gradle\caches\transforms-3\1a4354d61b59807c0c9032b03bfb82b1\transformed\cardview-1.0.0\res
+es.intermodular.equipo2.incidenciasies.app-appcompat-resources-1.6.1-4 C:\Users\Vladyslav\.gradle\caches\transforms-3\1c2b95e79b3b84833e5d8799ad3f29d1\transformed\appcompat-resources-1.6.1\res
+es.intermodular.equipo2.incidenciasies.app-annotation-experimental-1.3.0-5 C:\Users\Vladyslav\.gradle\caches\transforms-3\228863afcbb817ea985f101a96bc5f44\transformed\annotation-experimental-1.3.0\res
+es.intermodular.equipo2.incidenciasies.app-startup-runtime-1.1.1-6 C:\Users\Vladyslav\.gradle\caches\transforms-3\29f35b1eaf4a12c52ca9009fa587c761\transformed\startup-runtime-1.1.1\res
+es.intermodular.equipo2.incidenciasies.app-emoji2-views-helper-1.2.0-7 C:\Users\Vladyslav\.gradle\caches\transforms-3\348e5e8e2744bf678587b3e1256d9fd2\transformed\emoji2-views-helper-1.2.0\res
+es.intermodular.equipo2.incidenciasies.app-core-ktx-1.12.0-8 C:\Users\Vladyslav\.gradle\caches\transforms-3\3b9ae2c6c82b4429739cced470af4bdd\transformed\core-ktx-1.12.0\res
+es.intermodular.equipo2.incidenciasies.app-constraintlayout-2.1.4-9 C:\Users\Vladyslav\.gradle\caches\transforms-3\4e02433abdf738f8fd561c48b0279f32\transformed\constraintlayout-2.1.4\res
+es.intermodular.equipo2.incidenciasies.app-viewpager2-1.0.0-10 C:\Users\Vladyslav\.gradle\caches\transforms-3\625fbf41786ffc45fa096f951cd2af8b\transformed\viewpager2-1.0.0\res
+es.intermodular.equipo2.incidenciasies.app-lifecycle-viewmodel-2.7.0-11 C:\Users\Vladyslav\.gradle\caches\transforms-3\64d05bb2b7ca35605d029f56c68e9e46\transformed\lifecycle-viewmodel-2.7.0\res
+es.intermodular.equipo2.incidenciasies.app-lifecycle-viewmodel-savedstate-2.7.0-12 C:\Users\Vladyslav\.gradle\caches\transforms-3\6f85d70f7611e0c79ba61b8ceefab1eb\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
+es.intermodular.equipo2.incidenciasies.app-activity-1.8.0-13 C:\Users\Vladyslav\.gradle\caches\transforms-3\73064ef97e7ccba96d2d3e6e0781c50b\transformed\activity-1.8.0\res
+es.intermodular.equipo2.incidenciasies.app-lifecycle-livedata-core-2.7.0-14 C:\Users\Vladyslav\.gradle\caches\transforms-3\73ac0c9d2552bd7e4138ae19d39c7842\transformed\lifecycle-livedata-core-2.7.0\res
+es.intermodular.equipo2.incidenciasies.app-profileinstaller-1.3.0-15 C:\Users\Vladyslav\.gradle\caches\transforms-3\8025a341fde4862027ae497659bfbf3c\transformed\profileinstaller-1.3.0\res
+es.intermodular.equipo2.incidenciasies.app-savedstate-1.2.1-16 C:\Users\Vladyslav\.gradle\caches\transforms-3\8c94d522c77e4e34e35915ee735c788f\transformed\savedstate-1.2.1\res
+es.intermodular.equipo2.incidenciasies.app-lifecycle-runtime-2.7.0-17 C:\Users\Vladyslav\.gradle\caches\transforms-3\a4258e67ed5e39a4fc4b2ec78ee60c60\transformed\lifecycle-runtime-2.7.0\res
+es.intermodular.equipo2.incidenciasies.app-material-1.11.0-18 C:\Users\Vladyslav\.gradle\caches\transforms-3\a690b269fdae87765d7d9b2f00727dff\transformed\material-1.11.0\res
+es.intermodular.equipo2.incidenciasies.app-lifecycle-process-2.7.0-19 C:\Users\Vladyslav\.gradle\caches\transforms-3\a98b181eaa144163716943b8d7e3c327\transformed\lifecycle-process-2.7.0\res
+es.intermodular.equipo2.incidenciasies.app-lifecycle-livedata-ktx-2.7.0-20 C:\Users\Vladyslav\.gradle\caches\transforms-3\af749246b3f057811eba1c1c5a8dbba4\transformed\lifecycle-livedata-ktx-2.7.0\res
+es.intermodular.equipo2.incidenciasies.app-transition-1.2.0-21 C:\Users\Vladyslav\.gradle\caches\transforms-3\b36ce438f500933ce530c991cde81c2d\transformed\transition-1.2.0\res
+es.intermodular.equipo2.incidenciasies.app-coordinatorlayout-1.1.0-22 C:\Users\Vladyslav\.gradle\caches\transforms-3\b72d40ca4c0880ebd6f3d888d4f8bae8\transformed\coordinatorlayout-1.1.0\res
+es.intermodular.equipo2.incidenciasies.app-fragment-1.3.6-23 C:\Users\Vladyslav\.gradle\caches\transforms-3\bc4895871d907b9ff95e47b1550c9f7e\transformed\fragment-1.3.6\res
+es.intermodular.equipo2.incidenciasies.app-recyclerview-1.1.0-24 C:\Users\Vladyslav\.gradle\caches\transforms-3\bcfb46fb77e495bad5635ae20916d878\transformed\recyclerview-1.1.0\res
+es.intermodular.equipo2.incidenciasies.app-emoji2-1.2.0-25 C:\Users\Vladyslav\.gradle\caches\transforms-3\be554354f11e19abc6f185866628b961\transformed\emoji2-1.2.0\res
+es.intermodular.equipo2.incidenciasies.app-lifecycle-viewmodel-ktx-2.7.0-26 C:\Users\Vladyslav\.gradle\caches\transforms-3\c89c126ddebed538d4dd05b6d721f3fa\transformed\lifecycle-viewmodel-ktx-2.7.0\res
+es.intermodular.equipo2.incidenciasies.app-core-runtime-2.2.0-27 C:\Users\Vladyslav\.gradle\caches\transforms-3\c8a1f78857fe3061c3dd6a3d6e795149\transformed\core-runtime-2.2.0\res
+es.intermodular.equipo2.incidenciasies.app-lifecycle-livedata-core-ktx-2.7.0-28 C:\Users\Vladyslav\.gradle\caches\transforms-3\d61b91eee63e94d2d942a15e9076e55c\transformed\lifecycle-livedata-core-ktx-2.7.0\res
+es.intermodular.equipo2.incidenciasies.app-appcompat-1.6.1-29 C:\Users\Vladyslav\.gradle\caches\transforms-3\dbe3962d9aec76139097d4ab0707e85b\transformed\appcompat-1.6.1\res
+es.intermodular.equipo2.incidenciasies.app-pngs-30 C:\Users\Vladyslav\Desktop\RETO Intermodular\RetoIntermodular\AplicacionMovil\IncidenciasIES\app\build\generated\res\pngs\debug
+es.intermodular.equipo2.incidenciasies.app-resValues-31 C:\Users\Vladyslav\Desktop\RETO Intermodular\RetoIntermodular\AplicacionMovil\IncidenciasIES\app\build\generated\res\resValues\debug
+es.intermodular.equipo2.incidenciasies.app-packageDebugResources-32 C:\Users\Vladyslav\Desktop\RETO Intermodular\RetoIntermodular\AplicacionMovil\IncidenciasIES\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+es.intermodular.equipo2.incidenciasies.app-packageDebugResources-33 C:\Users\Vladyslav\Desktop\RETO Intermodular\RetoIntermodular\AplicacionMovil\IncidenciasIES\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+es.intermodular.equipo2.incidenciasies.app-merged_res-34 C:\Users\Vladyslav\Desktop\RETO Intermodular\RetoIntermodular\AplicacionMovil\IncidenciasIES\app\build\intermediates\merged_res\debug
+es.intermodular.equipo2.incidenciasies.app-debug-35 C:\Users\Vladyslav\Desktop\RETO Intermodular\RetoIntermodular\AplicacionMovil\IncidenciasIES\app\src\debug\res
+es.intermodular.equipo2.incidenciasies.app-main-36 C:\Users\Vladyslav\Desktop\RETO Intermodular\RetoIntermodular\AplicacionMovil\IncidenciasIES\app\src\main\res
