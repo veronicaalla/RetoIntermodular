@@ -140,7 +140,7 @@ class Principal : AppCompatActivity() {
         binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         binding.rvIncidencias.adapter = adapter
 
-        //Mostramos los items
+      /*  //Mostramos los items
         CoroutineScope(Dispatchers.IO).launch {
             val myResponse: Response<List<IncidenciaResponse>> =
                 retrofit.create(IncidenciaApiService::class.java).getIncidencias()
@@ -151,7 +151,7 @@ class Principal : AppCompatActivity() {
                     adapter.setIncidencias(listIncidencias)
                 }
             }
-        }
+        }*/
     }
 
     private fun mostrarLayoutAyuda() {
