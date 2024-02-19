@@ -25,10 +25,12 @@ class Principal : AppCompatActivity() {
 
     private lateinit var binding: ActivityPrincipalBinding
     private lateinit var retrofit: Retrofit
-    var adapter: RecyclerView.Adapter<*>? = null
+    private lateinit var adapter: IncidenciaAdapter
+    //var adapter: RecyclerView.Adapter<*>? = null
 
-    var recyclerView: RecyclerView? = null
-    var layoutManager: RecyclerView.LayoutManager? = null
+    //var recyclerView: RecyclerView? = null
+    //var layoutManager: RecyclerView.LayoutManager? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -128,8 +130,6 @@ class Principal : AppCompatActivity() {
         }
 
         initUI()
-
-
     }
 
     private fun initUI() {
@@ -147,7 +147,17 @@ class Principal : AppCompatActivity() {
         binding.rvIncidencias.adapter = adapter
 
         //Mostramos los items
+        CoroutineScope(Dispatchers.IO).launch {
+            val myResponse: Response<List<IncidenciaResponse>> =
+                retrofit.create(IncidenciaApiService::class.java).getIncidencias()
 
+            if (myResponse.isSuccessful) {
+                val listIncidencias: List<IncidenciaResponse>? = myResponse.body()
+                if (listIncidencias != null) {
+                    adapter.setIncidencias(listIncidencias)
+                }
+            }
+        }
     }
 
     private fun mostrarLayoutAyuda() {
@@ -169,8 +179,6 @@ class Principal : AppCompatActivity() {
 
         // Añadir la vista a tu layout principal
         setContentView(helpView)
-
-        // Lógica adicional para mostrar la ayuda
     }
 
     private fun mostrarLayoutAcercaDe() {
