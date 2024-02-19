@@ -1,6 +1,6 @@
 package es.intermodular.equipo2.incidenciasies.recyclerIncidencias
 
-import es.intermodular.equipo2.incidenciasies.datos.incidencias.IncidenciaApi
+import es.intermodular.equipo2.incidenciasies.datos.IncidenciaApi
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 
 class IncidenciaRepository {

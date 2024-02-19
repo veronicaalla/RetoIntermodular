@@ -18,9 +18,5 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
         //NOTA:
         //Cuando obtenemos el estado de la incidencia, dependiendo de su ESTADO
         //el btn (no clicable) será de un color u otro
-
-        binding.btnVolver.setOnClickListener {
-
-        }
     }
 }
