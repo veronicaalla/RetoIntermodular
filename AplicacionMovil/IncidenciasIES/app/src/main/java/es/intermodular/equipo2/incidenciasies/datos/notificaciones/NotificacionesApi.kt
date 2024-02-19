@@ -1,4 +1,10 @@
 package es.intermodular.equipo2.incidenciasies.datos.notificaciones
 
-class NotificacionesApi {
+import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
+
+object NotificacionesApi {
+
+    private val retrofit = RetrofitBuilder.build()
+    val retrofitService: NotificacionesApiService by lazy { retrofit.create(NotificacionesApiService::class.java) }
+
 }

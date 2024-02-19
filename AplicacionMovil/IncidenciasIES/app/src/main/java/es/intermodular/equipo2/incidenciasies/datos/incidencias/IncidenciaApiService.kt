@@ -9,5 +9,4 @@ interface IncidenciaApiService {
     @GET("api/incidencias")
     suspend fun getIncidencias(): List<IncidenciaResponse>
 
-
 }
