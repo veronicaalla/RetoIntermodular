@@ -13,8 +13,8 @@ namespace ProyectoIntermodular.Clases
         public int num { get; set; }
         public TipoIncidencia tipo { get; set; }
         public int subtipo_id { get; set; }
-        public DateTime fecha_creacion { get; set; }
-        public DateTime? fecha_cierre { get; set; }
+        public DateTime fechaCreacion { get; set; }
+        public DateTime? fechaCierre { get; set; }
         public string descripcion { get; set; }
         public EstadoIncidencia estado { get; set; }
         public string adjunto_url { get; set; }
@@ -34,8 +34,8 @@ namespace ProyectoIntermodular.Clases
             this.num = num;
             this.tipo = tipo;
             this.subtipo_id = subtipo_id;
-            this.fecha_creacion = fecha_creacion;
-            this.fecha_cierre = fecha_cierre;
+            this.fechaCreacion = fecha_creacion;
+            this.fechaCierre = fecha_cierre;
             this.descripcion = descripcion;
             this.estado = estado;
             this.adjunto_url = adjunto_url;
