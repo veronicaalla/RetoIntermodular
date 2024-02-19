@@ -21,33 +21,40 @@ namespace ProyectoIntermodular.Formularios
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            controladorPersonal= new ControladorPersonal(); 
+            controladorPersonal = new ControladorPersonal();
             person = new Personal();
             GetPersonal();
         }
 
         private async void GetPersonal()
         {
-            person = await controladorPersonal.GetPersonal();
+            lista = await controladorPersonal.GetPersonal();
 
-            if (person != null)
+            if (lista != null)
             {
-                foreach(var personal in lista)
+                foreach (var personal in lista)
                 {
                     DataGridViewRow row = new DataGridViewRow();
                     row.CreateCells(dgvPerfiles);
 
-                    row.Cells[0].Value = person.nombre;
-                    row.Cells[1].Value = person.apellido1;
-                    row.Cells[2].Value = person.dni;
-                    row.Cells[3].Value = person.direccion;
+                    row.Cells[0].Value = personal.nombre;
+                    row.Cells[1].Value = personal.apellido1;
+                    row.Cells[2].Value = personal.dni;
+                    row.Cells[3].Value = personal.direccion;
+                    row.Cells[4].Value = personal.localidad;
+                    row.Cells[5].Value = personal.cp;
+                    row.Cells[6].Value = personal.tlf;
+                    if (personal.activo == true) {row.Cells[7].Value = "SI";}
+                    else { row.Cells[7].Value = "NO"; }
+                    
 
                     dgvPerfiles.Rows.Add(row);
                 }
             }
         }
+    
 
-            private void btnVolver_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
             ControlUsuarios controlUsuarios = new ControlUsuarios();
             this.Hide();
@@ -56,7 +63,7 @@ namespace ProyectoIntermodular.Formularios
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ModificarUsuario modificarUsuario   = new ModificarUsuario();
+            ModificarUsuario modificarUsuario = new ModificarUsuario();
             this.Hide();
             modificarUsuario.Show();
         }
@@ -69,3 +76,9 @@ namespace ProyectoIntermodular.Formularios
         }
     }
 }
+    
+
+
+
+
+

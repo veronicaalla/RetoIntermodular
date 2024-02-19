@@ -40,6 +40,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@
             this.Direccion,
             this.Localidad,
             this.CP,
-            this.Tlfno});
+            this.Tlfno,
+            this.Activo});
             this.dgvPerfiles.Location = new System.Drawing.Point(21, 21);
             this.dgvPerfiles.Name = "dgvPerfiles";
             this.dgvPerfiles.RowHeadersWidth = 51;
@@ -150,6 +152,13 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.MinimumWidth = 6;
+            this.Activo.Name = "Activo";
+            this.Activo.Width = 125;
+            // 
             // SeleccionarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -181,5 +190,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn CP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tlfno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
     }
 }

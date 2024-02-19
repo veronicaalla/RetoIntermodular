@@ -16,22 +16,19 @@ namespace ProyectoIntermodular.Controladores
         public ControladorPersonal()
         {
             client=new HttpClient();
-        } 
+        }
 
-        public async Task<Personal> GetPersonal()
+        public async Task<List<Personal>> GetPersonal()
         {
             try
             {
-                Personal personal = new Personal();
-                HttpResponseMessage response = await
-                    client.GetAsync("http://localhost:8080/api/personal");
+                HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/personal");
                 response.EnsureSuccessStatusCode();
 
-                string responseJson=await response.Content.ReadAsStringAsync();
+                string responseJson = await response.Content.ReadAsStringAsync();
 
-                personal=JsonConvert.DeserializeObject<Personal>
-                    (responseJson);
-                return personal;
+                List<Personal> personas = JsonConvert.DeserializeObject<List<Personal>>(responseJson);
+                return personas;
             }
             catch (Exception)
             {

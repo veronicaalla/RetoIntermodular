@@ -27,6 +27,7 @@ namespace ProyectoIntermodular
             pictureBox1.Enabled = false;
             pictureBox1.Hide();
 
+
         }
 
         private async void btnIniciar_Click(object sender, EventArgs e)
