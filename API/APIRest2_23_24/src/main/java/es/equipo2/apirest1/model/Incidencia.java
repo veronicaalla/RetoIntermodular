@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
@@ -30,6 +31,7 @@ public class Incidencia implements Serializable {
 
 	private Date fechaCreacion;
 
+	@Column(name = "tiempo_dec")
 	private Time tiempo_dec;
 	
 	@Enumerated(EnumType.STRING)

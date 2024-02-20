@@ -25,5 +25,28 @@ class SpecificListIncidents : AppCompatActivity() {
         binding.menuAtras.setOnClickListener {
             finish()
         }
+
+        when (typeOfIncidents) {
+            "Abiertas" -> {
+                binding.toolbar.setBackgroundColor(getResources().getColor(R.color.colorEnAbierto))
+            }
+
+            "Asignadas" -> {
+                binding.toolbar.setBackgroundColor(getResources().getColor(R.color.colorAsignado))
+            }
+
+            "En Proceso" -> {
+                binding.toolbar.setBackgroundColor(getResources().getColor(R.color.colorEnProceso))
+            }
+
+            "Resueltas" -> {
+                binding.toolbar.setBackgroundColor(getResources().getColor(R.color.colorResuelto))
+            }
+
+            "Cerradas" -> {
+                binding.toolbar.setBackgroundColor(getResources().getColor(R.color.colorCerrado))
+            }
+
+        }
     }
 }

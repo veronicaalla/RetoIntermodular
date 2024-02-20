@@ -1,13 +1,14 @@
 package es.intermodular.equipo2.incidenciasies
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.ConnectivityManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.PopupMenu
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
 import es.intermodular.equipo2.incidenciasies.datos.IncidenciaApiService
@@ -17,9 +18,9 @@ import es.intermodular.equipo2.incidenciasies.recyclerIncidencias.IncidenciaAdap
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
 import retrofit2.Response
 import retrofit2.Retrofit
+
 
 class Principal : AppCompatActivity() {
 
@@ -34,6 +35,7 @@ class Principal : AppCompatActivity() {
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        isOnline(this)
         //We give functionality to the buttons
         binding.btnAbiertas.setOnClickListener {
             val intent = Intent(this, SpecificListIncidents::class.java)
@@ -124,10 +126,13 @@ class Principal : AppCompatActivity() {
             // Mostrar el menú desplegable
             popupMenu.show()
         }
+
+        retrofit = RetrofitBuilder.build()
         initUI()
     }
 
     private fun initUI() {
+
         //Damos valor al recycler view
         retrofit = RetrofitBuilder.build()
         adapter = IncidenciaAdapter { incidenciaId ->
@@ -141,20 +146,30 @@ class Principal : AppCompatActivity() {
         binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         binding.rvIncidencias.adapter = adapter
 
-        /*
-        //Mostramos los items
-        CoroutineScope(Dispatchers.IO).launch {
-            val myResponse: Response<List<IncidenciaResponse>> =
-                retrofit.create(IncidenciaApiService::class.java).getIncidencias()
 
-            if (myResponse.isSuccessful) {
-                val listIncidencias: List<IncidenciaResponse>? = myResponse.body()
-                if (listIncidencias != null) {
-                    adapter.setIncidencias(listIncidencias)
+        //Mostramos los items
+        val idUsuarioPrueba: Int = 1;
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val myResponse: Response<List<IncidenciaResponse>> =
+                    retrofit.create(IncidenciaApiService::class.java)
+                        .getIncidenciasUsuario(idUsuarioPrueba)
+
+                if (myResponse.isSuccessful) {
+                    val response: List<IncidenciaResponse>? = myResponse.body()
+                    if (response != null) {
+                        runOnUiThread {
+                            adapter.updateIncidencias(response)
+                        }
+                    }
+                } else {
+                    Log.e("Incidencias", "Error al obtener las incidencias")
                 }
+            } catch (e: Exception) {
+                Log.e("Incidencias", "Error: ${e.message}")
             }
         }
-        */
+
     }
 
     private fun mostrarLayoutAyuda() {
@@ -196,6 +211,13 @@ class Principal : AppCompatActivity() {
         }
         // Añadir la vista a tu layout principal
         setContentView(aboutView)
+    }
+
+    fun isOnline(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = connectivityManager.activeNetworkInfo
+        return networkInfo != null && networkInfo.isAvailable && networkInfo.isConnected
     }
 
 }
