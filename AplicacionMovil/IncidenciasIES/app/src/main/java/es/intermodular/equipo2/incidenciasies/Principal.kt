@@ -1,16 +1,16 @@
 package es.intermodular.equipo2.incidenciasies
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.PopupMenu
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
-import es.intermodular.equipo2.incidenciasies.datos.IncidenciaApi
 import es.intermodular.equipo2.incidenciasies.datos.IncidenciaApiService
 import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
@@ -20,6 +20,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import retrofit2.Retrofit
+
 
 class Principal : AppCompatActivity() {
 
@@ -34,6 +35,7 @@ class Principal : AppCompatActivity() {
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        isOnline(this)
         //We give functionality to the buttons
         binding.btnAbiertas.setOnClickListener {
             val intent = Intent(this, SpecificListIncidents::class.java)
@@ -233,6 +235,13 @@ class Principal : AppCompatActivity() {
         }
         // Añadir la vista a tu layout principal
         setContentView(aboutView)
+    }
+
+    fun isOnline(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = connectivityManager.activeNetworkInfo
+        return networkInfo != null && networkInfo.isAvailable && networkInfo.isConnected
     }
 
 }
