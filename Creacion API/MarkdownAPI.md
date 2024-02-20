@@ -41,30 +41,42 @@ ___
 ## Personal-controlador(GET(/api/personal))
 En esta imagen se muestra como se usa el metodo mostrar personal.
 
+![Imagen](Python_e_imagenes/API/get_api_personal.PNG)
+
 ___
 
 ## Personal-controlador(POST(/api/personal))
 En esta imagen se muestra como funciona el metodo crear personal.
+
+![Imagen](Python_e_imagenes/API/post_api_personal.PNG)
 
 ___
 
 ## Personal-controlador(GET(/api/personal/nombre/{nombre}))
 En esta imagen se muestra como se usa el metodo buscar nombre de personal por nombre.
 
+![Imagen](Python_e_imagenes/API/get_api_personal_nombre_nombre.PNG)
+
 ___
 
 ## Personal-controlador(GET(/api/personal/apellido2/{apellido}))
 En esta imagen se muestra como se usa el metodo buscar apellido2 de personal por apellido.
+
+![Imagen](Python_e_imagenes/API/get_api_personal_apellido2_apellido.PNG)
 
 ___
 
 ## Personal-controlador(GET(/api/personal/apellido1/{apellido}))
 En esta imagen se muestra como se usa el metodo buscar apellido1 de personal por apellido.
 
+![Imagen](Python_e_imagenes/API/get_api_personal_apellido1_apellido.PNG)
+
 ___
 
 ## Personal-controlador(DELETE(/api/personal/borrar_usuario/{idUsuario}))
 En esta imagen se muestra como se usa el metodo borrar personal por idUsuario. Este metodo tambien requiere id de Administrador y contraseña de Administrador.
+
+![Imagen](Python_e_imagenes/API/delete_api_personal_borrar-usuario_idUsuario.PNG)
 
 ___
 
