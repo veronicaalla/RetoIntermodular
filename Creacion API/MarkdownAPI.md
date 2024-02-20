@@ -8,9 +8,9 @@ En esta imagen se pueden ver algunos metodos del controlador personal; ya se mos
 - __DELETE(/api/personal/{id})__: Elimina un elemento personal introduciendo un id.
 - __GET(/api/personal)__: Muestra los datos de todos los elementos personal.
 - __POST(/api/personal)__: Crea un nuevo elemento personal introduciendo un id.
-- __GET(/api/personal/nombre/{nombre})__: Muestra el nombre de todos los elementos personal introduciendo un nombre.
-- __GET(/api/personal/apellido2/{apellido})__: Muestra el segundo apellido de todos los elementos personal introduciendo un apellido.
-- __GET(/api/personal/apellido1/{apellido})__: Muestra el primer apellido de un elemento personal introduciendo un apellido.
+- __GET(/api/personal/nombre/{nombre})__: Muestra todos los elementos personal introduciendo un nombre.
+- __GET(/api/personal/apellido2/{apellido})__: Muestra todos los elementos personal introduciendo un apellido1.
+- __GET(/api/personal/apellido1/{apellido})__: Muestra todos los elemento personal introduciendo un apellido2.
 - __DELETE(/api/personal/borrar_usuario/{idUsuario})__: Elimina un elemento personal introduciendo un id desde borrar_usuario.
 
 ![Imagen](Python_e_imagenes/API/personal_controlador.PNG)
@@ -88,8 +88,8 @@ En esta imagen se pueden ver algunos metodos del controlador perfiles; ya se mos
 - __DELETE(/api/perfiles/{id})__: Elimina un elemento perfil introduciendo un id.
 - __GET(/api/perfiles)__: Muestra los datos de todos los elementos perfil.
 - __POST(/api/perfiles)__: Crea un nuevo elemento perfil introduciendo un id.
-- __GET(/api/perfiles/tipo/{perfil})__: Muestra el tipo perfil de todos los elementos perfil introduciendo un perfil.
-- __GET(/api/perfiles/dominio/{dominio})__: Muestra el dominio de todos los elementos perfil introduciendo un dominio.
+- __GET(/api/perfiles/tipo/{perfil})__: Muestra todos los elementos perfil introduciendo un perfil.
+- __GET(/api/perfiles/dominio/{dominio})__: Muestra todos los elementos perfil introduciendo un dominio.
 
 ![Imagen](Python_e_imagenes/API/perfiles_controlador.PNG)
 
@@ -117,7 +117,7 @@ En esta imagen se pueden ver algunos metodos del controlador incidencias-subtipo
 - __DELETE(/api/incidencias-subtipos/{id})__: Elimina un elemento incidencias-subtipos introduciendo un id.
 - __GET(/api/incidencias-subtipos)__: Muestra los datos de todos los elementos incidencias-subtipos.
 - __POST(/api/incidencias-subtipos)__: Crea un nuevo elemento incidencias-subtipos introduciendo un id.
-- __GET(/api/incidencias-subtipos/tipo/{tipo})__: Muestra el tipo de todos los elementos incidencias-subtipos introduciendo un tipo de incidencia.
+- __GET(/api/incidencias-subtipos/tipo/{tipo})__: Muestra todos los elementos incidencias-subtipos introduciendo un tipo de incidencia.
 
 ![Imagen](Python_e_imagenes/API/incidencias-subtipo_controlador.PNG)
 
@@ -139,11 +139,11 @@ En esta imagen se pueden ver algunos metodos del controlador personal; ya se mos
 - __GET(/api/incidencias)__: Muestra los datos de todos los elementos incidencias.
 - __POST(/api/incidencias)__: Crea un nuevo elemento incidencias.
 - __GET(/api/incidencias/tipo/{tipo})__: Muestra el tipo de todos los elementos incidencias introduciendo un tipo de incidencias.
-- __GET(/api/incidencias/responsable/{id})__: Muestra el responsable de todos los elementos incidencias introduciendo un id de responsable.
-- __GET(/api/incidencias/fecha-creacion/{fechaCreacion})__: Muestra la fecha de creacion de todos los elementos incidencias introduciendo una fecha de creacion.
-- __GET(/api/incidencias/fecha-cierre/{fechaCierre})__: Muestra la fecha de cierre de todos los elementos incidencias introduciendo una fecha de cierre. 
-- __GET(/api/incidencias/fecha-estado/{estado})__: Muestra el estado de todos los elementos incidencias introduciendo un estado.
-- __GET(/api/incidencias/creador/{id})__: Muestra el creador de todos los elementos incidencias introduciendo un id de creador.
+- __GET(/api/incidencias/responsable/{id})__: Muestra todos los elementos incidencias introduciendo un id de responsable.
+- __GET(/api/incidencias/fecha-creacion/{fechaCreacion})__: Muestra todos los elementos incidencias introduciendo una fecha de creacion.
+- __GET(/api/incidencias/fecha-cierre/{fechaCierre})__: Muestra todos los elementos incidencias introduciendo una fecha de cierre. 
+- __GET(/api/incidencias/fecha-estado/{estado})__: Muestra todos los elementos incidencias introduciendo un estado.
+- __GET(/api/incidencias/creador/{id})__: Muestra todos los elementos incidencias introduciendo un id de creador.
 - __GET(/api/incidencias/buscar)__: Muestra un buscador de incidencias.
 
 ![Imagen](Python_e_imagenes/API/incidencia_controlador.PNG)
@@ -236,8 +236,8 @@ En esta imagen se pueden ver algunos metodos del controlador aula; ya se mostrar
 - __PUT(/api/aula/aula/{num})__: Modifica un elemento aula introduciendo un num.
 - __DELETE(/api/aula/aula/{num})__: Elimina un elemento aula introduciendo un num.
 - __POST(/api/aula/aula)__: Crea un nuevo elemento aula.
-- __GET(/api/aula)__: Muestra los datos de un elemento aula introduciendo un num.
-- __GET(/api/aula/{num})__: Muestra el num de todos los elementos aula introduciendo un num.
+- __GET(/api/aula)__: Muestra los datos de todos los elementos aula.
+- __GET(/api/aula/{num})__: Muestra todos los elementos aula introduciendo un num.
 - __GET(/api/aula/planta/{planta})__: Muestra la planta de todos los elementos aula introduciendo una planta.
 
 ![Imagen](Python_e_imagenes/API/aula_controlador.PNG)
