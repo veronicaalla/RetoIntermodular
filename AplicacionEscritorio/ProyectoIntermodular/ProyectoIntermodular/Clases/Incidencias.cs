@@ -17,11 +17,13 @@ namespace ProyectoIntermodular.Clases
         public DateTime? fechaCierre { get; set; }
         public string descripcion { get; set; }
         public EstadoIncidencia estado { get; set; }
-        public string adjunto_url { get; set; }
-        public int creador_id { get; set; }
-        public int responsable_id { get; set; }
-        public int equipo_id { get; set; }
+        public string adjuntoUrl { get; set; }
+        public Personal creador { get; set; }
+        public Personal responsable { get; set; }
+        public Equipos equipo { get; set; }
+        
 
+       
         
         public Incidencias()
         {
@@ -29,7 +31,7 @@ namespace ProyectoIntermodular.Clases
         }
 
         
-        public Incidencias(int num, TipoIncidencia tipo, int subtipo_id, DateTime fecha_creacion, DateTime? fecha_cierre, string descripcion, EstadoIncidencia estado, string adjunto_url, int creador_id, int responsable_id, int equipo_id)
+        public Incidencias(int num, TipoIncidencia tipo, int subtipo_id, DateTime fecha_creacion, DateTime? fecha_cierre, string descripcion, EstadoIncidencia estado, string adjunto_url, Personal creador_id, Personal responsable_id, Equipos equipo_id)
         {
             this.num = num;
             this.tipo = tipo;
@@ -38,10 +40,10 @@ namespace ProyectoIntermodular.Clases
             this.fechaCierre = fecha_cierre;
             this.descripcion = descripcion;
             this.estado = estado;
-            this.adjunto_url = adjunto_url;
-            this.creador_id = creador_id;
-            this.responsable_id = responsable_id;
-            this.equipo_id = equipo_id;
+            this.adjuntoUrl = adjunto_url;
+            this.creador = creador_id;
+            this.responsable = responsable_id;
+            this.equipo = equipo_id;
         }
     }
 

@@ -53,6 +53,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +72,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Num,
             this.Tipo,
             this.Subtipo,
             this.FechaCreacion,
@@ -336,6 +338,13 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // Num
+            // 
+            this.Num.HeaderText = "Numero";
+            this.Num.MinimumWidth = 6;
+            this.Num.Name = "Num";
+            this.Num.Width = 125;
+            // 
             // Tipo
             // 
             this.Tipo.HeaderText = "Tipo";
@@ -455,6 +464,7 @@
         private System.Windows.Forms.CheckBox cbxSub;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaCreacion;
