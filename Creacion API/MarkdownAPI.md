@@ -14,10 +14,53 @@ En esta imagen se pueden ver algunos metodos del controlador personal; ya se mos
 - __DELETE(/api/personal/borrar_usuario/{idUsuario})__: Elimina un elemento personal introduciendo un id desde borrar_usuario.
 
 ![Imagen](Python_e_imagenes/API/personal_controlador.PNG)
+
 ___
 
+## Personal-controlador(GET(/api/personal/{id}))
+En esta imagen se muestra como se usa el metodo buscar personal por id.
 
+___
 
+## Personal-controlador(PUT(/api/personal/{id}))
+En esta imagen se muestra como se usa el metodo modificar personal por id.
+
+___
+
+## Personal-controlador(DELETE(/api/personal/{id}))
+En esta imagen se muestra como se usa el metodo eliminar personal por id.
+
+___
+
+## Personal-controlador(GET(/api/personal))
+En esta imagen se muestro como se usa el metodo mostrar personal.
+
+___
+
+## Personal-controlador(POST(/api/personal))
+En esta imagen se pueden mostrar como funciona el metodo crear personal.
+
+___
+
+## Personal-controlador(GET(/api/personal/nombre/{nombre}))
+En esta imagen se muestra como se usa el metodo buscar nombre de personal por id.
+
+___
+
+## Personal-controlador(GET(/api/personal/apellido2/{apellido}))
+En esta imagen se pueden ver algunos metodos del controlador personal; ya se mostrar, modificar o eliminar.
+
+___
+
+## Personal-controlador(GET(/api/personal/apellido1/{apellido}))
+En esta imagen se pueden ver algunos metodos del controlador personal; ya se mostrar, modificar o eliminar.
+
+___
+
+## Personal-controlador(DELETE(/api/personal/borrar_usuario/{idUsuario}))
+En esta imagen se pueden ver algunos metodos del controlador personal; ya se mostrar, modificar o eliminar.
+
+___
 
 # Encabezado1
 ## Encabezado2
