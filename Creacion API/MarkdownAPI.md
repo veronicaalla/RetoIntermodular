@@ -20,15 +20,21 @@ ___
 ## Personal-controlador(GET(/api/personal/{id}))
 En esta imagen se muestra como se usa el metodo buscar personal por id.
 
+![Imagen](Python_e_imagenes/API/get_api_personal_id.PNG)
+
 ___
 
 ## Personal-controlador(PUT(/api/personal/{id}))
 En esta imagen se muestra como se usa el metodo modificar personal por id.
 
+![Imagen](Python_e_imagenes/API/put_api_personal_id.PNG)
+
 ___
 
 ## Personal-controlador(DELETE(/api/personal/{id}))
 En esta imagen se muestra como se usa el metodo eliminar personal por id.
+
+![Imagen](Python_e_imagenes/API/delete_api_personal_id.PNG)
 
 ___
 
