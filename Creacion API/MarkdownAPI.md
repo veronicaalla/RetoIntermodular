@@ -215,11 +215,34 @@ En esta imagen se pueden ver algunos metodos del controlador departamento; ya se
 
 ![Imagen](Python_e_imagenes/API/departamento_controlador.PNG)
 
+___
 
+## Comentario-controlador
+En esta imagen se pueden ver algunos metodos del controlador comentario; ya se mostrar, modificar o eliminar.
 
+- __GET(/api/comentarios/{id})__: Muestra los datos de un elemento comentario introduciendo un id.
+- __PUT(/api/comentarios/{id})__: Modifica un elemento comentario introduciendo un id.
+- __DELETE(/api/comentarios/{id})__: Elimina un elemento comentario introduciendo un id.
+- __GET(/api/comentarios)__: Muestra los datos de todos los elementos comentario.
+- __POST(/api/comentarios)__: Crea un nuevo elemento comentario introduciendo un id.
 
+![Imagen](Python_e_imagenes/API/comentario_controlador.PNG)
 
+___
 
+## aula-controlador
+En esta imagen se pueden ver algunos metodos del controlador aula; ya se mostrar, modificar o eliminar.
+
+- __PUT(/api/aula/aula/{num})__: Modifica un elemento aula introduciendo un num.
+- __DELETE(/api/aula/aula/{num})__: Elimina un elemento aula introduciendo un num.
+- __POST(/api/aula/aula)__: Crea un nuevo elemento aula.
+- __GET(/api/aula)__: Muestra los datos de un elemento aula introduciendo un num.
+- __GET(/api/aula/{num})__: Muestra el num de todos los elementos aula introduciendo un num.
+- __GET(/api/aula/planta/{planta})__: Muestra la planta de todos los elementos aula introduciendo una planta.
+
+![Imagen](Python_e_imagenes/API/aula_controlador.PNG)
+
+___
 
 
 
