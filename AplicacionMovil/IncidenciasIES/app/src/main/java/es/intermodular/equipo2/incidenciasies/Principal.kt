@@ -170,30 +170,6 @@ class Principal : AppCompatActivity() {
             }
         }
 
-       /* CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val myResponse: Response<List<IncidenciaResponse>> =
-                    IncidenciaApi.retrofitService.getIncidenciasUsuario(idUsuarioPrueba)
-
-                if (myResponse.isSuccessful) {
-                    Log.i("Patata", "Funciona")
-                    val response: List<IncidenciaResponse>? = myResponse.body()
-                    if (response != null) {
-                        Log.i("Incidencias", response.toString())
-                        runOnUiThread {
-                            adapter.updateIncidencias(response)
-                        }
-                    }
-                } else {
-                    Toast.makeText(applicationContext, "Error al obtener las incidencias", Toast.LENGTH_LONG).show()
-                }
-            } catch (e: Exception) {
-                Log.e("Error", e.message ?: "Error desconocido")
-                runOnUiThread {
-                    Toast.makeText(applicationContext, "Error al obtener las incidencias", Toast.LENGTH_LONG).show()
-                }
-            }
-        }*/
     }
 
     private fun mostrarLayoutAyuda() {
