@@ -128,6 +128,37 @@ En esta imagen se muestra como se usa el metodo buscar tipo de incidencia-subtip
 
 ![Imagen](Python_e_imagenes/API/get_api_incidencias-subtipos_tipo_tipo.PNG)
 
+___
+
+## Incidencias-controlador
+En esta imagen se pueden ver algunos metodos del controlador personal; ya se mostrar, modificar o eliminar.
+
+- __GET(/api/incidencias/{num})__: Muestra los datos de un elemento personal introduciendo un id.
+- __PUT(/apiincidencias/{num})__: Modifica un elemento incidencias introduciendo un num.
+- __DELETE(/api/incidencias/{num})__: Elimina un elemento incidencias introduciendo un num.
+- __GET(/api/incidencias)__: Muestra los datos de todos los elementos incidencias.
+- __POST(/api/incidencias)__: Crea un nuevo elemento incidencias.
+- __GET(/api/incidencias/tipo/{tipo})__: Muestra el tipo de un elemento incidencias introduciendo un tipo de incidencias.
+- __GET(/api/incidencias/responsable/{id})__: Muestra el responsable de un elemento incidencias introduciendo un id de responsable.
+- __GET(/api/incidencias/fecha-creacion/{fechaCreacion})__: Muestra la fecha de creacion de un elemento incidencias introduciendo una fecha de creacion.
+- __GET(/api/incidencias/fecha-cierre/{fechaCierre})__: Muestra la fecha de cierre de un elemento incidencias introduciendo una fecha de cierre. 
+- __GET(/api/incidencias/fecha-estado/{estado})__: Muestra el estado de un elemento incidencias introduciendo un estado.
+- __GET(/api/incidencias/creador/{id})__: Muestra el creador de un elemento incidencias introduciendo un id de creador.
+- __GET(/api/incidencias/buscar)__: Muestra un buscador de incidencias.
+
+![Imagen](Python_e_imagenes/API/incidencias_controlador.PNG)
+
+___
+
+
+
+
+
+
+
+
+
+
 # Encabezado1
 ## Encabezado2
 ### Encabezado3
