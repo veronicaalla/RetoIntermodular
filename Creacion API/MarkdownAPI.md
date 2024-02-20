@@ -7,7 +7,7 @@ En esta imagen se pueden ver algunos metodos del controlador personal; ya se mos
 - __PUT(/api/personal/{id})__: Modifica un elemento personal introduciendo un id.
 - __DELETE(/api/personal/{id})__: Elimina un elemento personal introduciendo un id.
 - __GET(/api/personal)__: Muestra los datos de todos los elementos personal.
-- __POST(/api/personal)__: Crea un nuevo elemento personal introduciendo un id.
+- __POST(/api/personal)__: Crea un nuevo elemento personal.
 - __GET(/api/personal/nombre/{nombre})__: Muestra todos los elementos personal introduciendo un nombre.
 - __GET(/api/personal/apellido2/{apellido})__: Muestra todos los elementos personal introduciendo un apellido1.
 - __GET(/api/personal/apellido1/{apellido})__: Muestra todos los elemento personal introduciendo un apellido2.
@@ -87,7 +87,7 @@ En esta imagen se pueden ver algunos metodos del controlador perfiles; ya se mos
 - __PUT(/api/perfiles/{id})__: Modifica un elemento perfil introduciendo un id.
 - __DELETE(/api/perfiles/{id})__: Elimina un elemento perfil introduciendo un id.
 - __GET(/api/perfiles)__: Muestra los datos de todos los elementos perfil.
-- __POST(/api/perfiles)__: Crea un nuevo elemento perfil introduciendo un id.
+- __POST(/api/perfiles)__: Crea un nuevo elemento perfil.
 - __GET(/api/perfiles/tipo/{perfil})__: Muestra todos los elementos perfil introduciendo un perfil.
 - __GET(/api/perfiles/dominio/{dominio})__: Muestra todos los elementos perfil introduciendo un dominio.
 
@@ -116,7 +116,7 @@ En esta imagen se pueden ver algunos metodos del controlador incidencias-subtipo
 - __PUT(/api/incidencias-subtipos/{id})__: Modifica un elemento incidencias-subtipos introduciendo un id.
 - __DELETE(/api/incidencias-subtipos/{id})__: Elimina un elemento incidencias-subtipos introduciendo un id.
 - __GET(/api/incidencias-subtipos)__: Muestra los datos de todos los elementos incidencias-subtipos.
-- __POST(/api/incidencias-subtipos)__: Crea un nuevo elemento incidencias-subtipos introduciendo un id.
+- __POST(/api/incidencias-subtipos)__: Crea un nuevo elemento incidencias-subtipos.
 - __GET(/api/incidencias-subtipos/tipo/{tipo})__: Muestra todos los elementos incidencias-subtipos introduciendo un tipo de incidencia.
 
 ![Imagen](Python_e_imagenes/API/incidencias-subtipo_controlador.PNG)
@@ -199,7 +199,7 @@ En esta imagen se pueden ver algunos metodos del controlador equipo; ya se mostr
 - __PUT(/api/equipos/{id})__: Modifica un elemento equipo introduciendo un id.
 - __DELETE(/api/equipos/{id})__: Elimina un elemento equipo introduciendo un id.
 - __GET(/api/equipos)__: Muestra los datos de todos los elementos equipo.
-- __POST(/api/equipos)__: Crea un nuevo elemento equipo introduciendo un id.
+- __POST(/api/equipos)__: Crea un nuevo elemento equipo.
 
 ![Imagen](Python_e_imagenes/API/equipo_controlador.PNG)
 ___
@@ -211,7 +211,7 @@ En esta imagen se pueden ver algunos metodos del controlador departamento; ya se
 - __PUT(/api/departamentos/{id})__: Modifica un elemento departamento introduciendo un id.
 - __DELETE(/api/departamentos/{id})__: Elimina un elemento departamento introduciendo un id.
 - __GET(/api/departamentos)__: Muestra los datos de todos los elementos departamento.
-- __POST(/api/departamentos)__: Crea un nuevo elemento departamento introduciendo un id.
+- __POST(/api/departamentos)__: Crea un nuevo elemento departamento.
 
 ![Imagen](Python_e_imagenes/API/departamento_controlador.PNG)
 
@@ -224,7 +224,7 @@ En esta imagen se pueden ver algunos metodos del controlador comentario; ya se m
 - __PUT(/api/comentarios/{id})__: Modifica un elemento comentario introduciendo un id.
 - __DELETE(/api/comentarios/{id})__: Elimina un elemento comentario introduciendo un id.
 - __GET(/api/comentarios)__: Muestra los datos de todos los elementos comentario.
-- __POST(/api/comentarios)__: Crea un nuevo elemento comentario introduciendo un id.
+- __POST(/api/comentarios)__: Crea un nuevo elemento comentario.
 
 ![Imagen](Python_e_imagenes/API/comentario_controlador.PNG)
 
@@ -250,10 +250,10 @@ En esta imagen se muestra como se usa el metodo buscar por planta.
 ![Imagen](Python_e_imagenes/API/get_api_aula_planta_planta.PNG)
 
 ___
-
-
-
-
+___
+___
+___
+___
 
 
 
