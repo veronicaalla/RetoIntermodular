@@ -80,6 +80,35 @@ En esta imagen se muestra como se usa el metodo borrar personal por idUsuario. E
 
 ___
 
+## Perfiles-controlador
+En esta imagen se pueden ver algunos metodos del controlador perfiles; ya se mostrar, modificar o eliminar.
+
+- __GET(/api/perfiles/{id})__: Muestra los datos de un elemento perfil introduciendo un id.
+- __PUT(/api/perfiles/{id})__: Modifica un elemento perfil introduciendo un id.
+- __DELETE(/api/perfiles/{id})__: Elimina un elemento perfil introduciendo un id.
+- __GET(/api/perfiles)__: Muestra los datos de todos los elementos perfil.
+- __POST(/api/perfiles)__: Crea un nuevo elemento perfil introduciendo un id.
+- __GET(/api/perfiles/tipo/{perfil})__: Muestra el tipo perfil de un elemento perfil introduciendo un perfil.
+- __GET(/api/perfiles/dominio/{dominio})__: Muestra el dominio de un elemento perfil introduciendo un dominio.
+
+
+
+___
+
+## Perfil-controlador(GET(/api/perfiles/tipo/{perfil}))
+En esta imagen se muestra como se usa el metodo buscar tipo de perfil por perfil.
+
+
+
+___
+
+## Perfil-controlador(GET(/api/perfiles/dominio/{dominio}))
+En esta imagen se muestra como se usa el metodo buscar dominio de perfil por dominio.
+
+
+
+___
+
 
 
 
