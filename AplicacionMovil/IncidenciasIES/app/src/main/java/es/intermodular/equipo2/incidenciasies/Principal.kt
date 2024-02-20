@@ -155,7 +155,12 @@ class Principal : AppCompatActivity() {
                     retrofit.create(IncidenciaApiService::class.java)
                         .getIncidenciasUsuario(idUsuarioPrueba)
 
+                if (myResponse !=null){
+                    Log.i("Incidecias usuario", myResponse.toString())
+                }
+
                 if (myResponse.isSuccessful) {
+                    Log.i("Incidecias usuario", "Funciona")
                     val response: List<IncidenciaResponse>? = myResponse.body()
                     if (response != null) {
                         runOnUiThread {

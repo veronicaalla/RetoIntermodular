@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <!-- deshabilitamos la política de seguridad de red de Android para permitir conexiones no seguras  Linea 11-->
 
     <application
