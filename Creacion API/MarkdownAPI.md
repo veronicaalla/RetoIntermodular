@@ -91,21 +91,21 @@ En esta imagen se pueden ver algunos metodos del controlador perfiles; ya se mos
 - __GET(/api/perfiles/tipo/{perfil})__: Muestra el tipo perfil de un elemento perfil introduciendo un perfil.
 - __GET(/api/perfiles/dominio/{dominio})__: Muestra el dominio de un elemento perfil introduciendo un dominio.
 
-
+![Imagen](Python_e_imagenes/API/perfiles_controlador.PNG)
 
 ___
 
 ## Perfil-controlador(GET(/api/perfiles/tipo/{perfil}))
 En esta imagen se muestra como se usa el metodo buscar tipo de perfil por perfil.
 
-
+![Imagen](Python_e_imagenes/API/get_api_perfiles_tipo_perfil.PNG)
 
 ___
 
 ## Perfil-controlador(GET(/api/perfiles/dominio/{dominio}))
 En esta imagen se muestra como se usa el metodo buscar dominio de perfil por dominio.
 
-
+![Imagen](Python_e_imagenes/API/get_api_perfiles_dominio_dominio.PNG)
 
 ___
 
