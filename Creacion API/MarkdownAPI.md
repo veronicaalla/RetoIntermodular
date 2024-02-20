@@ -8,8 +8,8 @@ En esta imagen se pueden ver algunos metodos del controlador personal; ya se mos
 - __DELETE(/api/personal/{id})__: Elimina un elemento personal introduciendo un id.
 - __GET(/api/personal)__: Muestra los datos de todos los elementos personal.
 - __POST(/api/personal)__: Crea un nuevo elemento personal introduciendo un id.
-- __GET(/api/personal/nombre/{nombre})__: Muestra el nombre de un elemento personal introduciendo un nombre.
-- __GET(/api/personal/apellido2/{apellido})__: Muestra el segundo apellido de un elemento personal introduciendo un apellido.
+- __GET(/api/personal/nombre/{nombre})__: Muestra el nombre de todos los elementos personal introduciendo un nombre.
+- __GET(/api/personal/apellido2/{apellido})__: Muestra el segundo apellido de todos los elementos personal introduciendo un apellido.
 - __GET(/api/personal/apellido1/{apellido})__: Muestra el primer apellido de un elemento personal introduciendo un apellido.
 - __DELETE(/api/personal/borrar_usuario/{idUsuario})__: Elimina un elemento personal introduciendo un id desde borrar_usuario.
 
@@ -53,21 +53,21 @@ En esta imagen se muestra como funciona el metodo crear personal.
 ___
 
 ## Personal-controlador(GET(/api/personal/nombre/{nombre}))
-En esta imagen se muestra como se usa el metodo buscar nombre de personal por nombre.
+En esta imagen se muestra como se usa el metodo buscar por nombre.
 
 ![Imagen](Python_e_imagenes/API/get_api_personal_nombre_nombre.PNG)
 
 ___
 
 ## Personal-controlador(GET(/api/personal/apellido2/{apellido}))
-En esta imagen se muestra como se usa el metodo buscar apellido2 de personal por apellido.
+En esta imagen se muestra como se usa el metodo buscar por apellido2.
 
 ![Imagen](Python_e_imagenes/API/get_api_personal_apellido2_apellido.PNG)
 
 ___
 
 ## Personal-controlador(GET(/api/personal/apellido1/{apellido}))
-En esta imagen se muestra como se usa el metodo buscar apellido1 de personal por apellido.
+En esta imagen se muestra como se usa el metodo buscar por apellido1.
 
 ![Imagen](Python_e_imagenes/API/get_api_personal_apellido1_apellido.PNG)
 
@@ -88,8 +88,8 @@ En esta imagen se pueden ver algunos metodos del controlador perfiles; ya se mos
 - __DELETE(/api/perfiles/{id})__: Elimina un elemento perfil introduciendo un id.
 - __GET(/api/perfiles)__: Muestra los datos de todos los elementos perfil.
 - __POST(/api/perfiles)__: Crea un nuevo elemento perfil introduciendo un id.
-- __GET(/api/perfiles/tipo/{perfil})__: Muestra el tipo perfil de un elemento perfil introduciendo un perfil.
-- __GET(/api/perfiles/dominio/{dominio})__: Muestra el dominio de un elemento perfil introduciendo un dominio.
+- __GET(/api/perfiles/tipo/{perfil})__: Muestra el tipo perfil de todos los elementos perfil introduciendo un perfil.
+- __GET(/api/perfiles/dominio/{dominio})__: Muestra el dominio de todos los elementos perfil introduciendo un dominio.
 
 ![Imagen](Python_e_imagenes/API/perfiles_controlador.PNG)
 
@@ -117,7 +117,7 @@ En esta imagen se pueden ver algunos metodos del controlador incidencias-subtipo
 - __DELETE(/api/incidencias-subtipos/{id})__: Elimina un elemento incidencias-subtipos introduciendo un id.
 - __GET(/api/incidencias-subtipos)__: Muestra los datos de todos los elementos incidencias-subtipos.
 - __POST(/api/incidencias-subtipos)__: Crea un nuevo elemento incidencias-subtipos introduciendo un id.
-- __GET(/api/incidencias-subtipos/tipo/{tipo})__: Muestra el tipo de un elemento incidencias-subtipos introduciendo un tipo de incidencia.
+- __GET(/api/incidencias-subtipos/tipo/{tipo})__: Muestra el tipo de todos los elementos incidencias-subtipos introduciendo un tipo de incidencia.
 
 ![Imagen](Python_e_imagenes/API/incidencias-subtipo_controlador.PNG)
 
@@ -138,12 +138,12 @@ En esta imagen se pueden ver algunos metodos del controlador personal; ya se mos
 - __DELETE(/api/incidencias/{num})__: Elimina un elemento incidencias introduciendo un num.
 - __GET(/api/incidencias)__: Muestra los datos de todos los elementos incidencias.
 - __POST(/api/incidencias)__: Crea un nuevo elemento incidencias.
-- __GET(/api/incidencias/tipo/{tipo})__: Muestra el tipo de un elemento incidencias introduciendo un tipo de incidencias.
-- __GET(/api/incidencias/responsable/{id})__: Muestra el responsable de un elemento incidencias introduciendo un id de responsable.
-- __GET(/api/incidencias/fecha-creacion/{fechaCreacion})__: Muestra la fecha de creacion de un elemento incidencias introduciendo una fecha de creacion.
-- __GET(/api/incidencias/fecha-cierre/{fechaCierre})__: Muestra la fecha de cierre de un elemento incidencias introduciendo una fecha de cierre. 
-- __GET(/api/incidencias/fecha-estado/{estado})__: Muestra el estado de un elemento incidencias introduciendo un estado.
-- __GET(/api/incidencias/creador/{id})__: Muestra el creador de un elemento incidencias introduciendo un id de creador.
+- __GET(/api/incidencias/tipo/{tipo})__: Muestra el tipo de todos los elementos incidencias introduciendo un tipo de incidencias.
+- __GET(/api/incidencias/responsable/{id})__: Muestra el responsable de todos los elementos incidencias introduciendo un id de responsable.
+- __GET(/api/incidencias/fecha-creacion/{fechaCreacion})__: Muestra la fecha de creacion de todos los elementos incidencias introduciendo una fecha de creacion.
+- __GET(/api/incidencias/fecha-cierre/{fechaCierre})__: Muestra la fecha de cierre de todos los elementos incidencias introduciendo una fecha de cierre. 
+- __GET(/api/incidencias/fecha-estado/{estado})__: Muestra el estado de todos los elementos incidencias introduciendo un estado.
+- __GET(/api/incidencias/creador/{id})__: Muestra el creador de todos los elementos incidencias introduciendo un id de creador.
 - __GET(/api/incidencias/buscar)__: Muestra un buscador de incidencias.
 
 ![Imagen](Python_e_imagenes/API/incidencia_controlador.PNG)
@@ -151,44 +151,89 @@ En esta imagen se pueden ver algunos metodos del controlador personal; ya se mos
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/tipo/{tipo}))
-En esta imagen se muestra como se usa el metodo buscar tipo de incidencia por tipo de incidencia.
+En esta imagen se muestra como se usa el metodo buscar por tipo de incidencia.
 
 ![Imagen](Python_e_imagenes/API/get_api_incidencias_tipo_tipo.PNG)
 
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/responsable/{id}))
-En esta imagen se muestra como se usa el metodo buscar responsable de incidencia por id de responsable.
+En esta imagen se muestra como se usa el metodo buscar por id de responsable.
 
 ![Imagen](Python_e_imagenes/API/get_api_incidencias_responsable_id.PNG)
 
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/fecha-creacion/{fechaCreacion}))
-En esta imagen se muestra como se usa el metodo buscar fecha de creacion de incidencia por fecha de creacion.
+En esta imagen se muestra como se usa el metodo buscar fecha por fecha de creacion.
 
 ![Imagen](Python_e_imagenes/API/get_api_incidencias_fecha-creacion_fechaCreacion.PNG)
 
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/fecha-cierre/{fechaCierre}))
-En esta imagen se muestra como se usa el metodo buscar fecha de cierre de incidencia por fecha de cierre.
+En esta imagen se muestra como se usa el metodo buscar fecha por fecha de cierre.
 
 ![Imagen](Python_e_imagenes/API/get_api_incidencias_fecha-cierre_fechaCierre.PNG)
 
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/estado/{estado}))
-En esta imagen se muestra como se usa el metodo buscar estado de incidencia por estado.
+En esta imagen se muestra como se usa el metodo buscar por estado.
 
 ![Imagen](Python_e_imagenes/API/get_api_incidencias_estado_estado.PNG)
 
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/creador/{id}))
-En esta imagen se muestra como se usa el metodo buscar creador de incidencia por id de creador.
+En esta imagen se muestra como se usa el metodo buscar por id de creador.
 
 ![Imagen](Python_e_imagenes/API/get_api_incidencias_creador_id.PNG)
+
+___
+
+## Equipo-controlador
+En esta imagen se pueden ver algunos metodos del controlador equipo; ya se mostrar, modificar o eliminar.
+
+- __GET(/api/equipos/{id})__: Muestra los datos de un elemento equipo introduciendo un id.
+- __PUT(/api/equipos/{id})__: Modifica un elemento equipo introduciendo un id.
+- __DELETE(/api/equipos/{id})__: Elimina un elemento equipo introduciendo un id.
+- __GET(/api/equipos)__: Muestra los datos de todos los elementos equipo.
+- __POST(/api/equipos)__: Crea un nuevo elemento equipo introduciendo un id.
+
+![Imagen](Python_e_imagenes/API/equipo_controlador.PNG)
+___
+
+## Departamento-controlador
+En esta imagen se pueden ver algunos metodos del controlador departamento; ya se mostrar, modificar o eliminar.
+
+- __GET(/api/departamentos/{id})__: Muestra los datos de un elemento departamento introduciendo un id.
+- __PUT(/api/departamentos/{id})__: Modifica un elemento departamento introduciendo un id.
+- __DELETE(/api/departamentos/{id})__: Elimina un elemento departamento introduciendo un id.
+- __GET(/api/departamentos)__: Muestra los datos de todos los elementos departamento.
+- __POST(/api/departamentos)__: Crea un nuevo elemento departamento introduciendo un id.
+
+![Imagen](Python_e_imagenes/API/departamento_controlador.PNG)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
