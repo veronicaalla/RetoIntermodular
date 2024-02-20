@@ -13,7 +13,7 @@ En esta imagen se pueden ver algunos metodos del controlador personal; ya se mos
 - __GET(/api/personal/apellido1/{apellido})__: Muestra el primer apellido de un elemento personal introduciendo un apellido.
 - __DELETE(/api/personal/borrar_usuario/{idUsuario})__: Elimina un elemento personal introduciendo un id desde borrar_usuario.
 
-![Imagen](Python_e_imagenes/Aplicacion_Escritorio/Inicial.PNG)
+![Imagen](Python_e_imagenes/API/personal_controlador.PNG)
 ___
 
 
