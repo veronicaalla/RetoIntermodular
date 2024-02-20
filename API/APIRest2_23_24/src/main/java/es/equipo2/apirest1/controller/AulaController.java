@@ -22,72 +22,60 @@ import es.equipo2.apirest1.repository.AulaRepository;
 @RequestMapping("/api/aula")
 public class AulaController {
 	@Autowired
-	private AulaRepository cocheRepository;
-	
+    private AulaRepository aulaRepository;
+		
 	@GetMapping
-	public ResponseEntity<?> obtenerCoches(){
-		List<Aula> coches=cocheRepository.findAll();
-		if(coches.isEmpty())
-			return ResponseEntity.notFound().build();
-		else
-			return ResponseEntity.ok(coches);
-	}
-	
-	@GetMapping("/{num}")
-	public ResponseEntity<?> obtenerUno(@PathVariable Integer num)
-	{
-		Aula coche = cocheRepository.findById(num).orElse(null); 
-		if(coche==null) 
-			return ResponseEntity.notFound().build(); 
-		else 
-			return ResponseEntity.ok(coche);
-	}
+    public List<Aula> obtenerAulas() {
+        return aulaRepository.findAll();
+    }
+
+    @GetMapping("/{num}")
+    public ResponseEntity<Aula> obtenerAulaPorNum(@PathVariable Integer num) {
+        return aulaRepository.findById(num)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 	
 	@GetMapping("/planta/{planta}")
     public List<Aula> obtenerAulasPorPlanta(@PathVariable int planta) {
-        return cocheRepository.findByPlanta(planta);
+        return aulaRepository.findByPlanta(planta);
     }
 	
 	@PostMapping("/aula")
 	public ResponseEntity<Aula> nuevoCoche(@RequestBody Aula nuevo)
 	{
-		Aula cocheGuardado=cocheRepository.save(nuevo);
+		Aula cocheGuardado=aulaRepository.save(nuevo);
 		return ResponseEntity
 				.status(HttpStatus.CREATED)
 				.body(cocheGuardado);
 	}
 
-	@PutMapping("/aula/{num}")
-	public ResponseEntity<?> editarCoche(@RequestBody Aula cocheEdit, @PathVariable Integer id)
-	{
-		Aula coche = cocheRepository
-				.findById(id).orElse(null); 
-		if(coche==null) 
-			return ResponseEntity.notFound().build(); 
-		else {
-			coche.setCodigo(cocheEdit.getCodigo());
-			coche.setDescripcion(cocheEdit.getDescripcion());
-			coche.setPlanta(cocheEdit.getPlanta());
-			return ResponseEntity
-					.ok(cocheRepository.save(coche));
-		}
-		   
-	}
+	@PostMapping
+    public ResponseEntity<Aula> crearAula(@RequestBody Aula nuevaAula) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(aulaRepository.save(nuevaAula));
+    }
 
-	@DeleteMapping("/aula/{num}")
-	public ResponseEntity<?> borrarCoche(@PathVariable Integer id)
-	{
-		if(cocheRepository.existsById(id))
-		{
-			Aula coche = cocheRepository.findById(id).get();
-			cocheRepository.delete(coche);
-			return ResponseEntity.noContent().build();
-		}
-		else
-		{
-			return ResponseEntity.notFound().build();
-		}
-	}
+    @PutMapping("/{num}")
+    public ResponseEntity<Aula> actualizarAula(@RequestBody Aula aulaEditada, @PathVariable Integer num) {
+        return aulaRepository.findById(num)
+                .map(aula -> {
+                    aula.setCodigo(aulaEditada.getCodigo());
+                    aula.setDescripcion(aulaEditada.getDescripcion());
+                    aula.setPlanta(aulaEditada.getPlanta());
+                    return ResponseEntity.ok(aulaRepository.save(aula));
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{num}")
+    public ResponseEntity<Void> borrarAula(@PathVariable Integer num) {
+        if (aulaRepository.existsById(num)) {
+            aulaRepository.deleteById(num);
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 	
 
 }

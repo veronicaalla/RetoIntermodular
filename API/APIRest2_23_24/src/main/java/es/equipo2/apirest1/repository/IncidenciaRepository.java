@@ -21,5 +21,12 @@ public interface IncidenciaRepository extends JpaRepository<Incidencia, Integer>
 	 List<Incidencia> findByFechaCreacion(Date fechaCreacion);
 	 List<Incidencia> findByFechaCierre(Date fechaCreacion);
 	 
-	 List<Incidencia> findByDescripcionContainingAndEstadoAndFechaCreacionAndFechaCierreAndTipoAndCreadorIdAndResponsableId(String descripcion, Estado_Incidencia estado, Date fechaCreacion, Date fechaCierre, Tipo_Incidencias tipo, Integer creadorId, Integer responsableId);
+	 List<Incidencia> findByEstadoAndTipoAndCreadorIdAndResponsableId(Estado_Incidencia estado,
+             Tipo_Incidencias tipo,
+             Integer creadorId,
+             Integer responsableId);
+	List<Incidencia> findByDescripcionContainingAndEstadoAndFechaCreacionAndFechaCierreAndTipoAndCreadorIdAndResponsableId(
+			String descripcion, Estado_Incidencia estado, Date fechaCreacion, Date fechaCierre, Tipo_Incidencias tipo,
+			Integer creadorId, Integer responsableId);
+	List<Incidencia> findByDescripcionContaining(String descripcion);
 }
