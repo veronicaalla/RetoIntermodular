@@ -12,10 +12,11 @@ namespace ProyectoIntermodular.Formularios
 {
     public partial class EliminarUsuario : Form
     {
-        public EliminarUsuario()
+        public EliminarUsuario(String nombre)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            cajaUsuario.Text = nombre;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

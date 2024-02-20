@@ -37,10 +37,10 @@
             this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tlfno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +62,8 @@
             this.dgvPerfiles.RowTemplate.Height = 24;
             this.dgvPerfiles.Size = new System.Drawing.Size(553, 431);
             this.dgvPerfiles.TabIndex = 5;
+            this.dgvPerfiles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerfiles_CellContentClick);
+            this.dgvPerfiles.SelectionChanged += new System.EventHandler(this.dgvPerfiles_SelectionChanged);
             // 
             // Nombre
             // 
@@ -119,6 +121,13 @@
             this.Tlfno.ReadOnly = true;
             this.Tlfno.Width = 125;
             // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.MinimumWidth = 6;
+            this.Activo.Name = "Activo";
+            this.Activo.Width = 125;
+            // 
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -151,13 +160,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // Activo
-            // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.MinimumWidth = 6;
-            this.Activo.Name = "Activo";
-            this.Activo.Width = 125;
             // 
             // SeleccionarUsuario
             // 

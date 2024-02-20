@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ProyectoIntermodular.Clases
 {
-    public class Equipos
+    public class Equipo
     {
 
         public int id { get; set; } 
         public TipoEquipo tipo_equipo { get; set; }  
         public DateTime fecha_adquisicion { get; set; }  
-        public char etiqueta { get; set; }  
+        public string etiqueta { get; set; }  
         public string marca { get; set; }  
         public string modelo { get; set; }  
         public string descripcion { get; set; }  
@@ -21,13 +21,13 @@ namespace ProyectoIntermodular.Clases
         public int puesto { get; set; }  
 
         
-        public Equipos()
+        public Equipo()
         {
             
         }
 
         
-        public Equipos(int id, TipoEquipo tipo_equipo, DateTime fecha_adquisicion, char etiqueta, string marca, string modelo, string descripcion, bool baja, int aula_num, int puesto)
+        public Equipo(int id, TipoEquipo tipo_equipo, DateTime fecha_adquisicion, string etiqueta, string marca, string modelo, string descripcion, bool baja, int aula_num, int puesto)
         {
             this.id = id;
             this.tipo_equipo = tipo_equipo;

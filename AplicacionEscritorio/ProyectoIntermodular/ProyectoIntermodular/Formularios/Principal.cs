@@ -64,8 +64,9 @@ namespace ProyectoIntermodular
                     row.Cells[8].Value = incidencia.creador.id;
                     row.Cells[9].Value = incidencia.responsable.id;
                     row.Cells[10].Value = incidencia.equipo.id;
-                    
-                    
+
+
+
 
                     dataGridView1.Rows.Add(row);
                 }

@@ -17,6 +17,7 @@ namespace ProyectoIntermodular.Formularios
         private ControladorPersonal controladorPersonal;
         private List<Personal> lista;
         private Personal person;
+        public Personal usuarioTocable;
         public SeleccionarUsuario()
         {
             InitializeComponent();
@@ -70,9 +71,33 @@ namespace ProyectoIntermodular.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            EliminarUsuario eliminarUsuario = new EliminarUsuario();
-            this.Hide();
-            eliminarUsuario.Show();
+            if (this.Tag != null && this.Tag is string nombreUsuario)
+            {
+                EliminarUsuario eliminarUsuario = new EliminarUsuario(nombreUsuario);
+                this.Hide();
+                eliminarUsuario.Show();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un usuario antes de eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvPerfiles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvPerfiles.Rows[e.RowIndex];
+                string nombreUsuario = row.Cells["Nombre"].Value.ToString(); // Reemplaza "NombreColumn" con el nombre de la columna que contiene el nombre del usuario en tu DataGridView
+
+                
+                this.Tag = nombreUsuario;
+            }
+        }
+
+        private void dgvPerfiles_SelectionChanged(object sender, EventArgs e)
+        {
+            usuarioTocable.nombre=dgvPerfiles.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }
