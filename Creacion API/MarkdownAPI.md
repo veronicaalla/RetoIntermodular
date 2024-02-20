@@ -146,15 +146,49 @@ En esta imagen se pueden ver algunos metodos del controlador personal; ya se mos
 - __GET(/api/incidencias/creador/{id})__: Muestra el creador de un elemento incidencias introduciendo un id de creador.
 - __GET(/api/incidencias/buscar)__: Muestra un buscador de incidencias.
 
-![Imagen](Python_e_imagenes/API/incidencias_controlador.PNG)
+![Imagen](Python_e_imagenes/API/incidencia_controlador.PNG)
 
 ___
 
+## Incidencias-controlador(GET(/api/incidencias/tipo/{tipo}))
+En esta imagen se muestra como se usa el metodo buscar tipo de incidencia por tipo de incidencia.
 
+![Imagen](Python_e_imagenes/API/get_api_incidencias_tipo_tipo.PNG)
 
+___
 
+## Incidencias-controlador(GET(/api/incidencias/responsable/{id}))
+En esta imagen se muestra como se usa el metodo buscar responsable de incidencia por id de responsable.
 
+![Imagen](Python_e_imagenes/API/get_api_incidencias_responsable_id.PNG)
 
+___
+
+## Incidencias-controlador(GET(/api/incidencias/fecha-creacion/{fechaCreacion}))
+En esta imagen se muestra como se usa el metodo buscar fecha de creacion de incidencia por fecha de creacion.
+
+![Imagen](Python_e_imagenes/API/get_api_incidencias_fecha-creacion_fechaCreacion.PNG)
+
+___
+
+## Incidencias-controlador(GET(/api/incidencias/fecha-cierre/{fechaCierre}))
+En esta imagen se muestra como se usa el metodo buscar fecha de cierre de incidencia por fecha de cierre.
+
+![Imagen](Python_e_imagenes/API/get_api_incidencias_fecha-cierre_fechaCierre.PNG)
+
+___
+
+## Incidencias-controlador(GET(/api/incidencias/estado/{estado}))
+En esta imagen se muestra como se usa el metodo buscar estado de incidencia por estado.
+
+![Imagen](Python_e_imagenes/API/get_api_incidencias_estado_estado.PNG)
+
+___
+
+## Incidencias-controlador(GET(/api/incidencias/creador/{id}))
+En esta imagen se muestra como se usa el metodo buscar creador de incidencia por id de creador.
+
+![Imagen](Python_e_imagenes/API/get_api_incidencias_creador_id.PNG)
 
 
 
