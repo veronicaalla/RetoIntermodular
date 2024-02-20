@@ -53,6 +53,17 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adjunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Creador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxCriterios.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +71,18 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Num,
+            this.Tipo,
+            this.Subtipo,
+            this.FechaCreacion,
+            this.FechaCierre,
+            this.Descripcion,
+            this.Estado,
+            this.Adjunto,
+            this.Creador,
+            this.Responsable,
+            this.Equipo});
             this.dataGridView1.Location = new System.Drawing.Point(12, 205);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -314,6 +337,83 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // Num
+            // 
+            this.Num.HeaderText = "Numero";
+            this.Num.MinimumWidth = 6;
+            this.Num.Name = "Num";
+            this.Num.Width = 125;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.MinimumWidth = 6;
+            this.Tipo.Name = "Tipo";
+            this.Tipo.Width = 125;
+            // 
+            // Subtipo
+            // 
+            this.Subtipo.HeaderText = "Subtipo";
+            this.Subtipo.MinimumWidth = 6;
+            this.Subtipo.Name = "Subtipo";
+            this.Subtipo.Width = 125;
+            // 
+            // FechaCreacion
+            // 
+            this.FechaCreacion.HeaderText = "Fecha de creación";
+            this.FechaCreacion.MinimumWidth = 6;
+            this.FechaCreacion.Name = "FechaCreacion";
+            this.FechaCreacion.Width = 125;
+            // 
+            // FechaCierre
+            // 
+            this.FechaCierre.HeaderText = "Fecha de cierre";
+            this.FechaCierre.MinimumWidth = 6;
+            this.FechaCierre.Name = "FechaCierre";
+            this.FechaCierre.Width = 125;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 125;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 125;
+            // 
+            // Adjunto
+            // 
+            this.Adjunto.HeaderText = "Adjunto";
+            this.Adjunto.MinimumWidth = 6;
+            this.Adjunto.Name = "Adjunto";
+            this.Adjunto.Width = 125;
+            // 
+            // Creador
+            // 
+            this.Creador.HeaderText = "Creador";
+            this.Creador.MinimumWidth = 6;
+            this.Creador.Name = "Creador";
+            this.Creador.Width = 125;
+            // 
+            // Responsable
+            // 
+            this.Responsable.HeaderText = "Responsable";
+            this.Responsable.MinimumWidth = 6;
+            this.Responsable.Name = "Responsable";
+            this.Responsable.Width = 125;
+            // 
+            // Equipo
+            // 
+            this.Equipo.HeaderText = "Equipo";
+            this.Equipo.MinimumWidth = 6;
+            this.Equipo.Name = "Equipo";
+            this.Equipo.Width = 125;
             // 
             // Principal
             // 
@@ -650,5 +750,16 @@
         private System.Windows.Forms.CheckBox cbxSub;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subtipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCreacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCierre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Adjunto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Creador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Responsable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Equipo;
     }
 }

@@ -61,19 +61,5 @@ namespace ProyectoIntermodular
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Admin admin = new Admin(this);
-            this.Hide();
-            admin.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Principal principal = new Principal();
-            this.Hide();
-            principal.Show();
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ProyectoIntermodular.Clases;
+using ProyectoIntermodular.Controladores;
 using ProyectoIntermodular.Formularios;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,11 @@ namespace ProyectoIntermodular
 {
     public partial class Principal : Form
     {
-        
+
+        private ControladorIncidencias controladorIncidencias;
+        private List<Incidencias> lista;
+        private Incidencias inci;
+
         public Principal()
         {
             InitializeComponent();
@@ -30,6 +35,40 @@ namespace ProyectoIntermodular
             {
                 btnVolver.Hide();
                 btnSalir.Show();
+            }
+
+            controladorIncidencias = new ControladorIncidencias();
+            inci = new Incidencias();
+            GetIncidencias();
+        }
+
+        private async void GetIncidencias()
+        {
+            lista = await controladorIncidencias.GetIncidencias();
+
+            if (lista != null)
+            {
+                foreach (var incidencia in lista) 
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(dataGridView1);
+
+                    row.Cells[0].Value = incidencia.num;
+                    row.Cells[1].Value = incidencia.tipo;
+                    row.Cells[2].Value = incidencia.subtipo_id; 
+                    row.Cells[3].Value = incidencia.fechaCreacion;
+                    row.Cells[4].Value = incidencia.fechaCierre;
+                    row.Cells[5].Value = incidencia.descripcion;
+                    row.Cells[6].Value = incidencia.estado;
+                    row.Cells[7].Value = incidencia.adjuntoUrl;
+                    row.Cells[8].Value = incidencia.creador.id;
+                    row.Cells[9].Value = incidencia.responsable.id;
+                    row.Cells[10].Value = incidencia.equipo.id;
+                    
+                    
+
+                    dataGridView1.Rows.Add(row);
+                }
             }
         }
 

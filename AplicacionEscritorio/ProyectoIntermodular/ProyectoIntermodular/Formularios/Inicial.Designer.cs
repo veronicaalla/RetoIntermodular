@@ -80,7 +80,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Inicial";
-            this.Text = "Form1";
+            this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Inicial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
