@@ -109,10 +109,24 @@ En esta imagen se muestra como se usa el metodo buscar dominio de perfil por dom
 
 ___
 
+## Incidencias-subtipo-controlador
+En esta imagen se pueden ver algunos metodos del controlador incidencias-subtipo; ya se mostrar, modificar o eliminar.
 
+- __GET(/api/incidencias-subtipos/{id})__: Muestra los datos de un elemento incidencias-subtipos introduciendo un id.
+- __PUT(/api/incidencias-subtipos/{id})__: Modifica un elemento incidencias-subtipos introduciendo un id.
+- __DELETE(/api/incidencias-subtipos/{id})__: Elimina un elemento incidencias-subtipos introduciendo un id.
+- __GET(/api/incidencias-subtipos)__: Muestra los datos de todos los elementos incidencias-subtipos.
+- __POST(/api/incidencias-subtipos)__: Crea un nuevo elemento incidencias-subtipos introduciendo un id.
+- __GET(/api/incidencias-subtipos/tipo/{tipo})__: Muestra el tipo de un elemento incidencias-subtipos introduciendo un tipo de incidencia.
 
+![Imagen](Python_e_imagenes/API/incidencias-subtipo_controlador.PNG)
 
+___
 
+## Incidencias-subtipo-controlador(GET(/api/incidencias-subtipos/tipo/{tipo}))
+En esta imagen se muestra como se usa el metodo buscar tipo de incidencia-subtipo por tipo de incidencia.
+
+![Imagen](Python_e_imagenes/API/get_api_incidencias-subtipos_tipo_tipo.PNG)
 
 # Encabezado1
 ## Encabezado2
