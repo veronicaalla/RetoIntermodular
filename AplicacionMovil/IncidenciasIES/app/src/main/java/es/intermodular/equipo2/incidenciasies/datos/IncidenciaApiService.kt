@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface IncidenciaApiService {
-    @GET("/incidencias/{id}")
+    @GET("incidencias/creador/{id}")
     suspend fun getIncidenciasUsuario(
         @Path("id") usuarioId: Int
     ): Response<List<IncidenciaResponse>>
