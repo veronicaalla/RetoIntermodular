@@ -33,34 +33,39 @@ En esta imagen se muestra como se usa el metodo eliminar personal por id.
 ___
 
 ## Personal-controlador(GET(/api/personal))
-En esta imagen se muestro como se usa el metodo mostrar personal.
+En esta imagen se muestra como se usa el metodo mostrar personal.
 
 ___
 
 ## Personal-controlador(POST(/api/personal))
-En esta imagen se pueden mostrar como funciona el metodo crear personal.
+En esta imagen se muestra como funciona el metodo crear personal.
 
 ___
 
 ## Personal-controlador(GET(/api/personal/nombre/{nombre}))
-En esta imagen se muestra como se usa el metodo buscar nombre de personal por id.
+En esta imagen se muestra como se usa el metodo buscar nombre de personal por nombre.
 
 ___
 
 ## Personal-controlador(GET(/api/personal/apellido2/{apellido}))
-En esta imagen se pueden ver algunos metodos del controlador personal; ya se mostrar, modificar o eliminar.
+En esta imagen se muestra como se usa el metodo buscar apellido2 de personal por apellido.
 
 ___
 
 ## Personal-controlador(GET(/api/personal/apellido1/{apellido}))
-En esta imagen se pueden ver algunos metodos del controlador personal; ya se mostrar, modificar o eliminar.
+En esta imagen se muestra como se usa el metodo buscar apellido1 de personal por apellido.
 
 ___
 
 ## Personal-controlador(DELETE(/api/personal/borrar_usuario/{idUsuario}))
-En esta imagen se pueden ver algunos metodos del controlador personal; ya se mostrar, modificar o eliminar.
+En esta imagen se muestra como se usa el metodo borrar personal por idUsuario. Este metodo tambien requiere id de Administrador y contraseña de Administrador.
 
 ___
+
+
+
+
+
 
 # Encabezado1
 ## Encabezado2
