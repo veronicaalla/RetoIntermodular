@@ -6,5 +6,5 @@ import retrofit2.Response
 
 class IncidenciaRepository {
 
-    suspend fun getIncidencias(): Response<List<IncidenciaResponse>> = IncidenciaApi.retrofitService.getIncidencias()
+    //suspend fun getIncidencias(): Response<List<IncidenciaResponse>> = IncidenciaApi.retrofitService.getIncidencias()
 }
