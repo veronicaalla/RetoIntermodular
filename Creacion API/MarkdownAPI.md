@@ -124,7 +124,7 @@ En esta imagen se pueden ver algunos metodos del controlador incidencias-subtipo
 ___
 
 ## Incidencias-subtipo-controlador(GET(/api/incidencias-subtipos/tipo/{tipo}))
-En esta imagen se muestra como se usa el metodo buscar tipo de incidencia-subtipo por tipo de incidencia.
+En esta imagen se muestra como se usa el metodo buscar por tipo de incidencia.
 
 ![Imagen](Python_e_imagenes/API/get_api_incidencias-subtipos_tipo_tipo.PNG)
 
@@ -244,7 +244,12 @@ En esta imagen se pueden ver algunos metodos del controlador aula; ya se mostrar
 
 ___
 
+## Aula-controlador(GET(/api/aula/planta/{planta}))
+En esta imagen se muestra como se usa el metodo buscar por planta.
 
+![Imagen](Python_e_imagenes/API/get_api_aula_planta_planta.PNG)
+
+___
 
 
 
