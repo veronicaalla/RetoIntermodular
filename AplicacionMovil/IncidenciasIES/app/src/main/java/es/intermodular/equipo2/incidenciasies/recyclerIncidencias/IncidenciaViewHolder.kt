@@ -11,7 +11,10 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(incidenciasResponse: IncidenciaResponse, onItemSelected: (String) -> Unit) {
         binding.txtFecha.text = incidenciasResponse.fechaCreacion.toString()
-        //binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia) }
+        binding.txtIncidenciaID.text= "Incidencia #${incidenciasResponse.idIncidencia}"
+        binding.btnEstadoIncidencai.text = incidenciasResponse.estado
+        binding.txtTipoIncidencia.text = " ${incidenciasResponse.tipoIncidencia.tipo} ${incidenciasResponse.tipoIncidencia.subtipoNombre} ${incidenciasResponse.tipoIncidencia.subSubtipo}"
+    //binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia) }
     }
 }
 
