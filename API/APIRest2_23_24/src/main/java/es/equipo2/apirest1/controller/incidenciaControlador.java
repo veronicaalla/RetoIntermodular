@@ -1,26 +1,34 @@
 package es.equipo2.apirest1.controller;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.List;
 import java.sql.Date;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
 
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import es.equipo2.apirest1.model.Estado_Incidencia;
 import es.equipo2.apirest1.model.Incidencia;
@@ -152,6 +160,69 @@ public class incidenciaControlador {
         entityManager.close();
 
         return incidencias;
+    }
+    
+    @GetMapping("/excel")
+    public ResponseEntity<byte[]> exportarExcel() {
+    	List<Incidencia> incidencias = incidenciaRepository.findAll();
+
+        try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+            Sheet sheet = workbook.createSheet("Incidencias");
+            Row headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("Número");
+            headerRow.createCell(1).setCellValue("Descripción");
+            headerRow.createCell(2).setCellValue("Estado");
+            headerRow.createCell(3).setCellValue("Fecha Creación");
+            headerRow.createCell(4).setCellValue("Fecha Cierre");
+            headerRow.createCell(5).setCellValue("Tipo");
+            headerRow.createCell(6).setCellValue("Subtipo ID");
+            headerRow.createCell(7).setCellValue("Adjunto URL");
+            headerRow.createCell(8).setCellValue("Creador ID");
+            headerRow.createCell(9).setCellValue("Responsable ID");
+            headerRow.createCell(10).setCellValue("Equipo ID");
+            headerRow.createCell(11).setCellValue("Tiempo Dec");
+
+            int rowNum = 1;
+            for (Incidencia incidencia : incidencias) {
+                Row row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(incidencia.getNum());
+                row.createCell(1).setCellValue(incidencia.getDescripcion());
+                row.createCell(2).setCellValue(incidencia.getEstado().toString());
+                row.createCell(3).setCellValue(incidencia.getFechaCreacion().toString());
+                if (incidencia.getFechaCierre() != null) {
+                    row.createCell(4).setCellValue(incidencia.getFechaCierre().toString());
+                } else {
+                    row.createCell(4).setCellValue(""); // Opcional: puedes establecer un valor predeterminado
+                }
+                row.createCell(5).setCellValue(incidencia.getTipo().toString());
+                row.createCell(6).setCellValue(incidencia.getIncidenciasSubtipo().getId());
+                row.createCell(7).setCellValue(incidencia.getAdjuntoUrl());
+                row.createCell(8).setCellValue(incidencia.getCreador().getId());
+                row.createCell(9).setCellValue(incidencia.getResponsable().getId());
+                if (incidencia.getEquipo() != null) {
+                    row.createCell(10).setCellValue(incidencia.getEquipo().getId());
+                } else {
+                    row.createCell(10).setCellValue(""); // Opcional: puedes establecer un valor predeterminado
+                }
+                if (incidencia.getTiempo_dec() != null) {
+                    row.createCell(11).setCellValue(incidencia.getTiempo_dec().toString());
+                } else {
+                    row.createCell(11).setCellValue(""); // Opcional: puedes establecer un valor predeterminado
+                }
+            }
+
+            workbook.write(baos);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+            headers.setContentDispositionFormData("filename", "incidencias.xlsx");
+            headers.setContentLength(baos.size());
+
+            return new ResponseEntity<>(baos.toByteArray(), headers, HttpStatus.OK);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
     // Método para convertir una cadena de fecha en un objeto Date

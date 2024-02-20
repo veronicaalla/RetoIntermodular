@@ -16,11 +16,15 @@ import es.equipo2.apirest1.model.Incidencia;
 import es.equipo2.apirest1.model.IncidenciasSubtipo;
 import es.equipo2.apirest1.model.Tipo_Incidencias;
 import es.equipo2.apirest1.repository.IncidenciaSubtipoRepository;
+import jakarta.persistence.EntityManager;
 
 @RestController
 @RequestMapping("/api/incidencias-subtipos")
 public class incidenciasSubtipoControlador {
 
+	@Autowired
+    private EntityManager entityManager;
+	
     @Autowired
     private IncidenciaSubtipoRepository incidenciasSubtipoRepository;
 
@@ -39,6 +43,18 @@ public class incidenciasSubtipoControlador {
         return incidenciasSubtipoRepository.findByTipo(tipo);
     }
 
+    @GetMapping("/subsubtipos/{subtipo}")
+    public List<IncidenciasSubtipo> obtenerSubsubtiposPorSubtipo(@PathVariable String subtipo) {
+        return incidenciasSubtipoRepository.findBySubtipoNombre(subtipo);
+    }
+
+    @GetMapping("/ids/{tipo}/{subtipo}/{subsubtipo}")
+    public List<IncidenciasSubtipo> buscarIds(@PathVariable Tipo_Incidencias tipo,
+                                               @PathVariable String subtipo,
+                                               @PathVariable String subsubtipo) {
+        return incidenciasSubtipoRepository.findByTipoAndSubtipoNombreAndSubSubtipo(tipo, subtipo, subsubtipo);
+    }
+    
     @PostMapping
     public IncidenciasSubtipo nuevoIncidenciaSubtipo(@RequestBody IncidenciasSubtipo nuevoIncidenciaSubtipo) {
         return incidenciasSubtipoRepository.save(nuevoIncidenciaSubtipo);
