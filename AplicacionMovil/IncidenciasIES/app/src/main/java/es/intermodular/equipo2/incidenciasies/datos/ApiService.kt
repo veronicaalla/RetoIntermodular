@@ -5,7 +5,7 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface IncidenciaApiService {
+interface ApiService {
     @GET("incidencias/creador/{id}")
     suspend fun getIncidenciasUsuario(
         @Path("id") usuarioId: Int

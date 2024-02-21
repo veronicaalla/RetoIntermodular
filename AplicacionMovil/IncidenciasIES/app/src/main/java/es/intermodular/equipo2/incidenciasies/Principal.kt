@@ -11,14 +11,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
-import es.intermodular.equipo2.incidenciasies.datos.IncidenciaApiService
+import es.intermodular.equipo2.incidenciasies.datos.ApiService
 import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 import es.intermodular.equipo2.incidenciasies.recyclerIncidencias.IncidenciaAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import retrofit2.Response
 import retrofit2.Retrofit
 
 
@@ -162,7 +161,7 @@ class Principal : AppCompatActivity() {
     private fun obtenerIncidencias(idUsuarioPrueba: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val myResponse = retrofit.create(IncidenciaApiService::class.java)
+                val myResponse = retrofit.create(ApiService::class.java)
                     .getIncidenciasUsuario(idUsuarioPrueba)
 
                 myResponse?.let {
@@ -190,15 +189,57 @@ class Principal : AppCompatActivity() {
     }
 
     private fun funcionalidadBotones(response: List<IncidenciaResponse>) {
+        // Establecer el texto del botón "btnIncidenciasTotales" con el número total de incidencias
         binding.btnIncidenciasTotales.text = "${response.size} Incidencias"
 
+        // Agrupar las incidencias por estado
         val estados = response.groupBy { it.estado }
 
-        binding.btnAbiertas.text = "${estados["abierta"]?.size ?: 0} Abiertas"
-        binding.btnAsignadas.text = "${estados["asignada"]?.size ?: 0} Asignadas"
-        binding.btnEnProceso.text = "${estados["en proceso"]?.size ?: 0} En proceso"
-        binding.btnResueltas.text = "${estados["resuelta"]?.size ?: 0} Resueltas"
-        binding.btnCerradas.text = "${estados["cerrada"]?.size ?: 0} Cerradas"
+        // Obtener la lista de incidencias en cada estado o una lista vacía si no hay incidencias en ese estado
+        val incidenciasAbiertasFuncionalidad = estados["abierta"] ?: emptyList()
+        val incidenciasCerradasFuncionalidad = estados["cerrada"] ?: emptyList()
+        val incidenciasAsignadasFuncionalidad = estados["asignada"] ?: emptyList()
+        val incidenciasEnProcesoFuncionalidad = estados["en proceso"] ?: emptyList()
+        val incidenciasResueltasFuncionalidad = estados["resuelta"] ?: emptyList()
+
+        // Establecer el texto de los botones con la cantidad de incidencias en cada estado
+        binding.btnAbiertas.text = "${incidenciasAbiertasFuncionalidad.size} Abiertas"
+        binding.btnAsignadas.text = "${incidenciasAsignadasFuncionalidad.size} Asignadas"
+        binding.btnEnProceso.text = "${incidenciasEnProcesoFuncionalidad.size} En Proceso"
+        binding.btnResueltas.text = "${incidenciasResueltasFuncionalidad.size} Resueltas"
+        binding.btnCerradas.text = "${incidenciasCerradasFuncionalidad.size} Cerradas"
+
+        // Configurar el OnClickListener para cada botón
+        binding.btnAbiertas.setOnClickListener {
+            val intent = Intent(this, SpecificListIncidents::class.java)
+            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Abiertas")
+            intent.putExtra("EXTRA_INCIDENCIAS", incidenciasAbiertasFuncionalidad.toTypedArray())
+            startActivity(intent)
+        }
+        binding.btnAsignadas.setOnClickListener {
+            val intent = Intent(this, SpecificListIncidents::class.java)
+            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Asignadas")
+            intent.putExtra("EXTRA_INCIDENCIAS", incidenciasAsignadasFuncionalidad.toTypedArray())
+            startActivity(intent)
+        }
+        binding.btnEnProceso.setOnClickListener {
+            val intent = Intent(this, SpecificListIncidents::class.java)
+            intent.putExtra("EXTRA_TYPE_INCIDENTS", "En proceso")
+            intent.putExtra("EXTRA_INCIDENCIAS", incidenciasEnProcesoFuncionalidad.toTypedArray())
+            startActivity(intent)
+        }
+        binding.btnEnProceso.setOnClickListener {
+            val intent = Intent(this, SpecificListIncidents::class.java)
+            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Resueltas")
+            intent.putExtra("EXTRA_INCIDENCIAS", incidenciasResueltasFuncionalidad.toTypedArray())
+            startActivity(intent)
+        }
+        binding.btnCerradas.setOnClickListener {
+            val intent = Intent(this, SpecificListIncidents::class.java)
+            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Cerradas")
+            intent.putExtra("EXTRA_INCIDENCIAS", incidenciasCerradasFuncionalidad.toTypedArray())
+            startActivity(intent)
+        }
     }
 
 
