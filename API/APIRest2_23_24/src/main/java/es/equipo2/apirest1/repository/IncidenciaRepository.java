@@ -29,4 +29,5 @@ public interface IncidenciaRepository extends JpaRepository<Incidencia, Integer>
 			String descripcion, Estado_Incidencia estado, Date fechaCreacion, Date fechaCierre, Tipo_Incidencias tipo,
 			Integer creadorId, Integer responsableId);
 	List<Incidencia> findByDescripcionContaining(String descripcion);
+	List<Incidencia> findByResponsableIdAndEstado(int idAdministrador, Estado_Incidencia resuelta);
 }

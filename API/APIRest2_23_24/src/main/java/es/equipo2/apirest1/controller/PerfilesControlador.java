@@ -56,30 +56,14 @@ public class PerfilesControlador {
     @GetMapping("/login")
     public ResponseEntity<?> login(@RequestParam String dominio, @RequestParam String password) {
         // Codificar la contraseña utilizando MD5
-        String passwordCodificado = md5(password);
 
         // Buscar el perfil por dominio y contraseña codificada
-        Perfiles perfil = perfilesRepository.findByDominioAndPassword(dominio, passwordCodificado);
+        Perfiles perfil = perfilesRepository.findByDominioAndPassword(dominio, password);
 
         if (perfil != null) {
             return ResponseEntity.ok(perfil);
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Dominio o contraseña incorrectos");
-        }
-    }
-    private String md5(String password) {
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] messageDigest = md.digest(password.getBytes());
-
-            // Convertir el array de bytes a una representación hexadecimal
-            StringBuilder sb = new StringBuilder();
-            for (byte b : messageDigest) {
-                sb.append(String.format("%02x", b));
-            }
-            return sb.toString();
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Error al codificar la contraseña", e);
         }
     }
     

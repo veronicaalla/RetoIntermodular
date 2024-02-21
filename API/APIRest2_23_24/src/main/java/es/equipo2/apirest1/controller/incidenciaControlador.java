@@ -3,15 +3,18 @@ package es.equipo2.apirest1.controller;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.sql.Date;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -59,10 +62,10 @@ public class incidenciaControlador {
 	 
     @Autowired
     private IncidenciaRepository incidenciaRepository;
-    
+
     @Autowired
     private PersonalRepository personalRepository;
-
+    
     @GetMapping
     public List<Incidencia> obtenerIncidencias() {
         return incidenciaRepository.findAll();
@@ -186,6 +189,9 @@ public class incidenciaControlador {
             headerRow.createCell(10).setCellValue("Equipo ID");
             headerRow.createCell(11).setCellValue("Tiempo Dec");
 
+         // Crear un mapa para almacenar los nombres completos de los creadores y responsables por ID
+            Map<Integer, String> nombresCompletos = obtenerNombresCompletos();
+            
             int rowNum = 1;
             for (Incidencia incidencia : incidencias) {
                 Row row = sheet.createRow(rowNum++);
@@ -201,8 +207,151 @@ public class incidenciaControlador {
                 row.createCell(5).setCellValue(incidencia.getTipo().toString());
                 row.createCell(6).setCellValue(incidencia.getIncidenciasSubtipo().getId());
                 row.createCell(7).setCellValue(incidencia.getAdjuntoUrl());
-                row.createCell(8).setCellValue(incidencia.getCreador().getId());
-                row.createCell(9).setCellValue(incidencia.getResponsable().getId());
+                row.createCell(8).setCellValue(nombresCompletos.get(incidencia.getCreador().getId()));
+                row.createCell(9).setCellValue(nombresCompletos.get(incidencia.getResponsable().getId()));
+                if (incidencia.getEquipo() != null) {
+                    row.createCell(10).setCellValue(incidencia.getEquipo().getId());
+                } else {
+                    row.createCell(10).setCellValue(""); // Opcional: puedes establecer un valor predeterminado
+                }
+                if (incidencia.getTiempo_dec() != null) {
+                    row.createCell(11).setCellValue(incidencia.getTiempo_dec().toString());
+                } else {
+                    row.createCell(11).setCellValue(""); // Opcional: puedes establecer un valor predeterminado
+                }
+            }
+
+            workbook.write(baos);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+            headers.setContentDispositionFormData("filename", "incidencias.xlsx");
+            headers.setContentLength(baos.size());
+
+            return new ResponseEntity<>(baos.toByteArray(), headers, HttpStatus.OK);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+    }
+    
+    @GetMapping("/excelAdministrador")
+    public ResponseEntity<byte[]> exportarExcel(@RequestParam int idAdministrador) {
+        // Buscar todas las incidencias resueltas por el administrador específico
+        List<Incidencia> incidencias = incidenciaRepository.findByResponsableIdAndEstado(idAdministrador, Estado_Incidencia.resuelta);
+
+        try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+            Sheet sheet = workbook.createSheet("Incidencias");
+            Row headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("Número");
+            headerRow.createCell(1).setCellValue("Descripción");
+            headerRow.createCell(2).setCellValue("Estado");
+            headerRow.createCell(3).setCellValue("Fecha Creación");
+            headerRow.createCell(4).setCellValue("Fecha Cierre");
+            headerRow.createCell(5).setCellValue("Tipo");
+            headerRow.createCell(6).setCellValue("Subtipo ID");
+            headerRow.createCell(7).setCellValue("Adjunto URL");
+            headerRow.createCell(8).setCellValue("Creador");
+            headerRow.createCell(9).setCellValue("Responsable");
+            headerRow.createCell(10).setCellValue("Equipo ID");
+            headerRow.createCell(11).setCellValue("Tiempo Dec");
+
+            // Crear un mapa para almacenar los nombres completos de los creadores y responsables por ID
+            Map<Integer, String> nombresCompletos = obtenerNombresCompletos();
+
+            int rowNum = 1;
+            for (Incidencia incidencia : incidencias) {
+                Row row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(incidencia.getNum());
+                row.createCell(1).setCellValue(incidencia.getDescripcion());
+                row.createCell(2).setCellValue(incidencia.getEstado().toString());
+                row.createCell(3).setCellValue(incidencia.getFechaCreacion().toString());
+                if (incidencia.getFechaCierre() != null) {
+                    row.createCell(4).setCellValue(incidencia.getFechaCierre().toString());
+                } else {
+                    row.createCell(4).setCellValue(""); // Opcional: puedes establecer un valor predeterminado
+                }
+                row.createCell(5).setCellValue(incidencia.getTipo().toString());
+                row.createCell(6).setCellValue(incidencia.getIncidenciasSubtipo().getId());
+                row.createCell(7).setCellValue(incidencia.getAdjuntoUrl());
+                row.createCell(8).setCellValue(nombresCompletos.get(incidencia.getCreador().getId()));
+                row.createCell(9).setCellValue(nombresCompletos.get(incidencia.getResponsable().getId()));
+                if (incidencia.getEquipo() != null) {
+                    row.createCell(10).setCellValue(incidencia.getEquipo().getId());
+                } else {
+                    row.createCell(10).setCellValue(""); // Opcional: puedes establecer un valor predeterminado
+                }
+                if (incidencia.getTiempo_dec() != null) {
+                    row.createCell(11).setCellValue(incidencia.getTiempo_dec().toString());
+                } else {
+                    row.createCell(11).setCellValue(""); // Opcional: puedes establecer un valor predeterminado
+                }
+            }
+
+            workbook.write(baos);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+            headers.setContentDispositionFormData("filename", "incidencias.xlsx");
+            headers.setContentLength(baos.size());
+
+            return new ResponseEntity<>(baos.toByteArray(), headers, HttpStatus.OK);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // Método para obtener los nombres completos de los creadores y responsables
+    private Map<Integer, String> obtenerNombresCompletos() {
+        List<Personal> personas = personalRepository.findAll();
+        Map<Integer, String> nombresCompletos = new HashMap<>();
+        for (Personal persona : personas) {
+            String nombreCompleto = persona.getNombre() + " " + persona.getApellido1() + " " + persona.getApellido2();
+            nombresCompletos.put(persona.getId(), nombreCompleto);
+        }
+        return nombresCompletos;
+    }
+
+    @GetMapping("/excelAbiertas")
+    public ResponseEntity<byte[]> exportarExcelAbiertas() {
+        List<Incidencia> incidenciasAbiertas = incidenciaRepository.findByEstado(Estado_Incidencia.abierta);
+
+        try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+            Sheet sheet = workbook.createSheet("Incidencias");
+            Row headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("Número");
+            headerRow.createCell(1).setCellValue("Descripción");
+            headerRow.createCell(2).setCellValue("Estado");
+            headerRow.createCell(3).setCellValue("Fecha Creación");
+            headerRow.createCell(4).setCellValue("Fecha Cierre");
+            headerRow.createCell(5).setCellValue("Tipo");
+            headerRow.createCell(6).setCellValue("Subtipo ID");
+            headerRow.createCell(7).setCellValue("Adjunto URL");
+            headerRow.createCell(8).setCellValue("Creador ID");
+            headerRow.createCell(9).setCellValue("Responsable ID");
+            headerRow.createCell(10).setCellValue("Equipo ID");
+            headerRow.createCell(11).setCellValue("Tiempo Dec");
+
+            // Crear un mapa para almacenar los nombres completos de los creadores y responsables por ID
+            Map<Integer, String> nombresCompletos = obtenerNombresCompletos();
+
+            int rowNum = 1;
+            for (Incidencia incidencia : incidenciasAbiertas) {
+                Row row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(incidencia.getNum());
+                row.createCell(1).setCellValue(incidencia.getDescripcion());
+                row.createCell(2).setCellValue(incidencia.getEstado().toString());
+                row.createCell(3).setCellValue(incidencia.getFechaCreacion().toString());
+                if (incidencia.getFechaCierre() != null) {
+                    row.createCell(4).setCellValue(incidencia.getFechaCierre().toString());
+                } else {
+                    row.createCell(4).setCellValue(""); // Opcional: puedes establecer un valor predeterminado
+                }
+                row.createCell(5).setCellValue(incidencia.getTipo().toString());
+                row.createCell(6).setCellValue(incidencia.getIncidenciasSubtipo().getId());
+                row.createCell(7).setCellValue(incidencia.getAdjuntoUrl());
+                row.createCell(8).setCellValue(nombresCompletos.get(incidencia.getCreador().getId()));
+                row.createCell(9).setCellValue(nombresCompletos.get(incidencia.getResponsable().getId()));
                 if (incidencia.getEquipo() != null) {
                     row.createCell(10).setCellValue(incidencia.getEquipo().getId());
                 } else {
@@ -229,25 +378,29 @@ public class incidenciaControlador {
 
     }
 
+
     @GetMapping("/pdf")
     public ResponseEntity<byte[]> exportarPdf() {
         List<Incidencia> incidencias = incidenciaRepository.findAll();
+        Map<Integer, String> nombresCompletos = obtenerNombresCompletos();
 
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
              PDDocument document = new PDDocument()) {
             PDPage page = new PDPage();
+            // Hacer la hoja más ancha (por ejemplo, 1000 puntos de ancho)
+            page.setMediaBox(new PDRectangle(1250, 600)); // Cambiar el tamaño según tus necesidades
             document.addPage(page);
 
             PDPageContentStream contentStream = new PDPageContentStream(document, page);
 
             // Establecer la posición inicial para escribir en el PDF
-            float y = page.getMediaBox().getHeight() - 50;
-            float margin = 50;
+            float x = 50; // Margen izquierdo
+            float y = page.getMediaBox().getHeight() - 50; // Margen superior
 
             // Escribir cabeceras
             contentStream.beginText();
             contentStream.setFont(PDType1Font.HELVETICA_BOLD, 10);
-            contentStream.newLineAtOffset(margin, y);
+            contentStream.newLineAtOffset(x, y);
             contentStream.showText("Número");
             contentStream.newLineAtOffset(100, 0);
             contentStream.showText("Descripción");
@@ -264,9 +417,9 @@ public class incidenciaControlador {
             contentStream.newLineAtOffset(100, 0);
             contentStream.showText("Adjunto URL");
             contentStream.newLineAtOffset(100, 0);
-            contentStream.showText("Creador ID");
+            contentStream.showText("Creador");
             contentStream.newLineAtOffset(100, 0);
-            contentStream.showText("Responsable ID");
+            contentStream.showText("Responsable");
             contentStream.newLineAtOffset(100, 0);
             contentStream.showText("Equipo ID");
             contentStream.newLineAtOffset(100, 0);
@@ -278,7 +431,7 @@ public class incidenciaControlador {
             for (Incidencia incidencia : incidencias) {
                 contentStream.beginText();
                 contentStream.setFont(PDType1Font.HELVETICA, 6);
-                contentStream.newLineAtOffset(margin, y);
+                contentStream.newLineAtOffset(x, y);
 
                 // Comprobar y escribir cada valor
                 contentStream.showText(incidencia.getNum() != 0 ? String.valueOf(incidencia.getNum()) : "");
@@ -296,10 +449,16 @@ public class incidenciaControlador {
                 contentStream.showText(incidencia.getIncidenciasSubtipo() != null ? String.valueOf(incidencia.getIncidenciasSubtipo().getId()) : "");
                 contentStream.newLineAtOffset(100, 0);
                 contentStream.showText(incidencia.getAdjuntoUrl() != null ? incidencia.getAdjuntoUrl() : "");
+
+                // Obtener nombres completos del creador y el responsable
+                String nombreCreador = nombresCompletos.getOrDefault(incidencia.getCreador().getId(), "");
+                String nombreResponsable = nombresCompletos.getOrDefault(incidencia.getResponsable().getId(), "");
+
                 contentStream.newLineAtOffset(100, 0);
-                contentStream.showText(incidencia.getCreador() != null ? String.valueOf(incidencia.getCreador().getId()) : "");
+                contentStream.showText(nombreCreador);
                 contentStream.newLineAtOffset(100, 0);
-                contentStream.showText(incidencia.getResponsable() != null ? String.valueOf(incidencia.getResponsable().getId()) : "");
+                contentStream.showText(nombreResponsable);
+
                 contentStream.newLineAtOffset(100, 0);
                 contentStream.showText(incidencia.getEquipo() != null ? String.valueOf(incidencia.getEquipo().getId()) : "");
                 contentStream.newLineAtOffset(100, 0);
@@ -308,7 +467,6 @@ public class incidenciaControlador {
                 contentStream.endText();
                 y -= 20;
             }
-
 
             contentStream.close();
 
@@ -325,6 +483,7 @@ public class incidenciaControlador {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
     
     @PostMapping
     public Incidencia nuevaIncidencia(@RequestBody Incidencia nuevaIncidencia) {
