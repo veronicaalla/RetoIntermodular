@@ -1,15 +1,16 @@
 package es.intermodular.equipo2.incidenciasies
 
+import android.R
 import android.content.Intent
 import android.content.SharedPreferences
-import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityLoginBinding
 
-import java.util.Locale
 
 class LoginActivity : AppCompatActivity() {
 
@@ -85,6 +86,8 @@ class LoginActivity : AppCompatActivity() {
             // Mostrar mensaje de olvidé contraseña
             showToast("Por favor, póngase en contacto con su coordinador TIC")
         }
+
+
     }
 
     override fun onStop() {
