@@ -1,11 +1,13 @@
 package es.intermodular.equipo2.incidenciasies
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityLoginBinding
+import es.intermodular.equipo2.incidenciasies.datos.Api
 import es.intermodular.equipo2.incidenciasies.datos.ApiService
 import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
 import es.intermodular.equipo2.incidenciasies.modelo.PerfilReponse
@@ -13,6 +15,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class LoginActivity : AppCompatActivity() {
@@ -44,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
                 // Mostrar mensaje de error
                 showToast("¡Por favor, rellene ambos campos!")
             } else {
-                comprobacionCredenciales()
+              comprobacionCredenciales()
                 /*// Si ambos campos tienen datos, continuar con la lógica de inicio de sesión
                 if (validateUser(usuario) && contrasenia == "123") {
                     // Mensaje de bienvenida
@@ -101,7 +105,7 @@ class LoginActivity : AppCompatActivity() {
 
         var retrofit = RetrofitBuilder.build()
 
-        CoroutineScope(Dispatchers.IO).launch {
+        /*CoroutineScope(Dispatchers.IO).launch {
             try{
                 val myResponse : Call<PerfilReponse> =
                     retrofit.create(ApiService::class.java)
@@ -119,7 +123,29 @@ class LoginActivity : AppCompatActivity() {
             }catch (e:Exception){
                 Log.e("Login usuario", "Error: ${e.message}")
             }
-        }
+        }*/
+
+        Api.retrofitService.login(email, clave).enqueue(object: Callback<PerfilReponse>{
+            override fun onResponse(call:Call<PerfilReponse>, response: Response<PerfilReponse>){
+                if (response.isSuccessful){
+                    val perfilResponse = response.body()
+                    Log.i("Login usuario", "Respuesta succesfull")
+                    Log.i("Loggin Usuario", perfilResponse!!.personal_id.toString())
+
+                    val intent = Intent(this@LoginActivity, Principal::class.java)
+                    intent.putExtra("ID_PERFIL_EXTRA", perfilResponse!!.personal_id)
+                    startActivity(intent)
+
+                }else{
+                    Log.i("Loggin Usuario", response.toString())
+                }
+            }
+            override fun onFailure(call: Call<PerfilReponse>, t: Throwable) {
+                // Manejar el error de conexión aquí
+            }
+        })
+
+
     }
 
     override fun onStop() {

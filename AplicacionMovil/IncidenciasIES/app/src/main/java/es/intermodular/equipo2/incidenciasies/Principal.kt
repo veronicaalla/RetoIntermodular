@@ -27,6 +27,7 @@ class Principal : AppCompatActivity() {
     private lateinit var retrofit: Retrofit
     private lateinit var adapter: IncidenciaAdapter
 
+    private  var idUsuarioPrueba:Int =0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,6 +37,8 @@ class Principal : AppCompatActivity() {
 
         isOnline(this)
 
+        //recuperamos el id del usuario que se ha pasado anteriormente, mediante un Intent
+         idUsuarioPrueba = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
 
         //region Damos funcionalidad a los botones
         binding.btnAbiertas.setOnClickListener {
@@ -154,7 +157,7 @@ class Principal : AppCompatActivity() {
         binding.rvIncidencias.adapter = adapter
 
         //Mostramos los items
-        val idUsuarioPrueba: Int = 1;
+
         obtenerIncidencias(idUsuarioPrueba)
     }
 
