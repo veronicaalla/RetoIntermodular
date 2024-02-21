@@ -1,15 +1,18 @@
 package es.intermodular.equipo2.incidenciasies
 
-import android.R
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityLoginBinding
+import es.intermodular.equipo2.incidenciasies.datos.ApiService
+import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
+import es.intermodular.equipo2.incidenciasies.modelo.PerfilReponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Call
 
 
 class LoginActivity : AppCompatActivity() {
@@ -41,16 +44,18 @@ class LoginActivity : AppCompatActivity() {
                 // Mostrar mensaje de error
                 showToast("¡Por favor, rellene ambos campos!")
             } else {
-                // Si ambos campos tienen datos, continuar con la lógica de inicio de sesión
+                comprobacionCredenciales()
+                /*// Si ambos campos tienen datos, continuar con la lógica de inicio de sesión
                 if (validateUser(usuario) && contrasenia == "123") {
                     // Mensaje de bienvenida
                     showToast("¡Bienvenido!")
                     // Iniciar actividad principal
                     startActivity(Intent(this, Principal::class.java))
+
                 } else {
                     // Mensaje de error de inicio de sesión
                     showToast("¡Usuario o contraseña incorrectos!")
-                }
+                }*/
             }
         }
 
@@ -88,6 +93,33 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun comprobacionCredenciales() {
+        val email = binding.EditTextUsuario.text.toString()
+        val clave = binding.EditTextContrasenia.text.toString()
+
+        var retrofit = RetrofitBuilder.build()
+
+        CoroutineScope(Dispatchers.IO).launch {
+            try{
+                val myResponse : Call<PerfilReponse> =
+                    retrofit.create(ApiService::class.java)
+                        .login(email, clave)
+
+                if (myResponse !=null){
+                    Log.i("Login usuario",myResponse.toString() )
+                }
+
+                if (myResponse.isExecuted){
+                    Log.i("Login usuario ", myResponse.toString())
+                }else{
+                    Log.e("Login usuario", "Error al intentar comprobar credenciales")
+                }
+            }catch (e:Exception){
+                Log.e("Login usuario", "Error: ${e.message}")
+            }
+        }
     }
 
     override fun onStop() {
