@@ -1,13 +1,14 @@
 package es.intermodular.equipo2.incidenciasies
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.ConnectivityManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.PopupMenu
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
 import es.intermodular.equipo2.incidenciasies.datos.IncidenciaApiService
@@ -17,9 +18,9 @@ import es.intermodular.equipo2.incidenciasies.recyclerIncidencias.IncidenciaAdap
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
 import retrofit2.Response
 import retrofit2.Retrofit
+
 
 class Principal : AppCompatActivity() {
 
@@ -34,7 +35,10 @@ class Principal : AppCompatActivity() {
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //We give functionality to the buttons
+        isOnline(this)
+
+
+        //region Damos funcionalidad a los botones
         binding.btnAbiertas.setOnClickListener {
             val intent = Intent(this, SpecificListIncidents::class.java)
             //We pass the type of incident
@@ -92,6 +96,10 @@ class Principal : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //endregion
+
+
+        //region Damos funcionalidad al menu
         val menuAjustes = findViewById<ImageView>(R.id.menuAjustes)
 
         // Configurar el OnClickListener para el ícono de ajustes
@@ -124,6 +132,11 @@ class Principal : AppCompatActivity() {
             // Mostrar el menú desplegable
             popupMenu.show()
         }
+
+        //endregion
+
+
+        retrofit = RetrofitBuilder.build()
         initUI()
     }
 
@@ -141,21 +154,53 @@ class Principal : AppCompatActivity() {
         binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         binding.rvIncidencias.adapter = adapter
 
-        /*
         //Mostramos los items
-        CoroutineScope(Dispatchers.IO).launch {
-            val myResponse: Response<List<IncidenciaResponse>> =
-                retrofit.create(IncidenciaApiService::class.java).getIncidencias()
+        val idUsuarioPrueba: Int = 1;
+        obtenerIncidencias(idUsuarioPrueba)
+    }
 
-            if (myResponse.isSuccessful) {
-                val listIncidencias: List<IncidenciaResponse>? = myResponse.body()
-                if (listIncidencias != null) {
-                    adapter.setIncidencias(listIncidencias)
+    private fun obtenerIncidencias(idUsuarioPrueba: Int) {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val myResponse = retrofit.create(IncidenciaApiService::class.java)
+                    .getIncidenciasUsuario(idUsuarioPrueba)
+
+                myResponse?.let {
+                    Log.i("Incidecias usuario", it.toString())
+
+                    if (it.isSuccessful) {
+                        Log.i("Incidecias usuario", "Funciona")
+                        val response: List<IncidenciaResponse>? = it.body()
+                        response?.let { res ->
+                            runOnUiThread {
+                                adapter.updateIncidencias(res)
+
+                                // Actualizar el texto de los botones
+                                funcionalidadBotones(res)
+                            }
+                        }
+                    } else {
+                        Log.e("Incidencias", "Error al obtener las incidencias")
+                    }
                 }
+            } catch (e: Exception) {
+                Log.e("Incidencias", "Error: ${e.message}")
             }
         }
-        */
     }
+
+    private fun funcionalidadBotones(response: List<IncidenciaResponse>) {
+        binding.btnIncidenciasTotales.text = "${response.size} Incidencias"
+
+        val estados = response.groupBy { it.estado }
+
+        binding.btnAbiertas.text = "${estados["abierta"]?.size ?: 0} Abiertas"
+        binding.btnAsignadas.text = "${estados["asignada"]?.size ?: 0} Asignadas"
+        binding.btnEnProceso.text = "${estados["en proceso"]?.size ?: 0} En proceso"
+        binding.btnResueltas.text = "${estados["resuelta"]?.size ?: 0} Resueltas"
+        binding.btnCerradas.text = "${estados["cerrada"]?.size ?: 0} Cerradas"
+    }
+
 
     private fun mostrarLayoutAyuda() {
         // Inflar el layout activity_help.xml
@@ -196,6 +241,13 @@ class Principal : AppCompatActivity() {
         }
         // Añadir la vista a tu layout principal
         setContentView(aboutView)
+    }
+
+    fun isOnline(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = connectivityManager.activeNetworkInfo
+        return networkInfo != null && networkInfo.isAvailable && networkInfo.isConnected
     }
 
 }

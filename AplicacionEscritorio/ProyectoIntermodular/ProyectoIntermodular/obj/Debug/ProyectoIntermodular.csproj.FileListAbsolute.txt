@@ -42,6 +42,7 @@ D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermod
 D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearPerfil.resources
 D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearUsuario.resources
 D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.EliminarUsuario.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Incidencia.resources
 D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Inicial.resources
 D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarUsuario.resources
 D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Principal.resources
@@ -58,4 +59,6 @@ C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoI
 D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.dll
 D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.xml
 D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CopyComplete
-D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarIncidencia.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CopyComplete
