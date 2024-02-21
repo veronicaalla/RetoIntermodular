@@ -27,15 +27,6 @@ namespace ProyectoIntermodular.Formularios
             }
         }
 
-        private void checkBoxFechaCierre_CheckedChanged(object sender, EventArgs e)
-        {
-            dateFechaCierre.Enabled = true;
-            if (!checkBoxFechaCierre.Checked)
-            {
-                dateFechaCierre.Enabled = false;
-            }
-        }
-
         private void btnCrear_Click(object sender, EventArgs e)
         {
             MessageBox.Show("La incidencia ha sido creada con éxito.", "Incidencia creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -69,6 +60,11 @@ namespace ProyectoIntermodular.Formularios
                 string archivoSeleccionado = openFileDialog.FileName;
                 lblArchivo.Text = archivoSeleccionado;
             }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

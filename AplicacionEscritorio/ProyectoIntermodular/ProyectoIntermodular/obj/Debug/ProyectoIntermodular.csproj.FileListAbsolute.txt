@@ -62,3 +62,4 @@ D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermod
 C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.dll
 C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.xml
 C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CopyComplete
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarIncidencia.resources
