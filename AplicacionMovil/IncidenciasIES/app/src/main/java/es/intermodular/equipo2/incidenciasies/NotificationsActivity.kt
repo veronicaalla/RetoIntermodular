@@ -17,7 +17,7 @@ class NotificationsActivity : AppCompatActivity() {
 
         //----------------- DAMOS FUNCIONALIDAD AL TOOL BAR ------------
         binding.menuAtras.setOnClickListener {
-            finish()
+
         }
     }
 }

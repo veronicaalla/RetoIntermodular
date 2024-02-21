@@ -36,7 +36,9 @@ class Principal : AppCompatActivity() {
         setContentView(binding.root)
 
         isOnline(this)
-        //We give functionality to the buttons
+
+
+        //region Damos funcionalidad a los botones
         binding.btnAbiertas.setOnClickListener {
             val intent = Intent(this, SpecificListIncidents::class.java)
             //We pass the type of incident
@@ -94,6 +96,10 @@ class Principal : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //endregion
+
+
+        //region Damos funcionalidad al menu
         val menuAjustes = findViewById<ImageView>(R.id.menuAjustes)
 
         // Configurar el OnClickListener para el ícono de ajustes
@@ -127,12 +133,14 @@ class Principal : AppCompatActivity() {
             popupMenu.show()
         }
 
+        //endregion
+
+
         retrofit = RetrofitBuilder.build()
         initUI()
     }
 
     private fun initUI() {
-
         //Damos valor al recycler view
         retrofit = RetrofitBuilder.build()
         adapter = IncidenciaAdapter { incidenciaId ->
@@ -146,16 +154,19 @@ class Principal : AppCompatActivity() {
         binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         binding.rvIncidencias.adapter = adapter
 
-
         //Mostramos los items
         val idUsuarioPrueba: Int = 1;
+        obtenerIncidencias(idUsuarioPrueba)
+    }
+
+    private fun obtenerIncidencias(idUsuarioPrueba: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val myResponse: Response<List<IncidenciaResponse>> =
                     retrofit.create(IncidenciaApiService::class.java)
                         .getIncidenciasUsuario(idUsuarioPrueba)
 
-                if (myResponse !=null){
+                if (myResponse != null) {
                     Log.i("Incidecias usuario", myResponse.toString())
                 }
 
@@ -165,6 +176,10 @@ class Principal : AppCompatActivity() {
                     if (response != null) {
                         runOnUiThread {
                             adapter.updateIncidencias(response)
+
+                            funcionalidadBotones(response)
+
+
                         }
                     }
                 } else {
@@ -174,6 +189,43 @@ class Principal : AppCompatActivity() {
                 Log.e("Incidencias", "Error: ${e.message}")
             }
         }
+    }
+
+    private fun funcionalidadBotones(response: List<IncidenciaResponse>) {
+        binding.btnIncidenciasTotales.text = "${response.size} Incidencias"
+
+        var incidenciasAbiertas: MutableList<IncidenciaResponse> =
+            mutableListOf<IncidenciaResponse>()
+        var incidenciasAsignadas: MutableList<IncidenciaResponse> =
+            mutableListOf<IncidenciaResponse>()
+        var incidenciasEnProceso: MutableList<IncidenciaResponse> =
+            mutableListOf<IncidenciaResponse>()
+        var incidenciasResueltas: MutableList<IncidenciaResponse> =
+            mutableListOf<IncidenciaResponse>()
+        var incidenciasCerradas: MutableList<IncidenciaResponse> =
+            mutableListOf<IncidenciaResponse>()
+
+        for (i in response) {
+            when (i.tipo) {
+                "abierta" -> incidenciasAbiertas.add(i)
+                "asignadas" -> incidenciasAsignadas.add(i)
+                "en proceso" -> incidenciasEnProceso.add(i)
+                "resueltas" -> incidenciasResueltas.add(i)
+                "cerradas" -> incidenciasCerradas.add(i)
+            }
+        }
+
+        //region Le asignamos el texto correspondiente a los botones
+        binding.btnAbiertas.text = "${incidenciasAbiertas.size} Abiertas"
+        binding.btnAsignadas.text = "${incidenciasAsignadas.size} Asignadas"
+        binding.btnEnProceso.text = "${incidenciasEnProceso.size} En proceso"
+        binding.btnResueltas.text = "${incidenciasResueltas.size} Resueltas"
+        binding.btnCerradas.text = "${incidenciasCerradas.size} Cerradas"
+        //enregion
+
+        //region Le damos la funcionalidad al boton
+
+        //endregion
 
     }
 
