@@ -9,6 +9,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.http.HttpHeaders;
@@ -225,18 +229,102 @@ public class incidenciaControlador {
 
     }
 
-    // Método para convertir una cadena de fecha en un objeto Date
-    private Date parseFecha(String fechaStr) {
-        try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            java.util.Date parsedDate = dateFormat.parse(fechaStr);
-            return new Date(parsedDate.getTime());
-        } catch (ParseException | NullPointerException e) {
-            // Manejar la excepción si la cadena de fecha no tiene el formato correcto o es nula
-            return null;
+    @GetMapping("/pdf")
+    public ResponseEntity<byte[]> exportarPdf() {
+        List<Incidencia> incidencias = incidenciaRepository.findAll();
+
+        try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
+             PDDocument document = new PDDocument()) {
+            PDPage page = new PDPage();
+            document.addPage(page);
+
+            PDPageContentStream contentStream = new PDPageContentStream(document, page);
+
+            // Establecer la posición inicial para escribir en el PDF
+            float y = page.getMediaBox().getHeight() - 50;
+            float margin = 50;
+
+            // Escribir cabeceras
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.HELVETICA_BOLD, 10);
+            contentStream.newLineAtOffset(margin, y);
+            contentStream.showText("Número");
+            contentStream.newLineAtOffset(100, 0);
+            contentStream.showText("Descripción");
+            contentStream.newLineAtOffset(100, 0);
+            contentStream.showText("Estado");
+            contentStream.newLineAtOffset(100, 0);
+            contentStream.showText("Fecha Creación");
+            contentStream.newLineAtOffset(100, 0);
+            contentStream.showText("Fecha Cierre");
+            contentStream.newLineAtOffset(100, 0);
+            contentStream.showText("Tipo");
+            contentStream.newLineAtOffset(100, 0);
+            contentStream.showText("Subtipo ID");
+            contentStream.newLineAtOffset(100, 0);
+            contentStream.showText("Adjunto URL");
+            contentStream.newLineAtOffset(100, 0);
+            contentStream.showText("Creador ID");
+            contentStream.newLineAtOffset(100, 0);
+            contentStream.showText("Responsable ID");
+            contentStream.newLineAtOffset(100, 0);
+            contentStream.showText("Equipo ID");
+            contentStream.newLineAtOffset(100, 0);
+            contentStream.showText("Tiempo Dec");
+            contentStream.endText();
+
+            // Escribir datos de incidencias
+            y -= 20;
+            for (Incidencia incidencia : incidencias) {
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.HELVETICA, 6);
+                contentStream.newLineAtOffset(margin, y);
+
+                // Comprobar y escribir cada valor
+                contentStream.showText(incidencia.getNum() != 0 ? String.valueOf(incidencia.getNum()) : "");
+                contentStream.newLineAtOffset(100, 0);
+                contentStream.showText(incidencia.getDescripcion() != null ? incidencia.getDescripcion() : "");
+                contentStream.newLineAtOffset(100, 0);
+                contentStream.showText(incidencia.getEstado() != null ? incidencia.getEstado().toString() : "");
+                contentStream.newLineAtOffset(100, 0);
+                contentStream.showText(incidencia.getFechaCreacion() != null ? incidencia.getFechaCreacion().toString() : "");
+                contentStream.newLineAtOffset(100, 0);
+                contentStream.showText(incidencia.getFechaCierre() != null ? incidencia.getFechaCierre().toString() : "");
+                contentStream.newLineAtOffset(100, 0);
+                contentStream.showText(incidencia.getTipo() != null ? incidencia.getTipo().toString() : "");
+                contentStream.newLineAtOffset(100, 0);
+                contentStream.showText(incidencia.getIncidenciasSubtipo() != null ? String.valueOf(incidencia.getIncidenciasSubtipo().getId()) : "");
+                contentStream.newLineAtOffset(100, 0);
+                contentStream.showText(incidencia.getAdjuntoUrl() != null ? incidencia.getAdjuntoUrl() : "");
+                contentStream.newLineAtOffset(100, 0);
+                contentStream.showText(incidencia.getCreador() != null ? String.valueOf(incidencia.getCreador().getId()) : "");
+                contentStream.newLineAtOffset(100, 0);
+                contentStream.showText(incidencia.getResponsable() != null ? String.valueOf(incidencia.getResponsable().getId()) : "");
+                contentStream.newLineAtOffset(100, 0);
+                contentStream.showText(incidencia.getEquipo() != null ? String.valueOf(incidencia.getEquipo().getId()) : "");
+                contentStream.newLineAtOffset(100, 0);
+                contentStream.showText(incidencia.getTiempo_dec() != null ? incidencia.getTiempo_dec().toString() : "");
+
+                contentStream.endText();
+                y -= 20;
+            }
+
+
+            contentStream.close();
+
+            document.save(baos);
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_PDF);
+            headers.setContentDispositionFormData("filename", "incidencias.pdf");
+            headers.setContentLength(baos.size());
+
+            return new ResponseEntity<>(baos.toByteArray(), headers, HttpStatus.OK);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
     
     @PostMapping
     public Incidencia nuevaIncidencia(@RequestBody Incidencia nuevaIncidencia) {
