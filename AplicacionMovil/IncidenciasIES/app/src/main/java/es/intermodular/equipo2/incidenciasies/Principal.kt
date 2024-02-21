@@ -162,28 +162,26 @@ class Principal : AppCompatActivity() {
     private fun obtenerIncidencias(idUsuarioPrueba: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val myResponse: Response<List<IncidenciaResponse>> =
-                    retrofit.create(IncidenciaApiService::class.java)
-                        .getIncidenciasUsuario(idUsuarioPrueba)
+                val myResponse = retrofit.create(IncidenciaApiService::class.java)
+                    .getIncidenciasUsuario(idUsuarioPrueba)
 
-                if (myResponse != null) {
-                    Log.i("Incidecias usuario", myResponse.toString())
-                }
+                myResponse?.let {
+                    Log.i("Incidecias usuario", it.toString())
 
-                if (myResponse.isSuccessful) {
-                    Log.i("Incidecias usuario", "Funciona")
-                    val response: List<IncidenciaResponse>? = myResponse.body()
-                    if (response != null) {
-                        runOnUiThread {
-                            adapter.updateIncidencias(response)
+                    if (it.isSuccessful) {
+                        Log.i("Incidecias usuario", "Funciona")
+                        val response: List<IncidenciaResponse>? = it.body()
+                        response?.let { res ->
+                            runOnUiThread {
+                                adapter.updateIncidencias(res)
 
-                            funcionalidadBotones(response)
-
-
+                                // Actualizar el texto de los botones
+                                funcionalidadBotones(res)
+                            }
                         }
+                    } else {
+                        Log.e("Incidencias", "Error al obtener las incidencias")
                     }
-                } else {
-                    Log.e("Incidencias", "Error al obtener las incidencias")
                 }
             } catch (e: Exception) {
                 Log.e("Incidencias", "Error: ${e.message}")
@@ -194,40 +192,15 @@ class Principal : AppCompatActivity() {
     private fun funcionalidadBotones(response: List<IncidenciaResponse>) {
         binding.btnIncidenciasTotales.text = "${response.size} Incidencias"
 
-        var incidenciasAbiertas: MutableList<IncidenciaResponse> =
-            mutableListOf<IncidenciaResponse>()
-        var incidenciasAsignadas: MutableList<IncidenciaResponse> =
-            mutableListOf<IncidenciaResponse>()
-        var incidenciasEnProceso: MutableList<IncidenciaResponse> =
-            mutableListOf<IncidenciaResponse>()
-        var incidenciasResueltas: MutableList<IncidenciaResponse> =
-            mutableListOf<IncidenciaResponse>()
-        var incidenciasCerradas: MutableList<IncidenciaResponse> =
-            mutableListOf<IncidenciaResponse>()
+        val estados = response.groupBy { it.estado }
 
-        for (i in response) {
-            when (i.tipo) {
-                "abierta" -> incidenciasAbiertas.add(i)
-                "asignadas" -> incidenciasAsignadas.add(i)
-                "en proceso" -> incidenciasEnProceso.add(i)
-                "resueltas" -> incidenciasResueltas.add(i)
-                "cerradas" -> incidenciasCerradas.add(i)
-            }
-        }
-
-        //region Le asignamos el texto correspondiente a los botones
-        binding.btnAbiertas.text = "${incidenciasAbiertas.size} Abiertas"
-        binding.btnAsignadas.text = "${incidenciasAsignadas.size} Asignadas"
-        binding.btnEnProceso.text = "${incidenciasEnProceso.size} En proceso"
-        binding.btnResueltas.text = "${incidenciasResueltas.size} Resueltas"
-        binding.btnCerradas.text = "${incidenciasCerradas.size} Cerradas"
-        //enregion
-
-        //region Le damos la funcionalidad al boton
-
-        //endregion
-
+        binding.btnAbiertas.text = "${estados["abierta"]?.size ?: 0} Abiertas"
+        binding.btnAsignadas.text = "${estados["asignada"]?.size ?: 0} Asignadas"
+        binding.btnEnProceso.text = "${estados["en proceso"]?.size ?: 0} En proceso"
+        binding.btnResueltas.text = "${estados["resuelta"]?.size ?: 0} Resueltas"
+        binding.btnCerradas.text = "${estados["cerrada"]?.size ?: 0} Cerradas"
     }
+
 
     private fun mostrarLayoutAyuda() {
         // Inflar el layout activity_help.xml
