@@ -10,7 +10,7 @@ En esta imagen se pueden ver algunos métodos del controlador personal; ya sea m
 - __POST(/api/personal)__: Crea un nuevo elemento personal.
 - __GET(/api/personal/nombre/{nombre})__: Muestra todos los elementos personal introduciendo un nombre.
 - __GET(/api/personal/apellido 2/{apellido})__: Muestra todos los elementos personal introduciendo un apellido1.
-- __GET(/api/personal/apellido 1/{apellido})__: Muestra todos los elemento personal introduciendo un apellido2.
+- __GET(/api/personal/apellido 1/{apellido})__: Muestra todos los elementos personal introduciendo un apellido2.
 - __DELETE(/api/personal/borrar_usuario/{id usuario})__: Elimina un elemento personal introduciendo un id con permisos de Administrador.
 
 ![Imagen](Python_e_imagenes/API/personal_controlador.PNG)
