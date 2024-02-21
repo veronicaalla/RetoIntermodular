@@ -1,7 +1,7 @@
 # Proyecto Intermodular
 
 ## Personal-controlador
-En esta imagen se pueden ver algunos metodos del controlador personal; ya se mostrar, modificar o eliminar.
+En esta imagen se pueden ver algunos métodos del controlador personal; ya sea mostrar, modificar o eliminar.
 
 - __GET(/api/personal/{id})__: Muestra los datos de un elemento personal introduciendo un id.
 - __PUT(/api/personal/{id})__: Modifica un elemento personal introduciendo un id.
@@ -9,9 +9,9 @@ En esta imagen se pueden ver algunos metodos del controlador personal; ya se mos
 - __GET(/api/personal)__: Muestra los datos de todos los elementos personal.
 - __POST(/api/personal)__: Crea un nuevo elemento personal.
 - __GET(/api/personal/nombre/{nombre})__: Muestra todos los elementos personal introduciendo un nombre.
-- __GET(/api/personal/apellido2/{apellido})__: Muestra todos los elementos personal introduciendo un apellido1.
-- __GET(/api/personal/apellido1/{apellido})__: Muestra todos los elemento personal introduciendo un apellido2.
-- __DELETE(/api/personal/borrar_usuario/{idUsuario})__: Elimina un elemento personal introduciendo un id con permisos de Administrador.
+- __GET(/api/personal/apellido 2/{apellido})__: Muestra todos los elementos personal introduciendo un apellido1.
+- __GET(/api/personal/apellido 1/{apellido})__: Muestra todos los elemento personal introduciendo un apellido2.
+- __DELETE(/api/personal/borrar_usuario/{id usuario})__: Elimina un elemento personal introduciendo un id con permisos de Administrador.
 
 ![Imagen](Python_e_imagenes/API/personal_controlador.PNG)
 
