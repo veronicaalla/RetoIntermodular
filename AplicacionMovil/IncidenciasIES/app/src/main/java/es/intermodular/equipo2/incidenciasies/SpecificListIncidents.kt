@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.databinding.ActivitySpecificListIncidentsBinding
+import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 
 class SpecificListIncidents : AppCompatActivity() {
 

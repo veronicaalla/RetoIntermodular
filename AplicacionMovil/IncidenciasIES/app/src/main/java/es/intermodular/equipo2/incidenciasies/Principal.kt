@@ -36,7 +36,9 @@ class Principal : AppCompatActivity() {
         setContentView(binding.root)
 
         isOnline(this)
-        //We give functionality to the buttons
+
+
+        //region Damos funcionalidad a los botones
         binding.btnAbiertas.setOnClickListener {
             val intent = Intent(this, SpecificListIncidents::class.java)
             //We pass the type of incident
@@ -94,6 +96,10 @@ class Principal : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //endregion
+
+
+        //region Damos funcionalidad al menu
         val menuAjustes = findViewById<ImageView>(R.id.menuAjustes)
 
         // Configurar el OnClickListener para el ícono de ajustes
@@ -127,12 +133,14 @@ class Principal : AppCompatActivity() {
             popupMenu.show()
         }
 
+        //endregion
+
+
         retrofit = RetrofitBuilder.build()
         initUI()
     }
 
     private fun initUI() {
-
         //Damos valor al recycler view
         retrofit = RetrofitBuilder.build()
         adapter = IncidenciaAdapter { incidenciaId ->
@@ -146,31 +154,53 @@ class Principal : AppCompatActivity() {
         binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         binding.rvIncidencias.adapter = adapter
 
-
         //Mostramos los items
         val idUsuarioPrueba: Int = 1;
+        obtenerIncidencias(idUsuarioPrueba)
+    }
+
+    private fun obtenerIncidencias(idUsuarioPrueba: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val myResponse: Response<List<IncidenciaResponse>> =
-                    retrofit.create(IncidenciaApiService::class.java)
-                        .getIncidenciasUsuario(idUsuarioPrueba)
+                val myResponse = retrofit.create(IncidenciaApiService::class.java)
+                    .getIncidenciasUsuario(idUsuarioPrueba)
 
-                if (myResponse.isSuccessful) {
-                    val response: List<IncidenciaResponse>? = myResponse.body()
-                    if (response != null) {
-                        runOnUiThread {
-                            adapter.updateIncidencias(response)
+                myResponse?.let {
+                    Log.i("Incidecias usuario", it.toString())
+
+                    if (it.isSuccessful) {
+                        Log.i("Incidecias usuario", "Funciona")
+                        val response: List<IncidenciaResponse>? = it.body()
+                        response?.let { res ->
+                            runOnUiThread {
+                                adapter.updateIncidencias(res)
+
+                                // Actualizar el texto de los botones
+                                funcionalidadBotones(res)
+                            }
                         }
+                    } else {
+                        Log.e("Incidencias", "Error al obtener las incidencias")
                     }
-                } else {
-                    Log.e("Incidencias", "Error al obtener las incidencias")
                 }
             } catch (e: Exception) {
                 Log.e("Incidencias", "Error: ${e.message}")
             }
         }
-
     }
+
+    private fun funcionalidadBotones(response: List<IncidenciaResponse>) {
+        binding.btnIncidenciasTotales.text = "${response.size} Incidencias"
+
+        val estados = response.groupBy { it.estado }
+
+        binding.btnAbiertas.text = "${estados["abierta"]?.size ?: 0} Abiertas"
+        binding.btnAsignadas.text = "${estados["asignada"]?.size ?: 0} Asignadas"
+        binding.btnEnProceso.text = "${estados["en proceso"]?.size ?: 0} En proceso"
+        binding.btnResueltas.text = "${estados["resuelta"]?.size ?: 0} Resueltas"
+        binding.btnCerradas.text = "${estados["cerrada"]?.size ?: 0} Cerradas"
+    }
+
 
     private fun mostrarLayoutAyuda() {
         // Inflar el layout activity_help.xml

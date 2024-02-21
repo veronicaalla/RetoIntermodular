@@ -8,13 +8,13 @@ data class EquipoResponse(
     @SerializedName("id")
     val id: Int,
     @SerializedName("baja")
-    val baja: Boolean,
+    val baja: Int,
     @SerializedName("descripcion")
     val descripcion: String,
     @SerializedName("etiqueta")
     val etiqueta: String,
     @SerializedName("fechaAdquisicion")
-    val fechaAdquisicion: Date,
+    val fechaAdquisicion: String,
     @SerializedName("marca")
     val marca: String,
     @SerializedName("modelo")

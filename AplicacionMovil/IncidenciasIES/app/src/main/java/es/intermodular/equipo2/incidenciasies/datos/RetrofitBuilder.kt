@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitBuilder {
     //Añadimos '/' para poder acceder a ello
     private const val URL_BASE =
-        "http://localhost:8080/api/incidencias/" //Añadir llamada a la db
+        "http://10.0.2.2:8080/api/" //Añadir llamada a la db
 
     fun build(): Retrofit =
         Retrofit.Builder()
