@@ -30,6 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adjunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Creador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnEli = new System.Windows.Forms.Button();
@@ -53,17 +64,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Adjunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Creador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxCriterios.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +89,83 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1004, 271);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Num
+            // 
+            this.Num.HeaderText = "Numero";
+            this.Num.MinimumWidth = 6;
+            this.Num.Name = "Num";
+            this.Num.Width = 125;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.MinimumWidth = 6;
+            this.Tipo.Name = "Tipo";
+            this.Tipo.Width = 125;
+            // 
+            // Subtipo
+            // 
+            this.Subtipo.HeaderText = "Subtipo";
+            this.Subtipo.MinimumWidth = 6;
+            this.Subtipo.Name = "Subtipo";
+            this.Subtipo.Width = 125;
+            // 
+            // FechaCreacion
+            // 
+            this.FechaCreacion.HeaderText = "Fecha de creación";
+            this.FechaCreacion.MinimumWidth = 6;
+            this.FechaCreacion.Name = "FechaCreacion";
+            this.FechaCreacion.Width = 125;
+            // 
+            // FechaCierre
+            // 
+            this.FechaCierre.HeaderText = "Fecha de cierre";
+            this.FechaCierre.MinimumWidth = 6;
+            this.FechaCierre.Name = "FechaCierre";
+            this.FechaCierre.Width = 125;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 125;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 125;
+            // 
+            // Adjunto
+            // 
+            this.Adjunto.HeaderText = "Adjunto";
+            this.Adjunto.MinimumWidth = 6;
+            this.Adjunto.Name = "Adjunto";
+            this.Adjunto.Width = 125;
+            // 
+            // Creador
+            // 
+            this.Creador.HeaderText = "Creador";
+            this.Creador.MinimumWidth = 6;
+            this.Creador.Name = "Creador";
+            this.Creador.Width = 125;
+            // 
+            // Responsable
+            // 
+            this.Responsable.HeaderText = "Responsable";
+            this.Responsable.MinimumWidth = 6;
+            this.Responsable.Name = "Responsable";
+            this.Responsable.Width = 125;
+            // 
+            // Equipo
+            // 
+            this.Equipo.HeaderText = "Equipo";
+            this.Equipo.MinimumWidth = 6;
+            this.Equipo.Name = "Equipo";
+            this.Equipo.Width = 125;
             // 
             // btnSeleccionar
             // 
@@ -337,83 +414,6 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // Num
-            // 
-            this.Num.HeaderText = "Numero";
-            this.Num.MinimumWidth = 6;
-            this.Num.Name = "Num";
-            this.Num.Width = 125;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.MinimumWidth = 6;
-            this.Tipo.Name = "Tipo";
-            this.Tipo.Width = 125;
-            // 
-            // Subtipo
-            // 
-            this.Subtipo.HeaderText = "Subtipo";
-            this.Subtipo.MinimumWidth = 6;
-            this.Subtipo.Name = "Subtipo";
-            this.Subtipo.Width = 125;
-            // 
-            // FechaCreacion
-            // 
-            this.FechaCreacion.HeaderText = "Fecha de creación";
-            this.FechaCreacion.MinimumWidth = 6;
-            this.FechaCreacion.Name = "FechaCreacion";
-            this.FechaCreacion.Width = 125;
-            // 
-            // FechaCierre
-            // 
-            this.FechaCierre.HeaderText = "Fecha de cierre";
-            this.FechaCierre.MinimumWidth = 6;
-            this.FechaCierre.Name = "FechaCierre";
-            this.FechaCierre.Width = 125;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 125;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.Width = 125;
-            // 
-            // Adjunto
-            // 
-            this.Adjunto.HeaderText = "Adjunto";
-            this.Adjunto.MinimumWidth = 6;
-            this.Adjunto.Name = "Adjunto";
-            this.Adjunto.Width = 125;
-            // 
-            // Creador
-            // 
-            this.Creador.HeaderText = "Creador";
-            this.Creador.MinimumWidth = 6;
-            this.Creador.Name = "Creador";
-            this.Creador.Width = 125;
-            // 
-            // Responsable
-            // 
-            this.Responsable.HeaderText = "Responsable";
-            this.Responsable.MinimumWidth = 6;
-            this.Responsable.Name = "Responsable";
-            this.Responsable.Width = 125;
-            // 
-            // Equipo
-            // 
-            this.Equipo.HeaderText = "Equipo";
-            this.Equipo.MinimumWidth = 6;
-            this.Equipo.Name = "Equipo";
-            this.Equipo.Width = 125;
             // 
             // Principal
             // 
