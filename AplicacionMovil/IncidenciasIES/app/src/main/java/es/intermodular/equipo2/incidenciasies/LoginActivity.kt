@@ -49,17 +49,6 @@ class LoginActivity : AppCompatActivity() {
                 showToast("¡Por favor, rellene ambos campos!")
             } else {
               comprobacionCredenciales()
-                /*// Si ambos campos tienen datos, continuar con la lógica de inicio de sesión
-                if (validateUser(usuario) && contrasenia == "123") {
-                    // Mensaje de bienvenida
-                    showToast("¡Bienvenido!")
-                    // Iniciar actividad principal
-                    startActivity(Intent(this, Principal::class.java))
-
-                } else {
-                    // Mensaje de error de inicio de sesión
-                    showToast("¡Usuario o contraseña incorrectos!")
-                }*/
             }
         }
 
@@ -103,28 +92,6 @@ class LoginActivity : AppCompatActivity() {
         val email = binding.EditTextUsuario.text.toString()
         val clave = binding.EditTextContrasenia.text.toString()
 
-        var retrofit = RetrofitBuilder.build()
-
-        /*CoroutineScope(Dispatchers.IO).launch {
-            try{
-                val myResponse : Call<PerfilReponse> =
-                    retrofit.create(ApiService::class.java)
-                        .login(email, clave)
-
-                if (myResponse !=null){
-                    Log.i("Login usuario",myResponse.toString() )
-                }
-
-                if (myResponse.isExecuted){
-                    Log.i("Login usuario ", myResponse.toString())
-                }else{
-                    Log.e("Login usuario", "Error al intentar comprobar credenciales")
-                }
-            }catch (e:Exception){
-                Log.e("Login usuario", "Error: ${e.message}")
-            }
-        }*/
-
         Api.retrofitService.login(email, clave).enqueue(object: Callback<PerfilReponse>{
             override fun onResponse(call:Call<PerfilReponse>, response: Response<PerfilReponse>){
                 if (response.isSuccessful){
@@ -137,11 +104,13 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent)
 
                 }else{
+                    Toast.makeText(this@LoginActivity, "Error en las credenciales", Toast.LENGTH_SHORT).show()
                     Log.i("Loggin Usuario", response.toString())
                 }
             }
             override fun onFailure(call: Call<PerfilReponse>, t: Throwable) {
                 // Manejar el error de conexión aquí
+                Toast.makeText(this@LoginActivity, "${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
 

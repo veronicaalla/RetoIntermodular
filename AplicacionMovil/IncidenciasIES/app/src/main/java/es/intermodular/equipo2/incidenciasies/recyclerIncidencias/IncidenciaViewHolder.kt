@@ -1,6 +1,7 @@
 package es.intermodular.equipo2.incidenciasies.recyclerIncidencias
 
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.R
 import es.intermodular.equipo2.incidenciasies.databinding.ItemIncidenciasBinding
@@ -16,6 +17,10 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         binding.btnEstadoIncidencai.text = incidenciasResponse.estado
         //Modificamos el color
+        when(incidenciasResponse.estado){
+           // "abierta"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(context.applicationContext, R.color.colorEnAbierto))
+
+        }
 
         binding.txtTipoIncidencia.text = " ${incidenciasResponse.tipoIncidencia.tipo} ${incidenciasResponse.tipoIncidencia.subtipoNombre} ${incidenciasResponse.tipoIncidencia.subSubtipo}"
     //binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia) }
