@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -378,6 +379,44 @@ public class incidenciaControlador {
 
     }
 
+    @GetMapping("/excelTiempoPorAdmin")
+    public ResponseEntity<byte[]> exportarExcelTiempoPorAdmin() {
+        List<Incidencia> incidencias = incidenciaRepository.findAll();
+
+        try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+            Sheet sheet = workbook.createSheet("Incidencias");
+            Row headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("Responsable");
+            headerRow.createCell(1).setCellValue("Suma de Tiempo Dec");
+
+            // Agrupar incidencias por responsable y calcular la suma de Tiempo Dec
+            Map<Personal, Duration> tiemposPorResponsable = new HashMap<>();
+            for (Incidencia incidencia : incidencias) {
+                Personal responsable = incidencia.getResponsable();
+                Duration tiempoDec = incidencia.getTiempo_dec() != null ? Duration.ofHours(incidencia.getTiempo_dec().getHours()).plusMinutes(incidencia.getTiempo_dec().getMinutes()) : Duration.ZERO;
+                tiemposPorResponsable.merge(responsable, tiempoDec, Duration::plus);
+            }
+
+            // Escribir los resultados en el Excel
+            int rowNum = 1;
+            for (Map.Entry<Personal, Duration> entry : tiemposPorResponsable.entrySet()) {
+                Row row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(entry.getKey().getNombre() + " " + entry.getKey().getApellido1() + " " + entry.getKey().getApellido2());
+                row.createCell(1).setCellValue(entry.getValue().toString());
+            }
+
+            workbook.write(baos);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+            headers.setContentDispositionFormData("filename", "incidencias.xlsx");
+            headers.setContentLength(baos.size());
+
+            return new ResponseEntity<>(baos.toByteArray(), headers, HttpStatus.OK);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
     @GetMapping("/pdf")
     public ResponseEntity<byte[]> exportarPdf() {
