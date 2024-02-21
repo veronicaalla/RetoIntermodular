@@ -13,70 +13,70 @@ En esta imagen se pueden ver algunos métodos del controlador personal; ya sea m
 - __GET(/api/personal/apellido1/{apellido})__: Muestra todos los elementos personal introduciendo un apellido2.
 - __DELETE(/api/personal/borrar_usuario/{id usuario})__: Elimina un elemento personal introduciendo un id con permisos de Administrador.
 
-![Imagen](Python_e_imagenes/API/personal_controlador.PNG)
+![Imagen](Imagenes/API/personal_controlador.PNG)
 
 ___
 
 ## Personal-controlador(GET(/api/personal/{id}))
 En esta imagen se muestra cómo se usa el método buscar personal por id.
 
-![Imagen](Python_e_imagenes/API/get_api_personal_id.PNG)
+![Imagen](Imagenes/API/get_api_personal_id.PNG)
 
 ___
 
 ## Personal-controlador(PUT(/api/personal/{id}))
 En esta imagen se muestra cómo se usa el método modificar personal por id.
 
-![Imagen](Python_e_imagenes/API/put_api_personal_id.PNG)
+![Imagen](Imagenes/API/put_api_personal_id.PNG)
 
 ___
 
 ## Personal-controlador(DELETE(/api/personal/{id}))
 En esta imagen se muestra cómo se usa el método eliminar personal por id.
 
-![Imagen](Python_e_imagenes/API/delete_api_personal_id.PNG)
+![Imagen](Imagenes/API/delete_api_personal_id.PNG)
 
 ___
 
 ## Personal-controlador(GET(/api/personal))
 En esta imagen se muestra cómo se usa el método mostrar personal.
 
-![Imagen](Python_e_imagenes/API/get_api_personal.PNG)
+![Imagen](Imagenes/API/get_api_personal.PNG)
 
 ___
 
 ## Personal-controlador(POST(/api/personal))
 En esta imagen se muestra cómo funciona el método crear personal.
 
-![Imagen](Python_e_imagenes/API/post_api_personal.PNG)
+![Imagen](Imagenes/API/post_api_personal.PNG)
 
 ___
 
 ## Personal-controlador(GET(/api/personal/nombre/{nombre}))
 En esta imagen se muestra cómo se usa el método buscar por nombre.
 
-![Imagen](Python_e_imagenes/API/get_api_personal_nombre_nombre.PNG)
+![Imagen](Imagenes/API/get_api_personal_nombre_nombre.PNG)
 
 ___
 
 ## Personal-controlador(GET(/api/personal/apellido2/{apellido}))
 En esta imagen se muestra cómo se usa el método buscar por apellido2.
 
-![Imagen](Python_e_imagenes/API/get_api_personal_apellido2_apellido.PNG)
+![Imagen](Imagenes/API/get_api_personal_apellido2_apellido.PNG)
 
 ___
 
 ## Personal-controlador(GET(/api/personal/apellido1/{apellido}))
 En esta imagen se muestra cómo se usa el método buscar por apellido1.
 
-![Imagen](Python_e_imagenes/API/get_api_personal_apellido1_apellido.PNG)
+![Imagen](Imagenes/API/get_api_personal_apellido1_apellido.PNG)
 
 ___
 
 ## Personal-controlador(DELETE(/api/personal/borrar_usuario/{idUsuario}))
 En esta imagen se muestra cómo se usa el método borrar personal por idUsuario. Este método también requiere id de Administrador y contraseña de Administrador.
 
-![Imagen](Python_e_imagenes/API/delete_api_personal_borrar-usuario_idUsuario.PNG)
+![Imagen](Imagenes/API/delete_api_personal_borrar-usuario_idUsuario.PNG)
 
 ___
 
@@ -91,21 +91,21 @@ En esta imagen se pueden ver algunos métodos del controlador perfiles; ya sea m
 - __GET(/api/perfiles/tipo/{perfil})__: Muestra todos los elementos perfil introduciendo un perfil.
 - __GET(/api/perfiles/dominio/{dominio})__: Muestra todos los elementos perfil introduciendo un dominio.
 
-![Imagen](Python_e_imagenes/API/perfiles_controlador.PNG)
+![Imagen](Imagenes/API/perfiles_controlador.PNG)
 
 ___
 
 ## Perfil-controlador(GET(/api/perfiles/tipo/{perfil}))
 En esta imagen se muestra cómo se usa el método buscar tipo de perfil por perfil.
 
-![Imagen](Python_e_imagenes/API/get_api_perfiles_tipo_perfil.PNG)
+![Imagen](Imagenes/API/get_api_perfiles_tipo_perfil.PNG)
 
 ___
 
 ## Perfil-controlador(GET(/api/perfiles/dominio/{dominio}))
 En esta imagen se muestra cómo se usa el método buscar dominio de perfil por dominio.
 
-![Imagen](Python_e_imagenes/API/get_api_perfiles_dominio_dominio.PNG)
+![Imagen](Imagenes/API/get_api_perfiles_dominio_dominio.PNG)
 
 ___
 
@@ -119,14 +119,14 @@ En esta imagen se pueden ver algunos métodos del controlador incidencias-subtip
 - __POST(/api/incidencias-subtipos)__: Crea un nuevo elemento incidencias-subtipos.
 - __GET(/api/incidencias-subtipos/tipo/{tipo})__: Muestra todos los elementos incidencias-subtipos introduciendo un tipo de incidencia.
 
-![Imagen](Python_e_imagenes/API/incidencias-subtipo_controlador.PNG)
+![Imagen](Imagenes/API/incidencias-subtipo_controlador.PNG)
 
 ___
 
 ## Incidencias-subtipo-controlador(GET(/api/incidencias-subtipos/tipo/{tipo}))
 En esta imagen se muestra cómo se usa el método buscar por tipo de incidencia.
 
-![Imagen](Python_e_imagenes/API/get_api_incidencias-subtipos_tipo_tipo.PNG)
+![Imagen](Imagenes/API/get_api_incidencias-subtipos_tipo_tipo.PNG)
 
 ___
 
@@ -146,49 +146,49 @@ En esta imagen se pueden ver algunos métodos del controlador personal; ya sea m
 - __GET(/api/incidencias/creador/{id})__: Muestra todos los elementos incidencias introduciendo un id de creador.
 - __GET(/api/incidencias/buscar)__: Muestra un buscador de incidencias.
 
-![Imagen](Python_e_imagenes/API/incidencia_controlador.PNG)
+![Imagen](Imagenes/API/incidencia_controlador.PNG)
 
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/tipo/{tipo}))
 En esta imagen se muestra cómo se usa el método buscar por tipo de incidencia.
 
-![Imagen](Python_e_imagenes/API/get_api_incidencias_tipo_tipo.PNG)
+![Imagen](Imagenes/API/get_api_incidencias_tipo_tipo.PNG)
 
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/responsable/{id}))
 En esta imagen se muestra cómo se usa el método buscar por id de responsable.
 
-![Imagen](Python_e_imagenes/API/get_api_incidencias_responsable_id.PNG)
+![Imagen](Imagenes/API/get_api_incidencias_responsable_id.PNG)
 
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/fecha-creacion/{fechaCreacion}))
 En esta imagen se muestra cómo se usa el método buscar fecha por fecha de creación.
 
-![Imagen](Python_e_imagenes/API/get_api_incidencias_fecha-creacion_fechaCreacion.PNG)
+![Imagen](Imagenes/API/get_api_incidencias_fecha-creacion_fechaCreacion.PNG)
 
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/fecha-cierre/{fechaCierre}))
 En esta imagen se muestra cómo se usa el método buscar fecha por fecha de cierre.
 
-![Imagen](Python_e_imagenes/API/get_api_incidencias_fecha-cierre_fechaCierre.PNG)
+![Imagen](Imagenes/API/get_api_incidencias_fecha-cierre_fechaCierre.PNG)
 
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/estado/{estado}))
 En esta imagen se muestra cómo se usa el método buscar por estado.
 
-![Imagen](Python_e_imagenes/API/get_api_incidencias_estado_estado.PNG)
+![Imagen](Imagenes/API/get_api_incidencias_estado_estado.PNG)
 
 ___
 
 ## Incidencias-controlador(GET(/api/incidencias/creador/{id}))
 En esta imagen se muestra cómo se usa el método buscar por id de creador.
 
-![Imagen](Python_e_imagenes/API/get_api_incidencias_creador_id.PNG)
+![Imagen](Imagenes/API/get_api_incidencias_creador_id.PNG)
 
 ___
 
@@ -201,7 +201,7 @@ En esta imagen se pueden ver algunos métodos del controlador equipo; ya sea mos
 - __GET(/api/equipos)__: Muestra los datos de todos los elementos equipo.
 - __POST(/api/equipos)__: Crea un nuevo elemento equipo.
 
-![Imagen](Python_e_imagenes/API/equipo_controlador.PNG)
+![Imagen](Imagenes/API/equipo_controlador.PNG)
 ___
 
 ## Departamento-controlador
@@ -213,7 +213,7 @@ En esta imagen se pueden ver algunos métodos del controlador departamento; ya s
 - __GET(/api/departamentos)__: Muestra los datos de todos los elementos departamento.
 - __POST(/api/departamentos)__: Crea un nuevo elemento departamento.
 
-![Imagen](Python_e_imagenes/API/departamento_controlador.PNG)
+![Imagen](Imagenes/API/departamento_controlador.PNG)
 
 ___
 
@@ -226,7 +226,7 @@ En esta imagen se pueden ver algunos métodos del controlador comentario; ya sea
 - __GET(/api/comentarios)__: Muestra los datos de todos los elementos comentario.
 - __POST(/api/comentarios)__: Crea un nuevo elemento comentario.
 
-![Imagen](Python_e_imagenes/API/comentario_controlador.PNG)
+![Imagen](Imagenes/API/comentario_controlador.PNG)
 
 ___
 
@@ -240,11 +240,11 @@ En esta imagen se pueden ver algunos métodos del controlador aula; ya sea mostr
 - __GET(/api/aula/{num})__: Muestra todos los elementos aula introduciendo un num.
 - __GET(/api/aula/planta/{planta})__: Muestra la planta de todos los elementos aula introduciendo una planta.
 
-![Imagen](Python_e_imagenes/API/aula_controlador.PNG)
+![Imagen](Imagenes/API/aula_controlador.PNG)
 
 ___
 
 ## Aula-controlador(GET(/api/aula/planta/{planta}))
 En esta imagen se muestra cómo se usa el método buscar por planta.
 
-![Imagen](Python_e_imagenes/API/get_api_aula_planta_planta.PNG)
+![Imagen](Imagenes/API/get_api_aula_planta_planta.PNG)
