@@ -1,109 +1,109 @@
 # Proyecto Intermodular
 
 ## Inicial
-Esta sera la primera pagina que aparecera tras haber iniciado la aplicación y mostrar un nombre y un solo boton llamado *INICIAR* con la unica funcion de llevar a la pagina de *Admin*.
+Esta será la primera página que aparecerá tras haber iniciado la aplicación y mostrar un nombre y un solo botón llamado *INICIAR*, con la única función de llevar a la página de *Admin*.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/Inicial.PNG)
 ___
 ## Admin
-Esta sera la pagina de bienvenida, en ella tendremos 2 botones.
+Esta será la página de bienvenida, en ella tendremos 2 botones.
 
-- **Incidencias**: Al pulsar este boton nos llevara a la pagina de incidencias.
-- **Usuarios**: Al pulsar este boton nos llevara a la pagina de control de usuarios.
+- **Incidencias**: Al pulsar este botón, nos llevará a la página de incidencias.
+- **Usuarios**: Al pulsar este botón, nos llevará a la página de control de usuarios.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/Admin.PNG)
 ___
 ## Principal
-Esta pagina sera en la que se realizaran la mayoria de tareas principales. Cuenta con un buscador muy avanzado para buscar por varias propiedades si existen o no, ya sea por: Profesor, Aula, Estado de la incidencia, Subtipo de incidencia, Tipo de incidencia, fecha. Contara con un visor que mostrara los datos de las incidencias encontradas. Por ultimo cuenta con 7 botones.
+Esta página será en la que se realizarán la mayoría de tareas principales. Cuenta con un buscador muy avanzado para buscar por varias propiedades si existen o no, ya sea por: Profesor, Aula, Estado de la incidencia, Subtipo de incidencia, Tipo de incidencia, fecha. Contará con un visor que mostrará los datos de las incidencias encontradas. Por último, cuenta con 7 botones.
 
-- **Limpiar**: Al pulsar este boton dejara los valores del buscador a sus valores por defecto.
-- **Buscar**: Al pulsar este boton en el visor se mostraran las posibles coincidencias de inicidencias.
-- **Selecciona**: Al pulsar este boton nos llevara a la pagina de incidencias.
-- **Volver**: Al pulsar este boton nos llevara de vuelata a la pagina de *Admin*.
-- **Salir**: Al pulsar este boton nos cierra la aplicacion.
-- **Eliminar**: Al pulsar este boton si ya habias seleccionado una incidencia nos la eliminara abriendo una ventana de confirmacion o denegacion. 
-- **Crear**: Al pulsar este boton nos llevara a la pagina de creación de incidencias.
+- **Limpiar**: Al pulsar este botón, dejará los valores del buscador a sus valores por defecto.
+- **Buscar**: Al pulsar este botón en el visor, se mostrarán las posibles coincidencias de incidencias.
+- **Selecciona**: Al pulsar este botón, nos llevará a la página de incidencias.
+- **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de *Admin*.
+- **Salir**: Al pulsar este botón, nos cierra la aplicación.
+- **Eliminar**: Al pulsar este botón, si ya habías seleccionado una incidencia, nos la eliminará abriendo una ventana de confirmación o denegación. 
+- **Crear**: Al pulsar este botón, nos llevará a la página de creación de incidencias.
 
 Nota: Los botones de *Volver* y *Salir* dependen del usuario:
 - **Admin**: Se muestra *Volver* pero no *Salir*.
-- **Otro**: Se muestra *Salir* pero no *Volver*.
+- **Otro**: Se muestra *Salir*, pero no *Volver*.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/Principal.PNG)
 ___
 ## Incidencia
-Esta pagina sera en la que se realizaran las funciones de edición y asignación de incidencias (la opcion de edicion estara deshabiltada). Cuenta con un editor muy avanzado para editar por varias propiedades si existen o no, ya sea por: Profesor, Aula, Estado de la incidencia, Subtipo de incidencia, Tipo de incidencia, fecha. Contara con un visor que mostrara los datos de todas las incidencias (Solo se podra editar la incidencia si ya habia sido seleccionada). Por ultimo cuenta con 4 botones. 	
+Esta página será en la que se realizarán las funciones de edición y asignación de incidencias (la opción de edición estará deshabilitada). Cuenta con un editor muy avanzado para editar por varias propiedades si existen o no, ya sea por: Profesor, Aula, Estado de la incidencia, Subtipo de incidencia, Tipo de incidencia, fecha. Contará con un visor que mostrará los datos de todas las incidencias (Solo se podrá editar la incidencia si ya había sido seleccionada). Por último, cuenta con 4 botones.
 
-- **Asignar**: Al pulsar este boton se asignan una incidencia ya seleccionada a otra.
-- **Confirmar**: Al pulsar este boton, si ya habias hecho cambios, confirmas los nuevos cambios y guardas la incidencia.
-- **Salir**: Al pulsar este boton nos llevara de vuelta a la pagina principal.
-- **Añadir comentario**: Al pulsar este boton nos llevara a la pagina de añadir comentario.
+- **Asignar**: Al pulsar este botón, se asignan una incidencia ya seleccionada a otra.
+- **Confirmar**: Al pulsar este botón, si ya habías hecho cambios, confirmas los nuevos cambios y guardas la incidencia.
+- **Salir**: Al pulsar este botón, nos llevará de vuelta a la página principal.
+- **Añadir comentario**: Al pulsar este botón, nos llevará a la página de añadir comentario.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/Incidencia.PNG)
 ___
 ## Añadir Comentario
-Esta pagina sera en la que se crearan y asignaran comentarios. Cuenta con un buscador de archivos y un cuadro de texto para escribir cualquier texto. Por ultimo con 3 botones.
+Esta página será en la que se crearán y asignarán comentarios. Cuenta con un buscador de archivos y un cuadro de texto para escribir cualquier texto. Por último, con 3 botones.
 
-- **Añadir archivo**: Al pulsar este boton nos mostrara un Explorador de archivos para asignar una ruta.
-- **Volver**: Al pulsar este boton nos llevara de vuelta a la pagina de incidencias.
-- **Añadir**: Al pulsar este boton nos guardara el nuevo comentario y nos llevara de vuelta a la pagina de incidencias.
+- **Añadir archivo**: Al pulsar este botón, nos mostrará un Explorador de archivos para asignar una ruta.
+- **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de incidencias.
+- **Añadir**: Al pulsar este botón, nos guardará el nuevo comentario y nos llevará de vuelta a la página de incidencias.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/AñadirComentario.PNG)
 ___
 ## Crear Incidencia
-Esta pagina sera en la que se realizaran las funciones de creacion de incidencias. Cuenta con varios cuadros de texto ya sea: nombre del creador, tipo de incidencia, subtipo de incidencia, estado de incidencia, nombre de responsable si tuviera, nombre de equipo, fecha de creacion, fecha de cierre si tuviera y un buscador de archivo. Por ultimo cuenta con 3 botones.
+Esta página será en la que se realizarán las funciones de creación de incidencias. Cuenta con varios cuadros de texto, ya sea: nombre del creador, tipo de incidencia, subtipo de incidencia, estado de incidencia, nombre de responsable si tuviera, nombre de equipo, fecha de creación, fecha de cierre si tuviera y un buscador de archivo. Por último, cuenta con 3 botones.
 
-- **Añadir archivo**: Al pulsar este boton nos mostrara un Explorador de archivos para asignar una ruta.
-- **Volver**: Al pulsar este boton nos llevara de vuelta a la pagina principal.
-- **Añadir**: Al pulsar este boton nos guardara la nueva incidencia y nos llevara de vuelta a la pagina principal.
+- **Añadir archivo**: Al pulsar este botón, nos mostrará un Explorador de archivos para asignar una ruta.
+- **Volver**: Al pulsar este botón, nos llevará de vuelta a la página principal.
+- **Añadir**: Al pulsar este botón, nos guardará la nueva incidencia y nos llevará de vuelta a la página principal.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/CrearIncidencia.PNG)
 ___
 ## Control Usuarios
-Esta sera la pagina en la que se realizaran las opciones relacionadas con los usuarios. Por ultimo cuenta con 3 botones.
+Esta será la página en la que se realizarán las opciones relacionadas con los usuarios. Por último, cuenta con 3 botones.
 
-- **Crear usuario**: Al pulsar este boton nos llevara a la pagina de creacion de usuario.
-- **Modificar**: Al pulsar este boton nos llevara a la pagina de seleccion de usuario.
-- **Volver**: Al pulsar este boton nos llevara de vuelta a la pagina principal.
+- **Crear usuario**: Al pulsar este botón, nos llevará a la página de creación de usuario.
+- **Modificar**: Al pulsar este botón, nos llevará a la página de selección de usuario.
+- **Volver**: Al pulsar este botón, nos llevará de vuelta a la página principal.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/ControlUsuarios.PNG)
 ___
 ## Crear Usuario
-Esta pagina sera en la que se realizaran las funciones de creacion de usuarios. Cuenta con varios cuadros de texto ya sea: datos personales y si esta activo o no. Por ultimo cuenta con 2 botones.
+Esta página será en la que se realizarán las funciones de creación de usuarios. Cuenta con varios cuadros de texto, ya sea: datos personales y si está activo o no. Por último, cuenta con 2 botones.
 
-- **Volver**: Al pulsar este boton nos llevara de vuelta a la pagina de control de usuarios.
-- **Siguiente**: Al pulsar este boton nos llevara a la pagina de creacion de perfil.
+- **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de control de usuarios.
+- **Siguiente**: Al pulsar este botón, nos llevará a la página de creación de perfil.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/CrearUsuario.PNG)
 ___
 ## Crear Perfil
-Esta pagina es la continuacion de la creacion de usuarios y sera en la que realizaran las funciones de creacion de perfiles de usuarios. Cuenta con varios cuadros de texto ya sea: nombre de dominio, cuenta de educantabria, contraseña y tipo de perfil. Por ultimo cuenta con 2 botones.
+Esta página es la continuación de la creación de usuarios y será en la que realizarán las funciones de creación de perfiles de usuarios. Cuenta con varios cuadros de texto, ya sea: nombre de dominio, cuenta de educantabria, contraseña y tipo de perfil. Por último, cuenta con 2 botones.
 
-- **Volver**: Al pulsar este boton nos llevara de vuelta a la pagina de control de usuarios.
-- **Crear**: Al pulsar este boton nos guardara el nuevo usuario y su perfil ya creados y nos llevara de vuelta a la pagina de control de usuarios.
+- **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de control de usuarios.
+- **Crear**: Al pulsar este botón, nos guardará el nuevo usuario y su perfil ya creados y nos llevará de vuelta a la página de control de usuarios.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/CrearPerfil.PNG)
 ___
 ## Seleccionar Usuario
-Esta pagina es la encargada tanto de la modificacion como la eliminacion de usuarios. Cuenta con un visor en el que se mostraran todos los usuarios que haya. con sus datos personales. Por ultimo cuenta con 3 botones.(No se podran usar algunas acciones si no se seleccionado primero un usuario del visor)
+Esta página es la encargada tanto de la modificación como la eliminación de usuarios. Cuenta con un visor en el que se mostrarán todos los usuarios que hay con sus datos personales. Por último, cuenta con 3 botones. (No se podrán usar algunas acciones sino se ha seleccionado primero un usuario del visor)
 
-- **Volver**: Al pulsar este boton nos llevara de vuelta a la pagina de control de usuarios.
-- **Modificar**: Al pulsar este boton nos llevara a la pagina de modificacion de usuario.
-- **Eliminar**: Al pulsar este boton nos llevara a la pagina de eliminacion de usuario.
+- **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de control de usuarios.
+- **Modificar**: Al pulsar este botón, nos llevará a la página de modificación de usuario.
+- **Eliminar**: Al pulsar este botón, nos llevará a la página de eliminación de usuario.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/SeleccionarUsuario.PNG)
 ___
 ## Modificar Usuario
-Esta pagina sera en la que se realizaran las funciones de modificacion de usuarios. Cuenta con varios cuadros de texto ya sea: datos personales y si esta activo o no. Por ultimo cuenta con 2 botones.
+Esta página será en la que se realizarán las funciones de modificación de usuarios. Cuenta con varios cuadros de texto, ya sea: datos personales y si está activo o no. Por último, cuenta con 2 botones.
 
-- **Volver**: Al pulsar este boton nos llevara de vuelta a la pagina de seleccion de usuarios.
-- **Finalizar**: Al pulsar este boton nos guardara los cambios realizados y nos llevara de vuelta a la pagina de seleccion de usuarios.
+- **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de usuarios.
+- **Finalizar**: Al pulsar este botón, nos guardará los cambios realizados y nos llevará de vuelta a la página de selección de usuarios.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/ModificarUsuario.PNG)
 ___
 ## Eliminar Usuario
-Esta pagina sera en la que se realizaran las funciones de eliminacion de usuarios. Cuenta con varios cuadros de texto ya sea: nombre de usuario, nombre de admin y contraseña. Por ultimo cuenta con 2 botones.
+Esta página será en la que se realizarán las funciones de eliminación de usuarios. Cuenta con varios cuadros de texto, ya sea: nombre de usuario, nombre de admin y contraseña. Por último, cuenta con 2 botones.
 
-- **Volver**: Al pulsar este boton nos llevara de vuelta a la pagina de seleccion de usuarios.
-- **Eliminar**: Al pulsar este boton nos eliminara el usuario seleccionado y nos llevara de vuelta a la pagina de seleccion de usuarios.
+- **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de usuarios.
+- **Eliminar**: Al pulsar este botón, nos eliminará el usuario seleccionado y nos llevará de vuelta a la página de selección de usuarios.
 
 ![Imagen](Python_e_imagenes/Aplicacion_Escritorio/EliminarUsuario.PNG)
