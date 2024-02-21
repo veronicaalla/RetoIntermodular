@@ -3,7 +3,7 @@
 ## Login
 Esta página será la que aparecerá tras abrir la aplicación, contará con un logo y 2 cuadros de texto en los cuales se escribirá: nombre de usuario y contraseña. También contará con una opción que podemos marcar o no para recordar la contraseña. También contará con un enlace por si has olvidado la contraseña para cambiarla o no. Por último un botón de inicio de sesión que verifica si puedes entrar o no, si da fallo significa que el usuario y/o la contraseña no son correctos. Si todo es correcto, te lleva a la ventana de _Mis_incidencias_.
 
-![Imagen](Python_e_imagenes/Aplicacion_Movil/Login.png)
+![Imagen](Imagenes/Aplicacion_Movil/Login.png)
 
 ___
 
@@ -14,25 +14,25 @@ Sería, por así decirlo, la ventana principal que muestra un resumen de las inc
 - __Ayuda__: Al pulsar esta opción, nos llevará a la ventana de _Ayuda_.
 - __Acerca de__: Al pulsar esta opción, nos llevará a la ventana _Acerca de_.
 
-![Imagen](Python_e_imagenes/Aplicacion_Movil/Mis_incidencias.png)
+![Imagen](Imagenes/Aplicacion_Movil/Mis_incidencias.png)
 
 ### Ejemplo de ventana
 
-![Imagen](Python_e_imagenes/Aplicacion_Movil/Incidencias_abiertas.png)
+![Imagen](Imagenes/Aplicacion_Movil/Incidencias_abiertas.png)
 
 ___
 
 ## Ayuda
 Esta ventana sería una pequeña guía de como funciona la aplicación. Cuenta con una flecha que nos devuelve a _Mis incidencias_.
 
-![Imagen](Python_e_imagenes/Aplicacion_Movil/Ayuda.png)
+![Imagen](Imagenes/Aplicacion_Movil/Ayuda.png)
 
 ___
 
 ## Notificaciones
 Esta es la ventana encarga de las notificaciones en ella se muestra una lista de notificaciones, así como una flecha para volver a la ventana _Mis incidencias_ y la lista con las opciones de _Ayuda_ y _Acerca de_.
 
-![Imagen](Python_e_imagenes/Aplicacion_Movil/Notificaciones.png)
+![Imagen](Imagenes/Aplicacion_Movil/Notificaciones.png)
 
 ___
 
@@ -43,7 +43,7 @@ Sería una parte de la creación de incidencias. Cuenta con una flecha que nos d
 - __Selector 2__: Seleccionar subtipo de incidencia de la lista.
 - __Selector 3__: Seleccionar otro dato de la lista.
 
-![Imagen](Python_e_imagenes/Aplicacion_Movil/Tipo_incidencia.png)
+![Imagen](Imagenes/Aplicacion_Movil/Tipo_incidencia.png)
 
 ___
 
@@ -53,11 +53,11 @@ Sería la continuación de la ventana _Tipo de incidencia_ que cuenta con muchos
 - __Cancelar__: Al pulsar esta opción, nos llevará a la ventana de _Mis incidencias_.
 - __Aceptar__: Al pulsar esta opción, nos llevará a la ventana de _Mis incidencias_ pero con la nueva incidencia ya añadida.
 
-![Imagen](Python_e_imagenes/Aplicacion_Movil/IncidenciaID.png)
+![Imagen](Imagenes/Aplicacion_Movil/IncidenciaID.png)
 
 ___
 
 ## Acerca de
 Esta ventana solo sería un resumen, cuenta con una flecha que nos devuelve a la venta _Mis incidencias_. Muestra los nombres de sus desarrolladores, un logo y un texto de copyright con año actual.
 
-![Imagen](Python_e_imagenes/Aplicacion_Movil/Acerca_de.png)
+![Imagen](Imagenes/Aplicacion_Movil/Acerca_de.png)
