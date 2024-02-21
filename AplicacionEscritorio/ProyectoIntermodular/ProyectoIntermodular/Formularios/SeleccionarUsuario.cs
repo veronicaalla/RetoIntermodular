@@ -48,7 +48,7 @@ namespace ProyectoIntermodular.Formularios
                     row.Cells[7].Value = personal.tlf;
                     if (personal.activo == true) {row.Cells[8].Value = "SI";}
                     else { row.Cells[8].Value = "NO"; }
-                    row.Cells[9].Value = personal.departamento.int_;
+                    row.Cells[9].Value = personal.departamento.nombre;
 
 
                     dgvPerfiles.Rows.Add(row);

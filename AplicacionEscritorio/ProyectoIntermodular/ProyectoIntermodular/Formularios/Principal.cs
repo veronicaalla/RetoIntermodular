@@ -61,9 +61,9 @@ namespace ProyectoIntermodular
                     row.Cells[5].Value = incidencia.descripcion;
                     row.Cells[6].Value = incidencia.estado;
                     row.Cells[7].Value = incidencia.adjuntoUrl;
-                    row.Cells[8].Value = incidencia.creador.id;
-                    row.Cells[9].Value = incidencia.responsable.id;
-                    row.Cells[10].Value = incidencia.equipo.id;
+                    row.Cells[8].Value = incidencia.creador.nombre;
+                    row.Cells[9].Value = incidencia.responsable.nombre;
+                    row.Cells[10].Value = incidencia.equipo.tipo_equipo;
 
 
 
@@ -82,7 +82,7 @@ namespace ProyectoIntermodular
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            Incidencia incidencia = new Incidencia();
+            ModificarIncidencia incidencia = new ModificarIncidencia();
             this.Hide();
             incidencia.Show();
         }

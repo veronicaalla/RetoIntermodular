@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoIntermodular.Formularios
 {
-    public partial class Incidencia : Form
+    public partial class ModificarIncidencia : Form
     {
-        public Incidencia()
+        public ModificarIncidencia()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;

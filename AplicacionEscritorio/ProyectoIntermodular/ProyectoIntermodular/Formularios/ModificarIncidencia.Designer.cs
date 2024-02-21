@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIntermodular.Formularios
 {
-    partial class Incidencia
+    partial class ModificarIncidencia
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Incidencia));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarIncidencia));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cbxEditar = new System.Windows.Forms.CheckBox();
             this.gbxEdit = new System.Windows.Forms.GroupBox();

@@ -101,11 +101,11 @@
     <Compile Include="Formularios\EliminarUsuario.Designer.cs">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Incidencia.cs">
+    <Compile Include="Formularios\ModificarIncidencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Incidencia.Designer.cs">
-      <DependentUpon>Incidencia.cs</DependentUpon>
+    <Compile Include="Formularios\ModificarIncidencia.Designer.cs">
+      <DependentUpon>ModificarIncidencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Inicial.cs">
       <SubType>Form</SubType>
@@ -154,8 +154,8 @@
     <EmbeddedResource Include="Formularios\EliminarUsuario.resx">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Incidencia.resx">
-      <DependentUpon>Incidencia.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\ModificarIncidencia.resx">
+      <DependentUpon>ModificarIncidencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Inicial.resx">
       <DependentUpon>Inicial.cs</DependentUpon>
