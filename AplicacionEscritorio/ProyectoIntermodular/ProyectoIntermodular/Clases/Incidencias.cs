@@ -20,18 +20,18 @@ namespace ProyectoIntermodular.Clases
         public string adjuntoUrl { get; set; }
         public Personal creador { get; set; }
         public Personal responsable { get; set; }
-        public Equipos equipo { get; set; }
-        
+        public Equipo equipo { get; set; }
 
-       
-        
+
+
+
         public Incidencias()
         {
             
         }
 
         
-        public Incidencias(int num, TipoIncidencia tipo, int subtipo_id, DateTime fecha_creacion, DateTime? fecha_cierre, string descripcion, EstadoIncidencia estado, string adjunto_url, Personal creador_id, Personal responsable_id, Equipos equipo_id)
+        public Incidencias(int num, TipoIncidencia tipo, int subtipo_id, DateTime fecha_creacion, DateTime? fecha_cierre, string descripcion, EstadoIncidencia estado, string adjunto_url, Personal creador_id, Personal responsable_id, Equipo equipo_id)
         {
             this.num = num;
             this.tipo = tipo;

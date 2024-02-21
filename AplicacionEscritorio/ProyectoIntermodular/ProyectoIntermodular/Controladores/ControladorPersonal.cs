@@ -20,8 +20,7 @@ namespace ProyectoIntermodular.Controladores
 
         public async Task<List<Personal>> GetPersonal()
         {
-            try
-            {
+            
                 HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/personal");
                 response.EnsureSuccessStatusCode();
 
@@ -29,11 +28,7 @@ namespace ProyectoIntermodular.Controladores
 
                 List<Personal> personas = JsonConvert.DeserializeObject<List<Personal>>(responseJson);
                 return personas;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+            
         }
     }
 }
