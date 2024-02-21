@@ -1,8 +1,12 @@
 package es.equipo2.apirest1.controller;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.equipo2.apirest1.model.Perfiles;
@@ -47,7 +52,37 @@ public class PerfilesControlador {
     public Perfiles nuevoPerfil(@RequestBody Perfiles nuevoPerfil) {
         return perfilesRepository.save(nuevoPerfil);
     }
+    
+    @GetMapping("/login")
+    public ResponseEntity<?> login(@RequestParam String dominio, @RequestParam String password) {
+        // Codificar la contraseña utilizando MD5
+        String passwordCodificado = md5(password);
 
+        // Buscar el perfil por dominio y contraseña codificada
+        Perfiles perfil = perfilesRepository.findByDominioAndPassword(dominio, passwordCodificado);
+
+        if (perfil != null) {
+            return ResponseEntity.ok(perfil);
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Dominio o contraseña incorrectos");
+        }
+    }
+    private String md5(String password) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(password.getBytes());
+
+            // Convertir el array de bytes a una representación hexadecimal
+            StringBuilder sb = new StringBuilder();
+            for (byte b : messageDigest) {
+                sb.append(String.format("%02x", b));
+            }
+            return sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Error al codificar la contraseña", e);
+        }
+    }
+    
     @PutMapping("/{id}")
     public Perfiles editarPerfil(@RequestBody Perfiles perfilEditado, @PathVariable int id) {
         if (perfilesRepository.existsById(id)) {

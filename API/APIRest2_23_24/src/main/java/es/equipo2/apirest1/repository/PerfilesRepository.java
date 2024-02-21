@@ -10,4 +10,5 @@ import es.equipo2.apirest1.model.Tipo_Perfil;
 public interface PerfilesRepository extends JpaRepository<Perfiles, Integer> {
 	List<Perfiles> findByPerfil(Tipo_Perfil perfil);
 	List<Perfiles> findByDominio(String dominio);
+	Perfiles findByDominioAndPassword(String dominio, String password);
 }
