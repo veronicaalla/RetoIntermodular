@@ -33,13 +33,6 @@ namespace ProyectoIntermodular.Formularios
             crearUsuario.Show();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            EliminarUsuario eliminarUsuario= new EliminarUsuario();
-            this.Hide();
-            eliminarUsuario.Show();
-        }
-
         private void ControlUsuarios_Load(object sender, EventArgs e)
         {
 

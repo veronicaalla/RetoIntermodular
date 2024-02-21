@@ -40,14 +40,16 @@ namespace ProyectoIntermodular.Formularios
 
                     row.Cells[0].Value = personal.nombre;
                     row.Cells[1].Value = personal.apellido1;
-                    row.Cells[2].Value = personal.dni;
-                    row.Cells[3].Value = personal.direccion;
-                    row.Cells[4].Value = personal.localidad;
-                    row.Cells[5].Value = personal.cp;
-                    row.Cells[6].Value = personal.tlf;
-                    if (personal.activo == true) {row.Cells[7].Value = "SI";}
-                    else { row.Cells[7].Value = "NO"; }
-                    
+                    row.Cells[2].Value = personal.apellido2;
+                    row.Cells[3].Value = personal.dni;
+                    row.Cells[4].Value = personal.direccion;
+                    row.Cells[5].Value = personal.localidad;
+                    row.Cells[6].Value = personal.cp;
+                    row.Cells[7].Value = personal.tlf;
+                    if (personal.activo == true) {row.Cells[8].Value = "SI";}
+                    else { row.Cells[8].Value = "NO"; }
+                    row.Cells[9].Value = personal.departamento.int_;
+
 
                     dgvPerfiles.Rows.Add(row);
                 }
@@ -64,40 +66,47 @@ namespace ProyectoIntermodular.Formularios
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ModificarUsuario modificarUsuario = new ModificarUsuario();
-            this.Hide();
-            modificarUsuario.Show();
+            if (dgvPerfiles.SelectedRows.Count > 0)
+            {
+                String nombreUsuario = dgvPerfiles.CurrentRow.Cells[0].Value.ToString();
+                String primerApellido = dgvPerfiles.CurrentRow.Cells[1].Value != null ? dgvPerfiles.CurrentRow.Cells[1].Value.ToString() : string.Empty;
+                String segundoApellido = dgvPerfiles.CurrentRow.Cells[2].Value != null ? dgvPerfiles.CurrentRow.Cells[2].Value.ToString() : string.Empty;
+                String dni = dgvPerfiles.CurrentRow.Cells[3].Value != null ? dgvPerfiles.CurrentRow.Cells[3].Value.ToString() : string.Empty;
+                String direccion = dgvPerfiles.CurrentRow.Cells[4].Value != null ? dgvPerfiles.CurrentRow.Cells[4].Value.ToString() : string.Empty;
+                String localidad = dgvPerfiles.CurrentRow.Cells[5].Value != null ? dgvPerfiles.CurrentRow.Cells[5].Value.ToString() : string.Empty;
+                String cp = dgvPerfiles.CurrentRow.Cells[6].Value != null ? dgvPerfiles.CurrentRow.Cells[6].Value.ToString() : string.Empty;
+                String telefono = dgvPerfiles.CurrentRow.Cells[7].Value != null ? dgvPerfiles.CurrentRow.Cells[7].Value.ToString() : string.Empty;
+                String activo = dgvPerfiles.CurrentRow.Cells[8].Value != null ? dgvPerfiles.CurrentRow.Cells[8].Value.ToString() : string.Empty;
+                String departamento = dgvPerfiles.CurrentRow.Cells[9].Value != null ? dgvPerfiles.CurrentRow.Cells[9].Value.ToString() : string.Empty;
+                ModificarUsuario modificarUsu = new ModificarUsuario(nombreUsuario,primerApellido,segundoApellido,dni,departamento,direccion,localidad,cp,telefono,activo);
+                this.Hide();
+                modificarUsu.Show();
+
+
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un usuario");
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (this.Tag != null && this.Tag is string nombreUsuario)
+
+            if (dgvPerfiles.SelectedRows.Count > 0)
             {
+                String nombreUsuario = dgvPerfiles.CurrentRow.Cells["Nombre"].Value.ToString();
                 EliminarUsuario eliminarUsuario = new EliminarUsuario(nombreUsuario);
                 this.Hide();
                 eliminarUsuario.Show();
+
+                
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un usuario antes de eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar un usuario");
             }
-        }
-
-        private void dgvPerfiles_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvPerfiles.Rows[e.RowIndex];
-                string nombreUsuario = row.Cells["Nombre"].Value.ToString(); // Reemplaza "NombreColumn" con el nombre de la columna que contiene el nombre del usuario en tu DataGridView
-
-                
-                this.Tag = nombreUsuario;
-            }
-        }
-
-        private void dgvPerfiles_SelectionChanged(object sender, EventArgs e)
-        {
-            usuarioTocable.nombre=dgvPerfiles.CurrentRow.Cells[0].Value.ToString();
+            
         }
     }
 }

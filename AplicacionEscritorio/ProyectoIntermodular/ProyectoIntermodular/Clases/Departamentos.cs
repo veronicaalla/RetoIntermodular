@@ -9,8 +9,8 @@ namespace ProyectoIntermodular.Clases
     public class Departamentos
     {
 
-        public int id { get; set; }  
-        public char cod { get; set; }  
+        public int int_ { get; set; }  
+        public int cod { get; set; }  
         public string nombre { get; set; }  
         public bool activo { get; set; }  
         public int jefdep_id { get; set; }  
@@ -22,9 +22,9 @@ namespace ProyectoIntermodular.Clases
         }
 
         
-        public Departamentos(int id, char cod, string nombre, bool activo, int jefdep_id)
+        public Departamentos(int id, int cod, string nombre, bool activo, int jefdep_id)
         {
-            this.id = id;
+            this.int_ = id;
             this.cod = cod;
             this.nombre = nombre;
             this.activo = activo;
