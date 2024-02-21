@@ -176,10 +176,7 @@ class Principal : AppCompatActivity() {
                     if (response != null) {
                         runOnUiThread {
                             adapter.updateIncidencias(response)
-
                             funcionalidadBotones(response)
-
-
                         }
                     }
                 } else {
