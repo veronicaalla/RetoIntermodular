@@ -12,6 +12,6 @@ public interface IncidenciaSubtipoRepository extends JpaRepository<IncidenciasSu
 
 	List<IncidenciasSubtipo> findBySubtipoNombre(String subtipo);
 
-	List<IncidenciasSubtipo> findByTipoAndSubtipoNombreAndSubSubtipo(Tipo_Incidencias tipo, String subtipo,
+	IncidenciasSubtipo findByTipoAndSubtipoNombreAndSubSubtipo(Tipo_Incidencias tipo, String subtipo,
 			String subsubtipo);
 }
