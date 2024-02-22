@@ -40,6 +40,19 @@ class Principal : AppCompatActivity() {
         //recuperamos el id del usuario que se ha pasado anteriormente, mediante un Intent
          idUsuarioPrueba = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
 
+        //region FUNCINALIDAD BOTONES
+        //Boton de añadir
+        binding.btnAddIncidencias.setOnClickListener {
+            val intent = Intent(this, SelectTypeIncidents::class.java)
+            startActivity(intent)
+        }
+
+        //Botones del ToolBar --> Apartado de notificaciones
+        binding.menuNotificaciones.setOnClickListener {
+            val intent = Intent(this, NotificationsActivity::class.java)
+            startActivity(intent)
+        }
+        //endregion
 
         //region Damos funcionalidad al menu
         val menuAjustes = findViewById<ImageView>(R.id.menuAjustes)
