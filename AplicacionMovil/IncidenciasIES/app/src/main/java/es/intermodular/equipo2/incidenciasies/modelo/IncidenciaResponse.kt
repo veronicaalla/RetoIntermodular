@@ -27,9 +27,9 @@ data class IncidenciaResponse(
     @SerializedName("incidenciasSubtipo")
     val tipoIncidencia: IncidenciasSubtipoResponse,
     @SerializedName("creador")
-    val creador: PerfilResponse,
+    val creador: PersonalResponse,
     @SerializedName("responsable")
-    val responsable: PerfilResponse
+    val responsable: PersonalResponse
 
 
 ) : Serializable
