@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoIntermodular.Clases;
+using ProyectoIntermodular.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +14,15 @@ namespace ProyectoIntermodular.Formularios
 {
     public partial class CrearUsuario : Form
     {
+        bool creado = false;
+        public PersonalRequest nuevoUser = new PersonalRequest();
+        ControladorDepartamentos controladorDepartamento = new ControladorDepartamentos();
+        ControladorPersonal controladorPersonal = new ControladorPersonal();
         public CrearUsuario()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            CargarComboBox();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -29,55 +36,43 @@ namespace ProyectoIntermodular.Formularios
         {
 
         }
-
-        private void btnCrear_Click(object sender, EventArgs e)
+        private async void CargarComboBox()
         {
+            List<Departamentos> listaDepartamentos = await controladorDepartamento.GetDepartamentos();
 
+            if (listaDepartamentos != null)
+            {
+                // Configurar el ComboBox
+                comboBoxDepartamento.DisplayMember = "nombre"; // Propiedad que se mostrará en el ComboBox
+
+                // Asignar la lista de incidencias al ComboBox
+                comboBoxDepartamento.DataSource = listaDepartamentos;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar las incidencias.");
+            }
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private async void btnSiguiente_Click(object sender, EventArgs e)
         {
+            nuevoUser.nombre = cajaNombre.Text.ToString();
+            nuevoUser.apellido1 = cajaApellido1.Text;
+            nuevoUser.apellido2 = cajaApellido2.Text;
+            nuevoUser.tlf = cajaTlfn.Text;
+            nuevoUser.cp = cajaCP.Text;
+            nuevoUser.direccion = cajaDireccion.Text;
+            nuevoUser.departamento = (Departamentos)comboBoxDepartamento.SelectedItem;
+            nuevoUser.dni = cajaDNI.Text;
+            nuevoUser.localidad = cajaLocalidad.Text;
+            nuevoUser.activo = true;
 
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPerfil_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblContraseña_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEducantabria_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDominio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSiguiente_Click(object sender, EventArgs e)
-        {
-            CrearPerfil crearPerfil = new CrearPerfil();
+            creado = await controladorPersonal.AgregarUser(nuevoUser);
+            if (creado)
+            {
+                MessageBox.Show("El usuario ha sido creado con éxito.", "Usuario creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            CrearPerfil crearPerfil = new CrearPerfil(this);
             this.Hide();
             crearPerfil.Show();
         }

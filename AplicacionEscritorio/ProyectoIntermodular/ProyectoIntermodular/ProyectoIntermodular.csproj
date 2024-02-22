@@ -57,6 +57,7 @@
     <Compile Include="Clases\IncidenciasSubtipos.cs" />
     <Compile Include="Clases\Perfiles.cs" />
     <Compile Include="Clases\Personal.cs" />
+    <Compile Include="Controladores\ControladorDepartamentos.cs" />
     <Compile Include="Controladores\ControladorIncidencias.cs" />
     <Compile Include="Controladores\ControladorPersonal.cs" />
     <Compile Include="Formularios\Admin.cs">

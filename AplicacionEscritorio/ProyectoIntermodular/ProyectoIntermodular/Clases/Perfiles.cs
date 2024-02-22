@@ -9,10 +9,10 @@ namespace ProyectoIntermodular.Clases
     public class Perfiles
     {
 
-        public int personal_id { get; set; }  
+        public Personal personal { get; set; }  
         public string dominio { get; set; }  
         public string educantabria { get; set; }  
-        public char password { get; set; }  
+        public string password { get; set; }  
         public PerfilEnum perfil { get; set; }  
 
         
@@ -26,9 +26,9 @@ namespace ProyectoIntermodular.Clases
         }
 
 
-        public Perfiles(int personal_id, string dominio, string educantabria, char password, PerfilEnum perfil)
+        public Perfiles(Personal personal_id, string dominio, string educantabria, string password, PerfilEnum perfil)
         {
-            this.personal_id = personal_id;
+            this.personal = personal_id;
             this.dominio = dominio;
             this.educantabria = educantabria;
             this.password = password;

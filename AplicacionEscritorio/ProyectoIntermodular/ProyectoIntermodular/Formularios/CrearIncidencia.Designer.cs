@@ -54,7 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxResponsable = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCrear
@@ -286,14 +286,14 @@
             this.comboBox4.Size = new System.Drawing.Size(121, 24);
             this.comboBox4.TabIndex = 52;
             // 
-            // comboBox3
+            // comboBoxResponsable
             // 
-            this.comboBox3.Enabled = false;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(749, 26);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 37;
+            this.comboBoxResponsable.Enabled = false;
+            this.comboBoxResponsable.FormattingEnabled = true;
+            this.comboBoxResponsable.Location = new System.Drawing.Point(749, 26);
+            this.comboBoxResponsable.Name = "comboBoxResponsable";
+            this.comboBoxResponsable.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxResponsable.TabIndex = 37;
             // 
             // CrearIncidencia
             // 
@@ -315,7 +315,7 @@
             this.Controls.Add(this.checkBoxResponsable);
             this.Controls.Add(this.comboBoxEquipo);
             this.Controls.Add(this.lblEquipo);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBoxResponsable);
             this.Controls.Add(this.lblResponsable);
             this.Controls.Add(this.lblArchivo);
             this.Controls.Add(this.btnAñadirArchivo);
@@ -362,6 +362,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxResponsable;
     }
 }

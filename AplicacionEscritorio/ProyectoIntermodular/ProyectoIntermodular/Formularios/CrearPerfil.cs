@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoIntermodular.Clases;
+using ProyectoIntermodular.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,22 @@ namespace ProyectoIntermodular.Formularios
 {
     public partial class CrearPerfil : Form
     {
-        public CrearPerfil()
+        CrearUsuario crear;
+        Perfiles nuevoPerfil = new Perfiles();
+        ControladorPersonal controladorPersonal = new ControladorPersonal();
+        bool creado=false;
+        public CrearPerfil(CrearUsuario crear)
         {
+            this.crear = crear;
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            CargarComboBox();
         }
-
+        private void CargarComboBox()
+        {
+            comboPerfil.Items.Add(PerfilEnum.ADMIN);
+            comboPerfil.Items.Add(PerfilEnum.PROFESOR);
+        }
         private void btnVolver_Click(object sender, EventArgs e)
         {
             CrearUsuario crearUsuario = new CrearUsuario();
@@ -25,9 +37,21 @@ namespace ProyectoIntermodular.Formularios
             crearUsuario.Show();
         }
 
-        private void btnCrear_Click(object sender, EventArgs e)
+        private async void btnCrear_ClickAsync(object sender, EventArgs e)
         {
-            MessageBox.Show("El usuario ha sido creado con éxito.", "Usuario creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            nuevoPerfil.educantabria = cajaEducantabria.Text;
+            nuevoPerfil.password = cajaContra.Text;
+            nuevoPerfil.dominio = cajaDominio.Text;
+
+            creado = await controladorPersonal.AgregarPerfil(nuevoPerfil);
+            if (creado)
+            {
+                MessageBox.Show("El usuario ha sido creado con éxito.", "Usuario creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+            Admin admin = new Admin();
+            admin.Show();
+            this.Close();
 
         }
     }

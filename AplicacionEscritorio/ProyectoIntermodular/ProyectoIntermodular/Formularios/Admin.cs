@@ -20,7 +20,11 @@ namespace ProyectoIntermodular.Formularios
             lblPrueba.Text = inicial.admin.perfil.ToString();
         }
 
-      
+        public Admin()
+        {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
 
         private void btnIncidencias_Click(object sender, EventArgs e)
         {
