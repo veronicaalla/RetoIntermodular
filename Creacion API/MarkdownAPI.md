@@ -11,7 +11,7 @@ En esta imagen se pueden ver algunos métodos del controlador personal; ya sea m
 - __GET(/api/personal/nombre/{nombre})__: Muestra todos los elementos personal introduciendo un nombre.
 - __GET(/api/personal/apellido2/{apellido})__: Muestra todos los elementos personal introduciendo un apellido1.
 - __GET(/api/personal/apellido1/{apellido})__: Muestra todos los elementos personal introduciendo un apellido2.
-- __DELETE(/api/personal/borrar_usuario/{id usuario})__: Elimina un elemento personal introduciendo un id con permisos de Administrador.
+- __DELETE(/api/personal/borrar_usuario/{idUsuario})__: Elimina un elemento personal introduciendo un id con permisos de Administrador.
 
 ![Imagen](Imagenes/API/personal_controlador.PNG)
 
