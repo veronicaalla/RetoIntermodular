@@ -16,31 +16,62 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(incidenciasResponse: IncidenciaResponse, onItemSelected: (String) -> Unit) {
         binding.txtFecha.text = incidenciasResponse.fechaCreacion.toString()
-        binding.txtIncidenciaID.text= "Incidencia #${incidenciasResponse.idIncidencia}"
+        binding.txtIncidenciaID.text = "Incidencia #${incidenciasResponse.idIncidencia}"
 
         binding.btnEstadoIncidencai.text = incidenciasResponse.estado
         //Modificamos el color
-        when(incidenciasResponse.estado){
-           "abierta"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorEnAbierto))
-            "asignada"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorAsignado))
-            "en proceso"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorEnProceso))
-            "resuelta"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorResuelto))
-            "cerrada"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorCerrado))
-         }
+        when (incidenciasResponse.estado) {
+            "abierta" -> binding.btnEstadoIncidencai.setBackgroundColor(
+                ContextCompat.getColor(
+                    itemView.context,
+                    R.color.colorEnAbierto
+                )
+            )
 
-        if (incidenciasResponse.estado.contains("abierta") || incidenciasResponse.estado.contains("asignada")){
+            "asignada" -> binding.btnEstadoIncidencai.setBackgroundColor(
+                ContextCompat.getColor(
+                    itemView.context,
+                    R.color.colorAsignado
+                )
+            )
+
+            "en proceso" -> binding.btnEstadoIncidencai.setBackgroundColor(
+                ContextCompat.getColor(
+                    itemView.context,
+                    R.color.colorEnProceso
+                )
+            )
+
+            "resuelta" -> binding.btnEstadoIncidencai.setBackgroundColor(
+                ContextCompat.getColor(
+                    itemView.context,
+                    R.color.colorResuelto
+                )
+            )
+
+            "cerrada" -> binding.btnEstadoIncidencai.setBackgroundColor(
+                ContextCompat.getColor(
+                    itemView.context,
+                    R.color.colorCerrado
+                )
+            )
+        }
+
+        if (incidenciasResponse.estado.contains("abierta") || incidenciasResponse.estado.contains("asignada")) {
             Log.i("Tipo incidencia ", incidenciasResponse.estado)
             binding.btnEditarIncidencias.setOnClickListener {
                 Toast.makeText(it.context, "Editar incidecia ", Toast.LENGTH_SHORT).show()
             }
-        }else{
+        } else {
             binding.btnEditarIncidencias.setVisibility(View.INVISIBLE);
         }
 
 
 
-        binding.txtTipoIncidencia.text = " ${incidenciasResponse.tipoIncidencia.tipo} ${incidenciasResponse.tipoIncidencia.subtipoNombre} ${incidenciasResponse.tipoIncidencia.subSubtipo}"
-    //binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia) }
+        binding.txtTipoIncidencia.text =
+            " ${incidenciasResponse.tipoIncidencia.tipo} ${incidenciasResponse.tipoIncidencia.subtipoNombre} ${incidenciasResponse.tipoIncidencia.subSubtipo}"
+
+       // binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia) }
     }
 }
 
