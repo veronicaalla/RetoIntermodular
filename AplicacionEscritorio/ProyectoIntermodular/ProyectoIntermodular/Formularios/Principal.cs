@@ -19,6 +19,8 @@ namespace ProyectoIntermodular
         private ControladorIncidencias controladorIncidencias;
         private List<Incidencias> lista;
         private Incidencias inci;
+        
+
 
         public Principal()
         {
@@ -55,18 +57,17 @@ namespace ProyectoIntermodular
 
                     row.Cells[0].Value = incidencia.num;
                     row.Cells[1].Value = incidencia.tipo;
-                    row.Cells[2].Value = incidencia.subtipo_id; 
+                    row.Cells[2].Value = incidencia.incidenciasSubtipo.subtipoNombre; 
                     row.Cells[3].Value = incidencia.fechaCreacion;
                     row.Cells[4].Value = incidencia.fechaCierre;
                     row.Cells[5].Value = incidencia.descripcion;
                     row.Cells[6].Value = incidencia.estado;
                     row.Cells[7].Value = incidencia.adjuntoUrl;
-                    row.Cells[8].Value = incidencia.creador.id;
-                    row.Cells[9].Value = incidencia.responsable.id;
-                    row.Cells[10].Value = incidencia.equipo.id;
+                    row.Cells[8].Value = incidencia.creador.nombre;
+                    row.Cells[9].Value = incidencia.responsable.nombre;
+                    row.Cells[10].Value = incidencia.equipo.tipoEquipo;
 
-
-
+                   
 
                     dataGridView1.Rows.Add(row);
                 }
@@ -82,9 +83,27 @@ namespace ProyectoIntermodular
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            Incidencia incidencia = new Incidencia();
-            this.Hide();
-            incidencia.Show();
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                String numero = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                String tipo = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                String subtipo = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                String fechaCreacion = dataGridView1.CurrentRow.Cells[3].Value != null ? dataGridView1.CurrentRow.Cells[3].Value.ToString() : string.Empty;
+                String fechaCierre = dataGridView1.CurrentRow.Cells[4].Value != null ? dataGridView1.CurrentRow.Cells[4].Value.ToString() : string.Empty;
+                String profesor = dataGridView1.CurrentRow.Cells[8].Value != null ? dataGridView1.CurrentRow.Cells[8].Value.ToString() : string.Empty;
+
+                ModificarIncidencia modificarInci = new ModificarIncidencia(numero,tipo,subtipo,fechaCreacion,fechaCierre,profesor);
+                this.Hide();
+                modificarInci.Show();
+
+
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un usuario");
+            }
+            
         }
 
         private void btnEli_Click(object sender, EventArgs e)

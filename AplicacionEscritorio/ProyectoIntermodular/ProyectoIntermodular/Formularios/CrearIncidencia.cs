@@ -65,6 +65,11 @@ namespace ProyectoIntermodular.Formularios
                 lblArchivo.Text = archivoSeleccionado;
             }
         }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     
