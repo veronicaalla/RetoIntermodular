@@ -30,10 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarIncidencia));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxEditar = new System.Windows.Forms.CheckBox();
             this.gbxEdit = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnAsignar = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.cmxSub = new System.Windows.Forms.ComboBox();
             this.cmxProfesor = new System.Windows.Forms.ComboBox();
             this.cbxSub = new System.Windows.Forms.CheckBox();
@@ -51,9 +54,6 @@
             this.cmxTipo = new System.Windows.Forms.ComboBox();
             this.btnComentar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxEdit.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +72,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(1075, 272);
             this.dataGridView1.TabIndex = 0;
             // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.MinimumWidth = 6;
+            this.Usuario.Name = "Usuario";
+            this.Usuario.Width = 125;
+            // 
+            // Comentario
+            // 
+            this.Comentario.HeaderText = "Comentario";
+            this.Comentario.MinimumWidth = 6;
+            this.Comentario.Name = "Comentario";
+            this.Comentario.Width = 750;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.MinimumWidth = 6;
+            this.Fecha.Name = "Fecha";
+            this.Fecha.Width = 150;
+            // 
             // cbxEditar
             // 
             this.cbxEditar.AutoSize = true;
@@ -81,11 +102,12 @@
             this.cbxEditar.TabIndex = 1;
             this.cbxEditar.Text = "Editar";
             this.cbxEditar.UseVisualStyleBackColor = true;
+            this.cbxEditar.CheckedChanged += new System.EventHandler(this.cbxEditar_CheckedChanged);
             // 
             // gbxEdit
             // 
-            this.gbxEdit.Controls.Add(this.button1);
-            this.gbxEdit.Controls.Add(this.btnConfirm);
+            this.gbxEdit.Controls.Add(this.btnAsignar);
+            this.gbxEdit.Controls.Add(this.btnConfirmar);
             this.gbxEdit.Controls.Add(this.cmxSub);
             this.gbxEdit.Controls.Add(this.cmxProfesor);
             this.gbxEdit.Controls.Add(this.cbxSub);
@@ -109,25 +131,25 @@
             this.gbxEdit.Text = "Grupo de edición";
             this.gbxEdit.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button1
+            // btnAsignar
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Location = new System.Drawing.Point(768, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 27);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Asignar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAsignar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnAsignar.Location = new System.Drawing.Point(768, 125);
+            this.btnAsignar.Name = "btnAsignar";
+            this.btnAsignar.Size = new System.Drawing.Size(80, 27);
+            this.btnAsignar.TabIndex = 39;
+            this.btnAsignar.Text = "Asignar";
+            this.btnAsignar.UseVisualStyleBackColor = false;
             // 
-            // btnConfirm
+            // btnConfirmar
             // 
-            this.btnConfirm.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnConfirm.Location = new System.Drawing.Point(870, 125);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(83, 27);
-            this.btnConfirm.TabIndex = 38;
-            this.btnConfirm.Text = "Confirmar";
-            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirmar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnConfirmar.Location = new System.Drawing.Point(870, 125);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(83, 27);
+            this.btnConfirmar.TabIndex = 38;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
             // cmxSub
             // 
@@ -285,27 +307,6 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.MinimumWidth = 6;
-            this.Usuario.Name = "Usuario";
-            this.Usuario.Width = 125;
-            // 
-            // Comentario
-            // 
-            this.Comentario.HeaderText = "Comentario";
-            this.Comentario.MinimumWidth = 6;
-            this.Comentario.Name = "Comentario";
-            this.Comentario.Width = 750;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.MinimumWidth = 6;
-            this.Fecha.Name = "Fecha";
-            this.Fecha.Width = 150;
-            // 
             // ModificarIncidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -333,7 +334,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox cbxEditar;
         private System.Windows.Forms.GroupBox gbxEdit;
-        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.ComboBox cmxSub;
         private System.Windows.Forms.ComboBox cmxProfesor;
         private System.Windows.Forms.CheckBox cbxSub;
@@ -351,7 +352,7 @@
         private System.Windows.Forms.ComboBox cmxTipo;
         private System.Windows.Forms.Button btnComentar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAsignar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;

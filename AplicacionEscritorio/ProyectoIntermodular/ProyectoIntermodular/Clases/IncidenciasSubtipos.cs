@@ -12,7 +12,7 @@ namespace ProyectoIntermodular.Clases
        
         public int id { get; set; }  
         public TipoIncidencia tipo { get; set; }  
-        public string subtipo_nombre { get; set; }  
+        public string subtipoNombre { get; set; }  
         public string sub_subtipo { get; set; } 
 
         
@@ -26,7 +26,7 @@ namespace ProyectoIntermodular.Clases
         {
             this.id = id;
             this.tipo = tipo;
-            this.subtipo_nombre = subtipo_nombre;
+            this.subtipoNombre = subtipo_nombre;
             this.sub_subtipo = sub_subtipo;
         }
     }

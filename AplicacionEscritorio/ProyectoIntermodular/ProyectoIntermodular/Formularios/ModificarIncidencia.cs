@@ -18,15 +18,18 @@ namespace ProyectoIntermodular.Formularios
         private ControladorComentarios controladorComentarios;
         private List<Comentarios> lista;
         private Comentarios coment;
-        public ModificarIncidencia(String numero,String tipo,String subtipo,String fechaCreacion,String fechaCierre)
+        public ModificarIncidencia(String numero,String tipo,String subtipo,String fechaCreacion,String fechaCierre,String profesor)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            gbxEdit.Enabled = false;
+           
             this.numeroInci = numero;
             cmxTipo.Text = tipo;
             cmxSub.Text = subtipo;
             dateTimePicker1.Text = fechaCreacion;
             dateTimePicker2.Text = fechaCierre;
+            cmxProfesor.Text=profesor;
 
             controladorComentarios = new ControladorComentarios();
             coment = new Comentarios();
@@ -50,10 +53,8 @@ namespace ProyectoIntermodular.Formularios
                         row.Cells[1].Value = comentario.texto;
                         row.Cells[2].Value = comentario.fechahora;
 
-
                         dataGridView1.Rows.Add(row);
                     }
-                    
                 }
             }
         }
@@ -78,6 +79,18 @@ namespace ProyectoIntermodular.Formularios
             Principal principal = new Principal();
             this.Close();
             principal.Show();
+        }
+
+        private void cbxEditar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxEditar.Checked)
+            {
+                gbxEdit.Enabled = true;
+            }
+            else
+            {
+                gbxEdit.Enabled = false;
+            }
         }
     }
 }

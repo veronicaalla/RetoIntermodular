@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ProyectoIntermodular.Clases;
+using ProyectoIntermodular.Controladores;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,7 @@ namespace ProyectoIntermodular.Formularios
 {
     public partial class ModificarUsuario : Form
     {
+        private ControladorPersonal controladorPersonal;
         public ModificarUsuario(String nombre,String primerApellido,String segundoApellido,String dni,String departamento,String direccion,String localidad,String cp,String telefono,String activo)
         {
             InitializeComponent();
@@ -33,6 +37,9 @@ namespace ProyectoIntermodular.Formularios
             {
                 checkBoxActivo.Checked = false;
             }
+
+            controladorPersonal = new ControladorPersonal();
+            
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -42,10 +49,29 @@ namespace ProyectoIntermodular.Formularios
             se.Show();
         }
 
-        private void btnFinalizar_Click(object sender, EventArgs e)
+        private async void btnFinalizar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El usuario ha sido modificado correctamente.", "Usuario modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            bool activo = false;
+            if (checkBoxActivo.Checked)
+            {
+                activo = true;
+            }
+            int id = 3; 
 
+            Departamentos departamento = new Departamentos(); 
+            Personal persona = new Personal(id, cajaNombre.Text, cajaApellido1.Text, cajaApellido2.Text, cajaDireccion.Text, cajaLocalidad.Text, cajaCP.Text, cajaTlfn.Text, cajaDNI.Text, activo, departamento);
+
+            // Espera a que se complete la actualización del personal
+            bool actualizacionExitosa = await controladorPersonal.ActualizarPersonal(persona);
+
+            if (actualizacionExitosa)
+            {
+                MessageBox.Show("El usuario ha sido modificado correctamente.", "Usuario modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al modificar el usuario. Por favor, inténtalo de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
