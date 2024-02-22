@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoIntermodular.Clases;
+using ProyectoIntermodular.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace ProyectoIntermodular.Formularios
 {
     public partial class CrearIncidencia : Form
     {
+        ControladorDepartamentos controladorDepartamento = new ControladorDepartamentos();
+        private Incidencias incidencia = new Incidencias();
         public CrearIncidencia()
         {
             InitializeComponent();

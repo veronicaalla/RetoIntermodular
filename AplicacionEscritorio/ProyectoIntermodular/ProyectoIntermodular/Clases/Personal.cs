@@ -17,7 +17,7 @@ namespace ProyectoIntermodular.Clases
         public string localidad { get; set; }
         public string cp { get; set; }
         public string tlf { get; set; }
-        public string dni { get; set; }  
+        public string dni { get; set; }
         public bool activo { get; set; }
         public Departamentos departamento { get; set; }
 
@@ -36,9 +36,22 @@ namespace ProyectoIntermodular.Clases
             this.localidad = localidad;
             this.cp = cp;
             this.tlf = tlf;
-            this.dni = dni;  
+            this.dni = dni;
             this.activo = activo;
             this.departamento = departamento_id;
         }
+    }
+    public class PersonalRequest
+    {
+        public string nombre { get; set; }
+        public string apellido1 { get; set; }
+        public string apellido2 { get; set; }
+        public string direccion { get; set; }
+        public string localidad { get; set; }
+        public string cp { get; set; }
+        public string tlf { get; set; }
+        public string dni { get; set; }
+        public bool activo { get; set; }
+        public Departamentos departamento { get; set; }
     }
 }

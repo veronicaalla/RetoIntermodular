@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearPerfil));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboPerfil = new System.Windows.Forms.ComboBox();
+            this.cajaContra = new System.Windows.Forms.TextBox();
+            this.cajaEducantabria = new System.Windows.Forms.TextBox();
+            this.cajaDominio = new System.Windows.Forms.TextBox();
             this.lblPerfil = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblEducantabria = new System.Windows.Forms.Label();
@@ -41,34 +41,34 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // comboPerfil
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(119, 134);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 20;
+            this.comboPerfil.FormattingEnabled = true;
+            this.comboPerfil.Location = new System.Drawing.Point(119, 134);
+            this.comboPerfil.Name = "comboPerfil";
+            this.comboPerfil.Size = new System.Drawing.Size(121, 24);
+            this.comboPerfil.TabIndex = 20;
             // 
-            // textBox4
+            // cajaContra
             // 
-            this.textBox4.Location = new System.Drawing.Point(119, 97);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 22);
-            this.textBox4.TabIndex = 19;
+            this.cajaContra.Location = new System.Drawing.Point(119, 97);
+            this.cajaContra.Name = "cajaContra";
+            this.cajaContra.Size = new System.Drawing.Size(121, 22);
+            this.cajaContra.TabIndex = 19;
             // 
-            // textBox3
+            // cajaEducantabria
             // 
-            this.textBox3.Location = new System.Drawing.Point(119, 56);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 22);
-            this.textBox3.TabIndex = 18;
+            this.cajaEducantabria.Location = new System.Drawing.Point(119, 56);
+            this.cajaEducantabria.Name = "cajaEducantabria";
+            this.cajaEducantabria.Size = new System.Drawing.Size(121, 22);
+            this.cajaEducantabria.TabIndex = 18;
             // 
-            // textBox1
+            // cajaDominio
             // 
-            this.textBox1.Location = new System.Drawing.Point(119, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 22);
-            this.textBox1.TabIndex = 17;
+            this.cajaDominio.Location = new System.Drawing.Point(119, 16);
+            this.cajaDominio.Name = "cajaDominio";
+            this.cajaDominio.Size = new System.Drawing.Size(121, 22);
+            this.cajaDominio.TabIndex = 17;
             // 
             // lblPerfil
             // 
@@ -115,7 +115,7 @@
             this.btnCrear.TabIndex = 12;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = false;
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_ClickAsync);
             // 
             // btnVolver
             // 
@@ -134,10 +134,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(315, 231);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboPerfil);
+            this.Controls.Add(this.cajaContra);
+            this.Controls.Add(this.cajaEducantabria);
+            this.Controls.Add(this.cajaDominio);
             this.Controls.Add(this.lblPerfil);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblEducantabria);
@@ -154,10 +154,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboPerfil;
+        private System.Windows.Forms.TextBox cajaContra;
+        private System.Windows.Forms.TextBox cajaEducantabria;
+        private System.Windows.Forms.TextBox cajaDominio;
         private System.Windows.Forms.Label lblPerfil;
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.Label lblEducantabria;

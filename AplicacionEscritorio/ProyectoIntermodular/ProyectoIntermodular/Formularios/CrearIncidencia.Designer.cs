@@ -294,7 +294,6 @@
             this.comboBoxResponsable.Name = "comboBoxResponsable";
             this.comboBoxResponsable.Size = new System.Drawing.Size(121, 24);
             this.comboBoxResponsable.TabIndex = 37;
-            this.comboBoxResponsable.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // CrearIncidencia
             // 

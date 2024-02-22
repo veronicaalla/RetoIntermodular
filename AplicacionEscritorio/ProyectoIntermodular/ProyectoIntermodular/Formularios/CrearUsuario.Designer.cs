@@ -228,6 +228,7 @@
             this.comboBoxDepartamento.Name = "comboBoxDepartamento";
             this.comboBoxDepartamento.Size = new System.Drawing.Size(121, 24);
             this.comboBoxDepartamento.TabIndex = 20;
+            this.comboBoxDepartamento.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepartamento_SelectedIndexChanged);
             // 
             // CrearUsuario
             // 

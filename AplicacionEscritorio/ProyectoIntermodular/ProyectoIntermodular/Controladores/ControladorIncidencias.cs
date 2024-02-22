@@ -37,6 +37,29 @@ namespace ProyectoIntermodular.Controladores
                 return null;
             }
         }
+        public async Task<bool> AgregarIncidencia(Incidencias incidencia)
+        {
+            try
+            {
+                // Crear un objeto con los datos de la nueva incidencia
+
+                // Convertir a formato JSON
+                string jsonData = JsonConvert.SerializeObject(incidencia);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                // Realizar la solicitud POST
+                HttpResponseMessage response = await client.PostAsync("http://localhost:8080/api/incidencias", content);
+                response.EnsureSuccessStatusCode();
+
+                // La incidencia se agregó correctamente
+                return true;
+            }
+            catch (Exception)
+            {
+                // Hubo un error al agregar la incidencia
+                return false;
+            }
+        }
     }
 }
 
