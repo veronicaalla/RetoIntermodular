@@ -32,6 +32,11 @@ public class comentarioControlador {
     public Comentario obtenerComentarioPorId(@PathVariable int id) {
         return comentarioRepository.findById(id).orElse(null);
     }
+    
+    @GetMapping("/incidencia/{incidenciaId}")
+    public List<Comentario> obtenerComentariosPorIncidencia(@PathVariable int incidenciaId) {
+        return comentarioRepository.findByIncidenciaNum(incidenciaId);
+    }
 
     @PostMapping
     public Comentario crearComentario(@RequestBody Comentario nuevoComentario) {

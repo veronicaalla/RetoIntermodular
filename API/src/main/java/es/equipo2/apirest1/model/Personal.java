@@ -20,7 +20,7 @@ public class Personal implements Serializable{
 	@Column(name="id")
 	private Integer personal_id;
 
-	private byte activo;
+	private boolean activo;
 
 	private String apellido1;
 
@@ -47,7 +47,7 @@ public class Personal implements Serializable{
 		super();
 	}
 
-	public Personal(byte activo, String apellido1, String apellido2, String cp, String direccion, String dni, String localidad, String nombre, String tlf, List<Comentario> comentarios,
+	public Personal(boolean activo, String apellido1, String apellido2, String cp, String direccion, String dni, String localidad, String nombre, String tlf, List<Comentario> comentarios,
 			List<Incidencia> incidencias, List<Perfiles> perfiles, Departamento departamento) {
 		super();
 		this.activo = activo;
@@ -75,11 +75,11 @@ public class Personal implements Serializable{
 		this.personal_id = id;
 	}
 
-	public byte getActivo() {
+	public boolean getActivo() {
 		return this.activo;
 	}
 
-	public void setActivo(byte activo) {
+	public void setActivo(boolean activo) {
 		this.activo = activo;
 	}
 
