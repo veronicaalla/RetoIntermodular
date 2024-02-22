@@ -3,7 +3,7 @@ package es.intermodular.equipo2.incidenciasies.modelo
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class Perfil(
+data class PerfilReponse(
 
     @SerializedName("personal_id")
     val personal_id: Int,

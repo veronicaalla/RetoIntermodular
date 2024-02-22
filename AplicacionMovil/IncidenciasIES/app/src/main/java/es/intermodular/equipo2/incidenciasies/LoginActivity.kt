@@ -1,15 +1,22 @@
 package es.intermodular.equipo2.incidenciasies
 
-import android.R
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityLoginBinding
+import es.intermodular.equipo2.incidenciasies.datos.Api
+import es.intermodular.equipo2.incidenciasies.datos.ApiService
+import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
+import es.intermodular.equipo2.incidenciasies.modelo.PerfilReponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class LoginActivity : AppCompatActivity() {
@@ -41,16 +48,7 @@ class LoginActivity : AppCompatActivity() {
                 // Mostrar mensaje de error
                 showToast("¡Por favor, rellene ambos campos!")
             } else {
-                // Si ambos campos tienen datos, continuar con la lógica de inicio de sesión
-                if (validateUser(usuario) && contrasenia == "123") {
-                    // Mensaje de bienvenida
-                    showToast("¡Bienvenido!")
-                    // Iniciar actividad principal
-                    startActivity(Intent(this, Principal::class.java))
-                } else {
-                    // Mensaje de error de inicio de sesión
-                    showToast("¡Usuario o contraseña incorrectos!")
-                }
+              comprobacionCredenciales()
             }
         }
 
@@ -86,6 +84,35 @@ class LoginActivity : AppCompatActivity() {
             // Mostrar mensaje de olvidé contraseña
             showToast("Por favor, póngase en contacto con su coordinador TIC")
         }
+
+
+    }
+
+    private fun comprobacionCredenciales() {
+        val email = binding.EditTextUsuario.text.toString()
+        val clave = binding.EditTextContrasenia.text.toString()
+
+        Api.retrofitService.login(email, clave).enqueue(object: Callback<PerfilReponse>{
+            override fun onResponse(call:Call<PerfilReponse>, response: Response<PerfilReponse>){
+                if (response.isSuccessful){
+                    val perfilResponse = response.body()
+                    Log.i("Login usuario", "Respuesta succesfull")
+                    Log.i("Loggin Usuario", perfilResponse!!.personal_id.toString())
+
+                    val intent = Intent(this@LoginActivity, Principal::class.java)
+                    intent.putExtra("ID_PERFIL_EXTRA", perfilResponse!!.personal_id)
+                    startActivity(intent)
+
+                }else{
+                    Toast.makeText(this@LoginActivity, "Error en las credenciales", Toast.LENGTH_SHORT).show()
+                    Log.i("Loggin Usuario", response.toString())
+                }
+            }
+            override fun onFailure(call: Call<PerfilReponse>, t: Throwable) {
+                // Manejar el error de conexión aquí
+                Toast.makeText(this@LoginActivity, "${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
 
 
     }
