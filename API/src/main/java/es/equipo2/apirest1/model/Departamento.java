@@ -14,7 +14,7 @@ public class Departamento implements Serializable{
 	@Column(name="id")
 	private int int_;
 
-	private byte activo;
+	private boolean activo;
 
 	private String cod;
 
@@ -35,11 +35,11 @@ public class Departamento implements Serializable{
 		this.int_ = int_;
 	}
 
-	public byte getActivo() {
+	public boolean getActivo() {
 		return this.activo;
 	}
 
-	public void setActivo(byte activo) {
+	public void setActivo(boolean activo) {
 		this.activo = activo;
 	}
 

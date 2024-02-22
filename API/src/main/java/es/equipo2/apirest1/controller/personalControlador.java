@@ -85,25 +85,26 @@ public class personalControlador {
     
     @DeleteMapping("/desactivar-usuario")
     public String desactivarUsuario(@RequestParam("idUsuario") int idUsuario, 
-            @RequestParam("idAdmin") int idAdmin, 
-            @RequestParam("contrasenaAdmin") String contrasenaAdmin) {
-			// Verificar si el usuario con el ID proporcionado es un administrador
-			if (!esAdministrador(idAdmin)) {
-				return "Error: El usuario administrador no es válido.";
-			}
-			
-			// Verificar si el usuario existe
-			Optional<Personal> optionalUsuario = personalRepository.findById(idUsuario);
-			if (optionalUsuario.isPresent()) {
-				Personal usuario = optionalUsuario.get(); // Desempaquetar el valor del Optional
-			// Modificar el campo "activo" a 0
-			usuario.setActivo((byte) 0);
-			personalRepository.save(usuario); // Guardar el usuario modificado en la base de datos
-			return "El usuario ha sido desactivado correctamente.";
-			} else {
-			return "Error: El usuario no existe.";
-			}
-		}
+                                    @RequestParam("idAdmin") int idAdmin, 
+                                    @RequestParam("contrasenaAdmin") String contrasenaAdmin) {
+        // Verificar si el usuario con el ID proporcionado es un administrador
+        if (!esAdministrador(idAdmin)) {
+            return "Error: El usuario administrador no es válido.";
+        }
+        
+        // Verificar si el usuario existe
+        Optional<Personal> optionalUsuario = personalRepository.findById(idUsuario);
+        if (optionalUsuario.isPresent()) {
+            Personal usuario = optionalUsuario.get(); // Desempaquetar el valor del Optional
+            // Modificar el campo "activo" a false
+            usuario.setActivo(false);
+            personalRepository.save(usuario); // Guardar el usuario modificado en la base de datos
+            return "El usuario ha sido desactivado correctamente.";
+        } else {
+            return "Error: El usuario no existe.";
+        }
+    }
+
     
     // Método para verificar si el usuario es un administrador
     private boolean esAdministrador(int idAdmin) {
