@@ -19,7 +19,12 @@ namespace ProyectoIntermodular
         private ControladorIncidencias controladorIncidencias;
         private List<Incidencias> lista;
         private Incidencias inci;
-        
+
+        bool creado = false;
+        public PersonalRequest nuevoUser = new PersonalRequest();
+        ControladorDepartamentos controladorDepartamento = new ControladorDepartamentos();
+        ControladorPersonal controladorPersonal = new ControladorPersonal();
+
 
 
         public Principal()
@@ -42,6 +47,7 @@ namespace ProyectoIntermodular
             controladorIncidencias = new ControladorIncidencias();
             inci = new Incidencias();
             GetIncidencias();
+            CargarComboBox();
         }
 
         private async void GetIncidencias()
@@ -71,6 +77,24 @@ namespace ProyectoIntermodular
 
                     dataGridView1.Rows.Add(row);
                 }
+            }
+        }
+
+        private async void CargarComboBox()
+        {
+            List<Personal> listaPersonal = await controladorPersonal.GetPersonal();
+
+            if (listaPersonal != null)
+            {
+                // Configurar el ComboBox
+                cmxProfesor.DisplayMember = "nombre"; // Propiedad que se mostrará en el ComboBox
+
+                // Asignar la lista de incidencias al ComboBox
+                cmxProfesor.DataSource = listaPersonal;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar las incidencias.");
             }
         }
 
