@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.sql.Date;
 import java.sql.Time;
@@ -85,41 +86,6 @@ public class incidenciaControlador {
     public List<Incidencia> obtenerIncidencias() {
         List<Incidencia> incidencias = incidenciaRepository.findAll();
         return incidencias;
-    }
-    
-    @GetMapping("ficheroPorId/{id}")
-    public ResponseEntity<Resource> obtenerIncidenciaPorId(@PathVariable int id) {
-    	// Buscar la incidencia por su ID
-        Incidencia incidencia = incidenciaRepository.findById(id).orElse(null);
-
-        if (incidencia != null) {
-            String adjuntoUrl = incidencia.getAdjuntoUrl();
-
-            if (adjuntoUrl != null && !adjuntoUrl.isEmpty()) {
-                try {
-                    // Decodificar Base64 a bytes
-                    byte[] adjuntoData = Base64.getDecoder().decode(adjuntoUrl.substring(0, adjuntoUrl.lastIndexOf(".")));
-
-                    // Definir los headers de respuesta para indicar la descarga del archivo
-                    HttpHeaders headers = new HttpHeaders();
-                    headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-                    headers.setContentDispositionFormData("attachment", "archivo" + adjuntoUrl.substring(adjuntoUrl.lastIndexOf(".")));
-
-                    // Devolver los datos decodificados como un archivo binario
-                    ByteArrayResource resource = new ByteArrayResource(adjuntoData);
-                    return ResponseEntity.ok()
-                            .headers(headers)
-                            .body(resource);
-                } catch (IllegalArgumentException e) {
-                    e.printStackTrace();
-                    // Manejar el error si la decodificación falla
-                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-                }
-            }
-        }
-
-        // Si no se encuentra la incidencia o el campo adjuntoUrl está vacío, devolver un error
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
     
     @GetMapping("/creador/{id}")
@@ -1203,40 +1169,12 @@ public class incidenciaControlador {
 
     @PostMapping
     public Incidencia nuevaIncidencia(@RequestBody Incidencia nuevaIncidencia) {
-        // Verificar si hay un archivo adjunto para codificar
-        String adjuntoPath = nuevaIncidencia.getAdjuntoUrl();
-        if (adjuntoPath != null && !adjuntoPath.isEmpty()) {
-            try {
-                // Codificar el contenido del archivo a Base64 y agregarle la extensión
-                String adjuntoBase64 = encodeFileToBase64(adjuntoPath);
-                nuevaIncidencia.setAdjuntoUrl(adjuntoBase64);
-            } catch (IOException e) {
-                e.printStackTrace();
-                // Manejar el error si ocurre una excepción de E/S
-            }
-        }
-
         return incidenciaRepository.save(nuevaIncidencia);
     }
 
     @PutMapping("/{num}")
     public Incidencia editarIncidencia(@RequestBody Incidencia incidenciaEditada, @PathVariable int num) {
         if (incidenciaRepository.findById(num).isPresent()) {
-            Incidencia incidenciaExistente = incidenciaRepository.findById(num).get();
-
-            // Verificar si hay un archivo adjunto para codificar
-            String adjuntoPath = incidenciaEditada.getAdjuntoUrl();
-            if (adjuntoPath != null && !adjuntoPath.isEmpty()) {
-                try {
-                    // Codificar el contenido del archivo a Base64 y agregarle la extensión
-                    String adjuntoBase64 = encodeFileToBase64(adjuntoPath);
-                    incidenciaEditada.setAdjuntoUrl(adjuntoBase64);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    // Manejar el error si ocurre una excepción de E/S
-                }
-            }
-
             incidenciaEditada.setNum(num);
             return incidenciaRepository.save(incidenciaEditada);
         } else {
@@ -1244,23 +1182,63 @@ public class incidenciaControlador {
         }
     }
 
-    // Método para codificar el contenido de un archivo a Base64 y agregarle la extensión del archivo
-    private String encodeFileToBase64(String filePath) throws IOException {
-        Path path = Paths.get(filePath);
-        byte[] fileContent = Files.readAllBytes(path);
-        String base64Encoded = Base64.getEncoder().encodeToString(fileContent);
-        // Agregar la extensión del archivo al final de la cadena codificada
-        String extension = getFileExtension(filePath);
-        base64Encoded += "." + extension;
-        return base64Encoded;
+    @PostMapping("/subirArchivo/{id}")
+    public ResponseEntity<String> subirArchivo(@RequestParam("archivoBase64") String archivoBase64, @PathVariable int id) {
+        try {
+            // Decodificar el archivo Base64 a bytes
+            byte[] archivoBytes = Base64.getDecoder().decode(archivoBase64);
+
+            // Obtener la extensión del archivo
+            String extension = obtenerExtensionDesdeBase64(archivoBase64);
+
+            // Generar un nombre para el archivo compuesto por "incidencia" + su ID + extensión
+            String nombreArchivo = "incidencia" + id + extension; // Reemplaza "incidencia" con el prefijo deseado
+
+            // Guardar el archivo en el sistema de archivos (o en el almacenamiento de tu elección)
+            String rutaArchivo = guardarArchivoEnSistemaDeArchivos(nombreArchivo, archivoBytes);
+
+            // Actualizar la incidencia en la base de datos con la ubicación del archivo
+            Optional<Incidencia> optionalIncidencia = incidenciaRepository.findById(id);
+            if (optionalIncidencia.isPresent()) {
+                Incidencia incidencia = optionalIncidencia.get();
+                incidencia.setAdjuntoUrl(rutaArchivo);
+                incidenciaRepository.save(incidencia);
+
+                return ResponseEntity.ok("Archivo subido exitosamente con nombre: " + nombreArchivo);
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al procesar el archivo.");
+        }
     }
 
-    // Método para obtener la extensión de un archivo a partir de su ruta
-    private String getFileExtension(String filePath) {
-        return filePath.substring(filePath.lastIndexOf(".") + 1);
+    // Método para obtener la extensión del archivo desde una cadena Base64
+    private String obtenerExtensionDesdeBase64(String base64String) {
+        // Extraer la extensión desde la cadena Base64 (asumiendo que está después de la coma)
+        int comaIndex = base64String.indexOf(",");
+        if (comaIndex != -1) {
+            String mimeType = base64String.substring(0, comaIndex);
+            return mimeType.substring(mimeType.lastIndexOf("/") + 1); // Extraer la extensión
+        }
+        return "";
     }
 
+    private String guardarArchivoEnSistemaDeArchivos(String nombreArchivo, byte[] archivoBytes) throws IOException {
+        // Obtener la ruta al directorio "ficheros" dentro del directorio del proyecto
+        String rutaDirectorio = Paths.get(System.getProperty("user.dir"), "ficheros").toString();
 
+        // Crear la ruta completa al archivo
+        Path rutaArchivoCompleta = Paths.get(rutaDirectorio, nombreArchivo);
+
+        // Escribir los bytes del archivo en el sistema de archivos
+        Files.write(rutaArchivoCompleta, archivoBytes);
+
+        // Devolver la ruta completa del archivo guardado
+        return rutaArchivoCompleta.toString();
+    }
+    
     @DeleteMapping("/{num}")
     public Incidencia borrarIncidencia(@PathVariable int num) {
         if (incidenciaRepository.findById(num).isPresent()) {

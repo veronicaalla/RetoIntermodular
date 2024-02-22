@@ -1,6 +1,8 @@
 package es.equipo2.apirest1.controller;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.equipo2.apirest1.model.Incidencia;
@@ -17,6 +20,7 @@ import es.equipo2.apirest1.model.IncidenciasSubtipo;
 import es.equipo2.apirest1.model.Tipo_Incidencias;
 import es.equipo2.apirest1.repository.IncidenciaSubtipoRepository;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 
 @RestController
 @RequestMapping("/api/incidencias-subtipos")
@@ -38,21 +42,31 @@ public class incidenciasSubtipoControlador {
         return incidenciasSubtipoRepository.findById(id).orElse(null);
     }
     
-    @GetMapping("/tipo/{tipo}")
-    public List<IncidenciasSubtipo> buscarPorTipo(@PathVariable Tipo_Incidencias tipo) {
-        return incidenciasSubtipoRepository.findByTipo(tipo);
+    @GetMapping("/subtipos")
+    public Set<String> obtenerSubtiposPorTipo(@RequestParam Tipo_Incidencias tipo) {
+        List<IncidenciasSubtipo> subtipos = incidenciasSubtipoRepository.findByTipo(tipo);
+        return subtipos.stream()
+                .map(IncidenciasSubtipo::getSubtipoNombre) // o cualquier otro campo que quieras devolver
+                .collect(Collectors.toSet());
     }
-
-    @GetMapping("/subsubtipos/{subtipo}")
-    public List<IncidenciasSubtipo> obtenerSubsubtiposPorSubtipo(@PathVariable String subtipo) {
-        return incidenciasSubtipoRepository.findBySubtipoNombre(subtipo);
+    
+    @GetMapping("/subsubtipos")
+    public Set<String> obtenerSubtiposRelacionados(@RequestParam String subtipo) {
+        List<IncidenciasSubtipo> subtipos = incidenciasSubtipoRepository.findBySubtipoNombre(subtipo);
+        Set<String> subtiposRelacionados = subtipos.stream()
+                .map(IncidenciasSubtipo::getSubSubtipo)
+                .collect(Collectors.toSet());
+        return subtiposRelacionados;
     }
-
-    @GetMapping("/ids/{tipo}/{subtipo}/{subsubtipo}")
-    public List<IncidenciasSubtipo> buscarIds(@PathVariable Tipo_Incidencias tipo,
-                                               @PathVariable String subtipo,
-                                               @PathVariable String subsubtipo) {
-        return incidenciasSubtipoRepository.findByTipoAndSubtipoNombreAndSubSubtipo(tipo, subtipo, subsubtipo);
+    
+    @GetMapping("/id")
+    public Integer obtenerIdPorTipoSubtipoYSubsubtipo(
+            @RequestParam Tipo_Incidencias tipo,
+            @RequestParam String subtipo,
+            @RequestParam String subsubtipo) {
+        IncidenciasSubtipo incidenciasSubtipo = incidenciasSubtipoRepository
+                .findByTipoAndSubtipoNombreAndSubSubtipo(tipo, subtipo, subsubtipo);
+        return incidenciasSubtipo != null ? incidenciasSubtipo.getId() : null;
     }
     
     @PostMapping
