@@ -1,11 +1,14 @@
 package es.intermodular.equipo2.incidenciasies.recyclerIncidencias
 
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.R
 import es.intermodular.equipo2.incidenciasies.databinding.ItemIncidenciasBinding
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
+
 
 class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -18,9 +21,23 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         binding.btnEstadoIncidencai.text = incidenciasResponse.estado
         //Modificamos el color
         when(incidenciasResponse.estado){
-           // "abierta"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(context.applicationContext, R.color.colorEnAbierto))
+           "abierta"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorEnAbierto))
+            "asignada"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorAsignado))
+            "en proceso"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorEnProceso))
+            "resuelta"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorResuelto))
+            "cerrada"-> binding.btnEstadoIncidencai.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorCerrado))
+         }
 
+        if (incidenciasResponse.estado.contains("abierta") || incidenciasResponse.estado.contains("asignada")){
+            Log.i("Tipo incidencia ", incidenciasResponse.estado)
+            binding.btnEditarIncidencias.setOnClickListener {
+                Toast.makeText(it.context, "Editar incidecia ", Toast.LENGTH_SHORT).show()
+            }
+        }else{
+            binding.btnEditarIncidencias.setVisibility(View.INVISIBLE);
         }
+
+
 
         binding.txtTipoIncidencia.text = " ${incidenciasResponse.tipoIncidencia.tipo} ${incidenciasResponse.tipoIncidencia.subtipoNombre} ${incidenciasResponse.tipoIncidencia.subSubtipo}"
     //binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia) }

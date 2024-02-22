@@ -40,66 +40,6 @@ class Principal : AppCompatActivity() {
         //recuperamos el id del usuario que se ha pasado anteriormente, mediante un Intent
          idUsuarioPrueba = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
 
-        //region Damos funcionalidad a los botones
-        binding.btnAbiertas.setOnClickListener {
-            val intent = Intent(this, SpecificListIncidents::class.java)
-            //We pass the type of incident
-            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Abiertas")
-            //We pass a certain list
-            //La lista la conseguimos con un método de la api
-            startActivity(intent)
-        }
-
-        binding.btnAsignadas.setOnClickListener {
-            val intent = Intent(this, SpecificListIncidents::class.java)
-            //We pass the type of incident
-            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Asignadas")
-            //We pass a certain list
-
-            startActivity(intent)
-        }
-
-        binding.btnEnProceso.setOnClickListener {
-            val intent = Intent(this, SpecificListIncidents::class.java)
-            //We pass the type of incident
-            intent.putExtra("EXTRA_TYPE_INCIDENTS", "En Proceso")
-            //We pass a certain list
-
-            startActivity(intent)
-        }
-
-        binding.btnResueltas.setOnClickListener {
-            val intent = Intent(this, SpecificListIncidents::class.java)
-            //We pass the type of incident
-            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Resueltas")
-            //We pass a certain list
-
-            startActivity(intent)
-        }
-
-        binding.btnCerradas.setOnClickListener {
-            val intent = Intent(this, SpecificListIncidents::class.java)
-            //We pass the type of incident
-            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Cerradas")
-            //We pass a certain list
-
-            startActivity(intent)
-        }
-
-        //Damos funcionalidad al boton de añadir
-        binding.btnAddIncidencias.setOnClickListener {
-            val intent = Intent(this, SelectTypeIncidents::class.java)
-            startActivity(intent)
-        }
-
-        //Damos funcionalidad a los botones del ToolBar
-        binding.menuNotificaciones.setOnClickListener {
-            val intent = Intent(this, NotificationsActivity::class.java)
-            startActivity(intent)
-        }
-
-        //endregion
-
 
         //region Damos funcionalidad al menu
         val menuAjustes = findViewById<ImageView>(R.id.menuAjustes)
@@ -231,7 +171,7 @@ class Principal : AppCompatActivity() {
             intent.putExtra("EXTRA_INCIDENCIAS", incidenciasEnProcesoFuncionalidad.toTypedArray())
             startActivity(intent)
         }
-        binding.btnEnProceso.setOnClickListener {
+        binding.btnResueltas.setOnClickListener {
             val intent = Intent(this, SpecificListIncidents::class.java)
             intent.putExtra("EXTRA_TYPE_INCIDENTS", "Resueltas")
             intent.putExtra("EXTRA_INCIDENCIAS", incidenciasResueltasFuncionalidad.toTypedArray())

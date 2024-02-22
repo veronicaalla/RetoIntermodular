@@ -18,8 +18,7 @@ class EditIncident : AppCompatActivity() {
         //setContentView(R.layout.activity_edit_incident)
 
         binding = ActivityEditIncidentBinding.inflate(layoutInflater)
-        setContentView(binding.root
-        )
+        setContentView(binding.root)
         //Recogemos el tipo de incidencia que se ha pasado mediante un Intent
         val tipo = intent.extras?.getString("tipo").orEmpty()
         binding.txtTipoIncidencia.text = tipo
