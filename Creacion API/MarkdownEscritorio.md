@@ -14,7 +14,7 @@ Esta será la página de bienvenida, en ella tendremos 2 botones.
 ![Imagen](Imagenes/Aplicacion_Escritorio/Admin.PNG)
 ___
 ## Principal
-Esta página será en la que se realizarán la mayoría de tareas principales. Cuenta con un buscador muy avanzado para buscar por varias propiedades si existen o no, ya sea por: Profesor, Aula, Estado de la incidencia, Subtipo de incidencia, Tipo de incidencia, fecha. Contará con un visor que mostrará los datos de las incidencias encontradas. Por último, cuenta con 7 botones.
+Esta página será en la que se realizarán la mayoría de tareas principales. Cuenta con un buscador muy avanzado para buscar por varias propiedades si existen o no, ya sea por: profesor, aula, estado de la incidencia, subtipo de incidencia, tipo de incidencia, fecha. Contará con un visor que mostrará los datos de las incidencias encontradas. Por último, cuenta con 7 botones.
 
 - **Limpiar**: Al pulsar este botón, dejará los valores del buscador a sus valores por defecto.
 - **Buscar**: Al pulsar este botón en el visor, se mostrarán las posibles coincidencias de incidencias.
