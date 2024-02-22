@@ -104,7 +104,7 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent)
 
                 }else{
-                    Toast.makeText(this@LoginActivity, "Usuario o contraseña incorrectos!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Error en las credenciales", Toast.LENGTH_SHORT).show()
                     Log.i("Loggin Usuario", response.toString())
                 }
             }

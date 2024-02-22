@@ -62,12 +62,10 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         if (incidenciasResponse.estado.contains("abierta") || incidenciasResponse.estado.contains("asignada")) {
             Log.i("Tipo incidencia ", incidenciasResponse.estado)
             binding.btnEditarIncidencias.setOnClickListener {
-                Toast.makeText(it.context, "Editar incidecia ", Toast.LENGTH_SHORT).show()
                 val intent = Intent(it.context, EditIncident::class.java)
-                ////Para poder pasarle la pelicula, hemos puesto la clase Film como Serializable
-                //            intent.putExtra(FilmEditActivity.EXTRA_EDIT_FILM, film)
-                intent.putExtra(EditIncident.EXTRA_EDIT_INCIDENCIA, incidenciasResponse)
+                ////Para poder pasarle la incidencia, debido a que hemos puesto la clase Incidencia como Serializable
                 Log.i("Paso de incidencia ", incidenciasResponse.toString())
+                intent.putExtra(EditIncident.EXTRA_EDIT_INCIDENCIA, incidenciasResponse)
                 ContextCompat.startActivity(it.context, intent, null )
             }
         } else {
