@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeleccionarDepartamentos));
             this.btnCrear = new System.Windows.Forms.Button();
             this.dgvDepartamentos = new System.Windows.Forms.DataGridView();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JefeDepartamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamentos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,28 +66,6 @@
             this.dgvDepartamentos.Size = new System.Drawing.Size(553, 431);
             this.dgvDepartamentos.TabIndex = 9;
             // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnModificar.Location = new System.Drawing.Point(245, 473);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(94, 30);
-            this.btnModificar.TabIndex = 8;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnVolver.Location = new System.Drawing.Point(155, 473);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 30);
-            this.btnVolver.TabIndex = 7;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
             // Codigo
             // 
             this.Codigo.HeaderText = "Código";
@@ -115,6 +93,28 @@
             this.JefeDepartamento.MinimumWidth = 6;
             this.JefeDepartamento.Name = "JefeDepartamento";
             this.JefeDepartamento.Width = 125;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnModificar.Location = new System.Drawing.Point(245, 473);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(94, 30);
+            this.btnModificar.TabIndex = 8;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnVolver.Location = new System.Drawing.Point(155, 473);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 30);
+            this.btnVolver.TabIndex = 7;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // SeleccionarDepartamentos
             // 

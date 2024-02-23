@@ -18,7 +18,7 @@ namespace ProyectoIntermodular.Controladores
         {
             client = new HttpClient();
         }
-        public async Task<List<Departamento>> GetDepartamentos()
+        public async Task<List<Departamentos>> GetDepartamentos()
         {
             try
             {
@@ -27,12 +27,39 @@ namespace ProyectoIntermodular.Controladores
 
                 string responseJson = await response.Content.ReadAsStringAsync();
 
-                List<Departamento> departamentos = JsonConvert.DeserializeObject<List<Departamento>>(responseJson);
+                List<Departamentos> departamentos = JsonConvert.DeserializeObject<List<Departamentos>>(responseJson);
                 return departamentos;
             }
             catch (Exception)
             {
                 return null;
+            }
+        }
+
+        public async Task<bool> ActualizarDepartamento(Departamentos departamento)
+        {
+            try
+            {
+                // Serializa el objeto comentario a formato JSON
+                string comentarioJson = JsonConvert.SerializeObject(departamento);
+
+                // Crea un contenido de tipo JSON a partir del objeto serializado
+                StringContent content = new StringContent(comentarioJson, Encoding.UTF8, "application/json");
+
+                // Realiza una solicitud HTTP PUT a la API para actualizar el comentario
+                HttpResponseMessage response = await client.PutAsync($"http://localhost:8080/api/departamentos/{departamento.int_}", content);
+
+                // Verifica si la solicitud fue exitosa
+                response.EnsureSuccessStatusCode();
+
+                // Retorna true si la solicitud fue exitosa
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Maneja cualquier excepción que pueda ocurrir durante la solicitud HTTP
+                Console.WriteLine("Error al actualizar el comentario: " + ex.Message);
+                return false;
             }
         }
     }

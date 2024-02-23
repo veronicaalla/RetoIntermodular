@@ -37,7 +37,25 @@ namespace ProyectoIntermodular.Controladores
                     return null;
                 }
             }
+
+        public async Task<List<Comentarios>> GetComentariosIncidencia(String num)
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync($"http://localhost:8080/api/comentarios/incidencia/{num}");
+                response.EnsureSuccessStatusCode();
+
+                string responseJson = await response.Content.ReadAsStringAsync();
+
+                List<Comentarios> coment = JsonConvert.DeserializeObject<List<Comentarios>>(responseJson);
+                return coment;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
+    }
     }
 
 

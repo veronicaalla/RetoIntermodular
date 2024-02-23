@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoIntermodular.Clases;
+using ProyectoIntermodular.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,31 @@ namespace ProyectoIntermodular.Formularios
 {
     public partial class CrearDepartamento : Form
     {
+        ControladorDepartamentos controladorDepartamento = new ControladorDepartamentos();
         public CrearDepartamento()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            CargarComboBox();
         }
 
+        private async void CargarComboBox()
+        {
+            List<Departamentos> listaDepartamentos = await controladorDepartamento.GetDepartamentos();
+
+            if (listaDepartamentos != null)
+            {
+                // Configurar el ComboBox
+                comboJefe.DisplayMember = "personal"; // Propiedad que se mostrará en el ComboBox
+
+                // Asignar la lista de incidencias al ComboBox
+                comboJefe.DataSource = listaDepartamentos;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar las incidencias.");
+            }
+        }
         private void lblDominio_Click(object sender, EventArgs e)
         {
 

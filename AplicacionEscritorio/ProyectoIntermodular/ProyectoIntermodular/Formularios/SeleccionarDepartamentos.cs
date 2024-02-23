@@ -15,15 +15,15 @@ namespace ProyectoIntermodular.Formularios
     public partial class SeleccionarDepartamentos : Form
     {
         private ControladorDepartamentos controladorDepartamentos;
-        private List<Departamento> lista;
-        private Departamento dep;
+        private List<Departamentos> lista;
+        private Departamentos dep;
         
         public SeleccionarDepartamentos()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             controladorDepartamentos = new ControladorDepartamentos();
-            dep = new Departamento();
+            dep = new Departamentos();
             GetDepartamentos();
         }
 
@@ -50,27 +50,28 @@ namespace ProyectoIntermodular.Formularios
             }
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private async void btnModificar_Click(object sender, EventArgs e)
         {
 
             if (dgvDepartamentos.SelectedRows.Count > 0)
             {
-                String codigo = dgvDepartamentos.CurrentRow.Cells[0].Value.ToString();
-                String nombre = dgvDepartamentos.CurrentRow.Cells[1].Value != null ? dgvDepartamentos.CurrentRow.Cells[1].Value.ToString() : string.Empty;
-                String activo = dgvDepartamentos.CurrentRow.Cells[2].Value != null ? dgvDepartamentos.CurrentRow.Cells[2].Value.ToString() : string.Empty;
-                String jefeDep = dgvDepartamentos.CurrentRow.Cells[3].Value != null ? dgvDepartamentos.CurrentRow.Cells[3].Value.ToString() : string.Empty;
-                
-                ModificarDepartamento modificar = new ModificarDepartamento(codigo,nombre,activo,jefeDep);
+                string codigo = dgvDepartamentos.CurrentRow.Cells[0].Value.ToString();
+                string nombre = dgvDepartamentos.CurrentRow.Cells[1].Value != null ? dgvDepartamentos.CurrentRow.Cells[1].Value.ToString() : string.Empty;
+                string activo = dgvDepartamentos.CurrentRow.Cells[2].Value != null ? dgvDepartamentos.CurrentRow.Cells[2].Value.ToString() : string.Empty;
+                string jefe = dgvDepartamentos.CurrentRow.Cells[3].Value != null ? dgvDepartamentos.CurrentRow.Cells[3].Value.ToString() : string.Empty;
+
+                ControladorPersonal controladorPersonal = new ControladorPersonal();
+                Personal jefeDep = await controladorPersonal.GetPersonalPorId(jefe);
+                int id=jefeDep.id;
+
+                ModificarDepartamento modificar = new ModificarDepartamento(id,codigo, nombre, activo, jefeDep);
                 this.Hide();
                 modificar.Show();
-
-
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un usuario");
+                MessageBox.Show("Debe seleccionar un departamento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void btnCrear_Click(object sender, EventArgs e)

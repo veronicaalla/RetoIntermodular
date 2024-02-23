@@ -18,7 +18,7 @@ namespace ProyectoIntermodular.Formularios
         private ControladorComentarios controladorComentarios;
         private List<Comentarios> lista;
         private Comentarios coment;
-        public ModificarIncidencia(String numero,String tipo,String subtipo,String fechaCreacion,String fechaCierre,String profesor)
+        public ModificarIncidencia(String numero,String tipo,String subtipo,String fechaCreacion,String fechaCierre,String profesor,string estado)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -30,22 +30,22 @@ namespace ProyectoIntermodular.Formularios
             dateTimePicker1.Text = fechaCreacion;
             dateTimePicker2.Text = fechaCierre;
             cmxProfesor.Text=profesor;
+            cmxEstado.Text = estado;
 
             controladorComentarios = new ControladorComentarios();
             coment = new Comentarios();
-            GetIncidencias();
+            GetComentarios();
         }
 
-        private async void GetIncidencias()
+        private async void GetComentarios()
         {
-            lista = await controladorComentarios.GetComentarios();
+            lista = await controladorComentarios.GetComentariosIncidencia(numeroInci);
 
             if (lista != null)
             {
                 foreach (var comentario in lista)
                 {
-                    if (comentario.incidencia.num.Equals(numeroInci))
-                    {
+                   
                         DataGridViewRow row = new DataGridViewRow();
                         row.CreateCells(dataGridView1);
 
@@ -55,7 +55,6 @@ namespace ProyectoIntermodular.Formularios
 
                         dataGridView1.Rows.Add(row);
                     }
-                }
             }
         }
 

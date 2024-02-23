@@ -37,6 +37,26 @@ namespace ProyectoIntermodular.Controladores
                 return null;
             }
         }
+
+        public async Task<List<Incidencias>> GetTiposIncidencia()
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/incidencias/tipo/{tipo}");
+                response.EnsureSuccessStatusCode();
+
+                string responseJson = await response.Content.ReadAsStringAsync();
+
+                List<Incidencias> incidencias = JsonConvert.DeserializeObject<List<Incidencias>>(responseJson);
+                return incidencias;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        
         public async Task<bool> AgregarIncidencia(Incidencias incidencia)
         {
             try

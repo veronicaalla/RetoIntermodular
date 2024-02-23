@@ -30,6 +30,35 @@ namespace ProyectoIntermodular.Controladores
                 return personas;
             
         }
+
+        public async Task<Personal>GetPersonalPorId(String id)
+        {
+
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync($"http://localhost:8080/api/personal/{id}");
+                response.EnsureSuccessStatusCode();
+
+                string responseJson = await response.Content.ReadAsStringAsync();
+
+                Personal persona = JsonConvert.DeserializeObject<Personal>(responseJson);
+                return persona;
+            }
+            catch (HttpRequestException ex)
+            {
+                // Maneja las excepciones específicas de las solicitudes HTTP
+                Console.WriteLine("Error al enviar la solicitud HTTP: " + ex.Message);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                // Maneja cualquier otra excepción que pueda ocurrir
+                Console.WriteLine("Error al procesar la respuesta: " + ex.Message);
+                return null;
+            }
+        }
+
+    
         public async Task<bool> AgregarPerfil(Perfiles perfil)
         {
             try

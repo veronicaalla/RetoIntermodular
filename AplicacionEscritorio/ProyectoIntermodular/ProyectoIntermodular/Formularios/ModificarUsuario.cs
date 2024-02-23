@@ -64,7 +64,7 @@ namespace ProyectoIntermodular.Formularios
                 activo = true;
             }
 
-            Departamento departamento = (Departamento) comboBoxDepartamento.SelectedItem; 
+            Departamentos departamento = (Departamentos) comboBoxDepartamento.SelectedItem; 
             Personal persona = new Personal(usu.id, cajaNombre.Text, cajaApellido1.Text, cajaApellido2.Text, cajaDireccion.Text, cajaLocalidad.Text, cajaCP.Text, cajaTlfn.Text, cajaDNI.Text, activo, departamento);
 
             // Espera a que se complete la actualización del personal
@@ -82,7 +82,7 @@ namespace ProyectoIntermodular.Formularios
 
         private async void CargarComboBox()
         {
-            List<Departamento> listaDepartamentos = await controladorDepartamento.GetDepartamentos();
+            List<Departamentos> listaDepartamentos = await controladorDepartamento.GetDepartamentos();
 
             if (listaDepartamentos != null)
             {
@@ -93,7 +93,7 @@ namespace ProyectoIntermodular.Formularios
                 comboBoxDepartamento.DataSource = listaDepartamentos;
                 
                 // Buscar el departamento que quieres seleccionar
-                Departamento departamentoSeleccionado = listaDepartamentos.FirstOrDefault(d => d.int_ == usu.departamento.int_);
+                Departamentos departamentoSeleccionado = listaDepartamentos.FirstOrDefault(d => d.int_ == usu.Departamento.int_);
 
                 // Seleccionar el departamento encontrado
                 if (departamentoSeleccionado != null)
