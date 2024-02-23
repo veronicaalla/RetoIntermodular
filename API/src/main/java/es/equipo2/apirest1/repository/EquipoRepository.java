@@ -6,4 +6,6 @@ import es.equipo2.apirest1.model.Equipo;
 
 public interface EquipoRepository extends JpaRepository<Equipo, Integer>{
 
+	Equipo findByEtiqueta(String etiqueta);
+
 }
