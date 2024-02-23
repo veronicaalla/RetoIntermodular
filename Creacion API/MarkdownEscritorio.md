@@ -5,10 +5,10 @@
 </style>
 # Proyecto Intermodular
 
-## Inicial
+## Inicial{#identifier .centrar}
 Esta será la primera página que aparecerá tras haber iniciado la aplicación y mostrar un nombre y un solo botón llamado *INICIAR*, con la única función de llevar a la página de *Admin*.
 
-![Imagen](Imagenes/Aplicacion_Escritorio/Inicial.PNG) {#identifier .centrar}
+![Imagen](Imagenes/Aplicacion_Escritorio/Inicial.PNG) 
 ___
 ## Admin
 Esta será la página de bienvenida, en ella tendremos 2 botones.
