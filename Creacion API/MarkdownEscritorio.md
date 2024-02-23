@@ -73,21 +73,22 @@ Esta página es la encargada tanto de la modificación como la creación de depa
 - **Crear**: Al pulsar este botón, nos llevará a la página de creación de departamentos.
 - **Modificar**: Al pulsar este botón, nos llevará a la página de modificación de departamentos.
 - **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de departamentos.
+
+![Imagen](Imagenes/Aplicacion_Escritorio/SeleccionarDepartamento.PNG)
 ___
 ## CrearDepartamento
 Esta página será en la que se realizarán las funciones de creación de departamentos. Cuenta con varios cuadros de texto, ya sea: código, nombre, código, jefe de departamento y opción de activo o no. Por último, cuenta con 2 botones.
 - **Crear**: Al pulsar este botón, nos llevará de vuelta a la página de selección de departamentos con un nuevo departamento ya añadido.
 - **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de departamentos.
 
+![Imagen](Imagenes/Aplicacion_Escritorio/CrearDepartamento.PNG)
 ___
 ## ModificarDepartamento
 Esta página será en la que se realizarán las funciones de modificación de departamentos. Cuenta con varios cuadros de texto, ya sea: código, nombre, codigo de jefe de departamento y si está activo o no. Por último, cuenta con 2 botones.
 - **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de departamentos.
 - **Finalizar**: Al pulsar este botón, nos guardará los cambios realizados y nos llevará de vuelta a la página de selección de departamentos.
 
-
-
-
+![Imagen](Imagenes/Aplicacion_Escritorio/ModificarDepartamento.PNG)
 ___
 ## Crear Usuario
 Esta página será en la que se realizarán las funciones de creación de usuarios. Cuenta con varios cuadros de texto, ya sea: datos personales y si está activo o no. Por último, cuenta con 2 botones.
