@@ -2,19 +2,21 @@ package es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telecom.Call
+
 import android.util.Log
+import android.widget.Toast
 import es.intermodular.equipo2.incidenciasies.R
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityEditIncidentBinding
 import es.intermodular.equipo2.incidenciasies.datos.Api
 import es.intermodular.equipo2.incidenciasies.datos.ApiService
 import es.intermodular.equipo2.incidenciasies.modelo.CrearIncidencia
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
-import retrofit2.Response
 import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import javax.security.auth.callback.Callback
+
+
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class EditIncident : AppCompatActivity() {
 
@@ -86,7 +88,7 @@ class EditIncident : AppCompatActivity() {
 
         //Le pasamos el id del creador, que corresponde con el del perfil
         nuevaIncidencia.creador_id = idPerfil
-
+        Log.i("Nueva incidencia -> creador_id" , nuevaIncidencia.creador_id.toString())
 
         //---------- PASO DE TIPO Y SUBTIPO ------------
         //Una vez obtenido el tipo de incidencia, en un string
@@ -105,27 +107,69 @@ class EditIncident : AppCompatActivity() {
         //El tipo de datos, se lo podemos pasar de forma automatica
         nuevaIncidencia.tipo = tipo
 
+
         //Llamamos a la api, para obtener el id del subtipo
-        //Controlamos si existe el subsubtipo
-        if (subSubTipo.isEmpty()) {
+        Api.retrofitService.obtenerIdPorTipoSubtipoYSubsubtipo(tipo, subTipo, subSubTipo)
+            .enqueue(object : Callback<Int> {
+                override fun onResponse(call: Call<Int>, response: Response<Int>) {
+                    if (response.isSuccessful) {
+                        val id: Int? = response.body()
+                        nuevaIncidencia.subtipo_id = response.body()!!
+                        Toast.makeText(this@EditIncident, "ID $id", Toast.LENGTH_SHORT).show()
+                        // Usa el id como necesites
+                        Log.i("Id del subtipo", id.toString())
 
-        } else {
 
-        }
+
+                    } else {
+                        Log.i("Error al crear la incidencia:", response.message())
+                    }
+                }
+
+                override fun onFailure(call: Call<Int>, t: Throwable) {
+                    Log.i("Error al realizar la solicitud:", t.message.toString())
+                }
+            })
 
 
         //Le asiganamos la descripcion
         nuevaIncidencia.descripcion = binding.editTextDescripcion.text.toString()
+        Log.i("Descripcion incidencia ", nuevaIncidencia.descripcion)
+
 
         //Le asignamos el equipoId
         if (binding.editTextEquipoIncidencia.text.isNotEmpty()) {
             //Convertimos el texto en un int
-            var equipoIncidenca = binding.editTextEquipoIncidencia.toString()
+            var equipoIncidenca = binding.editTextEquipoIncidencia.text.toString()
             var idEquipo = equipoIncidenca.toInt()
             nuevaIncidencia.equipoId = idEquipo
         }
-        //---------------
 
+        Log.i("nueva incidencia ", nuevaIncidencia.toString())
+
+        //Como ya hemos pasado todos los parametros, llamamos a la API y creamos la incidencia
+        Api.retrofitService.crearIncidencia(nuevaIncidencia)
+            .enqueue(object : Callback<IncidenciaResponse> {
+                override fun onResponse(
+                    call: Call<IncidenciaResponse>,
+                    response: Response<IncidenciaResponse>
+                ) {
+                    Log.i("Datos incidencia nueva", nuevaIncidencia.toString())
+                    if (response.isSuccessful) {
+                        val myresponse = response.body()
+                        Log.i("Creamos incidencia", myresponse.toString())
+
+                        //No esta recogiendo la fecha de creacion
+                        // Haz lo que necesites con la respuesta de la API
+                    } else {
+                        Log.i("Error al crear la incidencia:", response.message())
+                    }
+                }
+
+                override fun onFailure(call: Call<IncidenciaResponse>, t: Throwable) {
+                    Log.i("Error al realizar la solicitud:", t.message.toString())
+                }
+            })
 
     }
 
