@@ -72,7 +72,7 @@ ___
 Esta página es la encargada tanto de la modificación como la creación de departamentos. Cuenta con un visor en el que se mostrarán todos los departamentos que hay. Por último, cuenta con 3 botones. (No se podrán usar algunas acciones sino se ha seleccionado primero un departamento del visor).
 - **Crear**: Al pulsar este botón, nos llevará a la página de creación de departamentos.
 - **Modificar**: Al pulsar este botón, nos llevará a la página de modificación de departamentos.
-- **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de departamentos.
+- **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de control de usuarios.
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/SeleccionarDepartamento.PNG)
 ___
