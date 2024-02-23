@@ -16,6 +16,13 @@ interface ApiService {
         @Path("id") usuarioId: Int
     ): Response<List<IncidenciaResponse>>
 
+
+    //Obtener el id del subtipo si tengo tipo y subtipo
+
+
+    //Obtener el id del subtipo si tengo tipo, subtipo y subsubtipo
+
+
     //endregion
 
     //region Perfiles
@@ -24,5 +31,6 @@ interface ApiService {
         @Query("dominio") dominio: String, @Query("password") password: String
     ): Call<PerfilReponse>
     //endregion
+
 
 }

@@ -2,14 +2,19 @@ package es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.telecom.Call
 import android.util.Log
 import es.intermodular.equipo2.incidenciasies.R
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityEditIncidentBinding
+import es.intermodular.equipo2.incidenciasies.datos.Api
+import es.intermodular.equipo2.incidenciasies.datos.ApiService
 import es.intermodular.equipo2.incidenciasies.modelo.CrearIncidencia
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
+import retrofit2.Response
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import javax.security.auth.callback.Callback
 
 class EditIncident : AppCompatActivity() {
 
@@ -101,17 +106,23 @@ class EditIncident : AppCompatActivity() {
         nuevaIncidencia.tipo = tipo
 
         //Llamamos a la api, para obtener el id del subtipo
+        //Controlamos si existe el subsubtipo
+        if (subSubTipo.isEmpty()) {
+
+        } else {
+
+        }
 
 
         //Le asiganamos la descripcion
         nuevaIncidencia.descripcion = binding.editTextDescripcion.text.toString()
 
         //Le asignamos el equipoId
-        if (binding.editTextEquipoIncidencia.text.isNotEmpty()){
+        if (binding.editTextEquipoIncidencia.text.isNotEmpty()) {
             //Convertimos el texto en un int
             var equipoIncidenca = binding.editTextEquipoIncidencia.toString()
             var idEquipo = equipoIncidenca.toInt()
-            nuevaIncidencia.equipoId=idEquipo
+            nuevaIncidencia.equipoId = idEquipo
         }
         //---------------
 
