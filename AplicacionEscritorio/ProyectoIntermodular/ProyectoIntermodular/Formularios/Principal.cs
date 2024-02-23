@@ -83,14 +83,17 @@ namespace ProyectoIntermodular
         private async void CargarComboBox()
         {
             List<Personal> listaPersonal = await controladorPersonal.GetPersonal();
+            List<Incidencias> tiposIncidencias = await controladorIncidencias.GetTiposIncidencia();
 
             if (listaPersonal != null)
             {
-                // Configurar el ComboBox
-                cmxProfesor.DisplayMember = "nombre"; // Propiedad que se mostrará en el ComboBox
-
-                // Asignar la lista de incidencias al ComboBox
+                
+                cmxProfesor.DisplayMember = "nombre"; 
                 cmxProfesor.DataSource = listaPersonal;
+
+                cmxTipo.DisplayMember = "tipo";
+                cmxTipo.DataSource = tiposIncidencias;
+
             }
             else
             {
@@ -115,9 +118,10 @@ namespace ProyectoIntermodular
                 String subtipo = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 String fechaCreacion = dataGridView1.CurrentRow.Cells[3].Value != null ? dataGridView1.CurrentRow.Cells[3].Value.ToString() : string.Empty;
                 String fechaCierre = dataGridView1.CurrentRow.Cells[4].Value != null ? dataGridView1.CurrentRow.Cells[4].Value.ToString() : string.Empty;
+                String estado = dataGridView1.CurrentRow.Cells[6].Value != null ? dataGridView1.CurrentRow.Cells[6].Value.ToString() : string.Empty;
                 String profesor = dataGridView1.CurrentRow.Cells[8].Value != null ? dataGridView1.CurrentRow.Cells[8].Value.ToString() : string.Empty;
 
-                ModificarIncidencia modificarInci = new ModificarIncidencia(numero,tipo,subtipo,fechaCreacion,fechaCierre,profesor);
+                ModificarIncidencia modificarInci = new ModificarIncidencia(numero,tipo,subtipo,fechaCreacion,fechaCierre,profesor,estado);
                 this.Hide();
                 modificarInci.Show();
 

@@ -13,7 +13,7 @@ namespace ProyectoIntermodular.Clases
         public string cod { get; set; }  
         public string nombre { get; set; }  
         public bool activo { get; set; }  
-        public string personal { get; set; }  
+        public int personal { get; set; }  
 
         
         public Departamentos()
@@ -22,7 +22,7 @@ namespace ProyectoIntermodular.Clases
         }
 
         
-        public Departamentos(int id, string cod, string nombre, bool activo, string jefdep_id)
+        public Departamentos(int id, string cod, string nombre, bool activo, int jefdep_id)
         {
             this.int_ = id;
             this.cod = cod;
