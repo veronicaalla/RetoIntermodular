@@ -1,11 +1,13 @@
 <style>
-  .centrar{
-    alt:"AAta";
+  .heading1 {
+    color: red;
+    font-weight:700;
+    font-size: 35px;
   }
 </style>
 # Proyecto Intermodular
 
-## Inicial {#identifier .centrar}
+## Inicial {#identifier .heading1}
 Esta será la primera página que aparecerá tras haber iniciado la aplicación y mostrar un nombre y un solo botón llamado *INICIAR*, con la única función de llevar a la página de *Admin*.
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/Inicial.PNG) 
