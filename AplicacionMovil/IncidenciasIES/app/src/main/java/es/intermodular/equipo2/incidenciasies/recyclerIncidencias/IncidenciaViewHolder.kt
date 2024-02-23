@@ -74,11 +74,12 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         }
 
 
-
         binding.txtTipoIncidencia.text =
             " ${incidenciasResponse.tipoIncidencia.tipo} ${incidenciasResponse.tipoIncidencia.subtipoNombre} ${incidenciasResponse.tipoIncidencia.subSubtipo}"
 
-        // binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia) }
+
+        binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia.toString()) }
     }
+
 }
 

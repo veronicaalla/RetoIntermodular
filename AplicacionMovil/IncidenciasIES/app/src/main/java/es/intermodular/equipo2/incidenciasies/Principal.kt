@@ -10,6 +10,7 @@ import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
+import es.intermodular.equipo2.incidenciasies.DetailsIncidenciaActivity.Companion.EXTRA_ID
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
 import es.intermodular.equipo2.incidenciasies.datos.ApiService
 import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
@@ -106,12 +107,20 @@ class Principal : AppCompatActivity() {
                 )
             )
         }
+        //adapter = IncidenciaAdapter { idIncidencia ->  navigateToDetail(idIncidencia) }
+
         binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         binding.rvIncidencias.adapter = adapter
 
         //Mostramos los items
-
         obtenerIncidencias(idUsuarioPrueba)
+    }
+
+    private fun navigateToDetail(incidenciaResponse: IncidenciaResponse) {
+        val intent = Intent(this, DetailsIncidenciaActivity::class.java)
+        intent.putExtra(EXTRA_ID, incidenciaResponse.idIncidencia)
+        intent.putExtra("incidencia", incidenciaResponse)
+        startActivity(intent)
     }
 
     private fun obtenerIncidencias(idUsuarioPrueba: Int) {
@@ -197,7 +206,6 @@ class Principal : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
 
     private fun mostrarLayoutAyuda() {
         // Inflar el layout activity_help.xml
