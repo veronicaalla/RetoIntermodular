@@ -62,7 +62,7 @@ namespace ProyectoIntermodular.Formularios
             nuevoUser.tlf = cajaTlfn.Text;
             nuevoUser.cp = cajaCP.Text;
             nuevoUser.direccion = cajaDireccion.Text;
-            nuevoUser.departamento = (Departamentos)comboBoxDepartamento.SelectedItem;
+            nuevoUser.departamento = (Departamentos) comboBoxDepartamento.SelectedItem;
             nuevoUser.dni = cajaDNI.Text;
             nuevoUser.localidad = cajaLocalidad.Text;
             nuevoUser.activo = true;
