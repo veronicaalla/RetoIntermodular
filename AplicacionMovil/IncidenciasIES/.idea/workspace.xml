@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-    <layouts>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-    </layouts>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="be700724-fc9b-4456-8b03-03170b575062" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/SpecificListIncidents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/SpecificListIncidents.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" afterDir="false" />
+    <list default="true" id="4215f14e-0311-472d-8fb8-febbdeff4bba" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/CrearModificarIncidencia/EditIncident.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/CrearModificarIncidencia/EditIncident.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/CrearModificarIncidencia/SelectTypeIncidents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/CrearModificarIncidencia/SelectTypeIncidents.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/datos/ApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/datos/ApiService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaViewHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionViewHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_details_incidencia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_details_incidencia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_incident.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_incident.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_select_type_incidents.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_select_type_incidents.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_comentario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_comentario.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
-=======
-    <list default="true" id="be700724-fc9b-4456-8b03-03170b575062" name="Changes" comment="" />
->>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,69 +40,29 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\User\.android\avd\Medium_Phone_API_34.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$/app">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="IncidenciasIES" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="IncidenciasIES" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="IncidenciasIES" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="IncidenciasIES" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="2capbsFM6ncO8NGJPj7MN0D8Gzm" />
+  <component name="ProjectId" id="2clsc4kJG6OzfbOXUneYmeySVcD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Vlady&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vladyslav/Desktop/RETO Intermodular/RetoIntermodular/AplicacionMovil/IncidenciasIES&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "Vlady"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="IncidenciasIES.app.main" />
@@ -170,11 +135,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="be700724-fc9b-4456-8b03-03170b575062" name="Changes" comment="" />
-      <created>1708359617863</created>
+      <changelist id="4215f14e-0311-472d-8fb8-febbdeff4bba" name="Changes" comment="" />
+      <created>1708697577516</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1708359617863</updated>
+      <updated>1708697577516</updated>
     </task>
     <servers />
   </component>

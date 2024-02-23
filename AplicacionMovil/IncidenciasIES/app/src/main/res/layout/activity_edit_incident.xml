@@ -57,6 +57,7 @@
                         android:id="@+id/txtTipoIncidencia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:text="@string/ejemplo_incidencia" />
                 </TableRow>
 
@@ -73,11 +74,13 @@
                         android:text="@string/fecha_de_creaci_n"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextFechaCreacion"
+                    <TextView
+                        android:id="@+id/txtFechaCreacion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="10dp"
                         android:enabled="false"
                         android:inputType="date" />
 
@@ -147,6 +150,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:clickable="false"
+
                         android:text="@string/prueba_estado" />
 
 
@@ -164,11 +168,12 @@
                         android:text="@string/fecha_cierre"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextFechaCierreIncidencia"
+                    <TextView
+                        android:id="@+id/txtFechaCierre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:hint="fecha final indeterminada"
                         android:enabled="false"
                         android:inputType="date" />
 

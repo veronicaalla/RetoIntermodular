@@ -100,6 +100,7 @@ class SelectTypeIncidents : AppCompatActivity() {
             val tipo = TipoDeIncidenciaSeleccionada.toString()
             val intent = Intent(this, EditIncident::class.java)
             intent.putExtra("tipo", tipo)
+            intent.putExtra("incidencia", 0)
             startActivity(intent)
         }
 
@@ -119,7 +120,7 @@ class SelectTypeIncidents : AppCompatActivity() {
             )
             binding.spinnerSubSubTipo.adapter = adapter
 
-        } else if (selectedValue.equals("ALTAVOZ")) {
+        } else if (selectedValue.equals("PORTATIL")) {
 
             binding.spinnerSubSubTipo.visibility = View.VISIBLE
             binding.txtSubSubTipo.visibility = View.VISIBLE
