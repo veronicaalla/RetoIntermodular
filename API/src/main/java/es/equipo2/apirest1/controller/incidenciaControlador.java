@@ -1239,7 +1239,7 @@ public class incidenciaControlador {
         return rutaArchivo.toString();
     }
     
-    @GetMapping("/api/incidencias/descargarArchivoBase64")
+    @GetMapping("/descargarArchivoBase64")
     public ResponseEntity<byte[]> descargarArchivoBase64(@RequestParam("id") int id) {
         Optional<Incidencia> optionalIncidencia = incidenciaRepository.findById(id);
         if (optionalIncidencia.isPresent()) {
@@ -1254,12 +1254,21 @@ public class incidenciaControlador {
                 // Codificar los bytes del archivo a Base64
                 byte[] archivoCodificado = Base64.getEncoder().encode(archivoBytes);
 
+                // Convertir la extensión a bytes
+                byte[] extensionBytes = extension.getBytes();
+
+                // Concatenar el punto y la extensión al final del contenido del archivo codificado
+                byte[] contenidoFinal = new byte[archivoCodificado.length + 1 + extensionBytes.length];
+                System.arraycopy(archivoCodificado, 0, contenidoFinal, 0, archivoCodificado.length);
+                contenidoFinal[archivoCodificado.length] = '.'; // Agregar el punto
+                System.arraycopy(extensionBytes, 0, contenidoFinal, archivoCodificado.length + 1, extensionBytes.length);
+
                 // Devolver el archivo codificado como parte de la respuesta HTTP
                 HttpHeaders headers = new HttpHeaders();
                 headers.setContentType(MediaType.TEXT_PLAIN);
-                headers.setContentDisposition(ContentDisposition.builder("attachment").filename("incidenciaCodificada." + extension).build());
+                headers.setContentDisposition(ContentDisposition.builder("attachment").filename("incidenciaCodificada.txt").build());
                 
-                return ResponseEntity.ok().headers(headers).body(archivoCodificado);
+                return ResponseEntity.ok().headers(headers).body(contenidoFinal);
             } catch (IOException e) {
                 e.printStackTrace();
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null); // Devolver error 500 si ocurre algún error
@@ -1268,13 +1277,13 @@ public class incidenciaControlador {
             return ResponseEntity.notFound().build(); // Devolver error 404 si no se encuentra la incidencia
         }
     }
-
+    
     private String obtenerExtension(String ubicacionArchivo) {
         // Extraer la extensión del nombre del archivo
         return ubicacionArchivo.substring(ubicacionArchivo.lastIndexOf(".") + 1);
     }
-
     
+
     @DeleteMapping("/{num}")
     public Incidencia borrarIncidencia(@PathVariable int num) {
         if (incidenciaRepository.findById(num).isPresent()) {
