@@ -68,7 +68,7 @@ Esta será la página en la que se realizarán las opciones relacionadas con los
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/ControlUsuarios.PNG)
 ___
-## SeleccionarDepartamento 
+## Seleccionar Departamento 
 Esta página es la encargada tanto de la modificación como la creación de departamentos. Cuenta con un visor en el que se mostrarán todos los departamentos que hay. Por último, cuenta con 3 botones. (No se podrán usar algunas acciones sino se ha seleccionado primero un usuario del visor).
 - **Crear**: Al pulsar este botón, nos llevará a la página de creación de departamentos.
 - **Modificar**: Al pulsar este botón, nos llevará a la página de modificación de departamentos.
@@ -76,14 +76,14 @@ Esta página es la encargada tanto de la modificación como la creación de depa
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/SeleccionarDepartamento.PNG)
 ___
-## CrearDepartamento
+## Crear Departamento
 Esta página será en la que se realizarán las funciones de creación de departamentos. Cuenta con varios cuadros de texto, ya sea: código, nombre, código, jefe de departamento y opción de activo o no. Por último, cuenta con 2 botones.
 - **Crear**: Al pulsar este botón, nos llevará de vuelta a la página de selección de departamentos con un nuevo departamento ya añadido.
 - **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de departamentos.
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/CrearDepartamento.PNG)
 ___
-## ModificarDepartamento
+## Modificar Departamento
 Esta página será en la que se realizarán las funciones de modificación de departamentos. Cuenta con varios cuadros de texto, ya sea: código, nombre, codigo de jefe de departamento y si está activo o no. Por último, cuenta con 2 botones.
 - **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de departamentos.
 - **Finalizar**: Al pulsar este botón, nos guardará los cambios realizados y nos llevará de vuelta a la página de selección de departamentos.
