@@ -13,6 +13,7 @@ Esta será la página de bienvenida, en ella tendremos 2 botones.
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/Admin.PNG)
 ___
+
 ## Principal
 Esta página será en la que se realizarán la mayoría de tareas principales. Cuenta con un buscador muy avanzado para buscar por varias propiedades si existen o no, ya sea por: profesor, aula, estado de la incidencia, subtipo de incidencia, tipo de incidencia, fecha. Contará con un visor que mostrará los datos de las incidencias encontradas. Por último, cuenta con 7 botones.
 
@@ -30,6 +31,7 @@ Esta página será en la que se realizarán la mayoría de tareas principales. C
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/Principal.PNG)
 ___
+
 ## Incidencia
 Esta página será en la que se realizarán las funciones de edición y asignación de incidencias (la opción de edición estará deshabilitada). Cuenta con un editor muy avanzado para editar por varias propiedades si existen o no, ya sea por: Profesor, Aula, Estado de la incidencia, Subtipo de incidencia, Tipo de incidencia, fecha. Contará con un visor que mostrará los datos de todas las incidencias (Solo se podrá editar la incidencia si ya había sido seleccionada). Por último, cuenta con 4 botones.
 
@@ -40,6 +42,7 @@ Esta página será en la que se realizarán las funciones de edición y asignaci
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/Incidencia.PNG)
 ___
+
 ## Añadir Comentario
 Esta página será en la que se crearán y asignarán comentarios. Cuenta con un buscador de archivos y un cuadro de texto para escribir cualquier texto. Por último, con 3 botones.
 
@@ -49,6 +52,7 @@ Esta página será en la que se crearán y asignarán comentarios. Cuenta con un
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/AñadirComentario.PNG)
 ___
+
 ## Crear Incidencia
 Esta página será en la que se realizarán las funciones de creación de incidencias. Cuenta con varios cuadros de texto, ya sea: nombre del creador, tipo de incidencia, subtipo de incidencia, estado de incidencia, nombre de responsable si tuviera, nombre de equipo, fecha de creación, fecha de cierre si tuviera y un buscador de archivo. Por último, cuenta con 3 botones.
 
@@ -58,6 +62,7 @@ Esta página será en la que se realizarán las funciones de creación de incide
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/CrearIncidencia.PNG)
 ___
+
 ## Control Usuarios
 Esta será la página en la que se realizarán las opciones relacionadas con los usuarios y departamentos. Por último, cuenta con 4 botones.
 
@@ -68,28 +73,35 @@ Esta será la página en la que se realizarán las opciones relacionadas con los
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/ControlUsuarios.PNG)
 ___
+
 ## Seleccionar Departamento 
 Esta página es la encargada tanto de la modificación como la creación de departamentos. Cuenta con un visor en el que se mostrarán todos los departamentos que hay. Por último, cuenta con 3 botones. (No se podrán usar algunas acciones sino se ha seleccionado primero un departamento del visor).
+
 - **Crear**: Al pulsar este botón, nos llevará a la página de creación de departamentos.
 - **Modificar**: Al pulsar este botón, nos llevará a la página de modificación de departamentos.
 - **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de control de usuarios.
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/SeleccionarDepartamento.PNG)
 ___
+
 ## Crear Departamento
-Esta página será en la que se realizarán las funciones de creación de departamentos. Cuenta con varios cuadros de texto, ya sea: código, nombre, código, jefe de departamento y opción de activo o no. Por último, cuenta con 2 botones.
+Esta página será en la que se realizarán las funciones de creación de departamentos. Cuenta con varios cuadros de texto, ya sea: código, nombre, código de jefe de departamento y opción de activo o no. Por último, cuenta con 2 botones.
+
 - **Crear**: Al pulsar este botón, nos llevará de vuelta a la página de selección de departamentos con un nuevo departamento ya añadido.
 - **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de departamentos.
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/CrearDepartamento.PNG)
 ___
+
 ## Modificar Departamento
 Esta página será en la que se realizarán las funciones de modificación de departamentos. Cuenta con varios cuadros de texto, ya sea: código, nombre, codigo de jefe de departamento y si está activo o no. Por último, cuenta con 2 botones.
+
 - **Volver**: Al pulsar este botón, nos llevará de vuelta a la página de selección de departamentos.
 - **Finalizar**: Al pulsar este botón, nos guardará los cambios realizados y nos llevará de vuelta a la página de selección de departamentos.
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/ModificarDepartamento.PNG)
 ___
+
 ## Crear Usuario
 Esta página será en la que se realizarán las funciones de creación de usuarios. Cuenta con varios cuadros de texto, ya sea: datos personales y si está activo o no. Por último, cuenta con 2 botones.
 
@@ -98,6 +110,7 @@ Esta página será en la que se realizarán las funciones de creación de usuari
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/CrearUsuario.PNG)
 ___
+
 ## Crear Perfil
 Esta página es la continuación de la creación de usuarios y será en la que realizarán las funciones de creación de perfiles de usuarios. Cuenta con varios cuadros de texto, ya sea: nombre de dominio, cuenta de educantabria, contraseña y tipo de perfil. Por último, cuenta con 2 botones.
 
@@ -106,6 +119,7 @@ Esta página es la continuación de la creación de usuarios y será en la que r
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/CrearPerfil.PNG)
 ___
+
 ## Seleccionar Usuario
 Esta página es la encargada tanto de la modificación como la eliminación de usuarios. Cuenta con un visor en el que se mostrarán todos los usuarios que hay con sus datos personales. Por último, cuenta con 3 botones. (No se podrán usar algunas acciones sino se ha seleccionado primero un usuario del visor)
 
@@ -115,6 +129,7 @@ Esta página es la encargada tanto de la modificación como la eliminación de u
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/SeleccionarUsuario.PNG)
 ___
+
 ## Modificar Usuario
 Esta página será en la que se realizarán las funciones de modificación de usuarios. Cuenta con varios cuadros de texto, ya sea: datos personales y si está activo o no. Por último, cuenta con 2 botones.
 
@@ -123,6 +138,7 @@ Esta página será en la que se realizarán las funciones de modificación de us
 
 ![Imagen](Imagenes/Aplicacion_Escritorio/ModificarUsuario.PNG)
 ___
+
 ## Eliminar Usuario
 Esta página será en la que se realizarán las funciones de eliminación de usuarios. Cuenta con varios cuadros de texto, ya sea: nombre de usuario, nombre de admin y contraseña. Por último, cuenta con 2 botones.
 
