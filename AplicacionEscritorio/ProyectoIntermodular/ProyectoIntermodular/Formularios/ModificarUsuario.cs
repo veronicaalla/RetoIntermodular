@@ -18,22 +18,24 @@ namespace ProyectoIntermodular.Formularios
         private ControladorPersonal controladorPersonal;
         bool creado = false;
         public PersonalRequest nuevoUser = new PersonalRequest();
+        Personal usu = new Personal();
         ControladorDepartamentos controladorDepartamento = new ControladorDepartamentos();
         
-        public ModificarUsuario(String nombre,String primerApellido,String segundoApellido,String dni,String departamento,String direccion,String localidad,String cp,String telefono,String activo)
+        public ModificarUsuario(Personal usuarioTocable)
         {
             InitializeComponent();
+            usu = usuarioTocable;
             this.StartPosition = FormStartPosition.CenterScreen;
-            cajaNombre.Text = nombre;
-            cajaApellido1.Text = primerApellido;
-            cajaApellido2.Text = segundoApellido;
-            cajaDNI.Text = dni;
-            comboBoxDepartamento.Text = departamento;
-            cajaDireccion.Text = direccion;
-            cajaLocalidad.Text = localidad;
-            cajaCP.Text = cp;
-            cajaTlfn.Text = telefono;
-            if (activo.Equals("SI"))
+            cajaNombre.Text = usu.nombre;
+            cajaApellido1.Text = usu.apellido1;
+            cajaApellido2.Text = usu.apellido2;
+            cajaDNI.Text = usu.dni; 
+            CargarComboBox();
+            cajaDireccion.Text = usu.direccion;
+            cajaLocalidad.Text = usu.localidad;
+            cajaCP.Text = usu.cp;
+            cajaTlfn.Text = usu.tlf;
+            if (usu.activo.Equals("SI"))
             {
                 checkBoxActivo.Checked = true;
             }
@@ -43,7 +45,7 @@ namespace ProyectoIntermodular.Formularios
             }
 
             controladorPersonal = new ControladorPersonal();
-            CargarComboBox();
+            
 
         }
 
@@ -61,10 +63,9 @@ namespace ProyectoIntermodular.Formularios
             {
                 activo = true;
             }
-            int id = 3; 
 
-            Departamentos departamento = new Departamentos(); 
-            Personal persona = new Personal(id, cajaNombre.Text, cajaApellido1.Text, cajaApellido2.Text, cajaDireccion.Text, cajaLocalidad.Text, cajaCP.Text, cajaTlfn.Text, cajaDNI.Text, activo, departamento);
+            Departamento departamento = (Departamento) comboBoxDepartamento.SelectedItem; 
+            Personal persona = new Personal(usu.id, cajaNombre.Text, cajaApellido1.Text, cajaApellido2.Text, cajaDireccion.Text, cajaLocalidad.Text, cajaCP.Text, cajaTlfn.Text, cajaDNI.Text, activo, departamento);
 
             // Espera a que se complete la actualización del personal
             bool actualizacionExitosa = await controladorPersonal.ActualizarPersonal(persona);
@@ -81,7 +82,7 @@ namespace ProyectoIntermodular.Formularios
 
         private async void CargarComboBox()
         {
-            List<Departamentos> listaDepartamentos = await controladorDepartamento.GetDepartamentos();
+            List<Departamento> listaDepartamentos = await controladorDepartamento.GetDepartamentos();
 
             if (listaDepartamentos != null)
             {
@@ -90,11 +91,21 @@ namespace ProyectoIntermodular.Formularios
 
                 // Asignar la lista de incidencias al ComboBox
                 comboBoxDepartamento.DataSource = listaDepartamentos;
+                
+                // Buscar el departamento que quieres seleccionar
+                Departamento departamentoSeleccionado = listaDepartamentos.FirstOrDefault(d => d.int_ == usu.departamento.int_);
+
+                // Seleccionar el departamento encontrado
+                if (departamentoSeleccionado != null)
+                {
+                    comboBoxDepartamento.SelectedItem = departamentoSeleccionado;
+                }
             }
             else
             {
                 MessageBox.Show("Error al cargar las incidencias.");
             }
+            
         }
 
         private void comboBoxDepartamento_SelectedIndexChanged(object sender, EventArgs e)

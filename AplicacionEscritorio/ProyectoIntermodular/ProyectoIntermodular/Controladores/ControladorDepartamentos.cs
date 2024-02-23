@@ -18,7 +18,7 @@ namespace ProyectoIntermodular.Controladores
         {
             client = new HttpClient();
         }
-        public async Task<List<Departamentos>> GetDepartamentos()
+        public async Task<List<Departamento>> GetDepartamentos()
         {
             try
             {
@@ -27,7 +27,7 @@ namespace ProyectoIntermodular.Controladores
 
                 string responseJson = await response.Content.ReadAsStringAsync();
 
-                List<Departamentos> departamentos = JsonConvert.DeserializeObject<List<Departamentos>>(responseJson);
+                List<Departamento> departamentos = JsonConvert.DeserializeObject<List<Departamento>>(responseJson);
                 return departamentos;
             }
             catch (Exception)

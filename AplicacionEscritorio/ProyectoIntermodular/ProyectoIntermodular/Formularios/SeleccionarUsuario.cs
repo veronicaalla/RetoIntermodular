@@ -29,35 +29,69 @@ namespace ProyectoIntermodular.Formularios
 
         private async void GetPersonal()
         {
+            dgvPerfiles.AutoGenerateColumns = false;
+            
+            DataGridViewTextBoxColumn nombreColumna = new DataGridViewTextBoxColumn();
+            nombreColumna.HeaderText = "Nombre"; // Puedes personalizar el nombre aquí
+            nombreColumna.DataPropertyName = "nombre"; // Debe coincidir con el nombre de la propiedad en tu clase Persona
+            dgvPerfiles.Columns.Add(nombreColumna);
+            
+            nombreColumna = new DataGridViewTextBoxColumn();
+            nombreColumna.HeaderText = "Primer Apellido"; // Puedes personalizar el nombre aquí
+            nombreColumna.DataPropertyName = "apellido1"; // Debe coincidir con el nombre de la propiedad en tu clase Persona
+            dgvPerfiles.Columns.Add(nombreColumna);
+
+            nombreColumna = new DataGridViewTextBoxColumn();
+            nombreColumna.HeaderText = "Segundo Apellido"; // Puedes personalizar el nombre aquí
+            nombreColumna.DataPropertyName = "apellido2"; // Debe coincidir con el nombre de la propiedad en tu clase Persona
+            dgvPerfiles.Columns.Add(nombreColumna);
+
+            nombreColumna = new DataGridViewTextBoxColumn();
+            nombreColumna.HeaderText = "DNI"; // Puedes personalizar el nombre aquí
+            nombreColumna.DataPropertyName = "dni"; // Debe coincidir con el nombre de la propiedad en tu clase Persona
+            dgvPerfiles.Columns.Add(nombreColumna);
+
+            nombreColumna = new DataGridViewTextBoxColumn();
+            nombreColumna.HeaderText = "Direccion"; // Puedes personalizar el nombre aquí
+            nombreColumna.DataPropertyName = "direccion"; // Debe coincidir con el nombre de la propiedad en tu clase Persona
+            dgvPerfiles.Columns.Add(nombreColumna);
+
+            nombreColumna = new DataGridViewTextBoxColumn();
+            nombreColumna.HeaderText = "Localidad"; // Puedes personalizar el nombre aquí
+            nombreColumna.DataPropertyName = "localidad"; // Debe coincidir con el nombre de la propiedad en tu clase Persona
+            dgvPerfiles.Columns.Add(nombreColumna);
+
+            nombreColumna = new DataGridViewTextBoxColumn();
+            nombreColumna.HeaderText = "Telefono"; // Puedes personalizar el nombre aquí
+            nombreColumna.DataPropertyName = "tlf"; // Debe coincidir con el nombre de la propiedad en tu clase Persona
+           
+            nombreColumna = new DataGridViewTextBoxColumn();
+            nombreColumna.HeaderText = "Activo"; // Puedes personalizar el nombre aquí
+            nombreColumna.DataPropertyName = "activo"; // Debe coincidir con el nombre de la propiedad en tu clase Persona
+            
+            nombreColumna = new DataGridViewTextBoxColumn();
+            nombreColumna.HeaderText = "Departamentos"; // Puedes personalizar el nombre aquí
+            nombreColumna.DataPropertyName = "NombreDepartamento"; // Debe coincidir con el nombre de la propiedad en tu clase Persona
+
+            dgvPerfiles.Columns.Add(nombreColumna);
+            
             lista = await controladorPersonal.GetPersonal();
-
-            if (lista != null)
+            dgvPerfiles.DataSource = lista;
+            
+        }
+        private void dgvPerfiles_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Asegurarse de que el clic se realiza en una celda válida y no en el encabezado
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                foreach (var personal in lista)
-                {
-                    DataGridViewRow row = new DataGridViewRow();
-                    row.CreateCells(dgvPerfiles);
+                // Obtener el objeto seleccionado
+                usuarioTocable = (Personal)dgvPerfiles.Rows[e.RowIndex].DataBoundItem;
 
-                    row.Cells[0].Value = personal.nombre;
-                    row.Cells[1].Value = personal.apellido1;
-                    row.Cells[2].Value = personal.apellido2;
-                    row.Cells[3].Value = personal.dni;
-                    row.Cells[4].Value = personal.direccion;
-                    row.Cells[5].Value = personal.localidad;
-                    row.Cells[6].Value = personal.cp;
-                    row.Cells[7].Value = personal.tlf;
-                    if (personal.activo == true) {row.Cells[8].Value = "SI";}
-                    else { row.Cells[8].Value = "NO"; }
-                    row.Cells[9].Value = personal.departamento.nombre;
-
-
-                    dgvPerfiles.Rows.Add(row);
-                }
+                // Hacer algo con el objeto seleccionado, por ejemplo, mostrar sus detalles
             }
         }
-    
 
-        private void btnVolver_Click(object sender, EventArgs e)
+            private void btnVolver_Click(object sender, EventArgs e)
         {
             ControlUsuarios controlUsuarios = new ControlUsuarios();
             this.Hide();
@@ -68,17 +102,8 @@ namespace ProyectoIntermodular.Formularios
         {
             if (dgvPerfiles.SelectedRows.Count > 0)
             {
-                String nombreUsuario = dgvPerfiles.CurrentRow.Cells[0].Value.ToString();
-                String primerApellido = dgvPerfiles.CurrentRow.Cells[1].Value != null ? dgvPerfiles.CurrentRow.Cells[1].Value.ToString() : string.Empty;
-                String segundoApellido = dgvPerfiles.CurrentRow.Cells[2].Value != null ? dgvPerfiles.CurrentRow.Cells[2].Value.ToString() : string.Empty;
-                String dni = dgvPerfiles.CurrentRow.Cells[3].Value != null ? dgvPerfiles.CurrentRow.Cells[3].Value.ToString() : string.Empty;
-                String direccion = dgvPerfiles.CurrentRow.Cells[4].Value != null ? dgvPerfiles.CurrentRow.Cells[4].Value.ToString() : string.Empty;
-                String localidad = dgvPerfiles.CurrentRow.Cells[5].Value != null ? dgvPerfiles.CurrentRow.Cells[5].Value.ToString() : string.Empty;
-                String cp = dgvPerfiles.CurrentRow.Cells[6].Value != null ? dgvPerfiles.CurrentRow.Cells[6].Value.ToString() : string.Empty;
-                String telefono = dgvPerfiles.CurrentRow.Cells[7].Value != null ? dgvPerfiles.CurrentRow.Cells[7].Value.ToString() : string.Empty;
-                String activo = dgvPerfiles.CurrentRow.Cells[8].Value != null ? dgvPerfiles.CurrentRow.Cells[8].Value.ToString() : string.Empty;
-                String departamento = dgvPerfiles.CurrentRow.Cells[9].Value != null ? dgvPerfiles.CurrentRow.Cells[9].Value.ToString() : string.Empty;
-                ModificarUsuario modificarUsu = new ModificarUsuario(nombreUsuario,primerApellido,segundoApellido,dni,departamento,direccion,localidad,cp,telefono,activo);
+                usuarioTocable = (Personal)dgvPerfiles.SelectedRows[0].DataBoundItem;
+                ModificarUsuario modificarUsu = new ModificarUsuario(usuarioTocable);
                 this.Hide();
                 modificarUsu.Show();
 

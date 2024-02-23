@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoIntermodular.Clases
 {
-    public class Departamentos
+    public class Departamento
     {
 
         public int int_ { get; set; }  
@@ -16,13 +16,13 @@ namespace ProyectoIntermodular.Clases
         public string personal { get; set; }  
 
         
-        public Departamentos()
+        public Departamento()
         {
             
         }
 
         
-        public Departamentos(int id, string cod, string nombre, bool activo, string jefdep_id)
+        public Departamento(int id, string cod, string nombre, bool activo, string jefdep_id)
         {
             this.int_ = id;
             this.cod = cod;

@@ -15,15 +15,15 @@ namespace ProyectoIntermodular.Formularios
     public partial class SeleccionarDepartamentos : Form
     {
         private ControladorDepartamentos controladorDepartamentos;
-        private List<Departamentos> lista;
-        private Departamentos dep;
+        private List<Departamento> lista;
+        private Departamento dep;
         
         public SeleccionarDepartamentos()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             controladorDepartamentos = new ControladorDepartamentos();
-            dep = new Departamentos();
+            dep = new Departamento();
             GetDepartamentos();
         }
 

@@ -38,7 +38,7 @@ namespace ProyectoIntermodular.Formularios
         }
         private async void CargarComboBox()
         {
-            List<Departamentos> listaDepartamentos = await controladorDepartamento.GetDepartamentos();
+            List<Departamento> listaDepartamentos = await controladorDepartamento.GetDepartamentos();
 
             if (listaDepartamentos != null)
             {
@@ -62,7 +62,7 @@ namespace ProyectoIntermodular.Formularios
             nuevoUser.tlf = cajaTlfn.Text;
             nuevoUser.cp = cajaCP.Text;
             nuevoUser.direccion = cajaDireccion.Text;
-            nuevoUser.departamento = (Departamentos)comboBoxDepartamento.SelectedItem;
+            nuevoUser.departamento = (Departamento)comboBoxDepartamento.SelectedItem;
             nuevoUser.dni = cajaDNI.Text;
             nuevoUser.localidad = cajaLocalidad.Text;
             nuevoUser.activo = true;
