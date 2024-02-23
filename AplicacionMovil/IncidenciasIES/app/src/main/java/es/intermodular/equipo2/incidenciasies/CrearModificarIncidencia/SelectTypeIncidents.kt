@@ -6,14 +6,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import es.intermodular.equipo2.incidenciasies.R
-import es.intermodular.equipo2.incidenciasies.SpecificListIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivitySelectTypeIncidentsBinding
 
 class SelectTypeIncidents : AppCompatActivity() {
 
     private lateinit var binding: ActivitySelectTypeIncidentsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -26,17 +25,13 @@ class SelectTypeIncidents : AppCompatActivity() {
             finish()
         }
 
-
         //-------------- AJUSTAMOS LA VISUALIZACION INICIAL ------------
         val spinnerSubSub = binding.spinnerSubSubTipo
         spinnerSubSub.visibility = View.GONE
         binding.txtSubSubTipo.visibility = View.GONE
 
-
         var TipoDeIncidenciaSeleccionada: String = " "
         val spinnerTipoIncidencia = binding.spinnerTipoIncidencia
-
-
 
         //------------------- CREAMOS LA FUNCIONALIDAD DE LOS SPINNERS ----------------
         //Controlamos el constante cambio de valores
@@ -105,6 +100,7 @@ class SelectTypeIncidents : AppCompatActivity() {
             val tipo = TipoDeIncidenciaSeleccionada.toString()
             val intent = Intent(this, EditIncident::class.java)
             intent.putExtra("tipo", tipo)
+            intent.putExtra("incidencia", 0)
             startActivity(intent)
         }
 
@@ -124,7 +120,7 @@ class SelectTypeIncidents : AppCompatActivity() {
             )
             binding.spinnerSubSubTipo.adapter = adapter
 
-        } else if (selectedValue.equals("ALTAVOZ")) {
+        } else if (selectedValue.equals("PORTATIL")) {
 
             binding.spinnerSubSubTipo.visibility = View.VISIBLE
             binding.txtSubSubTipo.visibility = View.VISIBLE
@@ -188,4 +184,3 @@ class SelectTypeIncidents : AppCompatActivity() {
         }
     }
 }
-

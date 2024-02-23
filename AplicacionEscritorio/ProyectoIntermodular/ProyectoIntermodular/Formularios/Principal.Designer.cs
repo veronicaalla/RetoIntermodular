@@ -297,7 +297,7 @@
             // 
             this.cmxTipo.Enabled = false;
             this.cmxTipo.FormattingEnabled = true;
-            this.cmxTipo.Location = new System.Drawing.Point(271, 74);
+            this.cmxTipo.Location = new System.Drawing.Point(519, 124);
             this.cmxTipo.Name = "cmxTipo";
             this.cmxTipo.Size = new System.Drawing.Size(183, 24);
             this.cmxTipo.TabIndex = 15;
@@ -306,7 +306,7 @@
             // cbxTipo
             // 
             this.cbxTipo.AutoSize = true;
-            this.cbxTipo.Location = new System.Drawing.Point(237, 78);
+            this.cbxTipo.Location = new System.Drawing.Point(485, 128);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(18, 17);
             this.cbxTipo.TabIndex = 14;
@@ -361,7 +361,7 @@
             this.cmxProfesor.Name = "cmxProfesor";
             this.cmxProfesor.Size = new System.Drawing.Size(413, 24);
             this.cmxProfesor.TabIndex = 9;
-            this.cmxProfesor.Text = "Profesor";
+            this.cmxProfesor.Text = "Creador";
             // 
             // cbxProfesor
             // 

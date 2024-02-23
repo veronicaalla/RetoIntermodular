@@ -19,7 +19,9 @@ namespace ProyectoIntermodular.Clases
         public string tlf { get; set; }
         public string dni { get; set; }
         public bool activo { get; set; }
-        public Departamentos departamento { get; set; }
+        public Departamentos Departamento { get; set; }
+
+        public string NombreDepartamento => Departamento?.nombre;
 
         public Personal()
         {
@@ -38,7 +40,7 @@ namespace ProyectoIntermodular.Clases
             this.tlf = tlf;
             this.dni = dni;
             this.activo = activo;
-            this.departamento = departamento_id;
+            this.Departamento = departamento_id;
         }
     }
     public class PersonalRequest
@@ -53,5 +55,6 @@ namespace ProyectoIntermodular.Clases
         public string dni { get; set; }
         public bool activo { get; set; }
         public Departamentos departamento { get; set; }
+
     }
 }

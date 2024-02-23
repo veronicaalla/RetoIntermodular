@@ -109,11 +109,14 @@ namespace ProyectoIntermodular.Controladores
         {
             try
             {
+                int idPersonal = personal.id;
                 // Serializar el objeto Personal a JSON
                 string personalJson = JsonConvert.SerializeObject(personal);
 
+                string url = $"http://localhost:8080/api/personal/{idPersonal}";
+
                 // Crear una solicitud HTTP PUT con los datos actualizados
-                HttpResponseMessage response = await client.PutAsync("http://localhost:8080/api/personal/{id}",
+                HttpResponseMessage response = await client.PutAsync(url,
                                                                new StringContent(personalJson, Encoding.UTF8, "application/json"));
 
                 // Verificar si la solicitud fue exitosa

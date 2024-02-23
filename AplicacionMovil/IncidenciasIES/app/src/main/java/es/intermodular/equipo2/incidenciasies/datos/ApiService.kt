@@ -20,8 +20,9 @@ interface ApiService {
 
     //region Perfiles
     @GET("perfiles/login")
-     fun login(
+    fun login(
         @Query("dominio") dominio: String, @Query("password") password: String
     ): Call<PerfilReponse>
     //endregion
+
 }
