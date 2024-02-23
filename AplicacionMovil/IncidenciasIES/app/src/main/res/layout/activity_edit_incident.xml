@@ -150,6 +150,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:clickable="false"
+
                         android:text="@string/prueba_estado" />
 
 
@@ -168,10 +169,11 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txtFechaCierreIncidencia"
+                        android:id="@+id/txtFechaCierre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:hint="fecha final indeterminada"
                         android:enabled="false"
                         android:inputType="date" />
 

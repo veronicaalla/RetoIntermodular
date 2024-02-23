@@ -9,7 +9,6 @@ import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-
 class EditIncident : AppCompatActivity() {
 
     companion object {

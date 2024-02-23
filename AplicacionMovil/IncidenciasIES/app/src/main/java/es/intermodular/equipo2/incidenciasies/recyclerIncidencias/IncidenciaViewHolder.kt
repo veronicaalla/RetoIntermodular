@@ -61,14 +61,13 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         if (incidenciasResponse.estado.contains("abierta") || incidenciasResponse.estado.contains("asignada")) {
             Log.i("Tipo incidencia ", incidenciasResponse.estado)
-
             binding.btnEditarIncidencias.setOnClickListener {
                 val intent = Intent(it.context, EditIncident::class.java)
                 ////Para poder pasarle la incidencia, debido a que hemos puesto la clase Incidencia como Serializable
                 Log.i("Paso de incidencia ", incidenciasResponse.toString())
                 intent.putExtra(EditIncident.EXTRA_EDIT_INCIDENCIA, incidenciasResponse)
                 intent.putExtra("incidencia", 1)
-                ContextCompat.startActivity(it.context, intent, null )
+                ContextCompat.startActivity(it.context, intent, null)
             }
         } else {
             binding.btnEditarIncidencias.setVisibility(View.INVISIBLE);
@@ -79,7 +78,7 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         binding.txtTipoIncidencia.text =
             " ${incidenciasResponse.tipoIncidencia.tipo} ${incidenciasResponse.tipoIncidencia.subtipoNombre} ${incidenciasResponse.tipoIncidencia.subSubtipo}"
 
-       // binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia) }
+        // binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia) }
     }
 }
 
