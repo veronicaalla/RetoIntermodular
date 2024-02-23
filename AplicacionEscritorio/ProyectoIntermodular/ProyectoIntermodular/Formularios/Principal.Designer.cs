@@ -421,9 +421,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1028, 565);
+            this.Controls.Add(this.gbxCriterios);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.gbxCriterios);
             this.Controls.Add(this.btnEli);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnSeleccionar);

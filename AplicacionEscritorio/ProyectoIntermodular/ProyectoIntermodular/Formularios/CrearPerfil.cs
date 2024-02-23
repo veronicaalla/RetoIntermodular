@@ -54,5 +54,45 @@ namespace ProyectoIntermodular.Formularios
             this.Close();
 
         }
+
+        private void cajaContra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cajaEducantabria_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cajaDominio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPerfil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblContraseña_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEducantabria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDominio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboPerfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

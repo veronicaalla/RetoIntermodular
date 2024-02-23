@@ -16,6 +16,10 @@ namespace ProyectoIntermodular.Formularios
     public partial class ModificarUsuario : Form
     {
         private ControladorPersonal controladorPersonal;
+        bool creado = false;
+        public PersonalRequest nuevoUser = new PersonalRequest();
+        ControladorDepartamentos controladorDepartamento = new ControladorDepartamentos();
+        
         public ModificarUsuario(String nombre,String primerApellido,String segundoApellido,String dni,String departamento,String direccion,String localidad,String cp,String telefono,String activo)
         {
             InitializeComponent();
@@ -39,7 +43,8 @@ namespace ProyectoIntermodular.Formularios
             }
 
             controladorPersonal = new ControladorPersonal();
-            
+            CargarComboBox();
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -72,6 +77,29 @@ namespace ProyectoIntermodular.Formularios
             {
                 MessageBox.Show("Error al modificar el usuario. Por favor, inténtalo de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private async void CargarComboBox()
+        {
+            List<Departamentos> listaDepartamentos = await controladorDepartamento.GetDepartamentos();
+
+            if (listaDepartamentos != null)
+            {
+                // Configurar el ComboBox
+                comboBoxDepartamento.DisplayMember = "nombre"; // Propiedad que se mostrará en el ComboBox
+
+                // Asignar la lista de incidencias al ComboBox
+                comboBoxDepartamento.DataSource = listaDepartamentos;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar las incidencias.");
+            }
+        }
+
+        private void comboBoxDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -83,5 +83,10 @@ namespace ProyectoIntermodular.Formularios
             this.Hide();
             controlUsuarios.Show();
         }
+
+        private void comboBoxDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -44,5 +44,12 @@ namespace ProyectoIntermodular.Formularios
             this.Hide();
             seleccionar.Show();
         }
+
+        private void btnDepartamentos_Click(object sender, EventArgs e)
+        {
+            SeleccionarDepartamentos seleccionarDepartamentos=new SeleccionarDepartamentos();
+            this.Hide();
+            seleccionarDepartamentos.Show();
+        }
     }
 }
