@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityLoginBinding
 import es.intermodular.equipo2.incidenciasies.datos.Api
@@ -17,6 +18,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.math.log
 
 
 class LoginActivity : AppCompatActivity() {
@@ -26,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
 
     // Objeto utilizado para almacenar datos de manera persistente, como las preferencias del usuario
     private lateinit var sharedPref: SharedPreferences
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
                 // Mostrar mensaje de error
                 showToast("¡Por favor, rellene ambos campos!")
             } else {
-              comprobacionCredenciales()
+                comprobacionCredenciales()
             }
         }
 
@@ -92,22 +95,28 @@ class LoginActivity : AppCompatActivity() {
         val email = binding.EditTextUsuario.text.toString()
         val clave = binding.EditTextContrasenia.text.toString()
 
-        Api.retrofitService.login(email, clave).enqueue(object: Callback<PerfilReponse>{
-            override fun onResponse(call:Call<PerfilReponse>, response: Response<PerfilReponse>){
-                if (response.isSuccessful){
+        Api.retrofitService.login(email, clave).enqueue(object : Callback<PerfilReponse> {
+            override fun onResponse(call: Call<PerfilReponse>, response: Response<PerfilReponse>) {
+                if (response.isSuccessful) {
                     val perfilResponse = response.body()
                     Log.i("Login usuario", "Respuesta succesfull")
                     Log.i("Loggin Usuario", perfilResponse!!.personal_id.toString())
 
                     val intent = Intent(this@LoginActivity, Principal::class.java)
                     intent.putExtra("ID_PERFIL_EXTRA", perfilResponse!!.personal_id)
+
                     startActivity(intent)
 
-                }else{
-                    Toast.makeText(this@LoginActivity, "Error en las credenciales", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Error en las credenciales",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     Log.i("Loggin Usuario", response.toString())
                 }
             }
+
             override fun onFailure(call: Call<PerfilReponse>, t: Throwable) {
                 // Manejar el error de conexión aquí
                 Toast.makeText(this@LoginActivity, "${t.message}", Toast.LENGTH_SHORT).show()

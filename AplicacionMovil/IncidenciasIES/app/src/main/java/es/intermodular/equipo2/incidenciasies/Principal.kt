@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.PopupMenu
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
@@ -27,7 +28,8 @@ class Principal : AppCompatActivity() {
     private lateinit var retrofit: Retrofit
     private lateinit var adapter: IncidenciaAdapter
 
-    private  var idUsuarioPrueba:Int =0
+    private var idPerfil: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -38,12 +40,13 @@ class Principal : AppCompatActivity() {
         isOnline(this)
 
         //recuperamos el id del usuario que se ha pasado anteriormente, mediante un Intent
-         idUsuarioPrueba = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
-
+        idPerfil = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
+        
         //region FUNCINALIDAD BOTONES
         //Boton de añadir
         binding.btnAddIncidencias.setOnClickListener {
             val intent = Intent(this, SelectTypeIncidents::class.java)
+            intent.putExtra("idPerfil", idPerfil)
             startActivity(intent)
         }
 
@@ -111,7 +114,7 @@ class Principal : AppCompatActivity() {
 
         //Mostramos los items
 
-        obtenerIncidencias(idUsuarioPrueba)
+        obtenerIncidencias(idPerfil)
     }
 
     private fun obtenerIncidencias(idUsuarioPrueba: Int) {
@@ -135,7 +138,7 @@ class Principal : AppCompatActivity() {
                             }
                         }
                     } else {
-                        Log.e("Incidencias", "Error al obtener las incidencias")
+                        Log.e("Incidencias error", "Error al obtener las incidencias")
                     }
                 }
             } catch (e: Exception) {

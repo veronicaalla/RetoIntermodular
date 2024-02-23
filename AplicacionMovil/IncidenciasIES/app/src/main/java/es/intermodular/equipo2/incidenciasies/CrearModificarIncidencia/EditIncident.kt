@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import es.intermodular.equipo2.incidenciasies.R
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityEditIncidentBinding
+import es.intermodular.equipo2.incidenciasies.modelo.CrearIncidencia
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+
 class EditIncident : AppCompatActivity() {
 
     companion object {
@@ -28,17 +30,35 @@ class EditIncident : AppCompatActivity() {
         binding = ActivityEditIncidentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        //Comprobamos desde que clase ha accedido
+        //1 -> Principal (editando una incidencia)
+        //0 -> SelectTypeIncidents (creando una nueva)
         var claseAnterior = intent.getIntExtra("incidencia", -1)
         if (claseAnterior == 1) {
             var incidencia =
                 intent.getSerializableExtra(EXTRA_EDIT_INCIDENCIA) as IncidenciaResponse
             Log.i("Incidencia a editar", incidencia.toString())
+
+
         } else if (claseAnterior == 0) {
+
+            //Lo primero de todo, obtenemos cual es el perfil del usuario
+            val idPerfil = intent.getIntExtra("idPerfil", -1)
+            Log.i("id del perfil", idPerfil.toString())
+
+            //Recogemos el tipo de Incidencia y lo mostramos
             var tipoIncidencia = intent.getStringExtra("tipo").toString()
-            Log.i("Tipo incidencia ", tipoIncidencia)
+            //Le asignamos el tipo de incidencia
+            binding.txtTipoIncidencia.text = tipoIncidencia
 
+            //Le asignamos la fecha de creación, que es la actual -> No debemos asignarsela a la clase debido a que ya esta de forma automatica indicado
+            val fechaActual = LocalDate.now()
+            binding.txtFechaCreacion.text = fechaActual.toString()
 
-            crearIncidencia(tipoIncidencia)
+            binding.btnAceptar.setOnClickListener {
+                crearIncidencia(tipoIncidencia, idPerfil)
+            }
         }
 
         //region FUNCIONALIDAD DE LOS BOTONES
@@ -47,20 +67,26 @@ class EditIncident : AppCompatActivity() {
             finish()
         }
 
-        binding.btnAceptar.setOnClickListener {
-            Log.i("Editar incidencia", "Editar")
-        }
         //endregion
 
     }
 
-    private fun crearIncidencia(tipoIncidencia: String) {
-        /* binding.txtTipoIncidencia.text = ""
-         binding.txtTipoIncidencia.text = tipoIncidencia*/
-        //Debemos obtener el tipo de incidencia, para ello, debemos recoger del string palabra
-        //por palabra de forma individual, para poder llamar a la api
+
+    private fun crearIncidencia(
+        tipoIncidencia: String, idPerfil: Int
+    ) {
+        //Para crear la incidencia, la llamada la API recibe una incidencia
+        //por lo tanto, 1º debemos crearla
+        var nuevaIncidencia = CrearIncidencia()
+
+        //Le pasamos el id del creador, que corresponde con el del perfil
+        nuevaIncidencia.creador_id = idPerfil
 
 
+        //---------- PASO DE TIPO Y SUBTIPO ------------
+        //Una vez obtenido el tipo de incidencia, en un string
+        //Debemos separarlos, para poder hacer una llamada a la API
+        //para que nos devuelva el id
         val tipoI = tipoIncidencia.split(" ")
         val tipo = tipoI[0]
         val subTipo = tipoI[1]
@@ -71,12 +97,24 @@ class EditIncident : AppCompatActivity() {
         Log.i("subTipo:", subTipo)
         Log.i("subSubTipo", subSubTipo)
 
-        //Le asignamos el tipo de incidencia
-        binding.txtTipoIncidencia.text = tipoIncidencia
+        //El tipo de datos, se lo podemos pasar de forma automatica
+        nuevaIncidencia.tipo = tipo
 
-        //Le asignamos la fecha de creación, que es la actual
-        val fechaActual = LocalDate.now()
-        binding.txtFechaCreacion.text = fechaActual.toString()
+        //Llamamos a la api, para obtener el id del subtipo
+
+
+        //Le asiganamos la descripcion
+        nuevaIncidencia.descripcion = binding.editTextDescripcion.text.toString()
+
+        //Le asignamos el equipoId
+        if (binding.editTextEquipoIncidencia.text.isNotEmpty()){
+            //Convertimos el texto en un int
+            var equipoIncidenca = binding.editTextEquipoIncidencia.toString()
+            var idEquipo = equipoIncidenca.toInt()
+            nuevaIncidencia.equipoId=idEquipo
+        }
+        //---------------
+
 
     }
 
