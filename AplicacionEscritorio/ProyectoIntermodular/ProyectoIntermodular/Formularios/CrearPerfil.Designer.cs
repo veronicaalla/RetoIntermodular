@@ -48,6 +48,7 @@
             this.comboPerfil.Name = "comboPerfil";
             this.comboPerfil.Size = new System.Drawing.Size(121, 24);
             this.comboPerfil.TabIndex = 20;
+            this.comboPerfil.SelectedIndexChanged += new System.EventHandler(this.comboPerfil_SelectedIndexChanged);
             // 
             // cajaContra
             // 
@@ -55,6 +56,7 @@
             this.cajaContra.Name = "cajaContra";
             this.cajaContra.Size = new System.Drawing.Size(121, 22);
             this.cajaContra.TabIndex = 19;
+            this.cajaContra.TextChanged += new System.EventHandler(this.cajaContra_TextChanged);
             // 
             // cajaEducantabria
             // 
@@ -62,6 +64,7 @@
             this.cajaEducantabria.Name = "cajaEducantabria";
             this.cajaEducantabria.Size = new System.Drawing.Size(121, 22);
             this.cajaEducantabria.TabIndex = 18;
+            this.cajaEducantabria.TextChanged += new System.EventHandler(this.cajaEducantabria_TextChanged);
             // 
             // cajaDominio
             // 
@@ -69,6 +72,7 @@
             this.cajaDominio.Name = "cajaDominio";
             this.cajaDominio.Size = new System.Drawing.Size(121, 22);
             this.cajaDominio.TabIndex = 17;
+            this.cajaDominio.TextChanged += new System.EventHandler(this.cajaDominio_TextChanged);
             // 
             // lblPerfil
             // 
@@ -78,6 +82,7 @@
             this.lblPerfil.Size = new System.Drawing.Size(37, 16);
             this.lblPerfil.TabIndex = 16;
             this.lblPerfil.Text = "Perfil";
+            this.lblPerfil.Click += new System.EventHandler(this.lblPerfil_Click);
             // 
             // lblContraseña
             // 
@@ -87,6 +92,7 @@
             this.lblContraseña.Size = new System.Drawing.Size(76, 16);
             this.lblContraseña.TabIndex = 15;
             this.lblContraseña.Text = "Contraseña";
+            this.lblContraseña.Click += new System.EventHandler(this.lblContraseña_Click);
             // 
             // lblEducantabria
             // 
@@ -96,6 +102,7 @@
             this.lblEducantabria.Size = new System.Drawing.Size(87, 16);
             this.lblEducantabria.TabIndex = 14;
             this.lblEducantabria.Text = "Educantabria";
+            this.lblEducantabria.Click += new System.EventHandler(this.lblEducantabria_Click);
             // 
             // lblDominio
             // 
@@ -105,6 +112,7 @@
             this.lblDominio.Size = new System.Drawing.Size(57, 16);
             this.lblDominio.TabIndex = 13;
             this.lblDominio.Text = "Dominio";
+            this.lblDominio.Click += new System.EventHandler(this.lblDominio_Click);
             // 
             // btnCrear
             // 
