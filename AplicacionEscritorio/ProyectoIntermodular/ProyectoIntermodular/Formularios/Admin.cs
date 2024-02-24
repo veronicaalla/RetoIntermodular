@@ -17,7 +17,7 @@ namespace ProyectoIntermodular.Formularios
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         
-            lblPrueba.Text = inicial.admin.perfil.ToString();
+            lblPrueba.Text = inicial.usuario.educantabria.ToString();
         }
 
         public Admin()

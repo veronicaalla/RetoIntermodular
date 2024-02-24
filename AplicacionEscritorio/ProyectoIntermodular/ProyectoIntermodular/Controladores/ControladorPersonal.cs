@@ -30,6 +30,18 @@ namespace ProyectoIntermodular.Controladores
                 return personas;
             
         }
+        public async Task<List<PerfilesResponse>> GetPerfiles()
+        {
+
+            HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/perfiles");
+            response.EnsureSuccessStatusCode();
+
+            string responseJson = await response.Content.ReadAsStringAsync();
+
+            List<PerfilesResponse> personas = JsonConvert.DeserializeObject<List<PerfilesResponse>>(responseJson);
+            return personas;
+
+        }
 
         public async Task<Personal>GetPersonalPorId(String id)
         {

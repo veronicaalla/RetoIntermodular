@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoIntermodular.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,5 +43,14 @@ namespace ProyectoIntermodular.Clases
         ADMIN,
         PROFESOR
     }
+}
+public class PerfilesResponse
+{
+
+    public int personal { get; set; }
+    public string dominio { get; set; }
+    public string educantabria { get; set; }
+    public string password { get; set; }
+    public string perfil { get; set; }
 }
 

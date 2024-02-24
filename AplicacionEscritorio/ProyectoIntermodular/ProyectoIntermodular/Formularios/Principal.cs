@@ -25,9 +25,7 @@ namespace ProyectoIntermodular
         ControladorDepartamentos controladorDepartamento = new ControladorDepartamentos();
         ControladorPersonal controladorPersonal = new ControladorPersonal();
 
-
-
-        public Principal()
+        public Principal(Inicial inicial)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -49,7 +47,50 @@ namespace ProyectoIntermodular
             GetIncidencias();
             CargarComboBox();
         }
+        public Principal(Admin admin)
+        {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
 
+            if (perfiles.perfil == PerfilEnum.ADMIN)
+            {
+                btnVolver.Show();
+                btnSalir.Hide();
+            }
+            else
+            {
+                btnVolver.Hide();
+                btnSalir.Show();
+            }
+
+            controladorIncidencias = new ControladorIncidencias();
+            inci = new Incidencias();
+            GetIncidencias();
+            CargarComboBox();
+        }
+        public Principal()
+        {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
+
+            if (perfiles.perfil == PerfilEnum.ADMIN)
+            {
+                btnVolver.Show();
+                btnSalir.Hide();
+            }
+            else
+            {
+                btnVolver.Hide();
+                btnSalir.Show();
+            }
+
+            controladorIncidencias = new ControladorIncidencias();
+            inci = new Incidencias();
+            GetIncidencias();
+            CargarComboBox();
+        }
         private async void GetIncidencias()
         {
             lista = await controladorIncidencias.GetIncidencias();
