@@ -1,22 +1,21 @@
 package es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 
+import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import es.intermodular.equipo2.incidenciasies.R
+import androidx.appcompat.app.AppCompatActivity
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityEditIncidentBinding
 import es.intermodular.equipo2.incidenciasies.datos.Api
-import es.intermodular.equipo2.incidenciasies.datos.ApiService
 import es.intermodular.equipo2.incidenciasies.modelo.CrearIncidencia
+import es.intermodular.equipo2.incidenciasies.modelo.EquipoResponse
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
-import java.time.LocalDate
-
-
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class EditIncident : AppCompatActivity() {
 
@@ -46,6 +45,12 @@ class EditIncident : AppCompatActivity() {
             var incidencia =
                 intent.getSerializableExtra(EXTRA_EDIT_INCIDENCIA) as IncidenciaResponse
             Log.i("Incidencia a editar", incidencia.toString())
+
+            asignacionDatosEnCampos(incidencia)
+
+            binding.btnAceptar.setOnClickListener {
+                obtenerNuevosDatos(incidencia)
+            }
 
 
         } else if (claseAnterior == 0) {
@@ -78,6 +83,101 @@ class EditIncident : AppCompatActivity() {
 
     }
 
+    private fun obtenerNuevosDatos(incidencia: IncidenciaResponse) {
+        //Modificamos en la incidencia, los datos que el usuario ha podido cambiar
+        incidencia.descripcion = binding.editTextDescripcion.text.toString()
+        Log.i("descripcion incidencia ", incidencia.descripcion)
+
+        //Obtenemos todos los posibles cambios del idEquipo
+        if (incidencia.equipo == null) {
+            if (binding.editTextEquipoIncidencia.text.isEmpty()) {
+                //Como no se ha realizado ninguna modificacion, no lo cambiamos
+                Log.i("equipoId ", "VACIOOOO")
+            } else if (binding.editTextEquipoIncidencia.text.isNotEmpty()) {
+                obtenerEquipo(incidencia)
+            }
+        } else {
+            if (binding.editTextEquipoIncidencia.text.isEmpty()) {
+                Log.i("equipoId ", "VACIOOOO")
+            } else if (binding.editTextEquipoIncidencia.text.isNotEmpty()) {
+                obtenerEquipo(incidencia)
+            }
+        }
+
+        //Una vez que se han realizado las modificaciones en la actividad, modificamos la incidencia
+        //Para ello, realizamos una llamada a la API 
+        actualizamosIncidencia(incidencia)
+    }
+    
+    private fun actualizamosIncidencia(incidencia: IncidenciaResponse) {
+        val num = incidencia.idIncidencia
+        Api.retrofitService.editarIncidencia(incidencia, num)
+            .enqueue(object : Callback<IncidenciaResponse> {
+                override fun onResponse(
+                    call: Call<IncidenciaResponse>,
+                    response: Response<IncidenciaResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        var incidenciaEditada = response.body()
+                        Log.i("incidencia editada", incidenciaEditada.toString())
+                    } else {
+                        Log.i("Error al editar la incidencia ", response.message())
+                    }
+                }
+
+                override fun onFailure(call: Call<IncidenciaResponse>, t: Throwable) {
+                    Log.i("Error en la solicitud ", t.message.toString())
+                }
+            })
+    }
+
+    private fun obtenerEquipo(incidencia: IncidenciaResponse) {
+        //Recogemos el id del equipo
+        var equipo = binding.editTextEquipoIncidencia.text.toString()
+        var equipoId = equipo.toInt()
+        Log.i("equipoId ", equipoId.toString())
+
+        //Realizamos una llamada a la API para obtener el equipo
+        Api.retrofitService.obtenerEquipoPorId(equipoId).enqueue(object : Callback<EquipoResponse> {
+
+            override fun onResponse(
+                call: Call<EquipoResponse>, response: Response<EquipoResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val equipo: EquipoResponse = response.body()!!
+                    Log.i("Equipo Response ", equipo.toString())
+
+                    //Le asignamos el equipo a la incidencia
+                    incidencia.equipo = equipo
+
+                } else {
+                    Log.i("Error al recoger el equipo:", response.message())
+                }
+            }
+
+            override fun onFailure(call: Call<EquipoResponse>, t: Throwable) {
+                Log.i("Error al realizar la solicitud:", t.message.toString())
+            }
+        })
+    }
+
+
+    private fun asignacionDatosEnCampos(incidencia: IncidenciaResponse) {
+        binding.txtIncidenciaID.text = "Incidencia #${incidencia.idIncidencia}"
+        binding.txtTipoIncidencia.text =
+            "${incidencia.tipo} ${incidencia.tipoIncidencia.subtipoNombre} ${incidencia.tipoIncidencia.subSubtipo}"
+        binding.txtFechaCreacion.text = incidencia.fechaCreacion.toString()
+        binding.editTextDescripcion.setText(incidencia.descripcion)
+
+        //Como el equipo puede ser nulo, debemos controlarlo -> realizamos un if ternario
+        var equipoo = if (incidencia.equipo?.id.toString()
+                .equals("null")
+        ) "" else incidencia.equipo?.id.toString()
+        binding.editTextEquipoIncidencia.setText(equipoo)
+
+        binding.btnEstadoIncidencia.text = incidencia.estado
+    }
+
 
     private fun crearIncidencia(
         tipoIncidencia: String, idPerfil: Int
@@ -86,9 +186,16 @@ class EditIncident : AppCompatActivity() {
         //por lo tanto, 1º debemos crearla
         var nuevaIncidencia = CrearIncidencia()
 
+        //Obtenemos la fecha actual
+        var fechaActual = LocalDateTime.now()
+        //Parseamos la fecha para que tenga el mismo formato que en Worbench
+        val formatoDeseado = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+        nuevaIncidencia.fechaCreacion = fechaActual.format(formatoDeseado)
+        Log.i("Fecha creacion", nuevaIncidencia.fechaCreacion)
+
         //Le pasamos el id del creador, que corresponde con el del perfil
         nuevaIncidencia.creador_id = idPerfil
-        Log.i("Nueva incidencia -> creador_id" , nuevaIncidencia.creador_id.toString())
+        Log.i("Nueva incidencia -> creador_id", nuevaIncidencia.creador_id.toString())
 
         //---------- PASO DE TIPO Y SUBTIPO ------------
         //Una vez obtenido el tipo de incidencia, en un string
@@ -120,7 +227,6 @@ class EditIncident : AppCompatActivity() {
                         Log.i("Id del subtipo", id.toString())
 
 
-
                     } else {
                         Log.i("Error al crear la incidencia:", response.message())
                     }
@@ -147,6 +253,7 @@ class EditIncident : AppCompatActivity() {
 
         Log.i("nueva incidencia ", nuevaIncidencia.toString())
 
+        // region ------------------------------ NO FUNCIONA -------------------------
         //Como ya hemos pasado todos los parametros, llamamos a la API y creamos la incidencia
         Api.retrofitService.crearIncidencia(nuevaIncidencia)
             .enqueue(object : Callback<IncidenciaResponse> {
@@ -170,10 +277,9 @@ class EditIncident : AppCompatActivity() {
                     Log.i("Error al realizar la solicitud:", t.message.toString())
                 }
             })
+        //endregion
 
     }
 
-    private fun modificarIncidencia(incidencia: IncidenciaResponse) {
 
-    }
 }

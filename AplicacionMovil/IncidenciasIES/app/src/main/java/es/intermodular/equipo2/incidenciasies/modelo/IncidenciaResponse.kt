@@ -7,23 +7,23 @@ import java.sql.Time
 data class IncidenciaResponse(
 
     @SerializedName("num")
-    val idIncidencia: Int?,
+    val idIncidencia: Int,
     @SerializedName("adjuntoUrl")
     val adjunto_url: String,
     @SerializedName("descripcion")
-    val descripcion: String,
+    var descripcion: String,
     @SerializedName("estado")
     val estado: String,
     @SerializedName("fechaCierre")
-    val fechaCierre: java.util.Date?,
+    val fechaCierre: java.util.Date,
     @SerializedName("fechaCreacion")
-    val fechaCreacion: java.util.Date?,
+    val fechaCreacion: java.util.Date,
     @SerializedName("tiempo_dec")
-    val tiempoDesc: Time?,
+    val tiempoDesc: Time,
     @SerializedName("tipo")
     var tipo: String,
     @SerializedName("equipo")
-    val equipo: EquipoResponse,
+    var equipo: EquipoResponse,
     @SerializedName("incidenciasSubtipo")
     val tipoIncidencia: IncidenciasSubtipoResponse,
     @SerializedName("creador")

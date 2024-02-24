@@ -6,7 +6,7 @@ class CrearIncidencia {
 
     constructor() {
         // Inicializamos los atributos aquí
-        var fechaCreacion: LocalDateTime = LocalDateTime.now()
+
 
     }
 
@@ -22,6 +22,7 @@ class CrearIncidencia {
             field = value
         }
 
+    var fechaCreacion: String=""
 
     var descripcion: String = ""
         get() = field
@@ -45,7 +46,7 @@ class CrearIncidencia {
         }
 
     override fun toString(): String {
-        return "CrearIncidencia(tipo='$tipo', subtipo_id=$subtipo_id, descripcion='$descripcion', equipoId=$equipoId, estado='$estado', creador_id=$creador_id)"
+        return "CrearIncidencia(tipo='$tipo', subtipo_id=$subtipo_id, fechaCreacion=$fechaCreacion, descripcion='$descripcion', equipoId=$equipoId, estado='$estado', creador_id=$creador_id)"
     }
 
 

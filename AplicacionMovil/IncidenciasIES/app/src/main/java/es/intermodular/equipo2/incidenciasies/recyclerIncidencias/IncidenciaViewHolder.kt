@@ -22,6 +22,7 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         binding.btnEstadoIncidencai.text = incidenciasResponse.estado
         //Modificamos el color
+        //Lo tipos de valores son --> ENUM('abierta', 'asignada', 'en_proceso', 'enviada_a_Infortec', 'resuelta', 'cerrada')
         when (incidenciasResponse.estado) {
             "abierta" -> binding.btnEstadoIncidencai.setBackgroundColor(
                 ContextCompat.getColor(
@@ -37,7 +38,7 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 )
             )
 
-            "en proceso" -> binding.btnEstadoIncidencai.setBackgroundColor(
+            "en_proceso" -> binding.btnEstadoIncidencai.setBackgroundColor(
                 ContextCompat.getColor(
                     itemView.context,
                     R.color.colorEnProceso

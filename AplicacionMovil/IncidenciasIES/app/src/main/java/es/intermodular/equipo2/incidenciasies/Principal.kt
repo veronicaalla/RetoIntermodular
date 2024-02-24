@@ -158,7 +158,7 @@ class Principal : AppCompatActivity() {
         val incidenciasAbiertasFuncionalidad = estados["abierta"] ?: emptyList()
         val incidenciasCerradasFuncionalidad = estados["cerrada"] ?: emptyList()
         val incidenciasAsignadasFuncionalidad = estados["asignada"] ?: emptyList()
-        val incidenciasEnProcesoFuncionalidad = estados["en proceso"] ?: emptyList()
+        val incidenciasEnProcesoFuncionalidad = estados["en_proceso"] ?: emptyList()
         val incidenciasResueltasFuncionalidad = estados["resuelta"] ?: emptyList()
 
         // Establecer el texto de los botones con la cantidad de incidencias en cada estado
