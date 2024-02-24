@@ -119,7 +119,7 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                                 val myResponse = response.body()
                                 Log.i("Incidencia eliminada ", myResponse.toString())
                             } else {
-                                Log.i("No se ha podido eliminar", )
+                                Log.i("No se ha podido eliminar", response.message())
                             }
                         }
 
