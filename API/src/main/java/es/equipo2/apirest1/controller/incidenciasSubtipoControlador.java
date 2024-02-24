@@ -63,12 +63,21 @@ public class incidenciasSubtipoControlador {
     public Integer obtenerIdPorTipoSubtipoYSubsubtipo(
             @RequestParam Tipo_Incidencias tipo,
             @RequestParam String subtipo,
-            @RequestParam String subsubtipo) {
-        IncidenciasSubtipo incidenciasSubtipo = incidenciasSubtipoRepository
-                .findByTipoAndSubtipoNombreAndSubSubtipo(tipo, subtipo, subsubtipo);
-        return incidenciasSubtipo != null ? incidenciasSubtipo.getId() : null;
+            @RequestParam(required = false) String subsubtipo) {
+        try {
+            if (subsubtipo != null) {
+                IncidenciasSubtipo incidenciasSubtipo = incidenciasSubtipoRepository.findByTipoAndSubtipoNombreAndSubSubtipo(tipo, subtipo, subsubtipo);
+                return incidenciasSubtipo != null ? incidenciasSubtipo.getId() : null;
+            } else {
+                IncidenciasSubtipo incidenciasSubtipo = incidenciasSubtipoRepository.findByTipoAndSubtipoNombre(tipo, subtipo);
+                return incidenciasSubtipo != null ? incidenciasSubtipo.getId() : null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
-    
+        
     @PostMapping
     public IncidenciasSubtipo nuevoIncidenciaSubtipo(@RequestBody IncidenciasSubtipo nuevoIncidenciaSubtipo) {
         return incidenciasSubtipoRepository.save(nuevoIncidenciaSubtipo);

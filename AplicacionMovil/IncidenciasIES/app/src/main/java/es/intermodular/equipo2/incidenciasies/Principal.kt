@@ -10,7 +10,6 @@ import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
-import es.intermodular.equipo2.incidenciasies.DetailsIncidenciaActivity.Companion.EXTRA_ID
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
 import es.intermodular.equipo2.incidenciasies.datos.ApiService
 import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
@@ -28,33 +27,39 @@ class Principal : AppCompatActivity() {
     private lateinit var retrofit: Retrofit
     private lateinit var adapter: IncidenciaAdapter
 
-    private  var idUsuarioPrueba:Int =0
+    private var idPerfil: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Inflamos la vista
+        //Inflamos la vista
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         isOnline(this)
 
-        // Recuperamos el id del usuario que se ha pasado anteriormente, mediante un Intent
-        idUsuarioPrueba = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
-
-        // Boton de añadir
+        //recuperamos el id del usuario que se ha pasado anteriormente, mediante un Intent
+        idPerfil = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
+        
+        //region FUNCINALIDAD BOTONES
+        //Boton de añadir
         binding.btnAddIncidencias.setOnClickListener {
             val intent = Intent(this, SelectTypeIncidents::class.java)
+            intent.putExtra("idPerfil", idPerfil)
             startActivity(intent)
         }
 
-        // Botones del ToolBar --> Apartado de notificaciones
+        //Botones del ToolBar --> Apartado de notificaciones
         binding.menuNotificaciones.setOnClickListener {
             val intent = Intent(this, NotificationsActivity::class.java)
             startActivity(intent)
         }
+        //endregion
+
+        //region Damos funcionalidad al menu
+        val menuAjustes = findViewById<ImageView>(R.id.menuAjustes)
 
         // Configurar el OnClickListener para el ícono de ajustes
-        val menuAjustes = findViewById<ImageView>(R.id.menuAjustes)
         menuAjustes.setOnClickListener { view ->
             // Crear un objeto PopupMenu asociado con el ícono de ajustes
             val popupMenu = PopupMenu(this@Principal, view)
@@ -85,79 +90,29 @@ class Principal : AppCompatActivity() {
             popupMenu.show()
         }
 
+        //endregion
+
+
         retrofit = RetrofitBuilder.build()
-
-        // Obtén las incidencias según su estado
-        getIncidenciasPorEstado("Asignadas")
-        getIncidenciasPorEstado("En Proceso")
-        getIncidenciasPorEstado("Resueltas")
-        getIncidenciasPorEstado("Cerradas")
-
-        // Filtra las incidencias según su estado y guarda los IDs en los arrays correspondientes
-        val incidenciasAsignadasFuncionalidad = incidencias.filter { it.estado == "Asignadas" }.map { it.id }.toTypedArray()
-        val incidenciasEnProcesoFuncionalidad = incidencias.filter { it.estado == "En Proceso" }.map { it.id }.toTypedArray()
-        val incidenciasResueltasFuncionalidad = incidencias.filter { it.estado == "Resueltas" }.map { it.id }.toTypedArray()
-        val incidenciasCerradasFuncionalidad = incidencias.filter { it.estado == "Cerradas" }.map { it.id }.toTypedArray()
-
-        // Configurar los OnClickListener para cada botón
-        setupListeners()
+        initUI()
     }
 
     private fun initUI() {
         //Damos valor al recycler view
         retrofit = RetrofitBuilder.build()
-        adapter = IncidenciaAdapter(emptyList(), { incidenciaId ->
-            val incidencia = incidencias.first { it.idIncidencia == incidenciaId }
-            navigateToDetail(incidenciaId, incidencia)
-        })
-
-        /*
-        adapter = IncidenciaAdapter { incidenciaId ->
-            startActivity(
-                Intent(
-                    this,
-                    DetailsIncidenciaActivity::class.java
-                )
-            )
-        }
-         */
+        adapter = IncidenciaAdapter { incidence -> navigateToDetalil (incidence)}
 
         binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         binding.rvIncidencias.adapter = adapter
 
         //Mostramos los items
-        obtenerIncidencias(idUsuarioPrueba)
+        obtenerIncidencias(idPerfil)
     }
 
-    private fun navigateToDetail(incidencias: Array<IncidenciaResponse>) {
-        // Crear un intent para iniciar la actividad SpecificListIncidents
-        val intent = Intent(this, SpecificListIncidents::class.java)
-        // Pasar las incidencias como argumentos en el intent
-        intent.putExtra("EXTRA_INCIDENCIAS", incidencias)
-        // Iniciar la actividad SpecificListIncidents
+    private fun navigateToDetalil(incidencia: IncidenciaResponse) {
+        val intent = Intent(this, DetailsIncidenciaActivity::class.java)
+        intent.putExtra("verIncidencia", incidencia)
         startActivity(intent)
-    }
-
-    private fun getIncidenciasPorEstado(estado: String): List<Int> {
-        return incidencias.filter { it.estado == estado }.map { it.id }
-    }
-
-    private fun setupListeners() {
-        binding.btnAsignadas.setOnClickListener {
-            navigateToDetail(incidenciasAsignadas)
-        }
-
-        binding.btnEnProceso.setOnClickListener {
-            navigateToDetail(incidenciasEnProceso)
-        }
-
-        binding.btnResueltas.setOnClickListener {
-            navigateToDetail(incidenciasResueltas)
-        }
-
-        binding.btnCerradas.setOnClickListener {
-            navigateToDetail(incidenciasCerradas)
-        }
     }
 
     private fun obtenerIncidencias(idUsuarioPrueba: Int) {
@@ -181,7 +136,7 @@ class Principal : AppCompatActivity() {
                             }
                         }
                     } else {
-                        Log.e("Incidencias", "Error al obtener las incidencias")
+                        Log.e("Incidencias error", "Error al obtener las incidencias")
                     }
                 }
             } catch (e: Exception) {
@@ -201,7 +156,7 @@ class Principal : AppCompatActivity() {
         val incidenciasAbiertasFuncionalidad = estados["abierta"] ?: emptyList()
         val incidenciasCerradasFuncionalidad = estados["cerrada"] ?: emptyList()
         val incidenciasAsignadasFuncionalidad = estados["asignada"] ?: emptyList()
-        val incidenciasEnProcesoFuncionalidad = estados["en proceso"] ?: emptyList()
+        val incidenciasEnProcesoFuncionalidad = estados["en_proceso"] ?: emptyList()
         val incidenciasResueltasFuncionalidad = estados["resuelta"] ?: emptyList()
 
         // Establecer el texto de los botones con la cantidad de incidencias en cada estado
@@ -243,6 +198,7 @@ class Principal : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
 
     private fun mostrarLayoutAyuda() {
         // Inflar el layout activity_help.xml

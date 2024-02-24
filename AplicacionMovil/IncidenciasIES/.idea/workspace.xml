@@ -1,72 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-    <layouts>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_details_incidencia.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_incident.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_principal.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_select_type_incidents.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_specific_list_incidents.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_comentario.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_incidencias.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_notificaciones.xml">
-        <config>
-          <theme>@style/Theme.IncidenciasIES</theme>
-        </config>
-      </layout>
-    </layouts>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4215f14e-0311-472d-8fb8-febbdeff4bba" name="Changes" comment="">
+    <list default="true" id="5c2d5a50-852f-4ea0-ba45-8e02eb3bf01b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/CrearIncidencia.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/bin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/bin/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/bin/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/bin/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/bin/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/bin/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/bin/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/bin/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/bin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/bin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/bin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/bin/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/ApiRest12324Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/ApiRest12324Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/AulaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/AulaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/PerfilesControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/PerfilesControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/comentarioControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/comentarioControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/departamentoControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/departamentoControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/equipoControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/equipoControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/incidenciaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/incidenciaControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/incidenciasSubtipoControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/incidenciasSubtipoControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/personalControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/controller/personalControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Aula.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Aula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Comentario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Departamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Departamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Equipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Estado_Incidencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Estado_Incidencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Incidencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Incidencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/IncidenciasSubtipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/IncidenciasSubtipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Perfiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Perfiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Personal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Personal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/TipoEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/TipoEquipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Tipo_Incidencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Tipo_Incidencias.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Tipo_Perfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/model/Tipo_Perfil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/AulaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/AulaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/ComentarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/ComentarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/DepartamentoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/DepartamentoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/EquipoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/EquipoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/IncidenciaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/IncidenciaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/IncidenciaSubtipoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/IncidenciaSubtipoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/PerfilesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/PerfilesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/PersonalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/java/es/equipo2/apirest1/repository/PersonalRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/test/java/es/equipo2/apirest1/ApiRest12324ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/test/java/es/equipo2/apirest1/ApiRest12324ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API/src/test/java/es/luisherrero/apirest1/ApiRest12324ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../API/src/test/java/es/luisherrero/apirest1/ApiRest12324ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Asignacion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Asignacion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/migrations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/migrations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/es/intermodular/equipo2/incidenciasies/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/es/intermodular/equipo2/incidenciasies/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/CrearModificarIncidencia/EditIncident.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/CrearModificarIncidencia/EditIncident.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/CrearModificarIncidencia/SelectTypeIncidents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/CrearModificarIncidencia/SelectTypeIncidents.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/DetailsIncidenciaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/DetailsIncidenciaActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/LoginActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/NotificationsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/NotificationsActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/Principal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/Principal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/SpecificListIncidents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/SpecificListIncidents.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/SplashScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/SplashScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/datos/Api.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/datos/Api.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/datos/ApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/datos/ApiService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/datos/RetrofitBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/datos/RetrofitBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/AulaResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/AulaResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/ComentarioResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/DepartamentoResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/DepartamentoResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/EquipoResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/EquipoResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/IncidenciaResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/IncidenciaResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/IncidenciasSubtipoResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/IncidenciasSubtipoResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/NotificacionResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/PerfilReponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/PerfilReponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/PersonalResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/modelo/PersonalResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerIncidencias/IncidenciaViewHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/intermodular/equipo2/incidenciasies/recyclerNotificaciones/NotificacionViewHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_add_alert_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_add_alert_24.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_arrow_back_ios_new_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_arrow_back_ios_new_24.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_border_color_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_border_color_24.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_construction_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_construction_24.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_email.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_email.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_menu_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_menu_24.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_details_incidencia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_details_incidencia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_incident.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_incident.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_help.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_help.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_principal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_principal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_select_type_incidents.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_select_type_incidents.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_specific_list_incidents.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_specific_list_incidents.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_comentario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_comentario.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_incidencias.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_incidencias.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_notificaciones.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_notificaciones.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/splash_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/splash_screen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-land/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-land/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-w1240dp/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-w1240dp/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-w600dp/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-w600dp/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/es/intermodular/equipo2/incidenciasies/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/es/intermodular/equipo2/incidenciasies/ExampleUnitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,46 +154,37 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Vladyslav\.android\avd\Medium_Phone_API_34.avd]" />
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Kotlin Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="2clsc4kJG6OzfbOXUneYmeySVcD" />
+  <component name="ProjectId" id="2con365UiJ4chAsblhtZxgq1L8U" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Vlady&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vladyslav/Desktop/DAM 2/PMDM/Unidad 2/Ejemplo/Android-Expert-main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "Vlady",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="App" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="IncidenciasIES.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ALL_USERS" value="false" />
+      <option name="ALL_USERS" value="true" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
       <option name="CLEAR_APP_STORAGE" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
@@ -125,7 +193,7 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
@@ -180,11 +248,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4215f14e-0311-472d-8fb8-febbdeff4bba" name="Changes" comment="" />
-      <created>1708697577516</created>
+      <changelist id="5c2d5a50-852f-4ea0-ba45-8e02eb3bf01b" name="Changes" comment="" />
+      <created>1708786598965</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1708697577516</updated>
+      <updated>1708786598965</updated>
     </task>
     <servers />
   </component>

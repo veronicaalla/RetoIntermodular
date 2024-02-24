@@ -3,7 +3,6 @@ package es.intermodular.equipo2.incidenciasies.recyclerIncidencias
 import android.content.Intent
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.EditIncident
@@ -22,6 +21,7 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         binding.btnEstadoIncidencai.text = incidenciasResponse.estado
         //Modificamos el color
+        //Lo tipos de valores son --> ENUM('abierta', 'asignada', 'en_proceso', 'enviada_a_Infortec', 'resuelta', 'cerrada')
         when (incidenciasResponse.estado) {
             "abierta" -> binding.btnEstadoIncidencai.setBackgroundColor(
                 ContextCompat.getColor(
@@ -37,7 +37,7 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 )
             )
 
-            "en proceso" -> binding.btnEstadoIncidencai.setBackgroundColor(
+            "en_proceso" -> binding.btnEstadoIncidencai.setBackgroundColor(
                 ContextCompat.getColor(
                     itemView.context,
                     R.color.colorEnProceso
@@ -74,11 +74,11 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         }
 
 
+
         binding.txtTipoIncidencia.text =
             " ${incidenciasResponse.tipoIncidencia.tipo} ${incidenciasResponse.tipoIncidencia.subtipoNombre} ${incidenciasResponse.tipoIncidencia.subSubtipo}"
 
-
-        binding.root.setOnClickListener { onItemSelected(incidenciasResponse) }
+         binding.root.setOnClickListener { onItemSelected(incidenciasResponse) }
     }
-
 }
+
