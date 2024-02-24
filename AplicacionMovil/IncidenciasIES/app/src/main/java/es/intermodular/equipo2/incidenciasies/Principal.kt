@@ -27,7 +27,8 @@ class Principal : AppCompatActivity() {
     private lateinit var retrofit: Retrofit
     private lateinit var adapter: IncidenciaAdapter
 
-    private  var idUsuarioPrueba:Int =0
+    private var idPerfil: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -38,12 +39,13 @@ class Principal : AppCompatActivity() {
         isOnline(this)
 
         //recuperamos el id del usuario que se ha pasado anteriormente, mediante un Intent
-         idUsuarioPrueba = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
-
+        idPerfil = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
+        
         //region FUNCINALIDAD BOTONES
         //Boton de añadir
         binding.btnAddIncidencias.setOnClickListener {
             val intent = Intent(this, SelectTypeIncidents::class.java)
+            intent.putExtra("idPerfil", idPerfil)
             startActivity(intent)
         }
 
@@ -98,20 +100,19 @@ class Principal : AppCompatActivity() {
     private fun initUI() {
         //Damos valor al recycler view
         retrofit = RetrofitBuilder.build()
-        adapter = IncidenciaAdapter { incidenciaId ->
-            startActivity(
-                Intent(
-                    this,
-                    DetailsIncidenciaActivity::class.java
-                )
-            )
-        }
+        adapter = IncidenciaAdapter { incidence -> navigateToDetalil (incidence)}
+
         binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         binding.rvIncidencias.adapter = adapter
 
         //Mostramos los items
+        obtenerIncidencias(idPerfil)
+    }
 
-        obtenerIncidencias(idUsuarioPrueba)
+    private fun navigateToDetalil(incidencia: IncidenciaResponse) {
+        val intent = Intent(this, DetailsIncidenciaActivity::class.java)
+        intent.putExtra("verIncidencia", incidencia)
+        startActivity(intent)
     }
 
     private fun obtenerIncidencias(idUsuarioPrueba: Int) {
@@ -135,7 +136,7 @@ class Principal : AppCompatActivity() {
                             }
                         }
                     } else {
-                        Log.e("Incidencias", "Error al obtener las incidencias")
+                        Log.e("Incidencias error", "Error al obtener las incidencias")
                     }
                 }
             } catch (e: Exception) {
@@ -155,7 +156,7 @@ class Principal : AppCompatActivity() {
         val incidenciasAbiertasFuncionalidad = estados["abierta"] ?: emptyList()
         val incidenciasCerradasFuncionalidad = estados["cerrada"] ?: emptyList()
         val incidenciasAsignadasFuncionalidad = estados["asignada"] ?: emptyList()
-        val incidenciasEnProcesoFuncionalidad = estados["en proceso"] ?: emptyList()
+        val incidenciasEnProcesoFuncionalidad = estados["en_proceso"] ?: emptyList()
         val incidenciasResueltasFuncionalidad = estados["resuelta"] ?: emptyList()
 
         // Establecer el texto de los botones con la cantidad de incidencias en cada estado

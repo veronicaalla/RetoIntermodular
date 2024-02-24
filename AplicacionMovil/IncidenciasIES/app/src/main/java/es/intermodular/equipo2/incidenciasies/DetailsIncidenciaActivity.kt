@@ -2,6 +2,7 @@ package es.intermodular.equipo2.incidenciasies
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityDetailsIncidenciaBinding
 
 class DetailsIncidenciaActivity : AppCompatActivity() {
@@ -18,5 +19,9 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
         //NOTA:
         //Cuando obtenemos el estado de la incidencia, dependiendo de su ESTADO
         //el btn (no clicable) será de un color u otro
+
+        //Recogemos la incidenica
+        val incidencia = intent.getSerializableExtra("verIncidencia")
+        Log.i("Paso de incidencia ", incidencia.toString())
     }
 }
