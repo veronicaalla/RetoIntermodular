@@ -3,7 +3,6 @@ package es.intermodular.equipo2.incidenciasies.recyclerIncidencias
 import android.content.Intent
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.EditIncident
@@ -16,7 +15,7 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemIncidenciasBinding.bind(view)
 
-    fun bind(incidenciasResponse: IncidenciaResponse, onItemSelected: (String) -> Unit) {
+    fun bind(incidenciasResponse: IncidenciaResponse, onItemSelected: (IncidenciaResponse) -> Unit) {
         binding.txtFecha.text = incidenciasResponse.fechaCreacion.toString()
         binding.txtIncidenciaID.text = "Incidencia #${incidenciasResponse.idIncidencia}"
 
@@ -79,7 +78,7 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         binding.txtTipoIncidencia.text =
             " ${incidenciasResponse.tipoIncidencia.tipo} ${incidenciasResponse.tipoIncidencia.subtipoNombre} ${incidenciasResponse.tipoIncidencia.subSubtipo}"
 
-        // binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia) }
+         binding.root.setOnClickListener { onItemSelected(incidenciasResponse) }
     }
 }
 

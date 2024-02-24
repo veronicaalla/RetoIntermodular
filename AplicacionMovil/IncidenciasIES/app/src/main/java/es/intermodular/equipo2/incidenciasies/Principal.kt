@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.PopupMenu
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
@@ -101,20 +100,19 @@ class Principal : AppCompatActivity() {
     private fun initUI() {
         //Damos valor al recycler view
         retrofit = RetrofitBuilder.build()
-        adapter = IncidenciaAdapter { incidenciaId ->
-            startActivity(
-                Intent(
-                    this,
-                    DetailsIncidenciaActivity::class.java
-                )
-            )
-        }
+        adapter = IncidenciaAdapter { incidence -> navigateToDetalil (incidence)}
+
         binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         binding.rvIncidencias.adapter = adapter
 
         //Mostramos los items
-
         obtenerIncidencias(idPerfil)
+    }
+
+    private fun navigateToDetalil(incidencia: IncidenciaResponse) {
+        val intent = Intent(this, DetailsIncidenciaActivity::class.java)
+        intent.putExtra("verIncidencia", incidencia)
+        startActivity(intent)
     }
 
     private fun obtenerIncidencias(idUsuarioPrueba: Int) {
