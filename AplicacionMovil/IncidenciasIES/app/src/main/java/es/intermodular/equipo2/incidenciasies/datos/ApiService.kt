@@ -7,6 +7,7 @@ import es.intermodular.equipo2.incidenciasies.modelo.PerfilReponse
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
@@ -50,6 +51,11 @@ interface ApiService {
         @Body incidenciaEditada: IncidenciaResponse,
         @Path("num") num: Int
     ): Call<IncidenciaResponse>
+
+
+    //Eliminar una incidencia
+    @DELETE("/tu-endpoint/{num}")
+    fun borrarIncidencia(@Path("num") num: Int): Call<IncidenciaResponse>
 
     //endregion
 
