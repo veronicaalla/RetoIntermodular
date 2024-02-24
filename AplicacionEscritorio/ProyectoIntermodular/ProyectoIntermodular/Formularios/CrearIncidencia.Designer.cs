@@ -50,11 +50,9 @@
             this.btnAñadirTipo = new System.Windows.Forms.Button();
             this.btnAñadirSub = new System.Windows.Forms.Button();
             this.btnAñadirSubsubTipo = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBoxResponsable = new System.Windows.Forms.ComboBox();
+            this.cajaAula = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCrear
@@ -195,6 +193,7 @@
             this.comboBoxTipo.Name = "comboBoxTipo";
             this.comboBoxTipo.Size = new System.Drawing.Size(121, 24);
             this.comboBoxTipo.TabIndex = 23;
+            this.comboBoxTipo.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipo_SelectedIndexChanged);
             // 
             // lblTipo
             // 
@@ -252,23 +251,6 @@
             this.btnAñadirSubsubTipo.Text = "Añadir";
             this.btnAñadirSubsubTipo.UseVisualStyleBackColor = false;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(404, 265);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 50;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(305, 268);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 16);
-            this.label2.TabIndex = 49;
-            this.label2.Text = "Puesto";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -277,14 +259,6 @@
             this.label4.Size = new System.Drawing.Size(34, 16);
             this.label4.TabIndex = 51;
             this.label4.Text = "Aula";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(161, 226);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 24);
-            this.comboBox4.TabIndex = 52;
             // 
             // comboBoxResponsable
             // 
@@ -295,16 +269,22 @@
             this.comboBoxResponsable.Size = new System.Drawing.Size(121, 24);
             this.comboBoxResponsable.TabIndex = 37;
             // 
+            // cajaAula
+            // 
+            this.cajaAula.FormattingEnabled = true;
+            this.cajaAula.Location = new System.Drawing.Point(161, 226);
+            this.cajaAula.Name = "cajaAula";
+            this.cajaAula.Size = new System.Drawing.Size(121, 24);
+            this.cajaAula.TabIndex = 52;
+            // 
             // CrearIncidencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1031, 333);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.cajaAula);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAñadirSubsubTipo);
             this.Controls.Add(this.btnAñadirSub);
             this.Controls.Add(this.btnAñadirTipo);
@@ -358,10 +338,8 @@
         private System.Windows.Forms.Button btnAñadirTipo;
         private System.Windows.Forms.Button btnAñadirSub;
         private System.Windows.Forms.Button btnAñadirSubsubTipo;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBoxResponsable;
+        private System.Windows.Forms.ComboBox cajaAula;
     }
 }

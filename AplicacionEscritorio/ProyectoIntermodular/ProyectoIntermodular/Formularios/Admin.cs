@@ -12,11 +12,15 @@ namespace ProyectoIntermodular.Formularios
 {
     public partial class Admin : Form
     {
+        public PerfilesResponse usuario=new PerfilesResponse();
         public Admin(Inicial inicial)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-        
+
+            usuario=inicial.usuario;
+
+
             lblPrueba.Text = inicial.usuario.educantabria.ToString();
         }
 
@@ -28,7 +32,7 @@ namespace ProyectoIntermodular.Formularios
 
         private void btnIncidencias_Click(object sender, EventArgs e)
         {
-            Principal principal = new Principal();
+            Principal principal = new Principal(this);
             this.Hide();
             principal.Show();
         }

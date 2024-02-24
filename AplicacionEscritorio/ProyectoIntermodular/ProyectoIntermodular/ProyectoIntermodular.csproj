@@ -145,10 +145,12 @@
     <Compile Include="Clases\IncidenciasSubtipos.cs" />
     <Compile Include="Clases\Perfiles.cs" />
     <Compile Include="Clases\Personal.cs" />
+    <Compile Include="Controladores\ControladorAula.cs" />
     <Compile Include="Controladores\ControladorDepartamentos.cs" />
     <Compile Include="Controladores\ControladorComentarios.cs" />
     <Compile Include="Controladores\ControladorIncidencias.cs" />
     <Compile Include="Controladores\ControladorPersonal.cs" />
+    <Compile Include="Controladores\ControladorTipos.cs" />
     <Compile Include="Formularios\Admin.cs">
       <SubType>Form</SubType>
     </Compile>

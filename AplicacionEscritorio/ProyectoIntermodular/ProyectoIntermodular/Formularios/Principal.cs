@@ -19,10 +19,9 @@ namespace ProyectoIntermodular
         private ControladorIncidencias controladorIncidencias;
         private List<Incidencias> lista;
         private Incidencias inci;
+        public PerfilesResponse usuario = new PerfilesResponse();
 
         bool creado = false;
-        public PersonalRequest nuevoUser = new PersonalRequest();
-        ControladorDepartamentos controladorDepartamento = new ControladorDepartamentos();
         ControladorPersonal controladorPersonal = new ControladorPersonal();
 
         public Principal(Inicial inicial)
@@ -30,6 +29,8 @@ namespace ProyectoIntermodular
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
+            
+            usuario = inicial.usuario;
 
             if (perfiles.perfil==PerfilEnum.ADMIN)
             {
@@ -52,6 +53,8 @@ namespace ProyectoIntermodular
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
+
+            usuario = admin.usuario;
 
             if (perfiles.perfil == PerfilEnum.ADMIN)
             {
@@ -144,7 +147,7 @@ namespace ProyectoIntermodular
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            CrearIncidencia crearIncidencia = new CrearIncidencia();
+            CrearIncidencia crearIncidencia = new CrearIncidencia(this);
             this.Hide();
             crearIncidencia.Show();
         }
