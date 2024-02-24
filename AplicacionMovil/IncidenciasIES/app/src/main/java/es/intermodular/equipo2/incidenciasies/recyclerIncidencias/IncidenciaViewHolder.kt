@@ -16,7 +16,7 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemIncidenciasBinding.bind(view)
 
-    fun bind(incidenciasResponse: IncidenciaResponse, onItemSelected: (String) -> Unit) {
+    fun bind(incidenciasResponse: IncidenciaResponse, onItemSelected: (IncidenciaResponse) -> Unit) {
         binding.txtFecha.text = incidenciasResponse.fechaCreacion.toString()
         binding.txtIncidenciaID.text = "Incidencia #${incidenciasResponse.idIncidencia}"
 
@@ -78,8 +78,7 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             " ${incidenciasResponse.tipoIncidencia.tipo} ${incidenciasResponse.tipoIncidencia.subtipoNombre} ${incidenciasResponse.tipoIncidencia.subSubtipo}"
 
 
-        binding.root.setOnClickListener { onItemSelected(incidenciasResponse.idIncidencia.toString()) }
+        binding.root.setOnClickListener { onItemSelected(incidenciasResponse) }
     }
 
 }
-

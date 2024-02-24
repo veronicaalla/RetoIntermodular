@@ -10,6 +10,8 @@ import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 class DetailsIncidenciaActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailsIncidenciaBinding
+
+
     companion object {
         const val EXTRA_ID = "extra_id"
     }
@@ -26,16 +28,20 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
         //el btn (no clicable) será de un color u otro
 
         // Obtenemos los datos de la incidencia seleccionada
-        val incidenciaResponse = intent.extras?.get("incidencia") as IncidenciaResponse
+        val incidenciaId = intent.getStringExtra(EXTRA_ID)
+        val incidenciaResponse = intent.getSerializableExtra("incidencia") as IncidenciaResponse
 
-        // Mostramos los datos en los campos de texto y botones
-        binding.txtTipoIncidencia.text = incidenciaResponse.tipoIncidencia.tipo
-        binding.txtfechaCreacion.text = incidenciaResponse.fechaCreacion.toString()
-        binding.DescripcionIncidencia.text = incidenciaResponse.descripcion
-        binding.EquipoIncidencia.text = incidenciaResponse.equipo.id.toString() // Aquí accedemos al campo "id" dentro de "equipo"
-        binding.btnEstadoIncidencia.text = incidenciaResponse.estado
-        binding.FechaCierreIncidencia.text = incidenciaResponse.fechaCierre.toString()
-
+            if (incidenciaResponse != null) {
+                // Mostrar los detalles de la incidencia seleccionada
+                binding.txtTipoIncidencia.text = incidenciaResponse.tipoIncidencia.tipo
+                binding.txtfechaCreacion.text = incidenciaResponse.fechaCreacion.toString()
+                binding.DescripcionIncidencia.text = incidenciaResponse.descripcion
+                binding.EquipoIncidencia.text = incidenciaResponse.equipo.id.toString()
+                binding.btnEstadoIncidencia.text = incidenciaResponse.estado
+                binding.FechaCierreIncidencia.text = incidenciaResponse.fechaCierre.toString()
+            } else {
+                // Manejar el caso en el que no se pueda obtener el objeto IncidenciaResponse
+            }
 
         // Aquí puedes manejar el clic en los botones btnVolver y btnModificar
         binding.btnVolver.setOnClickListener {

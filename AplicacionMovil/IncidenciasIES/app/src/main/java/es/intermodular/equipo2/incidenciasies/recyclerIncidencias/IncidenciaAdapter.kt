@@ -7,12 +7,12 @@ import es.intermodular.equipo2.incidenciasies.R
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 
 class IncidenciaAdapter(
-    var listaIncidencias: List<IncidenciaResponse> = emptyList(),
-    private val onItemSelect: (String) -> Unit
+    var incidencias: List<IncidenciaResponse> = emptyList(),
+    private val onItemSelect: (IncidenciaResponse) -> Unit
 ) : RecyclerView.Adapter<IncidenciaViewHolder>() {
 
     fun updateIncidencias(list: List<IncidenciaResponse>) {
-        listaIncidencias = list
+        incidencias = list
         notifyDataSetChanged()
     }
 
@@ -23,11 +23,8 @@ class IncidenciaAdapter(
     }
 
     override fun onBindViewHolder(holder: IncidenciaViewHolder, position: Int) {
-        holder.bind(listaIncidencias[position], onItemSelect)
+        holder.bind(incidencias[position], onItemSelect)
     }
 
-    override fun getItemCount() = listaIncidencias.size
+    override fun getItemCount() = incidencias.size
 }
-
-
-
