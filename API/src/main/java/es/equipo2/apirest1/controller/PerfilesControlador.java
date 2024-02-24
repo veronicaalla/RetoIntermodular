@@ -2,7 +2,9 @@ package es.equipo2.apirest1.controller;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,9 +19,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import es.equipo2.apirest1.model.PerfilConPersonalDTO;
 import es.equipo2.apirest1.model.Perfiles;
+import es.equipo2.apirest1.model.Personal;
 import es.equipo2.apirest1.model.Tipo_Perfil;
 import es.equipo2.apirest1.repository.PerfilesRepository;
+import es.equipo2.apirest1.repository.PersonalRepository;
 
 @RestController
 @RequestMapping("/api/perfiles")
@@ -27,16 +32,37 @@ public class PerfilesControlador {
 
 	@Autowired
     private PerfilesRepository perfilesRepository;
+	@Autowired
+    private PersonalRepository personalRepository;
 
     @GetMapping
     public List<Perfiles> obtenerPerfiles() {
         return perfilesRepository.findAll();
     }
-
+    
     @GetMapping("/{id}")
     public Perfiles obtenerPerfilPorId(@PathVariable int id) {
         return perfilesRepository.findById(id).orElse(null);
     }
+    
+    @GetMapping("/con-personal")
+    public PerfilConPersonalDTO obtenerPerfilConPersonalPorId(@RequestParam int perfilesId) throws Exception {
+        Optional<Perfiles> perfilesOptional = perfilesRepository.findById(perfilesId);
+        if (perfilesOptional.isPresent()) {
+            Perfiles perfiles = perfilesOptional.get();
+            Personal personal = personalRepository.findById(perfiles.getPersonal_id()).orElse(null);
+            
+            PerfilConPersonalDTO perfilConPersonalDTO = new PerfilConPersonalDTO();
+            perfilConPersonalDTO.setPerfil(perfiles);
+            perfilConPersonalDTO.setPersonal(personal);
+            
+            return perfilConPersonalDTO;
+        } else {
+            // Manejo de error si no se encuentra el perfil con el ID proporcionado
+            throw new Exception("Perfil no encontrado con el ID: " + perfilesId);
+        }
+    }
+
     
     @GetMapping("/tipo/{perfil}")
     public List<Perfiles> obtenerPerfilPorTipo(@PathVariable Tipo_Perfil perfil) {
