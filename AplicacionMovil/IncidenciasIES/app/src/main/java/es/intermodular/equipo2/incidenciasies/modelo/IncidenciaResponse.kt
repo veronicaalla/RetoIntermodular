@@ -3,6 +3,7 @@ package es.intermodular.equipo2.incidenciasies.modelo
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 import java.sql.Time
+import java.util.Date
 
 data class IncidenciaResponse(
 
@@ -15,9 +16,9 @@ data class IncidenciaResponse(
     @SerializedName("estado")
     val estado: String,
     @SerializedName("fechaCierre")
-    val fechaCierre: java.util.Date,
+    val fechaCierre: Date,
     @SerializedName("fechaCreacion")
-    val fechaCreacion: java.util.Date,
+    var fechaCreacion: Date,
     @SerializedName("tiempo_dec")
     val tiempoDesc: Time,
     @SerializedName("tipo")

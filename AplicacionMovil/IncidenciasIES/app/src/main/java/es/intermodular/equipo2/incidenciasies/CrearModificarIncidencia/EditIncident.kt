@@ -13,6 +13,7 @@ import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -88,6 +89,11 @@ class EditIncident : AppCompatActivity() {
         incidencia.descripcion = binding.editTextDescripcion.text.toString()
         Log.i("descripcion incidencia ", incidencia.descripcion)
 
+        //Debemos formatear la fecha obtenida
+         val formato = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+        incidencia.fechaCreacion = formato.parse(incidencia.fechaCreacion.toString())
+
+
         //Obtenemos todos los posibles cambios del idEquipo
         if (incidencia.equipo == null) {
             if (binding.editTextEquipoIncidencia.text.isEmpty()) {
@@ -108,7 +114,7 @@ class EditIncident : AppCompatActivity() {
         //Para ello, realizamos una llamada a la API 
         actualizamosIncidencia(incidencia)
     }
-    
+
     private fun actualizamosIncidencia(incidencia: IncidenciaResponse) {
         val num = incidencia.idIncidencia
         Api.retrofitService.editarIncidencia(incidencia, num)
