@@ -16,8 +16,11 @@ namespace ProyectoIntermodular.Formularios
     {
         ControladorPersonal controladorPersonal = new ControladorPersonal();
         ControladorTipos controladortipos = new ControladorTipos();
+        ControladorIncidencias controladorInc = new ControladorIncidencias();
         ControladorAula controladorAula = new ControladorAula();
         PerfilesResponse creador = new PerfilesResponse();
+
+        bool creado = false;
         string archivoSeleccionado;
 
         List<IncidenciasSubtipos> listaTipos = new List<IncidenciasSubtipos>();
@@ -87,7 +90,7 @@ namespace ProyectoIntermodular.Formularios
         //    }
         //}
 
-        private void btnCrear_Click(object sender, EventArgs e)
+        private async void btnCrear_Click(object sender, EventArgs e)
         {
             IncidenciasRequest inc = new IncidenciasRequest();
             inc.fechaCreacion = DateTime.Now;
@@ -99,7 +102,14 @@ namespace ProyectoIntermodular.Formularios
             inc.creador = creador;
             inc.adjuntoUrl = archivoSeleccionado;
             inc.equipo = CajaEquipo.Text;
-            MessageBox.Show("La incidencia ha sido creada con éxito.", "Incidencia creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            creado = await controladorInc.AgregarIncidencia(inc);
+            if (creado)
+            {
+                MessageBox.Show("La incidencia ha sido creada con éxito.", "Incidencia creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+           
 
         }
 

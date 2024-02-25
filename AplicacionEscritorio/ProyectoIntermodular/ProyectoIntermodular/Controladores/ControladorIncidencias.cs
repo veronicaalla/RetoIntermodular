@@ -57,7 +57,7 @@ namespace ProyectoIntermodular.Controladores
         }
 
         
-        public async Task<bool> AgregarIncidencia(Incidencias incidencia)
+        public async Task<bool> AgregarIncidencia(IncidenciasRequest incidencia)
         {
             try
             {
