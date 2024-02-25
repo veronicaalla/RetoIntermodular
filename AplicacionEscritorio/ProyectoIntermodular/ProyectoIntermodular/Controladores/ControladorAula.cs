@@ -21,7 +21,7 @@ namespace ProyectoIntermodular.Controladores
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/comentarios");
+                HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/aula");
                 response.EnsureSuccessStatusCode();
 
                 string responseJson = await response.Content.ReadAsStringAsync();

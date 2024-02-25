@@ -18,9 +18,11 @@ namespace ProyectoIntermodular.Formularios
         ControladorTipos controladortipos = new ControladorTipos();
         ControladorAula controladorAula = new ControladorAula();
         PerfilesResponse creador = new PerfilesResponse();
+        string archivoSeleccionado;
 
         List<IncidenciasSubtipos> listaTipos = new List<IncidenciasSubtipos>();
         List<string> listaSubtipos = new List<string>();
+        List<string> listaSub_subtipos = new List<string>();
         List<Aulas> listaAulas = new List<Aulas>();
 
         ControladorDepartamentos controladorDepartamento = new ControladorDepartamentos();
@@ -41,25 +43,25 @@ namespace ProyectoIntermodular.Formularios
             List<PerfilesResponse> listaPersonal = await controladorPersonal.GetPerfiles();
             List<PerfilesResponse> listaAdmin = new List<PerfilesResponse>();
 
-            foreach (PerfilesResponse personal in listaPersonal)
-            {
-                if (personal.perfil.Equals("administrador"))
-                {
-                    listaAdmin.Add(personal);
-                }
-            }
-            if (listaPersonal != null)
-            {
-                // Configurar el ComboBox para mostrar el nombre de cada persona
-                comboBoxResponsable.DisplayMember = "educantabria";
+            //foreach (PerfilesResponse personal in listaPersonal)
+            //{
+            //    if (personal.perfil.Equals("administrador"))
+            //    {
+            //        listaAdmin.Add(personal);
+            //    }
+            //}
+            //if (listaPersonal != null)
+            //{
+            //    // Configurar el ComboBox para mostrar el nombre de cada persona
+            //    comboBoxResponsable.DisplayMember = "educantabria";
 
-                // Asignar la lista de personas como la fuente de datos del ComboBox
-                comboBoxResponsable.DataSource = listaAdmin;
-            }
-            else
-            {
-                MessageBox.Show("Error al cargar la lista de personas.");
-            }
+            //    // Asignar la lista de personas como la fuente de datos del ComboBox
+            //    comboBoxResponsable.DataSource = listaAdmin;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error al cargar la lista de personas.");
+            //}
 
             listaTipos = await controladortipos.GetIncidenciasSubtipos();
             if (listaTipos != null)
@@ -74,32 +76,29 @@ namespace ProyectoIntermodular.Formularios
             {
                 MessageBox.Show("Error al cargar la lista de personas.");
             }
-            listaAulas = await controladorAula.GetAulas();
-            if (listaAulas != null)
-            {
-                // Configurar el ComboBox para mostrar el nombre de cada persona
-                cajaAula.DisplayMember = "codigo";
-
-                // Asignar la lista de personas como la fuente de datos del ComboBox
-                cajaAula.DataSource = listaAulas;
-            }
-            else
-            {
-                MessageBox.Show("Error al cargar la lista de personas.");
-            }
         }
 
-        private void checkBoxResponsable_CheckedChanged(object sender, EventArgs e)
-        {
-            comboBoxResponsable.Enabled = true;
-            if (!checkBoxResponsable.Checked)
-            {
-                comboBoxResponsable.Enabled = false;
-            }
-        }
+        //private void checkBoxResponsable_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    comboBoxResponsable.Enabled = true;
+        //    if (!checkBoxResponsable.Checked)
+        //    {
+        //        comboBoxResponsable.Enabled = false;
+        //    }
+        //}
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
+            IncidenciasRequest inc = new IncidenciasRequest();
+            inc.fechaCreacion = DateTime.Now;
+            inc.estado = EstadoIncidencia.ABIERTA;
+            inc.descripcion = cajaDesc.Text;
+            inc.tipo = comboBoxTipo.Text;
+            inc.subtipo = comboBoxSubtipo.Text;
+            inc.sub_subtipo = cajaSub_sub.Text;
+            inc.creador = creador;
+            inc.adjuntoUrl = archivoSeleccionado;
+            inc.equipo = CajaEquipo.Text;
             MessageBox.Show("La incidencia ha sido creada con éxito.", "Incidencia creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
@@ -128,30 +127,50 @@ namespace ProyectoIntermodular.Formularios
             if (result == DialogResult.OK)
             {
 
-                string archivoSeleccionado = openFileDialog.FileName;
+                archivoSeleccionado = openFileDialog.FileName;
                 lblArchivo.Text = archivoSeleccionado;
             }
         }
 
         private async void comboBoxTipo_SelectedIndexChanged(object sender, EventArgs e)
-        { 
-                IncidenciasSubtipos tipo = comboBoxTipo.SelectedItem as IncidenciasSubtipos;
+        {
+            IncidenciasSubtipos tipo = comboBoxTipo.SelectedItem as IncidenciasSubtipos;
 
-                listaSubtipos = await controladortipos.GetSubtipos(tipo.tipo.ToString());
+            listaSubtipos = await controladortipos.GetSubtipos(tipo.tipo.ToString());
 
-                if (listaSubtipos != null)
-                {
-                    // Configurar el ComboBox para mostrar el nombre de cada persona
-                    comboBoxSubtipo.DisplayMember = "subtipoNombre";
+            if (listaSubtipos != null)
+            {
+                // Configurar el ComboBox para mostrar el nombre de cada persona
+                comboBoxSubtipo.DisplayMember = "subtipoNombre";
 
-                    // Asignar la lista de personas como la fuente de datos del ComboBox
-                    comboBoxSubtipo.DataSource = listaSubtipos;
-                }
-                else
-                {
-                    MessageBox.Show("Error al cargar la lista de personas.");
-                }
-            
+                // Asignar la lista de personas como la fuente de datos del ComboBox
+                comboBoxSubtipo.DataSource = listaSubtipos;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar la lista de personas.");
+            }
+
+        }
+
+        private async void comboBoxSubtipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string subtipo = comboBoxSubtipo.SelectedValue.ToString();
+
+            listaSub_subtipos = await controladortipos.GetSub_Subtipos(subtipo);
+
+            if (listaSub_subtipos != null)
+            {
+                // Configurar el ComboBox para mostrar el nombre de cada persona
+                comboBoxSubsubTipo.DisplayMember = "sub_subtipo";
+
+                // Asignar la lista de personas como la fuente de datos del ComboBox
+                comboBoxSubsubTipo.DataSource = listaSub_subtipos;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar la lista de personas.");
+            }
         }
     }
 }

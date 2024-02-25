@@ -66,5 +66,19 @@ namespace ProyectoIntermodular.Clases
         RESUELTA,
         CERRADA
     }
+    public class IncidenciasRequest
+    {
+
+        public string tipo { get; set; }
+
+        public string subtipo { get; set; }
+        public string sub_subtipo { get; set; }
+        public DateTime fechaCreacion { get; set; }
+        public string descripcion { get; set; }
+        public EstadoIncidencia estado { get; set; }
+        public string adjuntoUrl { get; set; }
+        public PerfilesResponse creador { get; set; }
+        public string equipo { get; set; }
+    }
 }
 

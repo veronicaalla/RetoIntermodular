@@ -39,13 +39,39 @@ namespace ProyectoIntermodular.Controladores
 
             try
             {
-                HttpResponseMessage response = await client.GetAsync($"http://localhost:8080/api/personal/{equipo}");
+                HttpResponseMessage response = await client.GetAsync($"http://localhost:8080/api/incidencias-subtipos/subtipos?tipo={equipo}");
                 response.EnsureSuccessStatusCode();
 
                 string responseJson = await response.Content.ReadAsStringAsync();
 
                 List<string> subtipos = JsonConvert.DeserializeObject<List<string>>(responseJson);
                 return subtipos;
+            }
+            catch (HttpRequestException ex)
+            {
+                // Maneja las excepciones específicas de las solicitudes HTTP
+                Console.WriteLine("Error al enviar la solicitud HTTP: " + ex.Message);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                // Maneja cualquier otra excepción que pueda ocurrir
+                Console.WriteLine("Error al procesar la respuesta: " + ex.Message);
+                return null;
+            }
+        }
+        public async Task<List<string>> GetSub_Subtipos(String subtipo)
+        {
+
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync($"http://localhost:8080/api/incidencias-subtipos/subsubtipos?subtipo={subtipo}");
+                response.EnsureSuccessStatusCode();
+
+                string responseJson = await response.Content.ReadAsStringAsync();
+
+                List<string> sub_subtipos = JsonConvert.DeserializeObject<List<string>>(responseJson);
+                return sub_subtipos;
             }
             catch (HttpRequestException ex)
             {
