@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoIntermodular.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,10 @@ namespace ProyectoIntermodular.Clases
     public class Perfiles
     {
 
-        public int personal_id { get; set; }  
+        public int Id{ get; set; }  
         public string dominio { get; set; }  
         public string educantabria { get; set; }  
-        public char password { get; set; }  
+        public string password { get; set; }  
         public PerfilEnum perfil { get; set; }  
 
         
@@ -26,9 +27,9 @@ namespace ProyectoIntermodular.Clases
         }
 
 
-        public Perfiles(int personal_id, string dominio, string educantabria, char password, PerfilEnum perfil)
+        public Perfiles(int personal_id, string dominio, string educantabria, string password, PerfilEnum perfil)
         {
-            this.personal_id = personal_id;
+            this.Id = personal_id;
             this.dominio = dominio;
             this.educantabria = educantabria;
             this.password = password;
@@ -39,8 +40,18 @@ namespace ProyectoIntermodular.Clases
   
     public enum PerfilEnum
     {
-        ADMIN,
-        PROFESOR
+        administrador,
+        profesor,
+        otros
     }
+}
+public class PerfilesResponse
+{
+
+    public int personal_id { get; set; }
+    public string dominio { get; set; }
+    public string educantabria { get; set; }
+    public string password { get; set; }
+    public string perfil { get; set; }
 }
 
