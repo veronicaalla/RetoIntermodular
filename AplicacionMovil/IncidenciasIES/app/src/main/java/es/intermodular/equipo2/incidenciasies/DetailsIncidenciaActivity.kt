@@ -1,5 +1,7 @@
 package es.intermodular.equipo2.incidenciasies
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,5 +25,12 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
         //Recogemos la incidenica
         val incidencia = intent.getSerializableExtra("verIncidencia")
         Log.i("Paso de incidencia ", incidencia.toString())
+
+        // Configuramos el onClickListener para el botón "Volver"
+        binding.btnVolver.setOnClickListener {
+            val intent = Intent()
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+        }
     }
 }

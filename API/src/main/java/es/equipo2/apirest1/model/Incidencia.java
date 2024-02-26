@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -28,7 +30,9 @@ public class Incidencia implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Estado_Incidencia estado;
 
+
 	private Date fechaCierre;
+
 
 	private Date fechaCreacion;
 
