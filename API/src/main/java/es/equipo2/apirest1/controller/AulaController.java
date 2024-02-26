@@ -1,6 +1,7 @@
 package es.equipo2.apirest1.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,10 +31,8 @@ public class AulaController {
     }
 
     @GetMapping("/{num}")
-    public ResponseEntity<Aula> obtenerAulaPorNum(@PathVariable Integer num) {
-        return aulaRepository.findById(num)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public Aula obtenerAulaPorNum(@PathVariable Integer num) {
+        return aulaRepository.findById(num).orElse(null);
     }
 	
 	@GetMapping("/planta/{planta}")
