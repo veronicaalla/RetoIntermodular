@@ -141,8 +141,6 @@
                             android:layout_height="wrap_content"
                             android:clickable="false"
                             android:text="@string/prueba_estado" />
-
-
                     </TableRow>
 
                     <TableRow
@@ -183,6 +181,45 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp">
+
+                    <TextView
+                        android:id="@+id/textcoment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crar comentario:"
+                        android:textStyle="italic" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/editTextNuevoComentario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:hint="Comentario..."
+                            android:inputType="textMultiLine" />
+
+                        <ImageView
+                            android:id="@+id/imagenEnviarComentario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/baseline_near_me_24" />
+
+
+                    </LinearLayout>
+
 
                     <LinearLayout
                         android:layout_width="match_parent"

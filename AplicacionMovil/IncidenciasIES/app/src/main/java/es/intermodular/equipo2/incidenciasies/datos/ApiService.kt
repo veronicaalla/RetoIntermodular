@@ -1,5 +1,6 @@
 package es.intermodular.equipo2.incidenciasies.datos
 
+import es.intermodular.equipo2.incidenciasies.modelo.ComentarioResponse
 import es.intermodular.equipo2.incidenciasies.modelo.CrearIncidencia
 import es.intermodular.equipo2.incidenciasies.modelo.EquipoResponse
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
@@ -65,4 +66,11 @@ interface ApiService {
     fun obtenerEquipoPorId(@Path("id") id: Int): Call<EquipoResponse>
 
 
+    //endregion
+
+    //region COMENTARIOS
+    @GET("comentarios/incidencia/{incidenciaId}")
+    fun obtenerComentariosPorIncidencia(@Path("incidenciaId") incidenciaId: Int): Call<List<ComentarioResponse>>
+
+    //endregion
 }
