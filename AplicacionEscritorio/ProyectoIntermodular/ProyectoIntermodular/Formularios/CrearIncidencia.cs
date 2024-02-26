@@ -169,18 +169,18 @@ namespace ProyectoIntermodular.Formularios
 
             listaSub_subtipos = await controladortipos.GetSub_Subtipos(subtipo);
 
-            if (listaSub_subtipos != null)
-            {
-                // Configurar el ComboBox para mostrar el nombre de cada persona
-                comboBoxSubsubTipo.DisplayMember = "sub_subtipo";
+            //if (listaSub_subtipos != null)
+            //{
+            //    // Configurar el ComboBox para mostrar el nombre de cada persona
+            //    comboBoxSubsubTipo.DisplayMember = "sub_subtipo";
 
-                // Asignar la lista de personas como la fuente de datos del ComboBox
-                comboBoxSubsubTipo.DataSource = listaSub_subtipos;
-            }
-            else
-            {
-                MessageBox.Show("Error al cargar la lista de personas.");
-            }
+            //    // Asignar la lista de personas como la fuente de datos del ComboBox
+            //    comboBoxSubsubTipo.DataSource = listaSub_subtipos;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error al cargar la lista de personas.");
+            //}
         }
     }
 }
