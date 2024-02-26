@@ -30,10 +30,10 @@ public class Incidencia implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Estado_Incidencia estado;
 
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+
 	private Date fechaCierre;
 
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+
 	private Date fechaCreacion;
 
 	@Column(name = "tiempo_dec")
