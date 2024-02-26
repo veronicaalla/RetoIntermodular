@@ -32,6 +32,7 @@
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnDepartamentos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCrear
@@ -48,7 +49,7 @@
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnVolver.Location = new System.Drawing.Point(372, 126);
+            this.btnVolver.Location = new System.Drawing.Point(372, 183);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
             this.btnVolver.TabIndex = 2;
@@ -67,12 +68,24 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // btnDepartamentos
+            // 
+            this.btnDepartamentos.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnDepartamentos.Location = new System.Drawing.Point(168, 121);
+            this.btnDepartamentos.Name = "btnDepartamentos";
+            this.btnDepartamentos.Size = new System.Drawing.Size(117, 32);
+            this.btnDepartamentos.TabIndex = 5;
+            this.btnDepartamentos.Text = "Departamentos";
+            this.btnDepartamentos.UseVisualStyleBackColor = false;
+            this.btnDepartamentos.Click += new System.EventHandler(this.btnDepartamentos_Click);
+            // 
             // ControlUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(459, 172);
+            this.ClientSize = new System.Drawing.Size(459, 218);
+            this.Controls.Add(this.btnDepartamentos);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnCrear);
@@ -90,5 +103,6 @@
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnDepartamentos;
     }
 }
