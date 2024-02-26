@@ -31,4 +31,13 @@ namespace ProyectoIntermodular.Clases
             this.personal = jefdep_id;
         }
     }
+
+    public class DepartementoRequest
+    {
+        public string cod { get; set; }
+        public string nombre { get; set; }
+        public bool activo { get; set; }
+        public int personal { get; set; }
+
+    }
 }

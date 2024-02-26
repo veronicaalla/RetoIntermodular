@@ -43,6 +43,7 @@
             // checkBoxActivo
             // 
             this.checkBoxActivo.AutoSize = true;
+            this.checkBoxActivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxActivo.Location = new System.Drawing.Point(37, 145);
             this.checkBoxActivo.Name = "checkBoxActivo";
             this.checkBoxActivo.Size = new System.Drawing.Size(66, 20);
@@ -75,33 +76,40 @@
             // lblPerfil
             // 
             this.lblPerfil.AutoSize = true;
+            this.lblPerfil.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPerfil.Location = new System.Drawing.Point(34, 107);
             this.lblPerfil.Name = "lblPerfil";
-            this.lblPerfil.Size = new System.Drawing.Size(139, 16);
+            this.lblPerfil.Size = new System.Drawing.Size(126, 15);
             this.lblPerfil.TabIndex = 36;
             this.lblPerfil.Text = "Jefe de departamento";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(34, 65);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.Size = new System.Drawing.Size(50, 15);
             this.lblNombre.TabIndex = 35;
             this.lblNombre.Text = "Nombre";
             // 
             // lblCod
             // 
             this.lblCod.AutoSize = true;
+            this.lblCod.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCod.Location = new System.Drawing.Point(34, 26);
             this.lblCod.Name = "lblCod";
-            this.lblCod.Size = new System.Drawing.Size(51, 16);
+            this.lblCod.Size = new System.Drawing.Size(46, 15);
             this.lblCod.TabIndex = 34;
             this.lblCod.Text = "Código";
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnFinalizar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnFinalizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizar.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnFinalizar.Location = new System.Drawing.Point(178, 197);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(75, 29);
@@ -112,7 +120,11 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnVolver.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVolver.Location = new System.Drawing.Point(85, 197);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 29);
@@ -125,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(339, 253);
             this.Controls.Add(this.checkBoxActivo);
             this.Controls.Add(this.comboJefe);
@@ -136,6 +148,7 @@
             this.Controls.Add(this.lblCod);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnVolver);
+            this.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarDepartamento";
             this.Text = "ModificarDepartamento";

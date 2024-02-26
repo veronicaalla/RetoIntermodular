@@ -63,7 +63,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxCriterios.SuspendLayout();
             this.SuspendLayout();
@@ -83,7 +82,7 @@
             this.Creador,
             this.Responsable,
             this.Equipo});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 205);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 195);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -169,8 +168,12 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSeleccionar.Location = new System.Drawing.Point(12, 512);
+            this.btnSeleccionar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSeleccionar.Location = new System.Drawing.Point(12, 502);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(116, 41);
             this.btnSeleccionar.TabIndex = 1;
@@ -180,8 +183,11 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCrear.Location = new System.Drawing.Point(923, 512);
+            this.btnCrear.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrear.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCrear.Location = new System.Drawing.Point(923, 502);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(93, 41);
             this.btnCrear.TabIndex = 3;
@@ -191,8 +197,12 @@
             // 
             // btnEli
             // 
-            this.btnEli.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnEli.Location = new System.Drawing.Point(814, 512);
+            this.btnEli.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnEli.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEli.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEli.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEli.Location = new System.Drawing.Point(814, 502);
             this.btnEli.Name = "btnEli";
             this.btnEli.Size = new System.Drawing.Size(93, 41);
             this.btnEli.TabIndex = 4;
@@ -219,12 +229,11 @@
             this.gbxCriterios.Controls.Add(this.cbxProfesor);
             this.gbxCriterios.Controls.Add(this.button2);
             this.gbxCriterios.Controls.Add(this.button1);
-            this.gbxCriterios.Location = new System.Drawing.Point(12, 23);
+            this.gbxCriterios.Location = new System.Drawing.Point(12, 13);
             this.gbxCriterios.Name = "gbxCriterios";
             this.gbxCriterios.Size = new System.Drawing.Size(1004, 167);
             this.gbxCriterios.TabIndex = 5;
             this.gbxCriterios.TabStop = false;
-            this.gbxCriterios.Text = "Criterios";
             // 
             // cmxSub
             // 
@@ -239,6 +248,7 @@
             // cbxSub
             // 
             this.cbxSub.AutoSize = true;
+            this.cbxSub.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxSub.Location = new System.Drawing.Point(237, 128);
             this.cbxSub.Name = "cbxSub";
             this.cbxSub.Size = new System.Drawing.Size(18, 17);
@@ -249,18 +259,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.label1.Location = new System.Drawing.Point(670, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 16);
+            this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 20;
             this.label1.Text = "Hasta:";
             // 
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
+            this.lblDesde.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesde.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblDesde.Location = new System.Drawing.Point(670, 38);
             this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(51, 16);
+            this.lblDesde.Size = new System.Drawing.Size(43, 15);
             this.lblDesde.TabIndex = 19;
             this.lblDesde.Text = "Desde:";
             // 
@@ -285,9 +299,12 @@
             // cbxFecha
             // 
             this.cbxFecha.AutoSize = true;
+            this.cbxFecha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxFecha.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxFecha.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.cbxFecha.Location = new System.Drawing.Point(567, 36);
             this.cbxFecha.Name = "cbxFecha";
-            this.cbxFecha.Size = new System.Drawing.Size(74, 20);
+            this.cbxFecha.Size = new System.Drawing.Size(64, 19);
             this.cbxFecha.TabIndex = 16;
             this.cbxFecha.Text = "Fechas";
             this.cbxFecha.UseVisualStyleBackColor = true;
@@ -306,6 +323,7 @@
             // cbxTipo
             // 
             this.cbxTipo.AutoSize = true;
+            this.cbxTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxTipo.Location = new System.Drawing.Point(485, 128);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(18, 17);
@@ -326,6 +344,7 @@
             // cbxEstado
             // 
             this.cbxEstado.AutoSize = true;
+            this.cbxEstado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxEstado.Location = new System.Drawing.Point(7, 128);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(18, 17);
@@ -346,6 +365,7 @@
             // cbxAula
             // 
             this.cbxAula.AutoSize = true;
+            this.cbxAula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxAula.Location = new System.Drawing.Point(7, 78);
             this.cbxAula.Name = "cbxAula";
             this.cbxAula.Size = new System.Drawing.Size(18, 17);
@@ -366,6 +386,7 @@
             // cbxProfesor
             // 
             this.cbxProfesor.AutoSize = true;
+            this.cbxProfesor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxProfesor.Location = new System.Drawing.Point(7, 33);
             this.cbxProfesor.Name = "cbxProfesor";
             this.cbxProfesor.Size = new System.Drawing.Size(18, 17);
@@ -375,7 +396,11 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.Location = new System.Drawing.Point(828, 124);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(67, 27);
@@ -385,7 +410,10 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(911, 124);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 27);
@@ -395,39 +423,31 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnVolver.Location = new System.Drawing.Point(134, 512);
+            this.btnVolver.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnVolver.Location = new System.Drawing.Point(143, 502);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(93, 41);
-            this.btnVolver.TabIndex = 6;
+            this.btnVolver.TabIndex = 8;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSalir.Location = new System.Drawing.Point(134, 512);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(93, 41);
-            this.btnSalir.TabIndex = 7;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1028, 565);
-            this.Controls.Add(this.gbxCriterios);
-            this.Controls.Add(this.btnSalir);
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(1028, 557);
             this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.gbxCriterios);
             this.Controls.Add(this.btnEli);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dataGridView1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Principal";
             this.Text = "Principal";
@@ -461,7 +481,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxCriterios.SuspendLayout();
             this.SuspendLayout();
@@ -691,24 +710,13 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSalir.Location = new System.Drawing.Point(134, 512);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(93, 41);
-            this.btnSalir.TabIndex = 7;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
+           
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1028, 565);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbxCriterios);
             this.Controls.Add(this.btnEli);
@@ -748,8 +756,6 @@
         private System.Windows.Forms.CheckBox cbxFecha;
         private System.Windows.Forms.ComboBox cmxSub;
         private System.Windows.Forms.CheckBox cbxSub;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtipo;
@@ -761,5 +767,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Creador;
         private System.Windows.Forms.DataGridViewTextBoxColumn Responsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Equipo;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -50,15 +50,20 @@
             // lblArchivo
             // 
             this.lblArchivo.AutoSize = true;
+            this.lblArchivo.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArchivo.Location = new System.Drawing.Point(145, 175);
             this.lblArchivo.Name = "lblArchivo";
-            this.lblArchivo.Size = new System.Drawing.Size(177, 16);
+            this.lblArchivo.Size = new System.Drawing.Size(159, 15);
             this.lblArchivo.TabIndex = 37;
             this.lblArchivo.Text = "No se añadió ningún archivo";
             // 
             // btnAñadirArchivo
             // 
-            this.btnAñadirArchivo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAñadirArchivo.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAñadirArchivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAñadirArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAñadirArchivo.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadirArchivo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAñadirArchivo.Location = new System.Drawing.Point(12, 172);
             this.btnAñadirArchivo.Name = "btnAñadirArchivo";
             this.btnAñadirArchivo.Size = new System.Drawing.Size(116, 23);
@@ -69,7 +74,11 @@
             // 
             // btnAñadir
             // 
-            this.btnAñadir.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAñadir.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAñadir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAñadir.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAñadir.Location = new System.Drawing.Point(553, 246);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(75, 23);
@@ -80,7 +89,11 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnVolver.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVolver.Location = new System.Drawing.Point(448, 246);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
@@ -93,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(655, 293);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAñadir);

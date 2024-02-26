@@ -171,7 +171,8 @@ namespace ProyectoIntermodular.Formularios
                 {
                     url = $"http://localhost:8080/api/incidencias-subtipos/id-objeto?tipo={tipo}&subtipo={subtipo}";
                 }
-                else {
+                else
+                {
                     // Construir la URL de la solicitud GET
                     url = $"http://localhost:8080/api/incidencias-subtipos/id-objeto?tipo={tipo}&subtipo={subtipo}&subsubtipo={subsubtipo}";
                 }

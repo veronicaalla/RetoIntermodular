@@ -77,9 +77,11 @@
             // lblPerfil
             // 
             this.lblPerfil.AutoSize = true;
+            this.lblPerfil.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPerfil.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblPerfil.Location = new System.Drawing.Point(12, 137);
             this.lblPerfil.Name = "lblPerfil";
-            this.lblPerfil.Size = new System.Drawing.Size(37, 16);
+            this.lblPerfil.Size = new System.Drawing.Size(35, 15);
             this.lblPerfil.TabIndex = 16;
             this.lblPerfil.Text = "Perfil";
             this.lblPerfil.Click += new System.EventHandler(this.lblPerfil_Click);
@@ -87,9 +89,11 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
+            this.lblContraseña.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContraseña.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblContraseña.Location = new System.Drawing.Point(12, 99);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(76, 16);
+            this.lblContraseña.Size = new System.Drawing.Size(66, 15);
             this.lblContraseña.TabIndex = 15;
             this.lblContraseña.Text = "Contraseña";
             this.lblContraseña.Click += new System.EventHandler(this.lblContraseña_Click);
@@ -97,9 +101,11 @@
             // lblEducantabria
             // 
             this.lblEducantabria.AutoSize = true;
+            this.lblEducantabria.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEducantabria.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblEducantabria.Location = new System.Drawing.Point(12, 58);
             this.lblEducantabria.Name = "lblEducantabria";
-            this.lblEducantabria.Size = new System.Drawing.Size(87, 16);
+            this.lblEducantabria.Size = new System.Drawing.Size(75, 15);
             this.lblEducantabria.TabIndex = 14;
             this.lblEducantabria.Text = "Educantabria";
             this.lblEducantabria.Click += new System.EventHandler(this.lblEducantabria_Click);
@@ -107,16 +113,21 @@
             // lblDominio
             // 
             this.lblDominio.AutoSize = true;
+            this.lblDominio.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDominio.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblDominio.Location = new System.Drawing.Point(12, 19);
             this.lblDominio.Name = "lblDominio";
-            this.lblDominio.Size = new System.Drawing.Size(57, 16);
+            this.lblDominio.Size = new System.Drawing.Size(50, 15);
             this.lblDominio.TabIndex = 13;
             this.lblDominio.Text = "Dominio";
             this.lblDominio.Click += new System.EventHandler(this.lblDominio_Click);
             // 
             // btnCrear
             // 
-            this.btnCrear.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnCrear.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCrear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCrear.Location = new System.Drawing.Point(156, 190);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 29);
@@ -127,7 +138,10 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnVolver.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVolver.Location = new System.Drawing.Point(63, 190);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 29);
@@ -140,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(315, 231);
             this.Controls.Add(this.comboPerfil);
             this.Controls.Add(this.cajaContra);

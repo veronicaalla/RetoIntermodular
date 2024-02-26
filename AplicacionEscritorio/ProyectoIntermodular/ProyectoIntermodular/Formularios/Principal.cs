@@ -35,12 +35,12 @@ namespace ProyectoIntermodular
             if (perfiles.perfil==PerfilEnum.administrador)
             {
                 btnVolver.Show();
-                btnSalir.Hide();
+
             }
             else
             {
                 btnVolver.Hide();
-                btnSalir.Show();
+
             }
 
             controladorIncidencias = new ControladorIncidencias();
@@ -59,12 +59,12 @@ namespace ProyectoIntermodular
             if (perfiles.perfil == PerfilEnum.administrador)
             {
                 btnVolver.Show();
-                btnSalir.Hide();
+
             }
             else
             {
                 btnVolver.Hide();
-                btnSalir.Show();
+
             }
 
             controladorIncidencias = new ControladorIncidencias();
@@ -81,12 +81,12 @@ namespace ProyectoIntermodular
             if (perfiles.perfil == PerfilEnum.administrador)
             {
                 btnVolver.Show();
-                btnSalir.Hide();
+
             }
             else
             {
                 btnVolver.Hide();
-                btnSalir.Show();
+
             }
 
             controladorIncidencias = new ControladorIncidencias();
