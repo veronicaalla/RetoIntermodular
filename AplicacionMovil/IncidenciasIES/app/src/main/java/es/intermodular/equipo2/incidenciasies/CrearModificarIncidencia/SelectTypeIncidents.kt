@@ -20,6 +20,7 @@ class SelectTypeIncidents : AppCompatActivity() {
         binding = ActivitySelectTypeIncidentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         //--------------- DAMOS FUNCIONALIDAD AL TOOL BAR ----------------
         binding.menuAtras.setOnClickListener {
             finish()
@@ -97,9 +98,13 @@ class SelectTypeIncidents : AppCompatActivity() {
 
         //Damos funcionalidad al boton siguiente
         binding.btnSiguiente.setOnClickListener {
+            //Lo primero que debemos hacer, es obtener el usuario, para poder pasarselo despues
+            val idPerfil = intent.getIntExtra("idPerfil", -1)
+
             val tipo = TipoDeIncidenciaSeleccionada.toString()
             val intent = Intent(this, EditIncident::class.java)
             intent.putExtra("tipo", tipo)
+            intent.putExtra("idPerfil", idPerfil)
             intent.putExtra("incidencia", 0)
             startActivity(intent)
         }

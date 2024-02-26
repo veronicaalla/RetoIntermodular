@@ -57,6 +57,11 @@ public class personalControlador {
         return personalRepository.findByApellido2(apellido);
     }
 
+    @GetMapping("/ultimo-id")
+    public Integer obtenerUltimoId() {
+        return personalRepository.findMaxId();
+    }
+    
     @PostMapping
     public Personal nuevoPersonal(@RequestBody Personal nuevoPersonal) {
         return personalRepository.save(nuevoPersonal);
