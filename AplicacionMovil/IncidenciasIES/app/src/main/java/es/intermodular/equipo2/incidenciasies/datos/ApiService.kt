@@ -54,7 +54,7 @@ interface ApiService {
 
 
     //Eliminar una incidencia
-    @DELETE("/tu-endpoint/{num}")
+    @DELETE("incidencias/{num}")
     fun borrarIncidencia(@Path("num") num: Int): Call<IncidenciaResponse>
 
     //endregion

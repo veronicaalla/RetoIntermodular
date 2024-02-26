@@ -1,5 +1,6 @@
 package es.intermodular.equipo2.incidenciasies
 
+
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -7,17 +8,26 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.SelectTypeIncidents
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityPrincipalBinding
+import es.intermodular.equipo2.incidenciasies.datos.Api
 import es.intermodular.equipo2.incidenciasies.datos.ApiService
 import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
+import es.intermodular.equipo2.incidenciasies.menuPrincipal.AcercaDeActivity
+import es.intermodular.equipo2.incidenciasies.menuPrincipal.AyudaActivity
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 import es.intermodular.equipo2.incidenciasies.recyclerIncidencias.IncidenciaAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 
 
@@ -29,6 +39,7 @@ class Principal : AppCompatActivity() {
 
     private var idPerfil: Int = 0
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,11 +47,13 @@ class Principal : AppCompatActivity() {
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        adapter = IncidenciaAdapter(emptyList(), ::navigateToDetalil, ::eliminarIncidencia)
+
         isOnline(this)
 
         //recuperamos el id del usuario que se ha pasado anteriormente, mediante un Intent
         idPerfil = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
-        
+
         //region FUNCINALIDAD BOTONES
         //Boton de añadir
         binding.btnAddIncidencias.setOnClickListener {
@@ -98,15 +111,56 @@ class Principal : AppCompatActivity() {
     }
 
     private fun initUI() {
+        binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
         //Damos valor al recycler view
         retrofit = RetrofitBuilder.build()
-        adapter = IncidenciaAdapter { incidence -> navigateToDetalil (incidence)}
 
-        binding.rvIncidencias.layoutManager = LinearLayoutManager(this)
+        binding.rvIncidencias.adapter = IncidenciaAdapter(
+            onItemSelect = { incidence -> navigateToDetalil(incidence) },
+            onItemDelete = { incidence -> eliminarIncidencia(incidence) }
+        )
+
+
         binding.rvIncidencias.adapter = adapter
 
         //Mostramos los items
         obtenerIncidencias(idPerfil)
+    }
+
+    private fun eliminarIncidencia(incidenciasResponse: IncidenciaResponse) {
+        // Creamos la ventana emergente
+        val dialog = MaterialAlertDialogBuilder(this)
+            .setTitle("Eliminar")
+            .setMessage("¿Estas seguro de que desea eliminar la incidencia?")
+
+            // Acción que se realiza al dar "Añadir"
+            .setPositiveButton("SI") { _, _ ->
+
+                Log.i("Incidencia para elliminar", incidenciasResponse.toString())
+                Api.retrofitService.borrarIncidencia(incidenciasResponse.idIncidencia)
+                    .enqueue(object : Callback<IncidenciaResponse> {
+                        override fun onResponse(
+                            call: Call<IncidenciaResponse>,
+                            response: Response<IncidenciaResponse>
+                        ) {
+                            if (response.isSuccessful) {
+                                val myResponse = response.body()
+                                Log.i("Incidencia eliminada ", myResponse.toString())
+
+                                obtenerIncidencias(idPerfil)
+                            } else {
+                                Log.i("No se ha podido eliminar", response.message())
+                            }
+                        }
+
+                        override fun onFailure(call: Call<IncidenciaResponse>, t: Throwable) {
+                            Log.i("Eror en la solicitud", t.message.toString())
+                        }
+                    })
+            }
+            .setNegativeButton("NO", null)
+            .create()
+        dialog.show()
     }
 
     private fun navigateToDetalil(incidencia: IncidenciaResponse) {
@@ -167,78 +221,98 @@ class Principal : AppCompatActivity() {
         binding.btnCerradas.text = "${incidenciasCerradasFuncionalidad.size} Cerradas"
 
         // Configurar el OnClickListener para cada botón
+
         binding.btnAbiertas.setOnClickListener {
-            val intent = Intent(this, SpecificListIncidents::class.java)
-            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Abiertas")
-            intent.putExtra("EXTRA_INCIDENCIAS", incidenciasAbiertasFuncionalidad.toTypedArray())
-            startActivity(intent)
+            if (incidenciasAbiertasFuncionalidad.size != 0) {
+                val intent = Intent(this, SpecificListIncidents::class.java)
+                intent.putExtra("EXTRA_TYPE_INCIDENTS", "Abiertas")
+                intent.putExtra(
+                    "EXTRA_INCIDENCIAS",
+                    incidenciasAbiertasFuncionalidad.toTypedArray()
+                )
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "No hay incidencias", Toast.LENGTH_SHORT).show()
+            }
         }
+
+
         binding.btnAsignadas.setOnClickListener {
-            val intent = Intent(this, SpecificListIncidents::class.java)
-            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Asignadas")
-            intent.putExtra("EXTRA_INCIDENCIAS", incidenciasAsignadasFuncionalidad.toTypedArray())
-            startActivity(intent)
+            if (incidenciasAsignadasFuncionalidad.size != 0) {
+                val intent = Intent(this, SpecificListIncidents::class.java)
+                intent.putExtra("EXTRA_TYPE_INCIDENTS", "Asignadas")
+                intent.putExtra(
+                    "EXTRA_INCIDENCIAS",
+                    incidenciasAsignadasFuncionalidad.toTypedArray()
+                )
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "No hay incidencias", Toast.LENGTH_SHORT).show()
+            }
         }
+
+
+
         binding.btnEnProceso.setOnClickListener {
-            val intent = Intent(this, SpecificListIncidents::class.java)
-            intent.putExtra("EXTRA_TYPE_INCIDENTS", "En proceso")
-            intent.putExtra("EXTRA_INCIDENCIAS", incidenciasEnProcesoFuncionalidad.toTypedArray())
-            startActivity(intent)
+            if (incidenciasEnProcesoFuncionalidad.size != 0) {
+                val intent = Intent(this, SpecificListIncidents::class.java)
+                intent.putExtra("EXTRA_TYPE_INCIDENTS", "En proceso")
+                intent.putExtra(
+                    "EXTRA_INCIDENCIAS",
+                    incidenciasEnProcesoFuncionalidad.toTypedArray()
+                )
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "No hay incidencias", Toast.LENGTH_SHORT).show()
+            }
         }
+
+
+
         binding.btnResueltas.setOnClickListener {
-            val intent = Intent(this, SpecificListIncidents::class.java)
-            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Resueltas")
-            intent.putExtra("EXTRA_INCIDENCIAS", incidenciasResueltasFuncionalidad.toTypedArray())
-            startActivity(intent)
+            if (incidenciasResueltasFuncionalidad.size != 0) {
+                val intent = Intent(this, SpecificListIncidents::class.java)
+                intent.putExtra("EXTRA_TYPE_INCIDENTS", "Resueltas")
+                intent.putExtra(
+                    "EXTRA_INCIDENCIAS",
+                    incidenciasResueltasFuncionalidad.toTypedArray()
+                )
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "No hay incidencias", Toast.LENGTH_SHORT).show()
+            }
         }
+
+
+
         binding.btnCerradas.setOnClickListener {
-            val intent = Intent(this, SpecificListIncidents::class.java)
-            intent.putExtra("EXTRA_TYPE_INCIDENTS", "Cerradas")
-            intent.putExtra("EXTRA_INCIDENCIAS", incidenciasCerradasFuncionalidad.toTypedArray())
-            startActivity(intent)
+            if (incidenciasResueltasFuncionalidad.size != 0) {
+                val intent = Intent(this, SpecificListIncidents::class.java)
+                intent.putExtra("EXTRA_TYPE_INCIDENTS", "Cerradas")
+                intent.putExtra(
+                    "EXTRA_INCIDENCIAS",
+                    incidenciasCerradasFuncionalidad.toTypedArray()
+                )
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "No hay incidencias", Toast.LENGTH_SHORT).show()
+            }
         }
+
     }
 
-
     private fun mostrarLayoutAyuda() {
-        // Inflar el layout activity_help.xml
-        val helpView = layoutInflater.inflate(R.layout.activity_help, null)
-
-        // Encontrar el botón de retroceso en el layout inflado
-        val menuAtras = helpView.findViewById<ImageView>(R.id.menuAtras)
-
-        // Configurar el OnClickListener para el botón de retroceso
-        menuAtras.setOnClickListener {
-            // Crear un intent para iniciar la actividad Principal
-            val intent = Intent(this, Principal::class.java)
-            // Iniciar la actividad Principal
-            startActivity(intent)
-            // Cerrar la actividad actual si es necesario
-            finish()
-        }
-
-        // Añadir la vista a tu layout principal
-        setContentView(helpView)
+        // Crear un intent para iniciar la actividad AyudaActivity
+        val intent = Intent(this, AyudaActivity::class.java)
+        // Iniciar la actividad AyudaActivity
+        startActivity(intent)
     }
 
     private fun mostrarLayoutAcercaDe() {
-        // Inflar el layout activity_about.xml
-        val aboutView = layoutInflater.inflate(R.layout.activity_about, null)
-
-        // Encontrar el botón de retroceso en el layout inflado
-        val menuAtras = aboutView.findViewById<ImageView>(R.id.menuAtras)
-
-        // Configurar el OnClickListener para el botón de retroceso
-        menuAtras.setOnClickListener {
-            // Crear un intent para iniciar la actividad Principal
-            val intent = Intent(this, Principal::class.java)
-            // Iniciar la actividad Principal
-            startActivity(intent)
-            // Cerrar la actividad actual si es necesario
-            finish()
-        }
-        // Añadir la vista a tu layout principal
-        setContentView(aboutView)
+        // Crear un intent para iniciar la actividad AcercaDeActivity
+        val intent = Intent(this, AcercaDeActivity::class.java)
+        // Iniciar la actividad AcercaDeActivity
+        startActivity(intent)
     }
 
     fun isOnline(context: Context): Boolean {
