@@ -32,16 +32,7 @@ namespace ProyectoIntermodular
             
             usuario = inicial.usuario;
 
-            if (perfiles.perfil==PerfilEnum.ADMIN)
-            {
-                btnVolver.Show();
-                btnSalir.Hide();
-            }
-            else
-            {
-                btnVolver.Hide();
-                btnSalir.Show();
-            }
+            
 
             controladorIncidencias = new ControladorIncidencias();
             inci = new Incidencias();
@@ -56,16 +47,7 @@ namespace ProyectoIntermodular
 
             usuario = admin.usuario;
 
-            if (perfiles.perfil == PerfilEnum.ADMIN)
-            {
-                btnVolver.Show();
-                btnSalir.Hide();
-            }
-            else
-            {
-                btnVolver.Hide();
-                btnSalir.Show();
-            }
+           
 
             controladorIncidencias = new ControladorIncidencias();
             inci = new Incidencias();
@@ -78,16 +60,7 @@ namespace ProyectoIntermodular
             this.StartPosition = FormStartPosition.CenterScreen;
             Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
 
-            if (perfiles.perfil == PerfilEnum.ADMIN)
-            {
-                btnVolver.Show();
-                btnSalir.Hide();
-            }
-            else
-            {
-                btnVolver.Hide();
-                btnSalir.Show();
-            }
+           
 
             controladorIncidencias = new ControladorIncidencias();
             inci = new Incidencias();

@@ -40,6 +40,7 @@ namespace ProyectoIntermodular
 
         private async void btnIniciar_Click(object sender, EventArgs e)
         {
+
             pictureBox1.Show();
             pictureBox1.Enabled = true;
 

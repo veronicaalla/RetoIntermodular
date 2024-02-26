@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearDepartamento));
             this.comboJefe = new System.Windows.Forms.ComboBox();
-            this.cajaEducantabria = new System.Windows.Forms.TextBox();
-            this.cajaDominio = new System.Windows.Forms.TextBox();
+            this.cajaNombre = new System.Windows.Forms.TextBox();
+            this.cajaCodigo = new System.Windows.Forms.TextBox();
             this.lblPerfil = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCod = new System.Windows.Forms.Label();
@@ -42,62 +42,69 @@
             // 
             // comboJefe
             // 
+            this.comboJefe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboJefe.FormattingEnabled = true;
             this.comboJefe.Location = new System.Drawing.Point(177, 107);
             this.comboJefe.Name = "comboJefe";
             this.comboJefe.Size = new System.Drawing.Size(121, 24);
             this.comboJefe.TabIndex = 30;
-            this.comboJefe.SelectedIndexChanged += new System.EventHandler(this.comboPerfil_SelectedIndexChanged);
             // 
-            // cajaEducantabria
+            // cajaNombre
             // 
-            this.cajaEducantabria.Location = new System.Drawing.Point(177, 66);
-            this.cajaEducantabria.Name = "cajaEducantabria";
-            this.cajaEducantabria.Size = new System.Drawing.Size(121, 22);
-            this.cajaEducantabria.TabIndex = 28;
-            this.cajaEducantabria.TextChanged += new System.EventHandler(this.cajaEducantabria_TextChanged);
+            this.cajaNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cajaNombre.Location = new System.Drawing.Point(177, 66);
+            this.cajaNombre.Name = "cajaNombre";
+            this.cajaNombre.Size = new System.Drawing.Size(121, 22);
+            this.cajaNombre.TabIndex = 28;
             // 
-            // cajaDominio
+            // cajaCodigo
             // 
-            this.cajaDominio.Location = new System.Drawing.Point(177, 26);
-            this.cajaDominio.Name = "cajaDominio";
-            this.cajaDominio.Size = new System.Drawing.Size(121, 22);
-            this.cajaDominio.TabIndex = 27;
-            this.cajaDominio.TextChanged += new System.EventHandler(this.cajaDominio_TextChanged);
+            this.cajaCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cajaCodigo.Location = new System.Drawing.Point(177, 26);
+            this.cajaCodigo.Name = "cajaCodigo";
+            this.cajaCodigo.Size = new System.Drawing.Size(121, 22);
+            this.cajaCodigo.TabIndex = 27;
             // 
             // lblPerfil
             // 
             this.lblPerfil.AutoSize = true;
+            this.lblPerfil.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPerfil.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblPerfil.Location = new System.Drawing.Point(32, 110);
             this.lblPerfil.Name = "lblPerfil";
-            this.lblPerfil.Size = new System.Drawing.Size(139, 16);
+            this.lblPerfil.Size = new System.Drawing.Size(126, 15);
             this.lblPerfil.TabIndex = 26;
             this.lblPerfil.Text = "Jefe de departamento";
-            this.lblPerfil.Click += new System.EventHandler(this.lblPerfil_Click);
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblNombre.Location = new System.Drawing.Point(32, 68);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.Size = new System.Drawing.Size(50, 15);
             this.lblNombre.TabIndex = 24;
             this.lblNombre.Text = "Nombre";
-            this.lblNombre.Click += new System.EventHandler(this.lblEducantabria_Click);
             // 
             // lblCod
             // 
             this.lblCod.AutoSize = true;
+            this.lblCod.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCod.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblCod.Location = new System.Drawing.Point(32, 29);
             this.lblCod.Name = "lblCod";
-            this.lblCod.Size = new System.Drawing.Size(51, 16);
+            this.lblCod.Size = new System.Drawing.Size(46, 15);
             this.lblCod.TabIndex = 23;
             this.lblCod.Text = "Código";
-            this.lblCod.Click += new System.EventHandler(this.lblCod_Click);
             // 
             // btnCrear
             // 
-            this.btnCrear.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnCrear.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCrear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrear.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCrear.Location = new System.Drawing.Point(176, 200);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 29);
@@ -108,7 +115,11 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnVolver.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVolver.Location = new System.Drawing.Point(83, 200);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 29);
@@ -120,24 +131,26 @@
             // checkBoxActivo
             // 
             this.checkBoxActivo.AutoSize = true;
+            this.checkBoxActivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxActivo.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxActivo.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.checkBoxActivo.Location = new System.Drawing.Point(35, 148);
             this.checkBoxActivo.Name = "checkBoxActivo";
-            this.checkBoxActivo.Size = new System.Drawing.Size(66, 20);
+            this.checkBoxActivo.Size = new System.Drawing.Size(61, 19);
             this.checkBoxActivo.TabIndex = 31;
             this.checkBoxActivo.Text = "Activo";
             this.checkBoxActivo.UseVisualStyleBackColor = true;
-            this.checkBoxActivo.CheckedChanged += new System.EventHandler(this.checkBoxActivo_CheckedChanged);
             // 
             // CrearDepartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(333, 257);
             this.Controls.Add(this.checkBoxActivo);
             this.Controls.Add(this.comboJefe);
-            this.Controls.Add(this.cajaEducantabria);
-            this.Controls.Add(this.cajaDominio);
+            this.Controls.Add(this.cajaNombre);
+            this.Controls.Add(this.cajaCodigo);
             this.Controls.Add(this.lblPerfil);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCod);
@@ -154,8 +167,8 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboJefe;
-        private System.Windows.Forms.TextBox cajaEducantabria;
-        private System.Windows.Forms.TextBox cajaDominio;
+        private System.Windows.Forms.TextBox cajaNombre;
+        private System.Windows.Forms.TextBox cajaCodigo;
         private System.Windows.Forms.Label lblPerfil;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCod;

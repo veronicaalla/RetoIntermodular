@@ -35,18 +35,23 @@
             this.txbUsuario = new System.Windows.Forms.TextBox();
             this.tbxContra = new System.Windows.Forms.TextBox();
             this.btnContraVisible = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIniciar
             // 
-            this.btnIniciar.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciar.Location = new System.Drawing.Point(233, 318);
+            this.btnIniciar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnIniciar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIniciar.Font = new System.Drawing.Font("Tw Cen MT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnIniciar.Location = new System.Drawing.Point(215, 316);
             this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(132, 42);
+            this.btnIniciar.Size = new System.Drawing.Size(162, 42);
             this.btnIniciar.TabIndex = 0;
-            this.btnIniciar.Text = "INICIAR";
+            this.btnIniciar.Text = "Iniciar sesión";
             this.btnIniciar.UseVisualStyleBackColor = false;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
@@ -63,17 +68,18 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(103, 20);
+            this.lblNombre.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lblNombre.Location = new System.Drawing.Point(116, 29);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(416, 69);
+            this.lblNombre.Size = new System.Drawing.Size(325, 71);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "INCIDENCIAS";
             this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // txbUsuario
             // 
-            this.txbUsuario.Location = new System.Drawing.Point(214, 219);
+            this.txbUsuario.Location = new System.Drawing.Point(199, 218);
             this.txbUsuario.Name = "txbUsuario";
             this.txbUsuario.Size = new System.Drawing.Size(189, 22);
             this.txbUsuario.TabIndex = 3;
@@ -81,27 +87,42 @@
             // 
             // tbxContra
             // 
-            this.tbxContra.Location = new System.Drawing.Point(176, 262);
+            this.tbxContra.Location = new System.Drawing.Point(199, 261);
             this.tbxContra.Name = "tbxContra";
             this.tbxContra.Size = new System.Drawing.Size(189, 22);
             this.tbxContra.TabIndex = 4;
             // 
             // btnContraVisible
             // 
-            this.btnContraVisible.Location = new System.Drawing.Point(371, 260);
+            this.btnContraVisible.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnContraVisible.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnContraVisible.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContraVisible.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnContraVisible.Image = ((System.Drawing.Image)(resources.GetObject("btnContraVisible.Image")));
+            this.btnContraVisible.Location = new System.Drawing.Point(394, 261);
             this.btnContraVisible.Name = "btnContraVisible";
-            this.btnContraVisible.Size = new System.Drawing.Size(77, 24);
+            this.btnContraVisible.Size = new System.Drawing.Size(64, 22);
             this.btnContraVisible.TabIndex = 5;
-            this.btnContraVisible.Text = "Ver";
-            this.btnContraVisible.UseVisualStyleBackColor = true;
+            this.btnContraVisible.UseVisualStyleBackColor = false;
             this.btnContraVisible.Click += new System.EventHandler(this.btnContraVisible_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(458, 36);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(97, 58);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
             // 
             // Inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(597, 372);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnContraVisible);
             this.Controls.Add(this.tbxContra);
             this.Controls.Add(this.txbUsuario);
@@ -114,6 +135,7 @@
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Inicial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +149,7 @@
         private System.Windows.Forms.TextBox txbUsuario;
         private System.Windows.Forms.TextBox tbxContra;
         private System.Windows.Forms.Button btnContraVisible;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

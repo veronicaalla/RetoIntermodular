@@ -36,6 +36,30 @@ namespace ProyectoIntermodular.Controladores
             }
         }
 
+        public async Task<bool> AgregarDepartamento(DepartementoRequest departamento)
+        {
+            try
+            {
+                // Crear un objeto con los datos de la nueva incidencia
+
+                // Convertir a formato JSON
+                string jsonData = JsonConvert.SerializeObject(departamento);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                // Realizar la solicitud POST
+                HttpResponseMessage response = await client.PostAsync("http://localhost:8080/api/departamentos", content);
+                response.EnsureSuccessStatusCode();
+
+                // La incidencia se agregó correctamente
+                return true;
+            }
+            catch (Exception)
+            {
+                // Hubo un error al agregar la incidencia
+                return false;
+            }
+        }
+
         public async Task<bool> ActualizarDepartamento(Departamentos departamento)
         {
             try

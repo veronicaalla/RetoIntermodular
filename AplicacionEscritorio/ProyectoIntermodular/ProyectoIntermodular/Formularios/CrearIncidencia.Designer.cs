@@ -49,7 +49,11 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnCrear.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCrear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrear.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCrear.Location = new System.Drawing.Point(873, 278);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(116, 23);
@@ -60,7 +64,11 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnVolver.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVolver.Location = new System.Drawing.Point(736, 278);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(116, 23);
@@ -72,24 +80,32 @@
             // lblEquipo
             // 
             this.lblEquipo.AutoSize = true;
+            this.lblEquipo.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEquipo.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblEquipo.Location = new System.Drawing.Point(62, 196);
             this.lblEquipo.Name = "lblEquipo";
-            this.lblEquipo.Size = new System.Drawing.Size(50, 16);
+            this.lblEquipo.Size = new System.Drawing.Size(43, 15);
             this.lblEquipo.TabIndex = 38;
             this.lblEquipo.Text = "Equipo";
             // 
             // lblArchivo
             // 
             this.lblArchivo.AutoSize = true;
+            this.lblArchivo.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArchivo.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblArchivo.Location = new System.Drawing.Point(763, 28);
             this.lblArchivo.Name = "lblArchivo";
-            this.lblArchivo.Size = new System.Drawing.Size(177, 16);
+            this.lblArchivo.Size = new System.Drawing.Size(159, 15);
             this.lblArchivo.TabIndex = 35;
             this.lblArchivo.Text = "No se añadió ningún archivo";
             // 
             // btnAñadirArchivo
             // 
-            this.btnAñadirArchivo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAñadirArchivo.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAñadirArchivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAñadirArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAñadirArchivo.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadirArchivo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAñadirArchivo.Location = new System.Drawing.Point(632, 28);
             this.btnAñadirArchivo.Name = "btnAñadirArchivo";
             this.btnAñadirArchivo.Size = new System.Drawing.Size(116, 23);
@@ -101,6 +117,7 @@
             // cajaCreador
             // 
             this.cajaCreador.Enabled = false;
+            this.cajaCreador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cajaCreador.Location = new System.Drawing.Point(161, 29);
             this.cajaCreador.Name = "cajaCreador";
             this.cajaCreador.Size = new System.Drawing.Size(222, 22);
@@ -110,14 +127,17 @@
             // lblCreador
             // 
             this.lblCreador.AutoSize = true;
+            this.lblCreador.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreador.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblCreador.Location = new System.Drawing.Point(62, 29);
             this.lblCreador.Name = "lblCreador";
-            this.lblCreador.Size = new System.Drawing.Size(56, 16);
+            this.lblCreador.Size = new System.Drawing.Size(51, 15);
             this.lblCreador.TabIndex = 30;
             this.lblCreador.Text = "Creador";
             // 
             // comboBoxSubtipo
             // 
+            this.comboBoxSubtipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSubtipo.FormattingEnabled = true;
             this.comboBoxSubtipo.Location = new System.Drawing.Point(161, 103);
             this.comboBoxSubtipo.Name = "comboBoxSubtipo";
@@ -128,14 +148,17 @@
             // lblSubtipo
             // 
             this.lblSubtipo.AutoSize = true;
+            this.lblSubtipo.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtipo.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblSubtipo.Location = new System.Drawing.Point(62, 106);
             this.lblSubtipo.Name = "lblSubtipo";
-            this.lblSubtipo.Size = new System.Drawing.Size(53, 16);
+            this.lblSubtipo.Size = new System.Drawing.Size(47, 15);
             this.lblSubtipo.TabIndex = 24;
             this.lblSubtipo.Text = "Subtipo";
             // 
             // comboBoxTipo
             // 
+            this.comboBoxTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTipo.FormattingEnabled = true;
             this.comboBoxTipo.Location = new System.Drawing.Point(161, 64);
             this.comboBoxTipo.Name = "comboBoxTipo";
@@ -146,23 +169,28 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
+            this.lblTipo.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblTipo.Location = new System.Drawing.Point(62, 67);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(35, 16);
+            this.lblTipo.Size = new System.Drawing.Size(30, 15);
             this.lblTipo.TabIndex = 22;
             this.lblTipo.Text = "Tipo";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.label1.Location = new System.Drawing.Point(62, 150);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 16);
+            this.label1.Size = new System.Drawing.Size(74, 15);
             this.label1.TabIndex = 44;
             this.label1.Text = "Sub_Subtipo";
             // 
             // CajaEquipo
             // 
+            this.CajaEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CajaEquipo.Location = new System.Drawing.Point(161, 190);
             this.CajaEquipo.Name = "CajaEquipo";
             this.CajaEquipo.Size = new System.Drawing.Size(222, 22);
@@ -179,14 +207,17 @@
             // lblDescrip
             // 
             this.lblDescrip.AutoSize = true;
+            this.lblDescrip.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescrip.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblDescrip.Location = new System.Drawing.Point(533, 73);
             this.lblDescrip.Name = "lblDescrip";
-            this.lblDescrip.Size = new System.Drawing.Size(79, 16);
+            this.lblDescrip.Size = new System.Drawing.Size(66, 15);
             this.lblDescrip.TabIndex = 50;
             this.lblDescrip.Text = "Descripcion";
             // 
             // comboBoxSubsubTipo
             // 
+            this.comboBoxSubsubTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSubsubTipo.FormattingEnabled = true;
             this.comboBoxSubsubTipo.Location = new System.Drawing.Point(161, 145);
             this.comboBoxSubsubTipo.Name = "comboBoxSubsubTipo";
@@ -197,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1031, 333);
             this.Controls.Add(this.comboBoxSubsubTipo);
             this.Controls.Add(this.cajaDesc);

@@ -54,7 +54,10 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnVolver.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVolver.Location = new System.Drawing.Point(195, 263);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(90, 30);
@@ -65,7 +68,10 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnSiguiente.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSiguiente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSiguiente.Location = new System.Drawing.Point(304, 263);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(90, 30);
@@ -77,9 +83,10 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(25, 34);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.Size = new System.Drawing.Size(50, 15);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre";
             // 
@@ -100,9 +107,10 @@
             // lblApellido1
             // 
             this.lblApellido1.AutoSize = true;
+            this.lblApellido1.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido1.Location = new System.Drawing.Point(25, 69);
             this.lblApellido1.Name = "lblApellido1";
-            this.lblApellido1.Size = new System.Drawing.Size(98, 16);
+            this.lblApellido1.Size = new System.Drawing.Size(89, 15);
             this.lblApellido1.TabIndex = 4;
             this.lblApellido1.Text = "Primer apellido";
             // 
@@ -116,9 +124,10 @@
             // lblApellido2
             // 
             this.lblApellido2.AutoSize = true;
+            this.lblApellido2.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido2.Location = new System.Drawing.Point(25, 106);
             this.lblApellido2.Name = "lblApellido2";
-            this.lblApellido2.Size = new System.Drawing.Size(114, 16);
+            this.lblApellido2.Size = new System.Drawing.Size(102, 15);
             this.lblApellido2.TabIndex = 6;
             this.lblApellido2.Text = "Segundo apellido";
             // 
@@ -132,9 +141,10 @@
             // lblDNI
             // 
             this.lblDNI.AutoSize = true;
+            this.lblDNI.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDNI.Location = new System.Drawing.Point(25, 143);
             this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(30, 16);
+            this.lblDNI.Size = new System.Drawing.Size(27, 15);
             this.lblDNI.TabIndex = 8;
             this.lblDNI.Text = "DNI";
             // 
@@ -148,9 +158,10 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.Location = new System.Drawing.Point(321, 143);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(61, 16);
+            this.lblTelefono.Size = new System.Drawing.Size(54, 15);
             this.lblTelefono.TabIndex = 16;
             this.lblTelefono.Text = "Teléfono";
             // 
@@ -164,9 +175,10 @@
             // lblCP
             // 
             this.lblCP.AutoSize = true;
+            this.lblCP.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCP.Location = new System.Drawing.Point(321, 106);
             this.lblCP.Name = "lblCP";
-            this.lblCP.Size = new System.Drawing.Size(25, 16);
+            this.lblCP.Size = new System.Drawing.Size(22, 15);
             this.lblCP.TabIndex = 14;
             this.lblCP.Text = "CP";
             // 
@@ -180,9 +192,10 @@
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Location = new System.Drawing.Point(321, 69);
+            this.lblLocalidad.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalidad.Location = new System.Drawing.Point(321, 67);
             this.lblLocalidad.Name = "lblLocalidad";
-            this.lblLocalidad.Size = new System.Drawing.Size(67, 16);
+            this.lblLocalidad.Size = new System.Drawing.Size(58, 15);
             this.lblLocalidad.TabIndex = 12;
             this.lblLocalidad.Text = "Localidad";
             // 
@@ -196,18 +209,20 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDireccion.Location = new System.Drawing.Point(321, 34);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(64, 16);
+            this.lblDireccion.Size = new System.Drawing.Size(55, 15);
             this.lblDireccion.TabIndex = 10;
             this.lblDireccion.Text = "Dirección";
             // 
             // checkBoxActivo
             // 
             this.checkBoxActivo.AutoSize = true;
+            this.checkBoxActivo.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxActivo.Location = new System.Drawing.Point(324, 183);
             this.checkBoxActivo.Name = "checkBoxActivo";
-            this.checkBoxActivo.Size = new System.Drawing.Size(66, 20);
+            this.checkBoxActivo.Size = new System.Drawing.Size(61, 19);
             this.checkBoxActivo.TabIndex = 18;
             this.checkBoxActivo.Text = "Activo";
             this.checkBoxActivo.UseVisualStyleBackColor = true;
@@ -215,9 +230,10 @@
             // lblDepartamento
             // 
             this.lblDepartamento.AutoSize = true;
+            this.lblDepartamento.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartamento.Location = new System.Drawing.Point(24, 184);
             this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(93, 16);
+            this.lblDepartamento.Size = new System.Drawing.Size(82, 15);
             this.lblDepartamento.TabIndex = 19;
             this.lblDepartamento.Text = "Departamento";
             // 
@@ -234,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(598, 329);
             this.Controls.Add(this.comboBoxDepartamento);
             this.Controls.Add(this.lblDepartamento);
@@ -257,6 +273,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnVolver);
+            this.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CrearUsuario";
             this.Text = "CrearUsuario";

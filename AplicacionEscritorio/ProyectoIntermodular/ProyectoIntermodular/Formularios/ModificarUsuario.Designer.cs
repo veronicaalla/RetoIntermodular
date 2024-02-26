@@ -64,18 +64,21 @@
             // lblDepartamento
             // 
             this.lblDepartamento.AutoSize = true;
+            this.lblDepartamento.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartamento.Location = new System.Drawing.Point(11, 183);
             this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(93, 16);
+            this.lblDepartamento.Size = new System.Drawing.Size(82, 15);
             this.lblDepartamento.TabIndex = 38;
             this.lblDepartamento.Text = "Departamento";
             // 
             // checkBoxActivo
             // 
             this.checkBoxActivo.AutoSize = true;
+            this.checkBoxActivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxActivo.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxActivo.Location = new System.Drawing.Point(311, 182);
             this.checkBoxActivo.Name = "checkBoxActivo";
-            this.checkBoxActivo.Size = new System.Drawing.Size(66, 20);
+            this.checkBoxActivo.Size = new System.Drawing.Size(61, 19);
             this.checkBoxActivo.TabIndex = 37;
             this.checkBoxActivo.Text = "Activo";
             this.checkBoxActivo.UseVisualStyleBackColor = true;
@@ -91,9 +94,10 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.Location = new System.Drawing.Point(308, 142);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(61, 16);
+            this.lblTelefono.Size = new System.Drawing.Size(54, 15);
             this.lblTelefono.TabIndex = 35;
             this.lblTelefono.Text = "Teléfono";
             // 
@@ -108,9 +112,10 @@
             // lblCP
             // 
             this.lblCP.AutoSize = true;
+            this.lblCP.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCP.Location = new System.Drawing.Point(308, 105);
             this.lblCP.Name = "lblCP";
-            this.lblCP.Size = new System.Drawing.Size(25, 16);
+            this.lblCP.Size = new System.Drawing.Size(22, 15);
             this.lblCP.TabIndex = 33;
             this.lblCP.Text = "CP";
             // 
@@ -125,9 +130,10 @@
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
+            this.lblLocalidad.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocalidad.Location = new System.Drawing.Point(308, 68);
             this.lblLocalidad.Name = "lblLocalidad";
-            this.lblLocalidad.Size = new System.Drawing.Size(67, 16);
+            this.lblLocalidad.Size = new System.Drawing.Size(58, 15);
             this.lblLocalidad.TabIndex = 31;
             this.lblLocalidad.Text = "Localidad";
             // 
@@ -142,9 +148,10 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDireccion.Location = new System.Drawing.Point(308, 33);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(64, 16);
+            this.lblDireccion.Size = new System.Drawing.Size(55, 15);
             this.lblDireccion.TabIndex = 29;
             this.lblDireccion.Text = "Dirección";
             // 
@@ -159,9 +166,10 @@
             // lblDNI
             // 
             this.lblDNI.AutoSize = true;
+            this.lblDNI.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDNI.Location = new System.Drawing.Point(12, 142);
             this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(30, 16);
+            this.lblDNI.Size = new System.Drawing.Size(27, 15);
             this.lblDNI.TabIndex = 27;
             this.lblDNI.Text = "DNI";
             // 
@@ -176,9 +184,10 @@
             // lblApellido2
             // 
             this.lblApellido2.AutoSize = true;
+            this.lblApellido2.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido2.Location = new System.Drawing.Point(12, 105);
             this.lblApellido2.Name = "lblApellido2";
-            this.lblApellido2.Size = new System.Drawing.Size(114, 16);
+            this.lblApellido2.Size = new System.Drawing.Size(102, 15);
             this.lblApellido2.TabIndex = 25;
             this.lblApellido2.Text = "Segundo apellido";
             // 
@@ -193,9 +202,10 @@
             // lblApellido1
             // 
             this.lblApellido1.AutoSize = true;
+            this.lblApellido1.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido1.Location = new System.Drawing.Point(12, 68);
             this.lblApellido1.Name = "lblApellido1";
-            this.lblApellido1.Size = new System.Drawing.Size(98, 16);
+            this.lblApellido1.Size = new System.Drawing.Size(89, 15);
             this.lblApellido1.TabIndex = 23;
             this.lblApellido1.Text = "Primer apellido";
             // 
@@ -210,15 +220,20 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(12, 33);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.Size = new System.Drawing.Size(50, 15);
             this.lblNombre.TabIndex = 21;
             this.lblNombre.Text = "Nombre";
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnVolver.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVolver.Location = new System.Drawing.Point(213, 245);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 30);
@@ -229,7 +244,11 @@
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnFinalizar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnFinalizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizar.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnFinalizar.Location = new System.Drawing.Point(332, 245);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(75, 30);
@@ -242,7 +261,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(626, 310);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnVolver);
@@ -265,6 +284,7 @@
             this.Controls.Add(this.lblApellido1);
             this.Controls.Add(this.cajaNombre);
             this.Controls.Add(this.lblNombre);
+            this.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarUsuario";
             this.Text = "ModificarUsuario";
