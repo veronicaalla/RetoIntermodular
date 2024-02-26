@@ -5,6 +5,7 @@ import java.io.Serializable
 import java.sql.Time
 import java.util.Date
 
+
 data class IncidenciaResponse(
 
     @SerializedName("num")
