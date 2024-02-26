@@ -171,7 +171,7 @@ namespace ProyectoIntermodular
                 String estado = dataGridView1.CurrentRow.Cells[6].Value != null ? dataGridView1.CurrentRow.Cells[6].Value.ToString() : string.Empty;
                 String profesor = dataGridView1.CurrentRow.Cells[8].Value != null ? dataGridView1.CurrentRow.Cells[8].Value.ToString() : string.Empty;
 
-                ModificarIncidencia modificarInci = new ModificarIncidencia(numero,tipo,subtipo,fechaCreacion,fechaCierre,profesor,estado);
+                ModificarIncidencia modificarInci = new ModificarIncidencia(numero,tipo,subtipo,fechaCreacion,fechaCierre,profesor,estado,usuario);
                 this.Hide();
                 modificarInci.Show();
 

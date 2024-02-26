@@ -1,4 +1,5 @@
-﻿using ProyectoIntermodular.Clases;
+﻿using Newtonsoft.Json;
+using ProyectoIntermodular.Clases;
 using ProyectoIntermodular.Controladores;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +20,7 @@ namespace ProyectoIntermodular.Formularios
         private ControladorComentarios controladorComentarios;
         private List<Comentarios> lista;
         private Comentarios coment;
-        public ModificarIncidencia(String numero,String tipo,String subtipo,String fechaCreacion,String fechaCierre,String profesor,string estado)
+        public ModificarIncidencia(String numero,String tipo,String subtipo,String fechaCreacion,String fechaCierre,String profesor,string estado, PerfilesResponse usuario)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -91,5 +93,85 @@ namespace ProyectoIntermodular.Formularios
                 gbxEdit.Enabled = false;
             }
         }
+
+        private void cmxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmxSub_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void cmxProfesor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtener la lista de responsables (personal) disponibles
+                List<Personal> listaResponsables = await ObtenerResponsables();
+
+                // Verificar si la lista es válida
+                if (listaResponsables != null)
+                {
+                    // Limpiar el ComboBox antes de agregar los nuevos elementos
+                    cmxProfesor.Items.Clear();
+
+                    // Agregar los nombres de los responsables al ComboBox
+                    foreach (var responsable in listaResponsables)
+                    {
+                        cmxProfesor.Items.Add(responsable.nombre);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener la lista de responsables.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar la lista de responsables: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task<List<Personal>> ObtenerResponsables()
+        {
+            try
+            {
+                // Realizar una solicitud HTTP GET al servidor para obtener la lista de responsables (personal)
+                HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/personal");
+                response.EnsureSuccessStatusCode();
+
+                // Verificar si la solicitud fue exitosa
+                if (response.IsSuccessStatusCode)
+                {
+                    // Deserializar la respuesta JSON en una lista de objetos Personal
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    List<Personal> responsables = JsonConvert.DeserializeObject<List<Personal>>(jsonResponse);
+
+                    // Devolver la lista de responsables
+                    return responsables;
+                }
+                else
+                {
+                    // Si la solicitud no fue exitosa, mostrar un mensaje de error
+                    Console.WriteLine("No se pudo obtener la lista de responsables.");
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción que pueda ocurrir durante la solicitud
+                Console.WriteLine($"Se produjo un error al obtener la lista de responsables: {ex.Message}");
+                return null;
+            }
+        }
+
+
     }
 }
