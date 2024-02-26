@@ -114,10 +114,16 @@ namespace ProyectoIntermodular
                     row.Cells[6].Value = incidencia.estado;
                     row.Cells[7].Value = incidencia.adjuntoUrl;
                     row.Cells[8].Value = incidencia.creador.nombre;
-                    row.Cells[9].Value = incidencia.responsable.nombre;
                     row.Cells[10].Value = incidencia.equipo.tipoEquipo;
 
-                   
+                    if (incidencia.responsable != null)
+                    {
+                        row.Cells[9].Value = incidencia.responsable.nombre;
+                    }
+                    else
+                    {
+                        row.Cells[9].Value = "No Asignado"; // O asigna un valor por defecto, como una cadena vacía
+                    }
 
                     dataGridView1.Rows.Add(row);
                 }
