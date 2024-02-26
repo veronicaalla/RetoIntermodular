@@ -71,14 +71,13 @@ namespace ProyectoIntermodular.Clases
 
         public string tipo { get; set; }
 
-        public string subtipo { get; set; }
-        public string sub_subtipo { get; set; }
+        public IncidenciasSubtipos incidenciasSubtipo { get; set; }
         public DateTime fechaCreacion { get; set; }
         public string descripcion { get; set; }
         public EstadoIncidencia estado { get; set; }
         public string adjuntoUrl { get; set; }
-        public PerfilesResponse creador { get; set; }
-        public string equipo { get; set; }
+        public Personal creador { get; set; }
+        public Equipo equipo { get; set; }
     }
 }
 

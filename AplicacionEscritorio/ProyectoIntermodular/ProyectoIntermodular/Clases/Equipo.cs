@@ -15,8 +15,8 @@ namespace ProyectoIntermodular.Clases
         public string etiqueta { get; set; }  
         public string marca { get; set; }  
         public string modelo { get; set; }  
-        public string descripcion { get; set; }  
-        public bool baja { get; set; } 
+        public string descripcion { get; set; }
+        public string baja { get; set; }
         public Aulas aula { get; set; }  
         public int puesto { get; set; }  
 
@@ -27,7 +27,7 @@ namespace ProyectoIntermodular.Clases
         }
 
         
-        public Equipo(int id, string tipo_equipo, DateTime fecha_adquisicion, string etiqueta, string marca, string modelo, string descripcion, bool baja, Aulas aula_num, int puesto)
+        public Equipo(int id, string tipo_equipo, DateTime fecha_adquisicion, string etiqueta, string marca, string modelo, string descripcion, string baja, Aulas aula_num, int puesto)
         {
             this.id = id;
             this.tipoEquipo = tipo_equipo;

@@ -52,13 +52,13 @@ namespace ProyectoIntermodular
 
             
 
-            if (usuario.perfil.ToString().Equals("administrador"))
+            if (usuario.perfil.Equals("administrador"))
             {
                 Admin admin = new Admin(this);
                 this.Hide();
                 admin.Show();
             }
-            else if (usuario.perfil.ToString().Equals("profesor"))
+            else if (usuario.perfil.Equals("profesor"))
             {
                 Principal princi = new Principal(this);
                 this.Hide();

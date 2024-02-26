@@ -23,5 +23,6 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
         //Recogemos la incidenica
         val incidencia = intent.getSerializableExtra("verIncidencia")
         Log.i("Paso de incidencia ", incidencia.toString())
+
     }
 }
