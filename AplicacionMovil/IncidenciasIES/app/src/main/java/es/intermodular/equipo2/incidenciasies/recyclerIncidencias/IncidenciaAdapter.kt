@@ -8,7 +8,7 @@ import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 
 class IncidenciaAdapter(
     var listaIncidencias: List<IncidenciaResponse> = emptyList(),
-    private val onItemSelect: (String) -> Unit
+    private val onItemSelect: (IncidenciaResponse) -> Unit
 ) : RecyclerView.Adapter<IncidenciaViewHolder>() {
 
     fun updateIncidencias(list: List<IncidenciaResponse>) {

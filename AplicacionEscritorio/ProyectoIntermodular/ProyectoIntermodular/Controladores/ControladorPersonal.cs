@@ -43,6 +43,19 @@ namespace ProyectoIntermodular.Controladores
 
         }
 
+        public async Task<int> GetUltimoPerfil()
+        {
+
+            HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/personal/ultimo-id");
+            response.EnsureSuccessStatusCode();
+
+            string responseJson = await response.Content.ReadAsStringAsync();
+
+            int id = JsonConvert.DeserializeObject<int>(responseJson);
+            return id;
+
+        }
+
         public async Task<Personal>GetPersonalPorId(String id)
         {
 
@@ -71,7 +84,7 @@ namespace ProyectoIntermodular.Controladores
         }
 
     
-        public async Task<bool> AgregarPerfil(Perfiles perfil)
+        public async Task<bool> AgregarPerfil(PerfilesResponse perfil)
         {
             try
             {

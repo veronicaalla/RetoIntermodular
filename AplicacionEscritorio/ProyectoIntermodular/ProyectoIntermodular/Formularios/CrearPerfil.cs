@@ -15,11 +15,13 @@ namespace ProyectoIntermodular.Formularios
     public partial class CrearPerfil : Form
     {
         CrearUsuario crear;
-        Perfiles nuevoPerfil = new Perfiles();
+        PerfilesResponse nuevoPerfil = new PerfilesResponse();
         ControladorPersonal controladorPersonal = new ControladorPersonal();
         bool creado=false;
+        int idPersonal;
         public CrearPerfil(CrearUsuario crear)
         {
+
             this.crear = crear;
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -27,8 +29,9 @@ namespace ProyectoIntermodular.Formularios
         }
         private void CargarComboBox()
         {
-            comboPerfil.Items.Add(PerfilEnum.ADMIN);
-            comboPerfil.Items.Add(PerfilEnum.PROFESOR);
+            comboPerfil.Items.Add(PerfilEnum.administrador);
+            comboPerfil.Items.Add(PerfilEnum.profesor);
+            comboPerfil.Items.Add(PerfilEnum.otros);
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
@@ -42,6 +45,14 @@ namespace ProyectoIntermodular.Formularios
             nuevoPerfil.educantabria = cajaEducantabria.Text;
             nuevoPerfil.password = cajaContra.Text;
             nuevoPerfil.dominio = cajaDominio.Text;
+
+            if (comboPerfil.Text.Equals(PerfilEnum.administrador.ToString())){nuevoPerfil.perfil = PerfilEnum.administrador;} 
+            
+            else if (comboPerfil.Text.Equals(PerfilEnum.profesor.ToString())) {nuevoPerfil.perfil = PerfilEnum.profesor;}
+
+            else { nuevoPerfil.perfil = PerfilEnum.otros; }
+
+            nuevoPerfil.personal_id = await controladorPersonal.GetUltimoPerfil();
 
             creado = await controladorPersonal.AgregarPerfil(nuevoPerfil);
             if (creado)
@@ -92,7 +103,7 @@ namespace ProyectoIntermodular.Formularios
 
         private void comboPerfil_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string valor = comboPerfil.Text;
         }
     }
 }

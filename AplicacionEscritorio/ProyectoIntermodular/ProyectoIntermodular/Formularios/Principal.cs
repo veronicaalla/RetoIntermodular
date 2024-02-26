@@ -28,11 +28,11 @@ namespace ProyectoIntermodular
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
+            Perfiles perfiles = new Perfiles(PerfilEnum.administrador);
             
             usuario = inicial.usuario;
 
-            if (perfiles.perfil==PerfilEnum.ADMIN)
+            if (perfiles.perfil==PerfilEnum.administrador)
             {
                 btnVolver.Show();
                 btnSalir.Hide();
@@ -52,11 +52,11 @@ namespace ProyectoIntermodular
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
+            Perfiles perfiles = new Perfiles(PerfilEnum.administrador);
 
             usuario = admin.usuario;
 
-            if (perfiles.perfil == PerfilEnum.ADMIN)
+            if (perfiles.perfil == PerfilEnum.administrador)
             {
                 btnVolver.Show();
                 btnSalir.Hide();
@@ -76,9 +76,9 @@ namespace ProyectoIntermodular
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
+            Perfiles perfiles = new Perfiles(PerfilEnum.administrador);
 
-            if (perfiles.perfil == PerfilEnum.ADMIN)
+            if (perfiles.perfil == PerfilEnum.administrador)
             {
                 btnVolver.Show();
                 btnSalir.Hide();

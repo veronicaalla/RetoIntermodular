@@ -8,7 +8,7 @@ data class DepartamentoResponse(
     @SerializedName("int_")
     val id: Int,
     @SerializedName("activo")
-    val activo: Int,
+    val activo: Boolean,
     @SerializedName("cod")
     val cod: String,
     @SerializedName("nombre")

@@ -8,7 +8,7 @@ data class PersonalResponse(
     @SerializedName("id")
     val id: Int,
     @SerializedName("activo")
-    val activo: Int,
+    val activo: Boolean,
     @SerializedName("apellido1")
     val apellido1: String,
     @SerializedName("apellido2")

@@ -41,8 +41,8 @@
                     android:id="@+id/txtFecha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginBottom="2dp"
+                    android:layout_weight="1"
                     android:text="05/02/2020"
                     android:textColor="@color/theme2" />
 
@@ -62,11 +62,27 @@
                     android:textColor="@color/theme2" />
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/btnEditarIncidencias"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/baseline_border_color_24" />
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/btnEditarIncidencias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:src="@drawable/baseline_border_color_24" />
+
+                <ImageView
+                    android:id="@+id/btnEliminarIncidencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/twotone_delete_outline_24" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

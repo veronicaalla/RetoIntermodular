@@ -2,9 +2,12 @@ package es.intermodular.equipo2.incidenciasies.modelo
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
+import java.lang.reflect.Constructor
 import java.sql.Date
 
 data class EquipoResponse(
+
+
     @SerializedName("id")
     val id: Int,
     @SerializedName("baja")
