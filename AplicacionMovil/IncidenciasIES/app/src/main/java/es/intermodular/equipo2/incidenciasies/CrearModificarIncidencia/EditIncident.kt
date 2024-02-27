@@ -89,10 +89,7 @@ class EditIncident : AppCompatActivity() {
         incidencia.descripcion = binding.editTextDescripcion.text.toString()
         Log.i("descripcion incidencia ", incidencia.descripcion)
 
-        //Debemos formatear la fecha obtenida
-         val formato = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-        incidencia.fechaCreacion = formato.parse(incidencia.fechaCreacion.toString())
-
+       //La fecha no nos hace falta
 
         //Obtenemos todos los posibles cambios del idEquipo
         if (incidencia.equipo == null) {
