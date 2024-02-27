@@ -34,7 +34,10 @@ namespace ProyectoIntermodular.Clases
             this.adjunto_url = adjunto_url;
         }
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     public class ComentarioRequest
     {
         public string texto { get; set; }
@@ -43,5 +46,8 @@ namespace ProyectoIntermodular.Clases
         public Personal personal { get; set; }
 
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 }

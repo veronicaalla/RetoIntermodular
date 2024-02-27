@@ -170,8 +170,27 @@ namespace ProyectoIntermodular
                     String estado = dataGridView1.CurrentRow.Cells[6].Value != null ? dataGridView1.CurrentRow.Cells[6].Value.ToString() : string.Empty;
                     String profesor = dataGridView1.CurrentRow.Cells[8].Value != null ? dataGridView1.CurrentRow.Cells[8].Value.ToString() : string.Empty;
 
+<<<<<<< Updated upstream
                     // Obtener la incidencia de forma asíncrona
                     Incidencias incidencia = await ObtenerIncidenciaPorIdAsync(Convert.ToInt32(numero));
+=======
+                Incidencias incidencia = await ObtenerIncidenciaPorIdAsync(Convert.ToInt32(numero));
+
+                // Verificar si se obtuvo la incidencia correctamente
+                if (incidencia != null)
+                {
+                    // Crear una instancia de ModificarIncidencia con la incidencia obtenida
+                    ModificarIncidencia modificarInci = new ModificarIncidencia(numero, tipo, subtipo, fechaCreacion, fechaCierre, profesor, estado, usuario, incidencia);
+
+                    // Mostrar el formulario de ModificarIncidencia
+                    this.Hide();
+                    modificarInci.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener la incidencia con el ID proporcionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+>>>>>>> Stashed changes
 
                     // Verificar si se obtuvo la incidencia correctamente
                     if (incidencia != null)
@@ -196,6 +215,18 @@ namespace ProyectoIntermodular
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+        private async Task<Incidencias> ObtenerIncidenciaPorIdAsync(int id)
+        {
+            try
+            {
+                // Llamar al método ObtenerIncidenciaPorId del controlador de incidencias
+                return await controladorIncidencias.ObtenerIncidenciaPorId(id);
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
 

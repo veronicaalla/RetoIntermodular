@@ -28,16 +28,27 @@ namespace ProyectoIntermodular.Formularios
         private List<Comentarios> lista;
         private Comentarios coment;
         private HttpClient client;
+<<<<<<< Updated upstream
         public ModificarIncidencia(String numero,String tipo,String subtipo,String fechaCreacion,String fechaCierre,String profesor,string estado, PerfilesResponse usuario, Incidencias inc)
+=======
+        public ModificarIncidencia(String numero, String tipo, String subtipo, String fechaCreacion, String fechaCierre, String profesor, string estado, PerfilesResponse usuario, Incidencias inc)
+>>>>>>> Stashed changes
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             gbxEdit.Enabled = false;
             this.usuario = usuario;
+<<<<<<< Updated upstream
            
             this.numeroInci = numero;
 
             cmxProfesor.Text=profesor;
+=======
+
+            this.numeroInci = numero;
+
+            cmxProfesor.Text = profesor;
+>>>>>>> Stashed changes
             cmxEstado.Text = estado;
 
             controladorComentarios = new ControladorComentarios();
@@ -79,7 +90,11 @@ namespace ProyectoIntermodular.Formularios
                     // Agregar los nombres de los responsables al ComboBox
                     foreach (var responsable in listaResponsables)
                     {
+<<<<<<< Updated upstream
                         cmxProfesor.Items.Add(responsable.nombre+" "+ responsable.apellido1+" "+responsable.apellido2);
+=======
+                        cmxProfesor.Items.Add(responsable.nombre + " " + responsable.apellido1 + " " + responsable.apellido2);
+>>>>>>> Stashed changes
                     }
                 }
                 else
@@ -164,6 +179,7 @@ namespace ProyectoIntermodular.Formularios
             }
         }
 
+<<<<<<< Updated upstream
         private void cmxEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -181,6 +197,64 @@ namespace ProyectoIntermodular.Formularios
 
         private void cmxProfesor_SelectedIndexChanged(object sender, EventArgs e)
         {
+=======
+        private async void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (!inc.estado.ToString().Equals("CERRADA"))
+            {
+                if (cmxEstado.SelectedItem.ToString().Equals("CERRADA"))
+                {
+                    inc.fechaCierre = DateTime.Now;
+                }
+            }
+
+            string nombreCompleto = cmxProfesor.SelectedItem.ToString();
+
+
+            string[] partesNombre = nombreCompleto.Split(' ');
+
+
+            if (partesNombre.Length >= 3)
+            {
+                string nombre = partesNombre[0];
+                string apellido1 = partesNombre[1];
+                string apellido2 = partesNombre[2];
+
+                personal = await controladorPersonal.GetPersonalPorNombre_Apellido1_Apellido2(nombre, apellido1, apellido2);
+
+                inc.responsable = personal;
+            }
+
+            if (textBoxTiempo.Enabled)
+            {
+                TimeSpan tiempoDec = TimeSpan.Parse(textBoxTiempo.Text);
+                inc.tiempo_dec = tiempoDec;
+            }
+
+            if (Enum.TryParse<EstadoIncidencia>(cmxEstado.SelectedItem.ToString(), out EstadoIncidencia estado))
+            {
+                inc.estado = estado;
+            }
+            else
+            {
+                // Manejar el caso en el que no se puede convertir el valor seleccionado a EstadoIncidencia
+                MessageBox.Show("Error al convertir el estado de la incidencia.");
+            }
+
+            // Intentar agregar la incidencia utilizando el controlador de incidencias
+            bool agregadaExitosamente = await controladorIncidencias.ActualizarIncidencia(Convert.ToInt32(inc.num), inc);
+
+            // Verificar si la incidencia se agregó exitosamente
+            if (agregadaExitosamente)
+            {
+                MessageBox.Show("La incidencia se creó exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Puedes realizar alguna otra acción aquí si es necesario
+            }
+            else
+            {
+                MessageBox.Show("Hubo un error al crear la incidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+>>>>>>> Stashed changes
         }
 
         private async Task<List<Personal>> ObtenerResponsables()
@@ -211,6 +285,7 @@ namespace ProyectoIntermodular.Formularios
             }
         }
 
+<<<<<<< Updated upstream
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -287,6 +362,9 @@ namespace ProyectoIntermodular.Formularios
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
+=======
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+>>>>>>> Stashed changes
         {
             if (checkBox1.Checked)
             {
@@ -298,7 +376,11 @@ namespace ProyectoIntermodular.Formularios
             }
         }
 
+<<<<<<< Updated upstream
         private void cbxProfesor_CheckedChanged(object sender, EventArgs e)
+=======
+        private void cbxProfesor_CheckedChanged_1(object sender, EventArgs e)
+>>>>>>> Stashed changes
         {
             if (cbxProfesor.Checked)
             {
@@ -310,7 +392,11 @@ namespace ProyectoIntermodular.Formularios
             }
         }
 
+<<<<<<< Updated upstream
         private void cbxEstado_CheckedChanged(object sender, EventArgs e)
+=======
+        private void cbxEstado_CheckedChanged_1(object sender, EventArgs e)
+>>>>>>> Stashed changes
         {
             if (cbxEstado.Checked)
             {

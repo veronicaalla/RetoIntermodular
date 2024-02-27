@@ -13,7 +13,10 @@ namespace ProyectoIntermodular.Clases
 
         
         public int num { get; set; }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         [JsonConverter(typeof(StringEnumConverter))]
         public string tipo { get; set; }
         public IncidenciasSubtipos incidenciasSubtipo { get; set; }
@@ -26,7 +29,10 @@ namespace ProyectoIntermodular.Clases
         public Personal responsable { get; set; }
         public Equipo equipo { get; set; }
         public TimeSpan? tiempo_dec { get; set; }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 
     public Incidencias()
@@ -34,7 +40,11 @@ namespace ProyectoIntermodular.Clases
             
         }
 
+<<<<<<< Updated upstream
         
+=======
+
+>>>>>>> Stashed changes
         public Incidencias(int num, string tipo, IncidenciasSubtipos subtipo_id, DateTime fecha_creacion, DateTime? fecha_cierre, string descripcion, EstadoIncidencia estado, string adjunto_url, Personal creador_id, Personal responsable_id, Equipo equipo_id, TimeSpan? tiempo_dec)
         {
             this.num = num;

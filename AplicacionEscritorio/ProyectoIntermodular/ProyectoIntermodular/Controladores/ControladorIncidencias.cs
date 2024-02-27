@@ -83,7 +83,10 @@ namespace ProyectoIntermodular.Controladores
                 return false;
             }
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         public async Task<bool> ActualizarIncidencia(int id, Incidencias incidencia)
         {
             try
@@ -105,7 +108,11 @@ namespace ProyectoIntermodular.Controladores
                 return false;
             }
         }
+<<<<<<< Updated upstream
         
+=======
+
+>>>>>>> Stashed changes
 
         public async Task<Incidencias> ObtenerIncidenciaPorId(int id)
         {
@@ -127,7 +134,10 @@ namespace ProyectoIntermodular.Controladores
                 return null;
             }
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 }
 

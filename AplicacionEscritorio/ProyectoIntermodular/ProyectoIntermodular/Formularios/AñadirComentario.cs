@@ -33,11 +33,15 @@ namespace ProyectoIntermodular.Formularios
             this.incidencia = inc;
             client = new HttpClient();
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         public AñadirComentario()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+
         }
 
         private void tbxComentario_TextChanged(object sender, EventArgs e)
@@ -72,11 +76,19 @@ namespace ProyectoIntermodular.Formularios
             try
             {
                 // Crear el objeto ComentarioRequest con los datos necesarios
+<<<<<<< Updated upstream
                
                 comentario.fechahora = DateTime.Now; // Fecha y hora actual
                 comentario.personal = await controladorPersonal.GetPersonalPorId(usuario.personal_id.ToString());
                 comentario.texto = tbxComentario.Text;
                 comentario.incidencia= incidencia; // ID de la incidencia
+=======
+
+                comentario.fechahora = DateTime.Now; // Fecha y hora actual
+                comentario.personal = await controladorPersonal.GetPersonalPorId(usuario.personal_id.ToString());
+                comentario.texto = tbxComentario.Text;
+                comentario.incidencia = incidencia; // ID de la incidencia
+>>>>>>> Stashed changes
 
                 // Serializar el objeto ComentarioRequest a JSON
                 string json = JsonConvert.SerializeObject(comentario);
