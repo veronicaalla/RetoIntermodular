@@ -66,7 +66,7 @@ class SpecificListIncidents : AppCompatActivity() {
                 binding.toolbar.setBackgroundColor(getResources().getColor(R.color.colorAsignado))
             }
 
-            "En Proceso" -> {
+            "En proceso" -> {
                 binding.toolbar.setBackgroundColor(getResources().getColor(R.color.colorEnProceso))
             }
 

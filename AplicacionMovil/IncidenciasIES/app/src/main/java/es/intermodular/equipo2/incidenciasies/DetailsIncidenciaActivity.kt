@@ -7,8 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.EditIncident
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityDetailsIncidenciaBinding
 import es.intermodular.equipo2.incidenciasies.datos.Api
 import es.intermodular.equipo2.incidenciasies.datos.ApiService
@@ -19,11 +19,16 @@ import es.intermodular.equipo2.incidenciasies.recyclerComentarios.ComentarioAdap
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import javax.security.auth.callback.Callback
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
-import retrofit2.create
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
+import java.util.Date
+import java.util.Locale
 
 
 class DetailsIncidenciaActivity : AppCompatActivity() {
@@ -62,9 +67,11 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
 
         //Boton de enviar
         binding.imagenEnviarComentario.setOnClickListener {
-            val comentario = binding.editTextNuevoComentario.text
+            val comentario = binding.editTextNuevoComentario.text.toString()
             if (comentario.isNotEmpty()) {
-
+                //Creamos el comentario
+                Log.i("Nuevo comentario", comentario)
+                crearComentario(comentario, incidencia)
 
             } else {
                 Toast.makeText(this, "El comentario esta vacio", Toast.LENGTH_SHORT).show()
@@ -76,8 +83,59 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.btnModificar.setOnClickListener {
+            val intent = Intent(it.context, EditIncident::class.java)
+            ////Para poder pasarle la incidencia, debido a que hemos puesto la clase Incidencia como Serializable
+            Log.i("Paso de incidencia ", incidencia.toString())
+            intent.putExtra(EditIncident.EXTRA_EDIT_INCIDENCIA, incidencia)
+            intent.putExtra("incidencia", 1)
+            startActivity(intent)
+        }
+
 
     }
+
+
+    private fun crearComentario(comentario: String, incidencia: IncidenciaResponse) {
+
+        val fechaActual = LocalDateTime.now()
+        val zonaHoraria = ZoneId.of("Europe/Madrid")
+        val fechaZonificada = fechaActual.atZone(zonaHoraria)
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ssXXX")
+        val fechaString = fechaZonificada.format(formatter)
+
+        val nuevoComentario = ComentarioResponse(
+            id = null,
+            adjuntoUrl = null,
+            texto = "Este es el texto del comentario",
+            fechahora = fechaString,
+            incidencia = incidencia,
+            personal = incidencia.creador
+        )
+
+        Log.i("Nuevo comentario asignado", nuevoComentario.toString())
+
+        Api.retrofitService.crearComentario(nuevoComentario)
+            .enqueue(object : Callback<ComentarioResponse> {
+                override fun onResponse(
+                    call: Call<ComentarioResponse>,
+                    response: Response<ComentarioResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val comentarioCreado = response.body()
+                        Log.i("Comentario creado", comentarioCreado.toString())
+
+                    } else {
+                        Log.i("Comentario NO creado", response.message())
+                    }
+                }
+
+                override fun onFailure(call: Call<ComentarioResponse>, t: Throwable) {
+                    Log.i("Error de conexion", t.message.toString())
+                }
+            })
+    }
+
 
     private fun obtenerComentariosApi(idIncidencia: Int) {
 
@@ -113,7 +171,9 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
     }
 
     private fun asignarValores(incidencia: IncidenciaResponse) {
-        binding.txtTipoIncidencia.text = incidencia.tipo
+        binding.txtIdIncidencia.text = "Incidencias #${incidencia.idIncidencia}"
+        binding.txtTipoIncidencia.text =
+            "${incidencia.tipo} ${incidencia.tipoIncidencia.subtipoNombre} ${incidencia.tipoIncidencia.subSubtipo}"
         binding.txtfechaCreacion.text = incidencia.fechaCreacion.toString()
         binding.DescripcionIncidencia.text = incidencia.descripcion
 

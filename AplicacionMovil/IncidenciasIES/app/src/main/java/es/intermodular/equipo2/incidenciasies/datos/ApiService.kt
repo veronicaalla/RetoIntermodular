@@ -68,8 +68,14 @@ interface ApiService {
     //endregion
 
     //region COMENTARIOS
+
+    //Obtener los comentarios de una incidencia
     @GET("comentarios/incidencia/{incidenciaId}")
     suspend fun obtenerComentariosPorIncidencia(@Path("incidenciaId") incidenciaId: Int): Response<List<ComentarioResponse>>
+
+    //Crear un comentario
+    @POST("comentarios")
+    fun crearComentario(@Body nuevoComentario: ComentarioResponse): Call<ComentarioResponse>
 
 
     //endregion

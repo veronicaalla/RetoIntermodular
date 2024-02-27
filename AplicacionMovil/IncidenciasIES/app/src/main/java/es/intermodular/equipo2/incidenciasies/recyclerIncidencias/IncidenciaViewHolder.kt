@@ -47,12 +47,15 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 )
             )
 
-            "en_proceso" -> binding.btnEstadoIncidencai.setBackgroundColor(
-                ContextCompat.getColor(
-                    itemView.context,
-                    R.color.colorEnProceso
+            "en_proceso" -> {
+                binding.btnEstadoIncidencai.setBackgroundColor(
+                    ContextCompat.getColor(
+                        itemView.context,
+                        R.color.colorEnProceso
+                    )
                 )
-            )
+                binding.btnEstadoIncidencai.text = "en proceso"
+            }
 
             "resuelta" -> binding.btnEstadoIncidencai.setBackgroundColor(
                 ContextCompat.getColor(
