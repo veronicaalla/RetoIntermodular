@@ -133,7 +133,6 @@ namespace ProyectoIntermodular
         private async void CargarComboBox()
         {
             List<Personal> listaPersonal = await controladorPersonal.GetPersonal();
-            List<Incidencias> tiposIncidencias = await controladorIncidencias.GetTiposIncidencia();
 
             if (listaPersonal != null)
             {
@@ -142,7 +141,6 @@ namespace ProyectoIntermodular
                 cmxProfesor.DataSource = listaPersonal;
 
                 cmxTipo.DisplayMember = "tipo";
-                cmxTipo.DataSource = tiposIncidencias;
 
             }
             else
@@ -300,6 +298,11 @@ namespace ProyectoIntermodular
                 dateTimePicker1.Enabled = false;
                 dateTimePicker2.Enabled = false;
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

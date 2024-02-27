@@ -38,13 +38,12 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.cmxProfesor = new System.Windows.Forms.ComboBox();
             this.cbxProfesor = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbxEstado = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cmxEstado = new System.Windows.Forms.ComboBox();
-            this.cbxFecha = new System.Windows.Forms.CheckBox();
             this.btnComentar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.textBoxTiempo = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxEdit.SuspendLayout();
             this.SuspendLayout();
@@ -99,14 +98,13 @@
             // 
             // gbxEdit
             // 
+            this.gbxEdit.Controls.Add(this.checkBox1);
+            this.gbxEdit.Controls.Add(this.textBoxTiempo);
             this.gbxEdit.Controls.Add(this.btnConfirmar);
             this.gbxEdit.Controls.Add(this.cmxProfesor);
             this.gbxEdit.Controls.Add(this.cbxProfesor);
-            this.gbxEdit.Controls.Add(this.label1);
             this.gbxEdit.Controls.Add(this.cbxEstado);
-            this.gbxEdit.Controls.Add(this.dateTimePicker1);
             this.gbxEdit.Controls.Add(this.cmxEstado);
-            this.gbxEdit.Controls.Add(this.cbxFecha);
             this.gbxEdit.Location = new System.Drawing.Point(62, 24);
             this.gbxEdit.Margin = new System.Windows.Forms.Padding(2);
             this.gbxEdit.Name = "gbxEdit";
@@ -131,6 +129,7 @@
             // 
             // cmxProfesor
             // 
+            this.cmxProfesor.Enabled = false;
             this.cmxProfesor.FormattingEnabled = true;
             this.cmxProfesor.Location = new System.Drawing.Point(34, 30);
             this.cmxProfesor.Margin = new System.Windows.Forms.Padding(2);
@@ -149,17 +148,7 @@
             this.cbxProfesor.Size = new System.Drawing.Size(15, 14);
             this.cbxProfesor.TabIndex = 23;
             this.cbxProfesor.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(512, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Cierre:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.cbxProfesor.CheckedChanged += new System.EventHandler(this.cbxProfesor_CheckedChanged);
             // 
             // cbxEstado
             // 
@@ -170,19 +159,11 @@
             this.cbxEstado.Size = new System.Drawing.Size(15, 14);
             this.cbxEstado.TabIndex = 27;
             this.cbxEstado.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(563, 28);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker1.TabIndex = 32;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.cbxEstado.CheckedChanged += new System.EventHandler(this.cbxEstado_CheckedChanged);
             // 
             // cmxEstado
             // 
+            this.cmxEstado.Enabled = false;
             this.cmxEstado.FormattingEnabled = true;
             this.cmxEstado.Location = new System.Drawing.Point(34, 66);
             this.cmxEstado.Margin = new System.Windows.Forms.Padding(2);
@@ -191,17 +172,6 @@
             this.cmxEstado.TabIndex = 28;
             this.cmxEstado.Text = "Estado";
             this.cmxEstado.SelectedIndexChanged += new System.EventHandler(this.cmxEstado_SelectedIndexChanged);
-            // 
-            // cbxFecha
-            // 
-            this.cbxFecha.AutoSize = true;
-            this.cbxFecha.Location = new System.Drawing.Point(428, 30);
-            this.cbxFecha.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxFecha.Name = "cbxFecha";
-            this.cbxFecha.Size = new System.Drawing.Size(61, 17);
-            this.cbxFecha.TabIndex = 31;
-            this.cbxFecha.Text = "Fechas";
-            this.cbxFecha.UseVisualStyleBackColor = true;
             // 
             // btnComentar
             // 
@@ -226,6 +196,26 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // textBoxTiempo
+            // 
+            this.textBoxTiempo.Enabled = false;
+            this.textBoxTiempo.Location = new System.Drawing.Point(465, 32);
+            this.textBoxTiempo.Name = "textBoxTiempo";
+            this.textBoxTiempo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTiempo.TabIndex = 39;
+            this.textBoxTiempo.TextChanged += new System.EventHandler(this.textBoxTiempo_TextChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(351, 34);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(108, 17);
+            this.checkBox1.TabIndex = 41;
+            this.checkBox1.Text = "Tiempo dedicado";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // ModificarIncidencia
             // 
@@ -258,15 +248,14 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.ComboBox cmxProfesor;
         private System.Windows.Forms.CheckBox cbxProfesor;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbxEstado;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cmxEstado;
-        private System.Windows.Forms.CheckBox cbxFecha;
         private System.Windows.Forms.Button btnComentar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.TextBox textBoxTiempo;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

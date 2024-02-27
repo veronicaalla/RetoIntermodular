@@ -19,6 +19,9 @@ namespace ProyectoIntermodular.Formularios
         ControladorPersonal controladorPersonal = new ControladorPersonal();
         ControladorIncidencias controladorIncidencias = new ControladorIncidencias();
 
+        PerfilesResponse usuario;
+        Personal personal;
+
         private Incidencias inc;
         private String numeroInci;
         private ControladorComentarios controladorComentarios;
@@ -30,9 +33,9 @@ namespace ProyectoIntermodular.Formularios
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             gbxEdit.Enabled = false;
+            this.usuario = usuario;
            
             this.numeroInci = numero;
-            dateTimePicker1.Text = fechaCierre;
 
             cmxProfesor.Text=profesor;
             cmxEstado.Text = estado;
@@ -76,7 +79,7 @@ namespace ProyectoIntermodular.Formularios
                     // Agregar los nombres de los responsables al ComboBox
                     foreach (var responsable in listaResponsables)
                     {
-                        cmxProfesor.Items.Add(responsable.nombre);
+                        cmxProfesor.Items.Add(responsable.nombre+" "+ responsable.apellido1+" "+responsable.apellido2);
                     }
                 }
                 else
@@ -96,7 +99,7 @@ namespace ProyectoIntermodular.Formularios
             {
                 // Aquí puedes implementar la lógica para cargar el ComboBox relacionado con el estado de la incidencia
                 // Por ejemplo:
-                List<string> estados = new List<string> { "ABIERTA", "ASIGNADA", "ENPROCESO", "ENVIADA_INFORTEC", "RESUELTA", "CERRADA" };
+                List<string> estados = new List<string> { "ABIERTA", "ASIGNADA", "EN_PROCESO", "ENVIADA_A_INFORTEC", "RESUELTA", "CERRADA" };
                 cmxEstado.Items.Clear();
                 cmxEstado.Items.AddRange(estados.ToArray());
             }
@@ -134,7 +137,7 @@ namespace ProyectoIntermodular.Formularios
 
         private void btnComentar_Click(object sender, EventArgs e)
         {
-            AñadirComentario childForm = new AñadirComentario();
+            AñadirComentario childForm = new AñadirComentario(usuario,inc);
 
 
 
@@ -222,8 +225,38 @@ namespace ProyectoIntermodular.Formularios
         {
             // Crear objeto IncidenciasRequest con los datos del formulario
 
-            inc.fechaCierre = dateTimePicker1.Value;
-            if(Enum.TryParse<EstadoIncidencia>(cmxEstado.SelectedItem.ToString(), out EstadoIncidencia estado))
+            if (!inc.estado.ToString().Equals("CERRADA"))
+            {
+                if (cmxEstado.SelectedItem.ToString().Equals("CERRADA"))
+                {
+                    inc.fechaCierre = DateTime.Now;
+                }
+            }
+
+            string nombreCompleto = cmxProfesor.SelectedItem.ToString();
+
+
+            string[] partesNombre = nombreCompleto.Split(' ');
+
+
+            if (partesNombre.Length >= 3)
+            {
+                string nombre = partesNombre[0];
+                string apellido1 = partesNombre[1];
+                string apellido2 = partesNombre[2];
+
+                personal = await controladorPersonal.GetPersonalPorNombre_Apellido1_Apellido2(nombre,apellido1,apellido2);
+
+                inc.responsable = personal;
+            }
+
+            if (textBoxTiempo.Enabled)
+            {
+                TimeSpan tiempoDec = TimeSpan.Parse(textBoxTiempo.Text);
+                inc.tiempo_dec = tiempoDec;
+            }
+
+            if (Enum.TryParse<EstadoIncidencia>(cmxEstado.SelectedItem.ToString(), out EstadoIncidencia estado))
             {
                 inc.estado = estado;
             }
@@ -245,6 +278,47 @@ namespace ProyectoIntermodular.Formularios
             else
             {
                 MessageBox.Show("Hubo un error al crear la incidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void textBoxTiempo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textBoxTiempo.Enabled = true;
+            }
+            else
+            {
+                textBoxTiempo.Enabled = false;
+            }
+        }
+
+        private void cbxProfesor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxProfesor.Checked)
+            {
+                cmxProfesor.Enabled = true;
+            }
+            else
+            {
+                cmxProfesor.Enabled = false;
+            }
+        }
+
+        private void cbxEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxEstado.Checked)
+            {
+                cmxEstado.Enabled = true;
+            }
+            else
+            {
+                cmxEstado.Enabled = false;
             }
         }
     }

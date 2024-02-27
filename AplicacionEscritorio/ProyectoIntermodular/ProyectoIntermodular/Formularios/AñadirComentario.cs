@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using ProyectoIntermodular.Clases;
+using ProyectoIntermodular.Controladores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,18 +17,20 @@ namespace ProyectoIntermodular.Formularios
 {
     public partial class AñadirComentario : Form
     {
+        ControladorPersonal controladorPersonal = new ControladorPersonal();
+
         private HttpClient client;
         private PerfilesResponse usuario; // Usuario actual
-        private int idIncidencia; // ID de la incidencia asociada al comentario
+        private Incidencias incidencia; // ID de la incidencia asociada al comentario
 
         ComentarioRequest comentario = new ComentarioRequest();
 
-        public AñadirComentario(PerfilesResponse usuario, int idIncidencia)
+        public AñadirComentario(PerfilesResponse usuario, Incidencias inc)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.usuario = usuario;
-            this.idIncidencia = idIncidencia;
+            this.incidencia = inc;
             client = new HttpClient();
         }
 
@@ -71,9 +74,9 @@ namespace ProyectoIntermodular.Formularios
                 // Crear el objeto ComentarioRequest con los datos necesarios
                
                 comentario.fechahora = DateTime.Now; // Fecha y hora actual
-                comentario.personal_id = usuario.personal_id; // ID de la persona actual
+                comentario.personal = await controladorPersonal.GetPersonalPorId(usuario.personal_id.ToString());
                 comentario.texto = tbxComentario.Text;
-                comentario.incidencia_num = idIncidencia; // ID de la incidencia
+                comentario.incidencia= incidencia; // ID de la incidencia
 
                 // Serializar el objeto ComentarioRequest a JSON
                 string json = JsonConvert.SerializeObject(comentario);
