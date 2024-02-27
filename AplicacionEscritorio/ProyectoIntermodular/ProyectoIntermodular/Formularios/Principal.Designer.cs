@@ -63,8 +63,21 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnInci = new System.Windows.Forms.Button();
+            this.btnTiempoAdmin = new System.Windows.Forms.Button();
+            this.btnTiempoTipo = new System.Windows.Forms.Button();
+            this.btnTiempoInci = new System.Windows.Forms.Button();
+            this.btnStats = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.btnCreador = new System.Windows.Forms.Button();
+            this.comboAdmin = new System.Windows.Forms.ComboBox();
+            this.checkAdmin = new System.Windows.Forms.CheckBox();
+            this.comboCreaInforme = new System.Windows.Forms.ComboBox();
+            this.checkCreador = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxCriterios.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -171,7 +184,7 @@
             this.btnSeleccionar.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionar.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSeleccionar.Location = new System.Drawing.Point(12, 502);
             this.btnSeleccionar.Name = "btnSeleccionar";
@@ -185,7 +198,7 @@
             // 
             this.btnCrear.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrear.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCrear.Location = new System.Drawing.Point(923, 502);
             this.btnCrear.Name = "btnCrear";
@@ -200,7 +213,7 @@
             this.btnEli.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnEli.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEli.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEli.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEli.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEli.Location = new System.Drawing.Point(814, 502);
             this.btnEli.Name = "btnEli";
@@ -259,22 +272,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.label1.Location = new System.Drawing.Point(670, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
+            this.label1.Size = new System.Drawing.Size(46, 16);
             this.label1.TabIndex = 20;
             this.label1.Text = "Hasta:";
             // 
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
-            this.lblDesde.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesde.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblDesde.Location = new System.Drawing.Point(670, 38);
             this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(43, 15);
+            this.lblDesde.Size = new System.Drawing.Size(51, 16);
             this.lblDesde.TabIndex = 19;
             this.lblDesde.Text = "Desde:";
             // 
@@ -300,11 +313,11 @@
             // 
             this.cbxFecha.AutoSize = true;
             this.cbxFecha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxFecha.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxFecha.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.cbxFecha.Location = new System.Drawing.Point(567, 36);
             this.cbxFecha.Name = "cbxFecha";
-            this.cbxFecha.Size = new System.Drawing.Size(64, 19);
+            this.cbxFecha.Size = new System.Drawing.Size(74, 20);
             this.cbxFecha.TabIndex = 16;
             this.cbxFecha.Text = "Fechas";
             this.cbxFecha.UseVisualStyleBackColor = true;
@@ -399,7 +412,7 @@
             this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.Location = new System.Drawing.Point(828, 124);
             this.button2.Name = "button2";
@@ -426,7 +439,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVolver.Location = new System.Drawing.Point(143, 502);
             this.btnVolver.Name = "btnVolver";
@@ -435,12 +448,181 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboCreaInforme);
+            this.groupBox1.Controls.Add(this.checkCreador);
+            this.groupBox1.Controls.Add(this.comboAdmin);
+            this.groupBox1.Controls.Add(this.checkAdmin);
+            this.groupBox1.Controls.Add(this.btnCreador);
+            this.groupBox1.Controls.Add(this.btnAdmin);
+            this.groupBox1.Controls.Add(this.btnStats);
+            this.groupBox1.Controls.Add(this.btnTiempoInci);
+            this.groupBox1.Controls.Add(this.btnTiempoTipo);
+            this.groupBox1.Controls.Add(this.btnTiempoAdmin);
+            this.groupBox1.Controls.Add(this.btnInci);
+            this.groupBox1.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.groupBox1.Location = new System.Drawing.Point(1043, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(216, 453);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Informes";
+            // 
+            // btnInci
+            // 
+            this.btnInci.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnInci.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInci.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInci.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInci.Location = new System.Drawing.Point(6, 27);
+            this.btnInci.Name = "btnInci";
+            this.btnInci.Size = new System.Drawing.Size(195, 41);
+            this.btnInci.TabIndex = 10;
+            this.btnInci.Text = "Incidencias";
+            this.btnInci.UseVisualStyleBackColor = false;
+            this.btnInci.Click += new System.EventHandler(this.btnInci_Click);
+            // 
+            // btnTiempoAdmin
+            // 
+            this.btnTiempoAdmin.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnTiempoAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTiempoAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTiempoAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiempoAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTiempoAdmin.Location = new System.Drawing.Point(6, 74);
+            this.btnTiempoAdmin.Name = "btnTiempoAdmin";
+            this.btnTiempoAdmin.Size = new System.Drawing.Size(195, 41);
+            this.btnTiempoAdmin.TabIndex = 11;
+            this.btnTiempoAdmin.Text = "Tiempo por Admin";
+            this.btnTiempoAdmin.UseVisualStyleBackColor = false;
+            this.btnTiempoAdmin.Click += new System.EventHandler(this.btnTiempoAdmin_Click);
+            // 
+            // btnTiempoTipo
+            // 
+            this.btnTiempoTipo.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnTiempoTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTiempoTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTiempoTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiempoTipo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTiempoTipo.Location = new System.Drawing.Point(6, 121);
+            this.btnTiempoTipo.Name = "btnTiempoTipo";
+            this.btnTiempoTipo.Size = new System.Drawing.Size(195, 41);
+            this.btnTiempoTipo.TabIndex = 12;
+            this.btnTiempoTipo.Text = "Tiempo por Tipo";
+            this.btnTiempoTipo.UseVisualStyleBackColor = false;
+            this.btnTiempoTipo.Click += new System.EventHandler(this.btnTiempoTipo_Click);
+            // 
+            // btnTiempoInci
+            // 
+            this.btnTiempoInci.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnTiempoInci.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTiempoInci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTiempoInci.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiempoInci.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTiempoInci.Location = new System.Drawing.Point(6, 171);
+            this.btnTiempoInci.Name = "btnTiempoInci";
+            this.btnTiempoInci.Size = new System.Drawing.Size(195, 41);
+            this.btnTiempoInci.TabIndex = 13;
+            this.btnTiempoInci.Text = "Tiempo Incidencia";
+            this.btnTiempoInci.UseVisualStyleBackColor = false;
+            this.btnTiempoInci.Click += new System.EventHandler(this.btnTiempoInci_Click);
+            // 
+            // btnStats
+            // 
+            this.btnStats.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnStats.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStats.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnStats.Location = new System.Drawing.Point(6, 218);
+            this.btnStats.Name = "btnStats";
+            this.btnStats.Size = new System.Drawing.Size(195, 41);
+            this.btnStats.TabIndex = 14;
+            this.btnStats.Text = "Estadisticas";
+            this.btnStats.UseVisualStyleBackColor = false;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAdmin.Location = new System.Drawing.Point(6, 309);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(195, 41);
+            this.btnAdmin.TabIndex = 15;
+            this.btnAdmin.Text = "Administrador";
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // btnCreador
+            // 
+            this.btnCreador.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCreador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreador.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCreador.Location = new System.Drawing.Point(6, 395);
+            this.btnCreador.Name = "btnCreador";
+            this.btnCreador.Size = new System.Drawing.Size(195, 41);
+            this.btnCreador.TabIndex = 16;
+            this.btnCreador.Text = "Creador";
+            this.btnCreador.UseVisualStyleBackColor = false;
+            this.btnCreador.Click += new System.EventHandler(this.btnCreador_Click);
+            // 
+            // comboAdmin
+            // 
+            this.comboAdmin.Enabled = false;
+            this.comboAdmin.FormattingEnabled = true;
+            this.comboAdmin.Location = new System.Drawing.Point(45, 279);
+            this.comboAdmin.Name = "comboAdmin";
+            this.comboAdmin.Size = new System.Drawing.Size(156, 24);
+            this.comboAdmin.TabIndex = 24;
+            this.comboAdmin.Text = "Creador";
+            // 
+            // checkAdmin
+            // 
+            this.checkAdmin.AutoSize = true;
+            this.checkAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkAdmin.Location = new System.Drawing.Point(11, 283);
+            this.checkAdmin.Name = "checkAdmin";
+            this.checkAdmin.Size = new System.Drawing.Size(18, 17);
+            this.checkAdmin.TabIndex = 23;
+            this.checkAdmin.UseVisualStyleBackColor = true;
+            this.checkAdmin.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // comboCreaInforme
+            // 
+            this.comboCreaInforme.Enabled = false;
+            this.comboCreaInforme.FormattingEnabled = true;
+            this.comboCreaInforme.Location = new System.Drawing.Point(45, 365);
+            this.comboCreaInforme.Name = "comboCreaInforme";
+            this.comboCreaInforme.Size = new System.Drawing.Size(156, 24);
+            this.comboCreaInforme.TabIndex = 26;
+            this.comboCreaInforme.Text = "Creador";
+            // 
+            // checkCreador
+            // 
+            this.checkCreador.AutoSize = true;
+            this.checkCreador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkCreador.Location = new System.Drawing.Point(11, 369);
+            this.checkCreador.Name = "checkCreador";
+            this.checkCreador.Size = new System.Drawing.Size(18, 17);
+            this.checkCreador.TabIndex = 25;
+            this.checkCreador.UseVisualStyleBackColor = true;
+            this.checkCreador.CheckedChanged += new System.EventHandler(this.checkCreador_CheckedChanged);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1028, 557);
+            this.ClientSize = new System.Drawing.Size(1281, 557);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbxCriterios);
             this.Controls.Add(this.btnEli);
@@ -454,6 +636,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbxCriterios.ResumeLayout(false);
             this.gbxCriterios.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -768,5 +952,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Responsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Equipo;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnInci;
+        private System.Windows.Forms.ComboBox comboCreaInforme;
+        private System.Windows.Forms.CheckBox checkCreador;
+        private System.Windows.Forms.ComboBox comboAdmin;
+        private System.Windows.Forms.CheckBox checkAdmin;
+        private System.Windows.Forms.Button btnCreador;
+        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Button btnStats;
+        private System.Windows.Forms.Button btnTiempoInci;
+        private System.Windows.Forms.Button btnTiempoTipo;
+        private System.Windows.Forms.Button btnTiempoAdmin;
     }
 }

@@ -17,7 +17,9 @@ namespace ProyectoIntermodular
     {
 
         private ControladorIncidencias controladorIncidencias;
+        private ControladorInformes controladorInformes = new ControladorInformes();
         private List<Incidencias> lista;
+        
         private Incidencias inci;
         public PerfilesResponse usuario = new PerfilesResponse();
 
@@ -134,12 +136,25 @@ namespace ProyectoIntermodular
         {
             List<Personal> listaPersonal = await controladorPersonal.GetPersonal();
             List<Incidencias> tiposIncidencias = await controladorIncidencias.GetTiposIncidencia();
-
+            List<PerfilesResponse> listaPerfiles = await controladorPersonal.GetPerfiles();
+            List<PerfilesResponse> listaPerfilesAdmin = new List<PerfilesResponse>();
+            
+            foreach (PerfilesResponse personal in listaPerfiles)
+            {
+                if (personal.perfil.ToString().Equals("administrador")) { listaPerfilesAdmin.Add(personal); }
+            }
+            comboAdmin.DisplayMember = "educantabria";
+            comboAdmin.DataSource = listaPerfilesAdmin;
             if (listaPersonal != null)
             {
                 
                 cmxProfesor.DisplayMember = "nombre"; 
                 cmxProfesor.DataSource = listaPersonal;
+
+                comboCreaInforme.DisplayMember = "nombre";
+                comboCreaInforme.DataSource = listaPersonal;
+
+                
 
                 cmxTipo.DisplayMember = "tipo";
                 cmxTipo.DataSource = tiposIncidencias;
@@ -269,6 +284,70 @@ namespace ProyectoIntermodular
                 dateTimePicker1.Enabled = false;
                 dateTimePicker2.Enabled = false;
             }
+        }
+
+        private async void btnInci_Click(object sender, EventArgs e)
+        {
+            await controladorInformes.GetExcel();
+           
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkAdmin.Checked)
+            {
+                comboAdmin.Enabled = true;
+            }
+            else { comboAdmin.Enabled = false; }
+        }
+
+        private void checkCreador_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkCreador.Checked)
+            {
+                comboCreaInforme.Enabled = true;
+            }
+            else { comboCreaInforme.Enabled = false; }
+        }
+
+        private async void btnTiempoAdmin_Click(object sender, EventArgs e)
+        {
+            await controladorInformes.GetExcelTiempoAdmin();
+
+        }
+
+        private async void btnTiempoTipo_Click(object sender, EventArgs e)
+        {
+            await controladorInformes.GetExcelTiempoTipo();
+
+        }
+
+        private async void btnTiempoInci_Click(object sender, EventArgs e)
+        {
+            await controladorInformes.GetExcelTiempoIncidencia();
+
+        }
+
+        private async void btnStats_Click(object sender, EventArgs e)
+        {
+            await controladorInformes.GetExcelEstadisticas();
+
+        }
+
+        private async void btnAdmin_Click(object sender, EventArgs e)
+        {
+            PerfilesResponse personal = (PerfilesResponse) comboAdmin.SelectedItem;
+
+            await controladorInformes.GetExcelAdministrador(personal.personal_id);
+
+        }
+
+        private async void btnCreador_Click(object sender, EventArgs e)
+        {
+            Personal personal = (Personal) comboCreaInforme.SelectedItem;
+
+            await controladorInformes.GetExcelAdministrador(personal.id);
+
         }
     }
 }

@@ -149,6 +149,7 @@
     <Compile Include="Controladores\ControladorDepartamentos.cs" />
     <Compile Include="Controladores\ControladorComentarios.cs" />
     <Compile Include="Controladores\ControladorIncidencias.cs" />
+    <Compile Include="Controladores\ControladorInformes.cs" />
     <Compile Include="Controladores\ControladorPersonal.cs" />
     <Compile Include="Controladores\ControladorTipos.cs" />
     <Compile Include="Formularios\Admin.cs">
