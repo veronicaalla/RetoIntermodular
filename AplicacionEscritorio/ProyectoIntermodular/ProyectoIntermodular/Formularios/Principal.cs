@@ -17,7 +17,9 @@ namespace ProyectoIntermodular
     {
         public IncidenciasBusqueda buscar = new IncidenciasBusqueda();
         private ControladorIncidencias controladorIncidencias;
+        private ControladorInformes controladorInformes = new ControladorInformes();
         private List<Incidencias> lista;
+        
         private Incidencias inci;
         public PerfilesResponse usuario = new PerfilesResponse();
 
@@ -28,10 +30,10 @@ namespace ProyectoIntermodular
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            
+
             usuario = inicial.usuario;
 
-            
+
 
             controladorIncidencias = new ControladorIncidencias();
             inci = new Incidencias();
@@ -45,7 +47,7 @@ namespace ProyectoIntermodular
 
             usuario = admin.usuario;
 
-           
+
 
             controladorIncidencias = new ControladorIncidencias();
             inci = new Incidencias();
@@ -57,7 +59,7 @@ namespace ProyectoIntermodular
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
-           
+
 
             controladorIncidencias = new ControladorIncidencias();
             inci = new Incidencias();
@@ -70,14 +72,14 @@ namespace ProyectoIntermodular
 
             if (lista != null)
             {
-                foreach (var incidencia in lista) 
+                foreach (var incidencia in lista)
                 {
                     DataGridViewRow row = new DataGridViewRow();
                     row.CreateCells(dataGridView1);
 
                     row.Cells[0].Value = incidencia.num;
                     row.Cells[1].Value = incidencia.tipo;
-                    row.Cells[2].Value = incidencia.incidenciasSubtipo.subtipoNombre; 
+                    row.Cells[2].Value = incidencia.incidenciasSubtipo.subtipoNombre;
                     row.Cells[3].Value = incidencia.fechaCreacion;
                     row.Cells[4].Value = incidencia.fechaCierre;
                     row.Cells[5].Value = incidencia.descripcion;
@@ -87,7 +89,7 @@ namespace ProyectoIntermodular
                     row.Cells[9].Value = incidencia.responsable.nombre;
                     row.Cells[10].Value = incidencia.equipo.tipoEquipo;
 
-                   
+
 
                     dataGridView1.Rows.Add(row);
                 }
@@ -98,13 +100,24 @@ namespace ProyectoIntermodular
         {
             List<Personal> listaPersonal = await controladorPersonal.GetPersonal();
             List<Personal> listaPersonal2 = await controladorPersonal.GetPersonal();
+            List<PerfilesResponse> listaPerfiles = await controladorPersonal.GetPerfiles();
+            List<PerfilesResponse> listaPerfilesAdmin = new List<PerfilesResponse>();
 
 
+            foreach (PerfilesResponse personal in listaPerfiles)
+            {
+                if (personal.perfil.ToString().Equals("administrador")) { listaPerfilesAdmin.Add(personal); }
+            }
+            comboAdmin.DisplayMember = "educantabria";
+            comboAdmin.DataSource = listaPerfilesAdmin;
             if (listaPersonal != null)
             {
-                
-                cmxProfesor.DisplayMember = "nombre"; 
+
+                cmxProfesor.DisplayMember = "nombre";
                 cmxProfesor.DataSource = listaPersonal;
+
+                comboCreaInforme.DisplayMember = "nombre";
+                comboCreaInforme.DataSource = listaPersonal;
 
                 cmxResponsable.DisplayMember = "nombre";
                 cmxResponsable.DataSource = listaPersonal2;
@@ -164,7 +177,7 @@ namespace ProyectoIntermodular
                 String estado = dataGridView1.CurrentRow.Cells[6].Value != null ? dataGridView1.CurrentRow.Cells[6].Value.ToString() : string.Empty;
                 String profesor = dataGridView1.CurrentRow.Cells[8].Value != null ? dataGridView1.CurrentRow.Cells[8].Value.ToString() : string.Empty;
 
-                ModificarIncidencia modificarInci = new ModificarIncidencia(numero,tipo,subtipo,fechaCreacion,fechaCierre,profesor,estado);
+                ModificarIncidencia modificarInci = new ModificarIncidencia(numero, tipo, subtipo, fechaCreacion, fechaCierre, profesor, estado);
                 this.Hide();
                 modificarInci.Show();
 
@@ -174,7 +187,7 @@ namespace ProyectoIntermodular
             {
                 MessageBox.Show("Debe seleccionar un usuario");
             }
-            
+
         }
 
         private void btnEli_Click(object sender, EventArgs e)
@@ -197,7 +210,7 @@ namespace ProyectoIntermodular
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Inicial inicial=new Inicial();
+            Inicial inicial = new Inicial();
             Admin admin = new Admin(inicial);
             this.Hide();
             admin.Show();
@@ -244,9 +257,9 @@ namespace ProyectoIntermodular
             }
         }
 
-        
 
-        
+
+
         private async void button1_Click(object sender, EventArgs e)
         {
 
@@ -262,7 +275,7 @@ namespace ProyectoIntermodular
                 estado = cmxEstado.Text.ToLower();
             }
 
-           
+
 
             if (cbxTipo.Checked)
             {
@@ -282,7 +295,7 @@ namespace ProyectoIntermodular
             }
 
             // Llamar al método de búsqueda con los criterios seleccionados
-            List<Incidencias> incidenciasEncontradas = await controladorIncidencias.BuscarIncidencias(estado,tipo, creadorId, responsableId);
+            List<Incidencias> incidenciasEncontradas = await controladorIncidencias.BuscarIncidencias(estado, tipo, creadorId, responsableId);
 
             // Limpiar el DataGridView antes de agregar nuevas filas
             dataGridView1.Rows.Clear();
@@ -326,5 +339,85 @@ namespace ProyectoIntermodular
         {
             dataGridView1.Rows.Clear();
         }
-    }
+
+        private void btnVolver_Click_1(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            this.Hide();
+            admin.Show();
+        }
+
+        private void btnVolver_Click_2(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            this.Hide();
+            admin.Show();
+        }
+
+        private async void btnInci_Click(object sender, EventArgs e)
+        {
+            await controladorInformes.GetExcel();
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ç.Checked)
+            {
+                comboAdmin.Enabled = true;
+            }
+            else { comboAdmin.Enabled = false; }
+        }
+
+        private void checkCreador_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkCreador.Checked)
+            {
+                comboCreaInforme.Enabled = true;
+            }
+            else { comboCreaInforme.Enabled = false; }
+        }
+
+        private async void btnTiempoAdmin_Click(object sender, EventArgs e)
+        {
+            await controladorInformes.GetExcelTiempoAdmin();
+
+        }
+
+        private async void btnTiempoTipo_Click(object sender, EventArgs e)
+        {
+            await controladorInformes.GetExcelTiempoTipo();
+
+        }
+
+        private async void btnTiempoInci_Click(object sender, EventArgs e)
+        {
+            await controladorInformes.GetExcelTiempoIncidencia();
+
+        }
+
+        private async void btnStats_Click(object sender, EventArgs e)
+        {
+            await controladorInformes.GetExcelEstadisticas();
+
+        }
+
+        private async void btnAdmin_Click(object sender, EventArgs e)
+        {
+            PerfilesResponse personal = (PerfilesResponse)comboAdmin.SelectedItem;
+
+            await controladorInformes.GetExcelAdministrador(personal.personal_id);
+
+        }
+
+        private async void btnCreador_Click(object sender, EventArgs e)
+        {
+            Personal personal = (Personal)comboCreaInforme.SelectedItem;
+
+            await controladorInformes.GetExcelAdministrador(personal.id);
+
+        }
+    }   
 }
+
+

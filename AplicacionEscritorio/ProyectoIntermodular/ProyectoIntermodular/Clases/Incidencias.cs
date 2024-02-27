@@ -77,7 +77,7 @@ namespace ProyectoIntermodular.Clases
         public string descripcion { get; set; }
         public EstadoIncidencia estado { get; set; }
         public string adjuntoUrl { get; set; }
-        public PerfilesResponse creador { get; set; }
+        public Personal creador { get; set; }
         public string equipo { get; set; }
     }
 

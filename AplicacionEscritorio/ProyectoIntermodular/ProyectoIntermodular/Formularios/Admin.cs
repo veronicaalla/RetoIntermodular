@@ -20,8 +20,13 @@ namespace ProyectoIntermodular.Formularios
 
             usuario=inicial.usuario;
 
-
-            lblPrueba.Text = inicial.usuario.educantabria.ToString();
+            if (usuario.educantabria != null) {
+                lblPrueba.Text = inicial.usuario.educantabria.ToString();
+            }
+            else
+            {
+                lblPrueba.Text = "";
+            }
         }
 
         public Admin()

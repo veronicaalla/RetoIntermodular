@@ -56,8 +56,21 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnInci = new System.Windows.Forms.Button();
+            this.btnTiempoAdmin = new System.Windows.Forms.Button();
+            this.btnTiempoInci = new System.Windows.Forms.Button();
+            this.btnStats = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.btnTiempoTipo = new System.Windows.Forms.Button();
+            this.btnCreador = new System.Windows.Forms.Button();
+            this.comboAdmin = new System.Windows.Forms.ComboBox();
+            this.ç = new System.Windows.Forms.CheckBox();
+            this.comboCreaInforme = new System.Windows.Forms.ComboBox();
+            this.checkCreador = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxCriterios.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -341,19 +354,190 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnVolver.Location = new System.Drawing.Point(143, 502);
+            this.btnVolver.Location = new System.Drawing.Point(148, 502);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(93, 41);
-            this.btnVolver.TabIndex = 8;
+            this.btnVolver.Size = new System.Drawing.Size(116, 41);
+            this.btnVolver.TabIndex = 6;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click_2);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboCreaInforme);
+            this.groupBox1.Controls.Add(this.checkCreador);
+            this.groupBox1.Controls.Add(this.comboAdmin);
+            this.groupBox1.Controls.Add(this.ç);
+            this.groupBox1.Controls.Add(this.btnCreador);
+            this.groupBox1.Controls.Add(this.btnTiempoTipo);
+            this.groupBox1.Controls.Add(this.btnAdmin);
+            this.groupBox1.Controls.Add(this.btnStats);
+            this.groupBox1.Controls.Add(this.btnTiempoInci);
+            this.groupBox1.Controls.Add(this.btnTiempoAdmin);
+            this.groupBox1.Controls.Add(this.btnInci);
+            this.groupBox1.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.groupBox1.Location = new System.Drawing.Point(952, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 453);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Informes";
+            // 
+            // btnInci
+            // 
+            this.btnInci.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnInci.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInci.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInci.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInci.Location = new System.Drawing.Point(6, 29);
+            this.btnInci.Name = "btnInci";
+            this.btnInci.Size = new System.Drawing.Size(188, 41);
+            this.btnInci.TabIndex = 8;
+            this.btnInci.Text = "Incidencias";
+            this.btnInci.UseVisualStyleBackColor = false;
+            this.btnInci.Click += new System.EventHandler(this.btnInci_Click);
+            // 
+            // btnTiempoAdmin
+            // 
+            this.btnTiempoAdmin.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnTiempoAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTiempoAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTiempoAdmin.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiempoAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTiempoAdmin.Location = new System.Drawing.Point(6, 79);
+            this.btnTiempoAdmin.Name = "btnTiempoAdmin";
+            this.btnTiempoAdmin.Size = new System.Drawing.Size(188, 41);
+            this.btnTiempoAdmin.TabIndex = 9;
+            this.btnTiempoAdmin.Text = "Tiempo por Admin";
+            this.btnTiempoAdmin.UseVisualStyleBackColor = false;
+            this.btnTiempoAdmin.Click += new System.EventHandler(this.btnTiempoAdmin_Click);
+            // 
+            // btnTiempoInci
+            // 
+            this.btnTiempoInci.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnTiempoInci.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTiempoInci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTiempoInci.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiempoInci.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTiempoInci.Location = new System.Drawing.Point(6, 176);
+            this.btnTiempoInci.Name = "btnTiempoInci";
+            this.btnTiempoInci.Size = new System.Drawing.Size(188, 41);
+            this.btnTiempoInci.TabIndex = 10;
+            this.btnTiempoInci.Text = "Tiempo Incidencia";
+            this.btnTiempoInci.UseVisualStyleBackColor = false;
+            this.btnTiempoInci.Click += new System.EventHandler(this.btnTiempoInci_Click);
+            // 
+            // btnStats
+            // 
+            this.btnStats.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnStats.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStats.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStats.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnStats.Location = new System.Drawing.Point(6, 225);
+            this.btnStats.Name = "btnStats";
+            this.btnStats.Size = new System.Drawing.Size(188, 41);
+            this.btnStats.TabIndex = 11;
+            this.btnStats.Text = "Estadísticas";
+            this.btnStats.UseVisualStyleBackColor = false;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAdmin.Location = new System.Drawing.Point(8, 309);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(186, 41);
+            this.btnAdmin.TabIndex = 13;
+            this.btnAdmin.Text = "Administrador";
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // btnTiempoTipo
+            // 
+            this.btnTiempoTipo.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnTiempoTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTiempoTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTiempoTipo.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiempoTipo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTiempoTipo.Location = new System.Drawing.Point(6, 127);
+            this.btnTiempoTipo.Name = "btnTiempoTipo";
+            this.btnTiempoTipo.Size = new System.Drawing.Size(188, 41);
+            this.btnTiempoTipo.TabIndex = 14;
+            this.btnTiempoTipo.Text = "Tiempo por Tipo";
+            this.btnTiempoTipo.UseVisualStyleBackColor = false;
+            this.btnTiempoTipo.Click += new System.EventHandler(this.btnTiempoTipo_Click);
+            // 
+            // btnCreador
+            // 
+            this.btnCreador.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCreador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreador.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreador.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCreador.Location = new System.Drawing.Point(8, 399);
+            this.btnCreador.Name = "btnCreador";
+            this.btnCreador.Size = new System.Drawing.Size(186, 41);
+            this.btnCreador.TabIndex = 15;
+            this.btnCreador.Text = "Creador";
+            this.btnCreador.UseVisualStyleBackColor = false;
+            this.btnCreador.Click += new System.EventHandler(this.btnCreador_Click);
+            // 
+            // comboAdmin
+            // 
+            this.comboAdmin.Enabled = false;
+            this.comboAdmin.FormattingEnabled = true;
+            this.comboAdmin.Location = new System.Drawing.Point(42, 277);
+            this.comboAdmin.Name = "comboAdmin";
+            this.comboAdmin.Size = new System.Drawing.Size(140, 23);
+            this.comboAdmin.TabIndex = 17;
+            this.comboAdmin.Text = "Creador";
+            // 
+            // ç
+            // 
+            this.ç.AutoSize = true;
+            this.ç.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ç.Location = new System.Drawing.Point(8, 278);
+            this.ç.Name = "ç";
+            this.ç.Size = new System.Drawing.Size(18, 17);
+            this.ç.TabIndex = 16;
+            this.ç.UseVisualStyleBackColor = true;
+            this.ç.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // comboCreaInforme
+            // 
+            this.comboCreaInforme.Enabled = false;
+            this.comboCreaInforme.FormattingEnabled = true;
+            this.comboCreaInforme.Location = new System.Drawing.Point(42, 365);
+            this.comboCreaInforme.Name = "comboCreaInforme";
+            this.comboCreaInforme.Size = new System.Drawing.Size(140, 23);
+            this.comboCreaInforme.TabIndex = 19;
+            this.comboCreaInforme.Text = "Creador";
+            // 
+            // checkCreador
+            // 
+            this.checkCreador.AutoSize = true;
+            this.checkCreador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkCreador.Location = new System.Drawing.Point(8, 366);
+            this.checkCreador.Name = "checkCreador";
+            this.checkCreador.Size = new System.Drawing.Size(18, 17);
+            this.checkCreador.TabIndex = 18;
+            this.checkCreador.UseVisualStyleBackColor = true;
+            this.checkCreador.CheckedChanged += new System.EventHandler(this.checkCreador_CheckedChanged);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(947, 557);
+            this.ClientSize = new System.Drawing.Size(1164, 557);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbxCriterios);
             this.Controls.Add(this.btnEli);
@@ -367,6 +551,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbxCriterios.ResumeLayout(false);
             this.gbxCriterios.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -599,5 +785,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Responsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Equipo;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboCreaInforme;
+        private System.Windows.Forms.CheckBox checkCreador;
+        private System.Windows.Forms.ComboBox comboAdmin;
+        private System.Windows.Forms.CheckBox ç;
+        private System.Windows.Forms.Button btnCreador;
+        private System.Windows.Forms.Button btnTiempoTipo;
+        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Button btnStats;
+        private System.Windows.Forms.Button btnTiempoInci;
+        private System.Windows.Forms.Button btnTiempoAdmin;
+        private System.Windows.Forms.Button btnInci;
     }
 }

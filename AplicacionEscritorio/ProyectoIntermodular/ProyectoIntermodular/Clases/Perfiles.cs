@@ -40,17 +40,18 @@ namespace ProyectoIntermodular.Clases
   
     public enum PerfilEnum
     {
-        ADMIN,
-        PROFESOR
+        administrador,
+        profesor,
+        otros
     }
 }
 public class PerfilesResponse
 {
 
-    public int personal { get; set; }
+    public int personal_id { get; set; }
     public string dominio { get; set; }
     public string educantabria { get; set; }
     public string password { get; set; }
-    public string perfil { get; set; }
+    public PerfilEnum perfil { get; set; }
 }
 
