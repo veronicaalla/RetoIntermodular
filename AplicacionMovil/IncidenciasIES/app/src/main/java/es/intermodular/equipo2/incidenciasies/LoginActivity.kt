@@ -102,10 +102,6 @@ class LoginActivity : AppCompatActivity() {
                     Log.i("Login usuario", "Respuesta succesfull")
                     Log.i("Loggin Usuario", perfilResponse!!.personal_id.toString())
 
-                    /* val intent = Intent(this@LoginActivity, Principal::class.java)
-                     intent.putExtra("ID_PERFIL_EXTRA", perfilResponse!!.personal_id)
-
-                     startActivity(intent)*/
                     onLoginSuccess(perfilResponse.personal_id)
 
                 } else {

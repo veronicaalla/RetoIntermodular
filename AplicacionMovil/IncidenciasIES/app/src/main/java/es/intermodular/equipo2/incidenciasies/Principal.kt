@@ -235,10 +235,10 @@ class Principal : AppCompatActivity() {
 
         // Obtener la lista de incidencias en cada estado o una lista vacía si no hay incidencias en ese estado
         val incidenciasAbiertasFuncionalidad = estados["abierta"] ?: emptyList()
-        val incidenciasCerradasFuncionalidad = estados["cerrada"] ?: emptyList()
         val incidenciasAsignadasFuncionalidad = estados["asignada"] ?: emptyList()
         val incidenciasEnProcesoFuncionalidad = estados["en_proceso"] ?: emptyList()
         val incidenciasResueltasFuncionalidad = estados["resuelta"] ?: emptyList()
+        val incidenciasCerradasFuncionalidad = estados["cerrada"] ?: emptyList()
 
         // Establecer el texto de los botones con la cantidad de incidencias en cada estado
         binding.btnAbiertas.text = "${incidenciasAbiertasFuncionalidad.size} Abiertas"
@@ -311,9 +311,8 @@ class Principal : AppCompatActivity() {
         }
 
 
-
         binding.btnCerradas.setOnClickListener {
-            if (incidenciasResueltasFuncionalidad.size != 0) {
+            if (incidenciasCerradasFuncionalidad.size != 0) {
                 val intent = Intent(this, SpecificListIncidents::class.java)
                 intent.putExtra("EXTRA_TYPE_INCIDENTS", "Cerradas")
                 intent.putExtra(
