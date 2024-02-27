@@ -11,6 +11,9 @@ data class ComentarioResponse(
     @SerializedName("adjuntoUrl")
     val adjuntoUrl: String,
 
+    @SerializedName("texto")
+    val texto: String,
+
     @SerializedName("fechahora")
     val fechahora: Date,
 
