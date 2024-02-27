@@ -29,7 +29,7 @@ class SplashScreen : AppCompatActivity() {
             //Al ser la ventana inicial, donde el usuario no tiene que interactuar
             //Sino que solamente debe de esperar, le quitaremos la animacion que hay
             //Entre ventanas
-            val flagIntent = Intent(this, LoginActivity::class.java)
+            val flagIntent = Intent(this, Principal::class.java)
             flagIntent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
             startActivity(flagIntent)
 

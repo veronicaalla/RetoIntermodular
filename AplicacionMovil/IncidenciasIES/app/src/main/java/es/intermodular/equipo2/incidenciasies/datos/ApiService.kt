@@ -1,5 +1,6 @@
 package es.intermodular.equipo2.incidenciasies.datos
 
+import es.intermodular.equipo2.incidenciasies.modelo.ComentarioResponse
 import es.intermodular.equipo2.incidenciasies.modelo.CrearIncidencia
 import es.intermodular.equipo2.incidenciasies.modelo.EquipoResponse
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
@@ -54,9 +55,8 @@ interface ApiService {
 
 
     //Eliminar una incidencia
-    @DELETE("/tu-endpoint/{num}")
+    @DELETE("incidencias/{num}")
     fun borrarIncidencia(@Path("num") num: Int): Call<IncidenciaResponse>
-
     //endregion
 
 
@@ -65,4 +65,18 @@ interface ApiService {
     fun obtenerEquipoPorId(@Path("id") id: Int): Call<EquipoResponse>
 
 
+    //endregion
+
+    //region COMENTARIOS
+
+    //Obtener los comentarios de una incidencia
+    @GET("comentarios/incidencia/{incidenciaId}")
+    suspend fun obtenerComentariosPorIncidencia(@Path("incidenciaId") incidenciaId: Int): Response<List<ComentarioResponse>>
+
+    //Crear un comentario
+    @POST("comentarios")
+    fun crearComentario(@Body nuevoComentario: ComentarioResponse): Call<ComentarioResponse>
+
+
+    //endregion
 }

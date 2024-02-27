@@ -3,12 +3,12 @@ package es.intermodular.equipo2.incidenciasies.recyclerIncidencias
 import android.content.Intent
 import android.util.Log
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia.EditIncident
+import es.intermodular.equipo2.incidenciasies.Principal
 import es.intermodular.equipo2.incidenciasies.R
 import es.intermodular.equipo2.incidenciasies.databinding.ItemIncidenciasBinding
 import es.intermodular.equipo2.incidenciasies.datos.Api
@@ -23,16 +23,16 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val binding = ItemIncidenciasBinding.bind(view)
 
     fun bind(
-        incidenciasResponse: IncidenciaResponse,
-        onItemSelected: (IncidenciaResponse) -> Unit
+        incidenciaResponse: IncidenciaResponse,
+        onItemSelected: (IncidenciaResponse) -> Unit,
+        onItemDelete: (IncidenciaResponse) -> Unit
     ) {
-        binding.txtFecha.text = incidenciasResponse.fechaCreacion.toString()
-        binding.txtIncidenciaID.text = "Incidencia #${incidenciasResponse.idIncidencia}"
+        binding.txtFecha.text = incidenciaResponse.fechaCreacion.toString()
+        binding.txtIncidenciaID.text = "Incidencia #${incidenciaResponse.idIncidencia}"
 
-        binding.btnEstadoIncidencai.text = incidenciasResponse.estado
-        //Modificamos el color
-        //Lo tipos de valores son --> ENUM('abierta', 'asignada', 'en_proceso', 'enviada_a_Infortec', 'resuelta', 'cerrada')
-        when (incidenciasResponse.estado) {
+        binding.btnEstadoIncidencai.text = incidenciaResponse.estado
+
+        when (incidenciaResponse.estado) {
             "abierta" -> binding.btnEstadoIncidencai.setBackgroundColor(
                 ContextCompat.getColor(
                     itemView.context,
@@ -47,12 +47,15 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 )
             )
 
-            "en_proceso" -> binding.btnEstadoIncidencai.setBackgroundColor(
-                ContextCompat.getColor(
-                    itemView.context,
-                    R.color.colorEnProceso
+            "en_proceso" -> {
+                binding.btnEstadoIncidencai.setBackgroundColor(
+                    ContextCompat.getColor(
+                        itemView.context,
+                        R.color.colorEnProceso
+                    )
                 )
-            )
+                binding.btnEstadoIncidencai.text = "en proceso"
+            }
 
             "resuelta" -> binding.btnEstadoIncidencai.setBackgroundColor(
                 ContextCompat.getColor(
@@ -69,21 +72,19 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             )
         }
 
-        if (incidenciasResponse.estado.contains("abierta") || incidenciasResponse.estado.contains("asignada")) {
-            Log.i("Tipo incidencia ", incidenciasResponse.estado)
+        if (incidenciaResponse.estado.contains("abierta") || incidenciaResponse.estado.contains("asignada")) {
+            Log.i("Tipo incidencia ", incidenciaResponse.estado)
             binding.btnEditarIncidencias.setOnClickListener {
                 val intent = Intent(it.context, EditIncident::class.java)
                 ////Para poder pasarle la incidencia, debido a que hemos puesto la clase Incidencia como Serializable
-                Log.i("Paso de incidencia ", incidenciasResponse.toString())
-                intent.putExtra(EditIncident.EXTRA_EDIT_INCIDENCIA, incidenciasResponse)
+                Log.i("Paso de incidencia ", incidenciaResponse.toString())
+                intent.putExtra(EditIncident.EXTRA_EDIT_INCIDENCIA, incidenciaResponse)
                 intent.putExtra("incidencia", 1)
                 ContextCompat.startActivity(it.context, intent, null)
             }
 
             binding.btnEliminarIncidencia.setOnClickListener {
-                Toast.makeText(it.context, "Eliminar incidencia ", Toast.LENGTH_SHORT).show()
-                //Comprobamos si el usuario de verdad desea eliminar la incidencia
-                eliminarIncidencia(incidenciasResponse)
+                onItemDelete(incidenciaResponse)
             }
         } else {
             binding.btnEditarIncidencias.setVisibility(View.INVISIBLE);
@@ -93,45 +94,12 @@ class IncidenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
 
         binding.txtTipoIncidencia.text =
-            " ${incidenciasResponse.tipoIncidencia.tipo} ${incidenciasResponse.tipoIncidencia.subtipoNombre} ${incidenciasResponse.tipoIncidencia.subSubtipo}"
+            " ${incidenciaResponse.tipoIncidencia.tipo} ${incidenciaResponse.tipoIncidencia.subtipoNombre} ${incidenciaResponse.tipoIncidencia.subSubtipo}"
 
-        binding.root.setOnClickListener { onItemSelected(incidenciasResponse) }
+        binding.root.setOnClickListener { onItemSelected(incidenciaResponse) }
     }
 
-    private fun eliminarIncidencia(incidenciasResponse: IncidenciaResponse) {
 
-        // Creamos la ventana emergente
-        val dialog = MaterialAlertDialogBuilder(itemView.context)
-            .setTitle("Eliminar")
-            .setMessage("¿Estas seguro de que desea eliminar la incidencia?")
-
-            // Acción que se realiza al dar "Añadir"
-            .setPositiveButton("SI") { _, _ ->
-
-                Log.i("Incidencia para elliminar", incidenciasResponse.toString())
-                Api.retrofitService.borrarIncidencia(incidenciasResponse.idIncidencia)
-                    .enqueue(object : Callback<IncidenciaResponse> {
-                        override fun onResponse(
-                            call: Call<IncidenciaResponse>,
-                            response: Response<IncidenciaResponse>
-                        ) {
-                            if (response.isSuccessful) {
-                                val myResponse = response.body()
-                                Log.i("Incidencia eliminada ", myResponse.toString())
-                            } else {
-                                Log.i("No se ha podido eliminar", response.message())
-                            }
-                        }
-
-                        override fun onFailure(call: Call<IncidenciaResponse>, t: Throwable) {
-                            Log.i("Eror en la solicitud", t.message.toString())
-                        }
-                    })
-            }
-            .setNegativeButton("NO", null)
-            .create()
-        dialog.show()
-    }
 }
 
 
