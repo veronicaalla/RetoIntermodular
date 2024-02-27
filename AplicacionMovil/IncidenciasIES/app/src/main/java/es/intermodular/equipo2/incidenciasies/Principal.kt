@@ -295,7 +295,6 @@ class Principal : AppCompatActivity() {
         }
 
 
-
         binding.btnResueltas.setOnClickListener {
             if (incidenciasResueltasFuncionalidad.size != 0) {
                 val intent = Intent(this, SpecificListIncidents::class.java)

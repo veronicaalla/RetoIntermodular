@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyApp</string>
+    <string name="app_name">Incidencias IES</string>
     <string name="hello">¡Hola!</string>
     <string name="username_hint">Usuario</string>
     <string name="password_hint">Contraseña</string>
