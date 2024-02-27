@@ -95,9 +95,18 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
         binding.txtTipoIncidencia.text = incidencia.tipo
         binding.txtfechaCreacion.text = incidencia.fechaCreacion.toString()
         binding.DescripcionIncidencia.text = incidencia.descripcion
-        binding.EquipoIncidencia.text = incidencia.equipo.id.toString()
+
+        //Como el equipo puede ser nulo, debemos controlarlo -> realizamos un if ternario
+        var equipo = if (incidencia.equipo?.id.toString()
+                .equals("null")
+        ) "" else incidencia.equipo?.id.toString()
+        binding.EquipoIncidencia.text = equipo
+
         binding.btnEstadoIncidencia.text = incidencia.estado
-        binding.FechaCierreIncidencia.text = incidencia.fechaCierre.toString()
+
+        var fechaCierre =
+            if (incidencia.fechaCierre == null) "" else incidencia.fechaCierre
+        binding.FechaCierreIncidencia.text = fechaCierre.toString()
     }
 
     private fun colorBoton(estado: String) {
