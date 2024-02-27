@@ -102,10 +102,11 @@ class LoginActivity : AppCompatActivity() {
                     Log.i("Login usuario", "Respuesta succesfull")
                     Log.i("Loggin Usuario", perfilResponse!!.personal_id.toString())
 
-                    val intent = Intent(this@LoginActivity, Principal::class.java)
-                    intent.putExtra("ID_PERFIL_EXTRA", perfilResponse!!.personal_id)
+                    /* val intent = Intent(this@LoginActivity, Principal::class.java)
+                     intent.putExtra("ID_PERFIL_EXTRA", perfilResponse!!.personal_id)
 
-                    startActivity(intent)
+                     startActivity(intent)*/
+                    onLoginSuccess(perfilResponse.personal_id)
 
                 } else {
                     Toast.makeText(
@@ -124,6 +125,19 @@ class LoginActivity : AppCompatActivity() {
         })
 
 
+    }
+
+    fun onLoginSuccess(idUsuario: Int) {
+        val userPreferences = UserPreferences(this)
+        //Mostramos que el usuario se ha logeado
+        userPreferences.isLoggedIn = true
+        //Guardamos el id de usuario
+        userPreferences.userId = idUsuario
+
+        //Iniciamos la actividad
+        val intent = Intent(this, Principal::class.java)
+        startActivity(intent)
+        finish()
     }
 
     override fun onStop() {

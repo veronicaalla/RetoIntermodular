@@ -47,12 +47,23 @@ class Principal : AppCompatActivity() {
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        adapter = IncidenciaAdapter(emptyList(), ::navigateToDetalil, ::eliminarIncidencia)
-
+        val userPreferences = UserPreferences(this)
+        if (!userPreferences.isLoggedIn) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+            return
+        }
         isOnline(this)
+        //recuperamos el id del usuario que se ha pasado anteriormente, mediante un Intent
+        idPerfil = userPreferences.userId
+        adapter = IncidenciaAdapter(emptyList(), ::navigateToDetalil, ::eliminarIncidencia)
+        retrofit = RetrofitBuilder.build()
+        initUI()
+
 
         //recuperamos el id del usuario que se ha pasado anteriormente, mediante un Intent
-        idPerfil = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
+        // idPerfil = intent.getIntExtra("ID_PERFIL_EXTRA", -1)
 
         //region FUNCINALIDAD BOTONES
         //Boton de añadir
@@ -95,6 +106,12 @@ class Principal : AppCompatActivity() {
                         true
                     }
 
+                    R.id.logOut -> {
+                        cerrarSesion()
+                        true
+
+                    }
+
                     else -> false
                 }
             }
@@ -106,8 +123,18 @@ class Principal : AppCompatActivity() {
         //endregion
 
 
-        retrofit = RetrofitBuilder.build()
-        initUI()
+    }
+
+    private fun cerrarSesion() {
+        val userPreferences = UserPreferences(this)
+        userPreferences.isLoggedIn = false
+        //Limpiamos el id del usuario
+        userPreferences.userId = -1
+
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 
     private fun initUI() {
