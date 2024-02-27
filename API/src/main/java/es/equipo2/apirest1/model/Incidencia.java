@@ -30,9 +30,7 @@ public class Incidencia implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Estado_Incidencia estado;
 
-
 	private Date fechaCierre;
-
 
 	private Date fechaCreacion;
 

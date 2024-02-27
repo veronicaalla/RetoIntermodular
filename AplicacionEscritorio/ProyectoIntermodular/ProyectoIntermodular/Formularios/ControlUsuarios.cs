@@ -33,13 +33,6 @@ namespace ProyectoIntermodular.Formularios
             crearUsuario.Show();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            EliminarUsuario eliminarUsuario= new EliminarUsuario();
-            this.Hide();
-            eliminarUsuario.Show();
-        }
-
         private void ControlUsuarios_Load(object sender, EventArgs e)
         {
 
@@ -50,6 +43,13 @@ namespace ProyectoIntermodular.Formularios
             SeleccionarUsuario seleccionar=new SeleccionarUsuario();
             this.Hide();
             seleccionar.Show();
+        }
+
+        private void btnDepartamentos_Click(object sender, EventArgs e)
+        {
+            SeleccionarDepartamentos seleccionarDepartamentos=new SeleccionarDepartamentos();
+            this.Hide();
+            seleccionarDepartamentos.Show();
         }
     }
 }
