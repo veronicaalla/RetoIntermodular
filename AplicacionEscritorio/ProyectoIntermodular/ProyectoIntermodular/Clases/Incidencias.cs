@@ -1,9 +1,7 @@
-﻿using Newtonsoft.Json.Converters;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ProyectoIntermodular.Clases
@@ -13,8 +11,6 @@ namespace ProyectoIntermodular.Clases
 
         
         public int num { get; set; }
-
-        [JsonConverter(typeof(StringEnumConverter))]
         public string tipo { get; set; }
         public IncidenciasSubtipos incidenciasSubtipo { get; set; }
         public DateTime fechaCreacion { get; set; }
@@ -25,17 +21,17 @@ namespace ProyectoIntermodular.Clases
         public Personal creador { get; set; }
         public Personal responsable { get; set; }
         public Equipo equipo { get; set; }
-        public TimeSpan? tiempo_dec { get; set; }
 
 
 
-    public Incidencias()
+
+        public Incidencias()
         {
             
         }
 
         
-        public Incidencias(int num, string tipo, IncidenciasSubtipos subtipo_id, DateTime fecha_creacion, DateTime? fecha_cierre, string descripcion, EstadoIncidencia estado, string adjunto_url, Personal creador_id, Personal responsable_id, Equipo equipo_id, TimeSpan? tiempo_dec)
+        public Incidencias(int num, string tipo, IncidenciasSubtipos subtipo_id, DateTime fecha_creacion, DateTime? fecha_cierre, string descripcion, EstadoIncidencia estado, string adjunto_url, Personal creador_id, Personal responsable_id, Equipo equipo_id)
         {
             this.num = num;
             this.tipo = tipo;
@@ -48,7 +44,6 @@ namespace ProyectoIntermodular.Clases
             this.creador = creador_id;
             this.responsable = responsable_id;
             this.equipo = equipo_id;
-            this.tiempo_dec = tiempo_dec;
         }
     }
 
@@ -66,8 +61,8 @@ namespace ProyectoIntermodular.Clases
     {
         ABIERTA,
         ASIGNADA,
-        EN_PROCESO,
-        ENVIADA_A_INFORTEC,
+        ENPROCESO,
+        ENVIADA_INFORTEC,
         RESUELTA,
         CERRADA
     }

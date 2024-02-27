@@ -188,32 +188,6 @@ namespace ProyectoIntermodular.Controladores
             Console.WriteLine("Error al eliminar el usuario: " + ex.Message);
             return false;
         }
-        public async Task<Personal> GetPersonalPorNombre_Apellido1_Apellido2(string nombre, string apellido1, string apellido2)
-        {
-            try
-            {
-                HttpResponseMessage response = await client.GetAsync($"http://localhost:8080/api/personal/objeto?nombre={nombre}&apellido1={apellido1}&apellido2={apellido2}");
-                response.EnsureSuccessStatusCode();
-
-                string responseJson = await response.Content.ReadAsStringAsync();
-
-                Personal personal = JsonConvert.DeserializeObject<Personal>(responseJson);
-                return personal;
-            }
-            catch (HttpRequestException ex)
-            {
-                // Maneja las excepciones específicas de las solicitudes HTTP
-                Console.WriteLine("Error al enviar la solicitud HTTP: " + ex.Message);
-                return null;
-            }
-            catch (Exception ex)
-            {
-                // Maneja cualquier otra excepción que pueda ocurrir
-                Console.WriteLine("Error al procesar la respuesta: " + ex.Message);
-                return null;
-            }
-        }
-
     }
 }
 }

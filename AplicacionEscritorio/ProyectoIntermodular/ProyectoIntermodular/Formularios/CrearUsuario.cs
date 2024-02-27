@@ -88,10 +88,5 @@ namespace ProyectoIntermodular.Formularios
         {
 
         }
-
-        private void cajaNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
