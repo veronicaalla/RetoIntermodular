@@ -57,7 +57,6 @@ interface ApiService {
     //Eliminar una incidencia
     @DELETE("incidencias/{num}")
     fun borrarIncidencia(@Path("num") num: Int): Call<IncidenciaResponse>
-
     //endregion
 
 
@@ -70,7 +69,8 @@ interface ApiService {
 
     //region COMENTARIOS
     @GET("comentarios/incidencia/{incidenciaId}")
-    fun obtenerComentariosPorIncidencia(@Path("incidenciaId") incidenciaId: Int): Call<List<ComentarioResponse>>
+    suspend fun obtenerComentariosPorIncidencia(@Path("incidenciaId") incidenciaId: Int): Response<List<ComentarioResponse>>
+
 
     //endregion
 }

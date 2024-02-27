@@ -2,7 +2,7 @@ package es.intermodular.equipo2.incidenciasies.modelo
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
-import java.sql.Date
+import java.util.Date
 
 data class ComentarioResponse(
     @SerializedName("id")

@@ -7,12 +7,15 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityDetailsIncidenciaBinding
 import es.intermodular.equipo2.incidenciasies.datos.Api
 import es.intermodular.equipo2.incidenciasies.datos.ApiService
 import es.intermodular.equipo2.incidenciasies.datos.RetrofitBuilder
 import es.intermodular.equipo2.incidenciasies.modelo.ComentarioResponse
 import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
+import es.intermodular.equipo2.incidenciasies.recyclerComentarios.ComentarioAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,7 +29,8 @@ import retrofit2.create
 class DetailsIncidenciaActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailsIncidenciaBinding
-
+    private lateinit var retrofit: Retrofit
+    private lateinit var adapter: ComentarioAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -44,9 +48,17 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
         asignarValores(incidencia)
         colorBoton(incidencia.estado)
 
+        adapter = ComentarioAdapter()
+        //Le damos los valores al RecyclerVIew
+        binding.rvComentarios.layoutManager = LinearLayoutManager(this)
+        binding.rvComentarios.adapter = adapter
 
+
+
+        retrofit = RetrofitBuilder.build()
         //Recogemos los comentarios de la api
         obtenerComentariosApi(incidencia.idIncidencia)
+
 
         //Boton de enviar
         binding.imagenEnviarComentario.setOnClickListener {
@@ -69,6 +81,7 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
 
     private fun obtenerComentariosApi(idIncidencia: Int) {
 
+
         var retrofit = RetrofitBuilder.build()
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -78,10 +91,18 @@ class DetailsIncidenciaActivity : AppCompatActivity() {
                 myResponse?.let {
                     Log.i("Comentarios incidencia $idIncidencia", it.toString())
 
-                    if (it.isExecuted) {
+                    if (it.isSuccessful) {
+                        Log.i("Comentarios incidencia $idIncidencia", "Funciona")
+                        val response: List<ComentarioResponse>? = it.body()
+                        response?.let { res ->
+                            runOnUiThread {
+                                adapter.updateComentarios(res)
+                                Log.i("Comentarios", "funciona")
+                            }
+                        }
 
                     } else {
-                        Log.e("Comentarios incidencia", "Error ")
+                        Log.e("Comentarios incidencia", myResponse.toString())
 
                     }
                 }

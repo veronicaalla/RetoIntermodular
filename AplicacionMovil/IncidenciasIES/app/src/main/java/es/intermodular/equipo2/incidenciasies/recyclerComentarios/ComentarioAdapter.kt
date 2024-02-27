@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import es.intermodular.equipo2.incidenciasies.R
 import es.intermodular.equipo2.incidenciasies.modelo.ComentarioResponse
 
-class ComentarioAdapter (
-    var listaComentarios: List<ComentarioResponse>
+class ComentarioAdapter(
+    var listaComentarios: List<ComentarioResponse> = emptyList()
 ) : RecyclerView.Adapter<ComentarioViewHolder>() {
 
     fun updateComentarios(list: List<ComentarioResponse>) {
