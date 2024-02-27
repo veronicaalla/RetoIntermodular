@@ -7,179 +7,243 @@
     android:orientation="vertical"
     tools:context=".DetailsIncidenciaActivity">
 
-    <TextView
-        android:id="@+id/textViewNombreAnimalDetalle"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/theme1"
-        android:padding="10sp"
-        android:text="@string/incidencia_id"
-        android:textColor="@color/white" />
+        android:layout_height="match_parent"
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp">
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true"
 
-        <TableRow
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tipo_de_incidencia_edit"
-                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="665dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txtTipoIncidencia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ejemplo_incidencia" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/textViewNombreAnimalDetalle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/theme1"
+                    android:padding="10sp"
+                    android:text="@string/incidencia_id"
+                    android:textColor="@color/white" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp">
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fecha_de_creaci_n"
-                android:textStyle="bold" />
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
 
-            <TextView
-                android:id="@+id/txtfechaCreacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fecha_prueba" />
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tipo_de_incidencia_edit"
+                            android:textStyle="bold" />
 
-        </TableRow>
+                        <TextView
+                            android:id="@+id/txtTipoIncidencia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/ejemplo_incidencia" />
+                    </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/descripcion"
-                android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fecha_de_creaci_n"
+                            android:textStyle="bold" />
 
-        </TableRow>
+                        <TextView
+                            android:id="@+id/txtfechaCreacion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/fecha_prueba" />
 
-        <TextView
-            android:id="@+id/DescripcionIncidencia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ejemplo_descripcion" />
+                    </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/equipo_id"
-                android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/descripcion"
+                            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/EquipoIncidencia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/if_02" />
-        </TableRow>
+                    </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+                    <TextView
+                        android:id="@+id/DescripcionIncidencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ejemplo_descripcion" />
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/estado"
-                android:textStyle="bold" />
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
 
-            <Button
-                android:id="@+id/btnEstadoIncidencia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:text="@string/prueba_estado" />
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/equipo_id"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/EquipoIncidencia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/if_02" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/estado"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/btnEstadoIncidencia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:text="@string/prueba_estado" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fecha_cierre"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/FechaCierreIncidencia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fecha_cierre_prueba" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/textViewComentarios"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Comentarios:"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvComentarios"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp">
+
+                        <TextView
+                            android:id="@+id/textcoment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Crear comentario:"
+                            android:textStyle="italic" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/editTextNuevoComentario"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:gravity="start|top"
+                                android:hint="Comentario..."
+                                android:inputType="textMultiLine" />
+
+                            <ImageView
+                                android:id="@+id/imagenEnviarComentario"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@drawable/baseline_near_me_24" />
 
 
-        </TableRow>
+                        </LinearLayout>
+                    </LinearLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fecha_cierre"
-                android:textStyle="bold" />
+                        <Button
+                            android:id="@+id/btnVolver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/volver" />
 
-            <TextView
-                android:id="@+id/FechaCierreIncidencia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fecha_cierre_prueba" />
-        </TableRow>
+                        <Button
+                            android:id="@+id/btnModificar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/modificar" />
+                    </LinearLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+                </TableLayout>
 
-            <TextView
-                android:id="@+id/textViewComentarios"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Comentarios:"
-                android:textStyle="bold" />
-
-        </TableRow>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewComentarios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"/>
-
-    </TableLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/btnVolver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/volver" />
-
-        <Button
-            android:id="@+id/btnModificar"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/modificar" />
-    </LinearLayout>
-
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

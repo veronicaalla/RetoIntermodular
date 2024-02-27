@@ -77,6 +77,24 @@ public class incidenciasSubtipoControlador {
 	            return null;
 	        }
 	    }
+	    
+	    @GetMapping("/id-objeto")
+	    public IncidenciasSubtipo obtenerIncidenciasSubtipoPorTipoSubtipoYSubsubtipo(
+	            @RequestParam Tipo_Incidencias tipo,
+	            @RequestParam String subtipo,
+	            @RequestParam(required = false) String subsubtipo) {
+	        try {
+	            if (subsubtipo != null) {
+	                return incidenciasSubtipoRepository.findByTipoAndSubtipoNombreAndSubSubtipo(tipo, subtipo, subsubtipo);
+	            } else {
+	                return incidenciasSubtipoRepository.findByTipoAndSubtipoNombre(tipo, subtipo);
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            return null;
+	        }
+	    }
+
         
     @PostMapping
     public IncidenciasSubtipo nuevoIncidenciaSubtipo(@RequestBody IncidenciasSubtipo nuevoIncidenciaSubtipo) {

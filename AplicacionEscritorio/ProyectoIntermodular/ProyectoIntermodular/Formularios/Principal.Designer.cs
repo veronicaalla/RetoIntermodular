@@ -45,19 +45,12 @@
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnEli = new System.Windows.Forms.Button();
             this.gbxCriterios = new System.Windows.Forms.GroupBox();
-            this.cmxSub = new System.Windows.Forms.ComboBox();
-            this.cbxSub = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblDesde = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cbxFecha = new System.Windows.Forms.CheckBox();
             this.cmxTipo = new System.Windows.Forms.ComboBox();
             this.cbxTipo = new System.Windows.Forms.CheckBox();
             this.cmxEstado = new System.Windows.Forms.ComboBox();
             this.cbxEstado = new System.Windows.Forms.CheckBox();
-            this.cmxDescripcion = new System.Windows.Forms.ComboBox();
-            this.cbxAula = new System.Windows.Forms.CheckBox();
+            this.cmxResponsable = new System.Windows.Forms.ComboBox();
+            this.cbxResponsable = new System.Windows.Forms.CheckBox();
             this.cmxProfesor = new System.Windows.Forms.ComboBox();
             this.cbxProfesor = new System.Windows.Forms.CheckBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -86,7 +79,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1004, 271);
+            this.dataGridView1.Size = new System.Drawing.Size(922, 271);
             this.dataGridView1.TabIndex = 0;
             // 
             // Num
@@ -187,7 +180,7 @@
             this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCrear.Location = new System.Drawing.Point(923, 502);
+            this.btnCrear.Location = new System.Drawing.Point(841, 502);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(93, 41);
             this.btnCrear.TabIndex = 3;
@@ -202,7 +195,7 @@
             this.btnEli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEli.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEli.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEli.Location = new System.Drawing.Point(814, 502);
+            this.btnEli.Location = new System.Drawing.Point(732, 502);
             this.btnEli.Name = "btnEli";
             this.btnEli.Size = new System.Drawing.Size(93, 41);
             this.btnEli.TabIndex = 4;
@@ -212,109 +205,27 @@
             // 
             // gbxCriterios
             // 
-            this.gbxCriterios.Controls.Add(this.cmxSub);
-            this.gbxCriterios.Controls.Add(this.cbxSub);
-            this.gbxCriterios.Controls.Add(this.label1);
-            this.gbxCriterios.Controls.Add(this.lblDesde);
-            this.gbxCriterios.Controls.Add(this.dateTimePicker2);
-            this.gbxCriterios.Controls.Add(this.dateTimePicker1);
-            this.gbxCriterios.Controls.Add(this.cbxFecha);
             this.gbxCriterios.Controls.Add(this.cmxTipo);
             this.gbxCriterios.Controls.Add(this.cbxTipo);
             this.gbxCriterios.Controls.Add(this.cmxEstado);
             this.gbxCriterios.Controls.Add(this.cbxEstado);
-            this.gbxCriterios.Controls.Add(this.cmxDescripcion);
-            this.gbxCriterios.Controls.Add(this.cbxAula);
+            this.gbxCriterios.Controls.Add(this.cmxResponsable);
+            this.gbxCriterios.Controls.Add(this.cbxResponsable);
             this.gbxCriterios.Controls.Add(this.cmxProfesor);
             this.gbxCriterios.Controls.Add(this.cbxProfesor);
             this.gbxCriterios.Controls.Add(this.btnLimpiar);
             this.gbxCriterios.Controls.Add(this.btnBuscar);
             this.gbxCriterios.Location = new System.Drawing.Point(12, 13);
             this.gbxCriterios.Name = "gbxCriterios";
-            this.gbxCriterios.Size = new System.Drawing.Size(1004, 167);
+            this.gbxCriterios.Size = new System.Drawing.Size(922, 167);
             this.gbxCriterios.TabIndex = 5;
             this.gbxCriterios.TabStop = false;
-            // 
-            // cmxSub
-            // 
-            this.cmxSub.Enabled = false;
-            this.cmxSub.FormattingEnabled = true;
-            this.cmxSub.Location = new System.Drawing.Point(271, 124);
-            this.cmxSub.Name = "cmxSub";
-            this.cmxSub.Size = new System.Drawing.Size(183, 24);
-            this.cmxSub.TabIndex = 22;
-            this.cmxSub.Text = "Subtipo";
-            // 
-            // cbxSub
-            // 
-            this.cbxSub.AutoSize = true;
-            this.cbxSub.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxSub.Location = new System.Drawing.Point(237, 128);
-            this.cbxSub.Name = "cbxSub";
-            this.cbxSub.Size = new System.Drawing.Size(18, 17);
-            this.cbxSub.TabIndex = 21;
-            this.cbxSub.UseVisualStyleBackColor = true;
-            this.cbxSub.CheckedChanged += new System.EventHandler(this.cbxSub_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label1.Location = new System.Drawing.Point(670, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Hasta:";
-            // 
-            // lblDesde
-            // 
-            this.lblDesde.AutoSize = true;
-            this.lblDesde.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesde.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblDesde.Location = new System.Drawing.Point(670, 38);
-            this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(43, 15);
-            this.lblDesde.TabIndex = 19;
-            this.lblDesde.Text = "Desde:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(749, 34);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker2.TabIndex = 18;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(749, 76);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 17;
-            // 
-            // cbxFecha
-            // 
-            this.cbxFecha.AutoSize = true;
-            this.cbxFecha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxFecha.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxFecha.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.cbxFecha.Location = new System.Drawing.Point(567, 36);
-            this.cbxFecha.Name = "cbxFecha";
-            this.cbxFecha.Size = new System.Drawing.Size(64, 19);
-            this.cbxFecha.TabIndex = 16;
-            this.cbxFecha.Text = "Fechas";
-            this.cbxFecha.UseVisualStyleBackColor = true;
-            this.cbxFecha.CheckedChanged += new System.EventHandler(this.cbxFecha_CheckedChanged);
             // 
             // cmxTipo
             // 
             this.cmxTipo.Enabled = false;
             this.cmxTipo.FormattingEnabled = true;
-            this.cmxTipo.Location = new System.Drawing.Point(519, 124);
+            this.cmxTipo.Location = new System.Drawing.Point(284, 71);
             this.cmxTipo.Name = "cmxTipo";
             this.cmxTipo.Size = new System.Drawing.Size(183, 24);
             this.cmxTipo.TabIndex = 15;
@@ -324,7 +235,7 @@
             // 
             this.cbxTipo.AutoSize = true;
             this.cbxTipo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxTipo.Location = new System.Drawing.Point(485, 128);
+            this.cbxTipo.Location = new System.Drawing.Point(250, 75);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(18, 17);
             this.cbxTipo.TabIndex = 14;
@@ -335,7 +246,7 @@
             // 
             this.cmxEstado.Enabled = false;
             this.cmxEstado.FormattingEnabled = true;
-            this.cmxEstado.Location = new System.Drawing.Point(41, 124);
+            this.cmxEstado.Location = new System.Drawing.Point(54, 124);
             this.cmxEstado.Name = "cmxEstado";
             this.cmxEstado.Size = new System.Drawing.Size(183, 24);
             this.cmxEstado.TabIndex = 13;
@@ -345,39 +256,39 @@
             // 
             this.cbxEstado.AutoSize = true;
             this.cbxEstado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxEstado.Location = new System.Drawing.Point(7, 128);
+            this.cbxEstado.Location = new System.Drawing.Point(20, 128);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(18, 17);
             this.cbxEstado.TabIndex = 12;
             this.cbxEstado.UseVisualStyleBackColor = true;
             this.cbxEstado.CheckedChanged += new System.EventHandler(this.cbxEstado_CheckedChanged);
             // 
-            // cmxDescripcion
+            // cmxResponsable
             // 
-            this.cmxDescripcion.Enabled = false;
-            this.cmxDescripcion.FormattingEnabled = true;
-            this.cmxDescripcion.Location = new System.Drawing.Point(41, 74);
-            this.cmxDescripcion.Name = "cmxDescripcion";
-            this.cmxDescripcion.Size = new System.Drawing.Size(183, 24);
-            this.cmxDescripcion.TabIndex = 11;
-            this.cmxDescripcion.Text = "Descripción";
+            this.cmxResponsable.Enabled = false;
+            this.cmxResponsable.FormattingEnabled = true;
+            this.cmxResponsable.Location = new System.Drawing.Point(54, 74);
+            this.cmxResponsable.Name = "cmxResponsable";
+            this.cmxResponsable.Size = new System.Drawing.Size(183, 24);
+            this.cmxResponsable.TabIndex = 11;
+            this.cmxResponsable.Text = "Responsable";
             // 
-            // cbxAula
+            // cbxResponsable
             // 
-            this.cbxAula.AutoSize = true;
-            this.cbxAula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxAula.Location = new System.Drawing.Point(7, 78);
-            this.cbxAula.Name = "cbxAula";
-            this.cbxAula.Size = new System.Drawing.Size(18, 17);
-            this.cbxAula.TabIndex = 10;
-            this.cbxAula.UseVisualStyleBackColor = true;
-            this.cbxAula.CheckedChanged += new System.EventHandler(this.cbxAula_CheckedChanged);
+            this.cbxResponsable.AutoSize = true;
+            this.cbxResponsable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxResponsable.Location = new System.Drawing.Point(20, 78);
+            this.cbxResponsable.Name = "cbxResponsable";
+            this.cbxResponsable.Size = new System.Drawing.Size(18, 17);
+            this.cbxResponsable.TabIndex = 10;
+            this.cbxResponsable.UseVisualStyleBackColor = true;
+            this.cbxResponsable.CheckedChanged += new System.EventHandler(this.cbxAula_CheckedChanged);
             // 
             // cmxProfesor
             // 
             this.cmxProfesor.Enabled = false;
             this.cmxProfesor.FormattingEnabled = true;
-            this.cmxProfesor.Location = new System.Drawing.Point(41, 29);
+            this.cmxProfesor.Location = new System.Drawing.Point(54, 29);
             this.cmxProfesor.Name = "cmxProfesor";
             this.cmxProfesor.Size = new System.Drawing.Size(413, 24);
             this.cmxProfesor.TabIndex = 9;
@@ -387,7 +298,7 @@
             // 
             this.cbxProfesor.AutoSize = true;
             this.cbxProfesor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxProfesor.Location = new System.Drawing.Point(7, 33);
+            this.cbxProfesor.Location = new System.Drawing.Point(20, 33);
             this.cbxProfesor.Name = "cbxProfesor";
             this.cbxProfesor.Size = new System.Drawing.Size(18, 17);
             this.cbxProfesor.TabIndex = 8;
@@ -401,12 +312,13 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLimpiar.Location = new System.Drawing.Point(828, 124);
+            this.btnLimpiar.Location = new System.Drawing.Point(746, 124);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(67, 27);
             this.btnLimpiar.TabIndex = 7;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnBuscar
             // 
@@ -414,7 +326,7 @@
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscar.Location = new System.Drawing.Point(911, 124);
+            this.btnBuscar.Location = new System.Drawing.Point(829, 124);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(67, 27);
             this.btnBuscar.TabIndex = 6;
@@ -441,7 +353,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1028, 557);
+            this.ClientSize = new System.Drawing.Size(947, 557);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbxCriterios);
             this.Controls.Add(this.btnEli);
@@ -466,19 +378,12 @@
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnEli = new System.Windows.Forms.Button();
             this.gbxCriterios = new System.Windows.Forms.GroupBox();
-            this.cmxSub = new System.Windows.Forms.ComboBox();
-            this.cbxSub = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblDesde = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cbxFecha = new System.Windows.Forms.CheckBox();
             this.cmxTipo = new System.Windows.Forms.ComboBox();
             this.cbxTipo = new System.Windows.Forms.CheckBox();
             this.cmxEstado = new System.Windows.Forms.ComboBox();
             this.cbxEstado = new System.Windows.Forms.CheckBox();
-            this.cmxDescripcion = new System.Windows.Forms.ComboBox();
-            this.cbxAula = new System.Windows.Forms.CheckBox();
+            this.cmxResponsable = new System.Windows.Forms.ComboBox();
+            this.cbxResponsable = new System.Windows.Forms.CheckBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
@@ -531,19 +436,14 @@
             // 
             // gbxCriterios
             // 
-            this.gbxCriterios.Controls.Add(this.cmxSub);
-            this.gbxCriterios.Controls.Add(this.cbxSub);
-            this.gbxCriterios.Controls.Add(this.label1);
-            this.gbxCriterios.Controls.Add(this.lblDesde);
-            this.gbxCriterios.Controls.Add(this.dateTimePicker2);
-            this.gbxCriterios.Controls.Add(this.dateTimePicker1);
-            this.gbxCriterios.Controls.Add(this.cbxFecha);
+            
+            
             this.gbxCriterios.Controls.Add(this.cmxTipo);
             this.gbxCriterios.Controls.Add(this.cbxTipo);
             this.gbxCriterios.Controls.Add(this.cmxEstado);
             this.gbxCriterios.Controls.Add(this.cbxEstado);
-            this.gbxCriterios.Controls.Add(this.cmxDescripcion);
-            this.gbxCriterios.Controls.Add(this.cbxAula);
+            this.gbxCriterios.Controls.Add(this.cmxResponsable);
+            this.gbxCriterios.Controls.Add(this.cbxResponsable);
             this.gbxCriterios.Controls.Add(this.btnLimpiar);
             this.gbxCriterios.Controls.Add(this.btnBuscar);
             this.gbxCriterios.Location = new System.Drawing.Point(12, 23);
@@ -553,72 +453,9 @@
             this.gbxCriterios.TabStop = false;
             this.gbxCriterios.Text = "Criterios";
             // 
-            // cmxSub
+            
             // 
-            this.cmxSub.Enabled = false;
-            this.cmxSub.FormattingEnabled = true;
-            this.cmxSub.Location = new System.Drawing.Point(271, 124);
-            this.cmxSub.Name = "cmxSub";
-            this.cmxSub.Size = new System.Drawing.Size(183, 24);
-            this.cmxSub.TabIndex = 22;
-            this.cmxSub.Text = "Subtipo";
-            // 
-            // cbxSub
-            // 
-            this.cbxSub.AutoSize = true;
-            this.cbxSub.Location = new System.Drawing.Point(237, 128);
-            this.cbxSub.Name = "cbxSub";
-            this.cbxSub.Size = new System.Drawing.Size(18, 17);
-            this.cbxSub.TabIndex = 21;
-            this.cbxSub.UseVisualStyleBackColor = true;
-            this.cbxSub.CheckedChanged += new System.EventHandler(this.cbxSub_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(670, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 16);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Hasta:";
-            // 
-            // lblDesde
-            // 
-            this.lblDesde.AutoSize = true;
-            this.lblDesde.Location = new System.Drawing.Point(670, 38);
-            this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(51, 16);
-            this.lblDesde.TabIndex = 19;
-            this.lblDesde.Text = "Desde:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(749, 34);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker2.TabIndex = 18;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(749, 76);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 17;
-            // 
-            // cbxFecha
-            // 
-            this.cbxFecha.AutoSize = true;
-            this.cbxFecha.Location = new System.Drawing.Point(567, 36);
-            this.cbxFecha.Name = "cbxFecha";
-            this.cbxFecha.Size = new System.Drawing.Size(74, 20);
-            this.cbxFecha.TabIndex = 16;
-            this.cbxFecha.Text = "Fechas";
-            this.cbxFecha.UseVisualStyleBackColor = true;
-            this.cbxFecha.CheckedChanged += new System.EventHandler(this.cbxFecha_CheckedChanged);
+            
             // 
             // cmxTipo
             // 
@@ -662,23 +499,23 @@
             // 
             // cmxAula
             // 
-            this.cmxDescripcion.Enabled = false;
-            this.cmxDescripcion.FormattingEnabled = true;
-            this.cmxDescripcion.Location = new System.Drawing.Point(41, 38);
-            this.cmxDescripcion.Name = "cmxAula";
-            this.cmxDescripcion.Size = new System.Drawing.Size(183, 24);
-            this.cmxDescripcion.TabIndex = 11;
-            this.cmxDescripcion.Text = "Aula";
+            this.cmxResponsable.Enabled = false;
+            this.cmxResponsable.FormattingEnabled = true;
+            this.cmxResponsable.Location = new System.Drawing.Point(41, 38);
+            this.cmxResponsable.Name = "cmxAula";
+            this.cmxResponsable.Size = new System.Drawing.Size(183, 24);
+            this.cmxResponsable.TabIndex = 11;
+            this.cmxResponsable.Text = "Aula";
             // 
             // cbxAula
             // 
-            this.cbxAula.AutoSize = true;
-            this.cbxAula.Location = new System.Drawing.Point(7, 42);
-            this.cbxAula.Name = "cbxAula";
-            this.cbxAula.Size = new System.Drawing.Size(18, 17);
-            this.cbxAula.TabIndex = 10;
-            this.cbxAula.UseVisualStyleBackColor = true;
-            this.cbxAula.CheckedChanged += new System.EventHandler(this.cbxAula_CheckedChanged);
+            this.cbxResponsable.AutoSize = true;
+            this.cbxResponsable.Location = new System.Drawing.Point(7, 42);
+            this.cbxResponsable.Name = "cbxAula";
+            this.cbxResponsable.Size = new System.Drawing.Size(18, 17);
+            this.cbxResponsable.TabIndex = 10;
+            this.cbxResponsable.UseVisualStyleBackColor = true;
+            this.cbxResponsable.CheckedChanged += new System.EventHandler(this.cbxAula_CheckedChanged);
             // 
             // button2
             // 
@@ -748,15 +585,8 @@
         private System.Windows.Forms.CheckBox cbxTipo;
         private System.Windows.Forms.ComboBox cmxEstado;
         private System.Windows.Forms.CheckBox cbxEstado;
-        private System.Windows.Forms.ComboBox cmxDescripcion;
-        private System.Windows.Forms.CheckBox cbxAula;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblDesde;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.CheckBox cbxFecha;
-        private System.Windows.Forms.ComboBox cmxSub;
-        private System.Windows.Forms.CheckBox cbxSub;
+        private System.Windows.Forms.ComboBox cmxResponsable;
+        private System.Windows.Forms.CheckBox cbxResponsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtipo;

@@ -15,7 +15,7 @@ namespace ProyectoIntermodular
 {
     public partial class Principal : Form
     {
-
+        public IncidenciasBusqueda buscar = new IncidenciasBusqueda();
         private ControladorIncidencias controladorIncidencias;
         private List<Incidencias> lista;
         private Incidencias inci;
@@ -28,7 +28,6 @@ namespace ProyectoIntermodular
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
             
             usuario = inicial.usuario;
 
@@ -43,7 +42,6 @@ namespace ProyectoIntermodular
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
 
             usuario = admin.usuario;
 
@@ -58,7 +56,6 @@ namespace ProyectoIntermodular
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            Perfiles perfiles = new Perfiles(PerfilEnum.ADMIN);
 
            
 
@@ -100,7 +97,8 @@ namespace ProyectoIntermodular
         private async void CargarComboBox()
         {
             List<Personal> listaPersonal = await controladorPersonal.GetPersonal();
-            List<Incidencias> tiposIncidencias = await controladorIncidencias.GetTiposIncidencia();
+            List<Personal> listaPersonal2 = await controladorPersonal.GetPersonal();
+
 
             if (listaPersonal != null)
             {
@@ -108,8 +106,36 @@ namespace ProyectoIntermodular
                 cmxProfesor.DisplayMember = "nombre"; 
                 cmxProfesor.DataSource = listaPersonal;
 
-                cmxTipo.DisplayMember = "tipo";
-                cmxTipo.DataSource = tiposIncidencias;
+                cmxResponsable.DisplayMember = "nombre";
+                cmxResponsable.DataSource = listaPersonal2;
+
+
+                Array estadosArray = Enum.GetValues(typeof(EstadoIncidencia));
+
+                // Convertir el array de valores en una lista de cadenas
+                List<string> estadosList = new List<string>();
+                foreach (EstadoIncidencia estado in estadosArray)
+                {
+                    estadosList.Add(estado.ToString());
+                }
+
+                // Asignar la lista como origen de datos para el ComboBox de estados
+                cmxEstado.DataSource = estadosList;
+
+                // Obtener los valores del enumerado Tipo_Incidencias
+                Array tiposArray = Enum.GetValues(typeof(Tipo_Incidencias));
+
+                // Convertir el array de valores en una lista de cadenas
+                List<string> tiposList = new List<string>();
+                foreach (Tipo_Incidencias tipo in tiposArray)
+                {
+                    tiposList.Add(tipo.ToString());
+                }
+
+                // Asignar la lista como origen de datos para el ComboBox de tipos de incidencia
+                cmxTipo.DataSource = tiposList;
+
+
 
             }
             else
@@ -193,10 +219,10 @@ namespace ProyectoIntermodular
 
         private void cbxAula_CheckedChanged(object sender, EventArgs e)
         {
-            cmxDescripcion.Enabled = true;
-            if (!cbxAula.Checked)
+            cmxResponsable.Enabled = true;
+            if (!cbxResponsable.Checked)
             {
-                cmxDescripcion.Enabled = false;
+                cmxResponsable.Enabled = false;
             }
         }
 
@@ -218,52 +244,87 @@ namespace ProyectoIntermodular
             }
         }
 
-        private void cbxSub_CheckedChanged(object sender, EventArgs e)
-        {
-            cmxSub.Enabled = true;
-            if (!cbxSub.Checked)
-            {
-                cmxSub.Enabled = false;
-            }
-        }
-
-        private void cbxFecha_CheckedChanged(object sender, EventArgs e)
-        {
-            dateTimePicker1.Enabled = true;
-            dateTimePicker2.Enabled = true;
-            if (!cbxFecha.Checked)
-            {
-                dateTimePicker1.Enabled = false;
-                dateTimePicker2.Enabled = false;
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Capturar los criterios de búsqueda seleccionados por el usuario
-            string descripcion = cmbDescripcion.Text;
-            string estado = cmbEstado.Text;
-            DateTime fechaCreacion = dtpFechaCreacion.Value;
-            DateTime fechaCierre = dtpFechaCierre.Value;
-            string tipo = cmbTipo.Text;
-            int creadorId = ObtenerIdSeleccionado(cmbCreador);
-            int responsableId = ObtenerIdSeleccionado(cmbResponsable);
-
-            try
-            {
-                // Realizar la consulta de búsqueda en la base de datos utilizando los criterios capturados
-                List<Incidencia> resultados = await controladorIncidencias.BuscarIncidencias(descripcion, estado, fechaCreacion, fechaCierre, tipo, creadorId, responsableId);
-
-                // Mostrar los resultados en el DataGridView
-                dataGridView1.DataSource = resultados;
-            }
-            catch (Exception ex)
-            {
-                // Manejar cualquier error que pueda ocurrir durante la búsqueda
-                MessageBox.Show("Error al buscar incidencias: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
 
         
+        private async void button1_Click(object sender, EventArgs e)
+        {
+
+            // Variables para almacenar los criterios de búsqueda
+            string estado = null;
+            string tipo = null;
+            int creadorId = 0;
+            int responsableId = 0;
+
+            // Verificar y asignar los valores de los criterios seleccionados
+            if (cbxEstado.Checked)
+            {
+                estado = cmxEstado.Text.ToLower();
+            }
+
+           
+
+            if (cbxTipo.Checked)
+            {
+                tipo = cmxTipo.Text;
+            }
+
+            if (cbxProfesor.Checked)
+            {
+                Personal selct = (Personal)cmxProfesor.SelectedItem;
+                creadorId = selct != null ? selct.id : 0; // Acceder al ID del Personal seleccionado
+            }
+
+            if (cbxResponsable.Checked)
+            {
+                Personal selct2 = (Personal)cmxResponsable.SelectedItem;
+                responsableId = selct2 != null ? selct2.id : 0; // Acceder al ID del Personal seleccionado
+            }
+
+            // Llamar al método de búsqueda con los criterios seleccionados
+            List<Incidencias> incidenciasEncontradas = await controladorIncidencias.BuscarIncidencias(estado,tipo, creadorId, responsableId);
+
+            // Limpiar el DataGridView antes de agregar nuevas filas
+            dataGridView1.Rows.Clear();
+
+            // Verificar si se encontraron incidencias
+            if (incidenciasEncontradas != null && incidenciasEncontradas.Count > 0)
+            {
+                // Iterar sobre cada incidencia encontrada y agregarla al DataGridView
+                foreach (var incidencia in incidenciasEncontradas)
+                {
+                    // Crear una nueva fila para el DataGridView
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(dataGridView1);
+
+                    // Asignar los valores de la incidencia a cada celda de la fila
+                    row.Cells[0].Value = incidencia.num;
+                    row.Cells[1].Value = incidencia.tipo;
+                    row.Cells[2].Value = incidencia.incidenciasSubtipo.subtipoNombre;
+                    row.Cells[3].Value = incidencia.fechaCreacion;
+                    row.Cells[4].Value = incidencia.fechaCierre;
+                    row.Cells[5].Value = incidencia.descripcion;
+                    row.Cells[6].Value = incidencia.estado;
+                    row.Cells[7].Value = incidencia.adjuntoUrl;
+                    row.Cells[8].Value = incidencia.creador.nombre;
+                    row.Cells[9].Value = incidencia.responsable.nombre;
+                    row.Cells[10].Value = incidencia.equipo.tipoEquipo;
+
+                    // Agregar la fila al DataGridView
+                    dataGridView1.Rows.Add(row);
+                }
+            }
+            else
+            {
+                // Mostrar un mensaje si no se encontraron incidencias
+                MessageBox.Show("No se encontraron incidencias con los criterios especificados.", "Sin coincidencias", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+        }
     }
 }

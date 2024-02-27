@@ -8,7 +8,7 @@
     <string name="forgot_password">¿Has olvidado tu contraseña?</string>
     <string name="login_error_message">¡Error, usuario o contraseña incorrectos!</string>
     <string name="resumen_incidencias">Resumen de incidencias</string>
-    <string name="indicencias_totales">50\nIndicendias</string>
+    <string name="indicencias_totales">\nIndicendias totales</string>
     <string name="ultimas_incidencias">Últimas incidencias</string>
     <string name="descripcion_scrollView">Este componente sirve para poder scrollear la app</string>
     <string name="tipo_de_incidencia">Tipo de Incidencia</string>
@@ -16,11 +16,11 @@
     <string name="sub_subTipo">Otro dato más:</string>
     <string name="siguiente">Siguiente</string>
     <string name="mis_incidencias">Mis incidencias</string>
-    <string name="_12_nabiertas">12\nAbiertas</string>
-    <string name="_12_nasignadas">12\nAsignadas</string>
-    <string name="_12_nen_proceso">12\nEn proceso</string>
-    <string name="_12_nresueltas">12\nResueltas</string>
-    <string name="_12_ncerradas">12\nCerradas</string>
+    <string name="_12_nabiertas">\nAbiertas</string>
+    <string name="_12_nasignadas">\nAsignadas</string>
+    <string name="_12_nen_proceso">\nEn proceso</string>
+    <string name="_12_nresueltas">\nResueltas</string>
+    <string name="_12_ncerradas">\nCerradas</string>
     <string name="notificaciones">Notificaciones</string>
     <string name="incidencia_id">Incidencia #ID</string>
     <string name="tipo_de_incidencia_edit">Tipo de incidencia:</string>

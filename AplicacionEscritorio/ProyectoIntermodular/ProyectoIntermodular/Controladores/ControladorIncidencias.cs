@@ -38,6 +38,40 @@ namespace ProyectoIntermodular.Controladores
             }
         }
 
+        public async Task<List<Incidencias>> BuscarIncidencias(string estado, string tipo, int creadorId, int responsableId)
+        {
+            try
+            {
+                string apiUrl = "http://localhost:8080/api/incidencias/buscar";
+
+                string urlWithParameters = apiUrl + "?";
+                if (!string.IsNullOrEmpty(estado))
+                    urlWithParameters += $"&estado={estado}";
+
+
+                if (!string.IsNullOrEmpty(tipo))
+                    urlWithParameters += $"&tipo={tipo}";
+
+                if (creadorId != 0)
+                    urlWithParameters += $"&creadorId={creadorId}";
+
+                if (responsableId != 0)
+                    urlWithParameters += $"&responsableId={responsableId}";
+
+                HttpResponseMessage response = await client.GetAsync(urlWithParameters);
+                response.EnsureSuccessStatusCode();
+
+                string responseJson = await response.Content.ReadAsStringAsync();
+
+                List<Incidencias> incidencias = JsonConvert.DeserializeObject<List<Incidencias>>(responseJson);
+                return incidencias;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public async Task<List<Incidencias>> GetTiposIncidencia()
         {
             try

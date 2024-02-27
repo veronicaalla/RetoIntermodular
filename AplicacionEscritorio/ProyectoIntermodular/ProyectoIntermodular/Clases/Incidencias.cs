@@ -80,5 +80,17 @@ namespace ProyectoIntermodular.Clases
         public PerfilesResponse creador { get; set; }
         public string equipo { get; set; }
     }
+
+    public class IncidenciasBusqueda
+    {
+        public int creador { get; set; }
+        public int responsable { get; set; }
+        public string tipo { get; set; }
+        public string estado { get; set; }
+        public string fechaCreacion { get; set; }
+       
+    }
+
+
 }
 
