@@ -56,12 +56,12 @@
             this.cbxTipo = new System.Windows.Forms.CheckBox();
             this.cmxEstado = new System.Windows.Forms.ComboBox();
             this.cbxEstado = new System.Windows.Forms.CheckBox();
-            this.cmxAula = new System.Windows.Forms.ComboBox();
+            this.cmxDescripcion = new System.Windows.Forms.ComboBox();
             this.cbxAula = new System.Windows.Forms.CheckBox();
             this.cmxProfesor = new System.Windows.Forms.ComboBox();
             this.cbxProfesor = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxCriterios.SuspendLayout();
@@ -223,12 +223,12 @@
             this.gbxCriterios.Controls.Add(this.cbxTipo);
             this.gbxCriterios.Controls.Add(this.cmxEstado);
             this.gbxCriterios.Controls.Add(this.cbxEstado);
-            this.gbxCriterios.Controls.Add(this.cmxAula);
+            this.gbxCriterios.Controls.Add(this.cmxDescripcion);
             this.gbxCriterios.Controls.Add(this.cbxAula);
             this.gbxCriterios.Controls.Add(this.cmxProfesor);
             this.gbxCriterios.Controls.Add(this.cbxProfesor);
-            this.gbxCriterios.Controls.Add(this.button2);
-            this.gbxCriterios.Controls.Add(this.button1);
+            this.gbxCriterios.Controls.Add(this.btnLimpiar);
+            this.gbxCriterios.Controls.Add(this.btnBuscar);
             this.gbxCriterios.Location = new System.Drawing.Point(12, 13);
             this.gbxCriterios.Name = "gbxCriterios";
             this.gbxCriterios.Size = new System.Drawing.Size(1004, 167);
@@ -352,15 +352,15 @@
             this.cbxEstado.UseVisualStyleBackColor = true;
             this.cbxEstado.CheckedChanged += new System.EventHandler(this.cbxEstado_CheckedChanged);
             // 
-            // cmxAula
+            // cmxDescripcion
             // 
-            this.cmxAula.Enabled = false;
-            this.cmxAula.FormattingEnabled = true;
-            this.cmxAula.Location = new System.Drawing.Point(41, 74);
-            this.cmxAula.Name = "cmxAula";
-            this.cmxAula.Size = new System.Drawing.Size(183, 24);
-            this.cmxAula.TabIndex = 11;
-            this.cmxAula.Text = "Aula";
+            this.cmxDescripcion.Enabled = false;
+            this.cmxDescripcion.FormattingEnabled = true;
+            this.cmxDescripcion.Location = new System.Drawing.Point(41, 74);
+            this.cmxDescripcion.Name = "cmxDescripcion";
+            this.cmxDescripcion.Size = new System.Drawing.Size(183, 24);
+            this.cmxDescripcion.TabIndex = 11;
+            this.cmxDescripcion.Text = "Descripción";
             // 
             // cbxAula
             // 
@@ -394,32 +394,33 @@
             this.cbxProfesor.UseVisualStyleBackColor = true;
             this.cbxProfesor.CheckedChanged += new System.EventHandler(this.cbxProfesor_CheckedChanged);
             // 
-            // button2
+            // btnLimpiar
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(828, 124);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 27);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnLimpiar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Tw Cen MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLimpiar.Location = new System.Drawing.Point(828, 124);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(67, 27);
+            this.btnLimpiar.TabIndex = 7;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(911, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBuscar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBuscar.Location = new System.Drawing.Point(911, 124);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(67, 27);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnVolver
             // 
@@ -476,10 +477,10 @@
             this.cbxTipo = new System.Windows.Forms.CheckBox();
             this.cmxEstado = new System.Windows.Forms.ComboBox();
             this.cbxEstado = new System.Windows.Forms.CheckBox();
-            this.cmxAula = new System.Windows.Forms.ComboBox();
+            this.cmxDescripcion = new System.Windows.Forms.ComboBox();
             this.cbxAula = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxCriterios.SuspendLayout();
@@ -541,10 +542,10 @@
             this.gbxCriterios.Controls.Add(this.cbxTipo);
             this.gbxCriterios.Controls.Add(this.cmxEstado);
             this.gbxCriterios.Controls.Add(this.cbxEstado);
-            this.gbxCriterios.Controls.Add(this.cmxAula);
+            this.gbxCriterios.Controls.Add(this.cmxDescripcion);
             this.gbxCriterios.Controls.Add(this.cbxAula);
-            this.gbxCriterios.Controls.Add(this.button2);
-            this.gbxCriterios.Controls.Add(this.button1);
+            this.gbxCriterios.Controls.Add(this.btnLimpiar);
+            this.gbxCriterios.Controls.Add(this.btnBuscar);
             this.gbxCriterios.Location = new System.Drawing.Point(12, 23);
             this.gbxCriterios.Name = "gbxCriterios";
             this.gbxCriterios.Size = new System.Drawing.Size(1004, 167);
@@ -661,13 +662,13 @@
             // 
             // cmxAula
             // 
-            this.cmxAula.Enabled = false;
-            this.cmxAula.FormattingEnabled = true;
-            this.cmxAula.Location = new System.Drawing.Point(41, 38);
-            this.cmxAula.Name = "cmxAula";
-            this.cmxAula.Size = new System.Drawing.Size(183, 24);
-            this.cmxAula.TabIndex = 11;
-            this.cmxAula.Text = "Aula";
+            this.cmxDescripcion.Enabled = false;
+            this.cmxDescripcion.FormattingEnabled = true;
+            this.cmxDescripcion.Location = new System.Drawing.Point(41, 38);
+            this.cmxDescripcion.Name = "cmxAula";
+            this.cmxDescripcion.Size = new System.Drawing.Size(183, 24);
+            this.cmxDescripcion.TabIndex = 11;
+            this.cmxDescripcion.Text = "Aula";
             // 
             // cbxAula
             // 
@@ -681,23 +682,23 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Location = new System.Drawing.Point(828, 124);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 27);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnLimpiar.Location = new System.Drawing.Point(828, 124);
+            this.btnLimpiar.Name = "button2";
+            this.btnLimpiar.Size = new System.Drawing.Size(67, 27);
+            this.btnLimpiar.TabIndex = 7;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Location = new System.Drawing.Point(911, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnBuscar.Location = new System.Drawing.Point(911, 124);
+            this.btnBuscar.Name = "button1";
+            this.btnBuscar.Size = new System.Drawing.Size(67, 27);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // btnVolver
             // 
@@ -739,15 +740,15 @@
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button btnEli;
         private System.Windows.Forms.GroupBox gbxCriterios;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox cmxProfesor;
         private System.Windows.Forms.CheckBox cbxProfesor;
         private System.Windows.Forms.ComboBox cmxTipo;
         private System.Windows.Forms.CheckBox cbxTipo;
         private System.Windows.Forms.ComboBox cmxEstado;
         private System.Windows.Forms.CheckBox cbxEstado;
-        private System.Windows.Forms.ComboBox cmxAula;
+        private System.Windows.Forms.ComboBox cmxDescripcion;
         private System.Windows.Forms.CheckBox cbxAula;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDesde;

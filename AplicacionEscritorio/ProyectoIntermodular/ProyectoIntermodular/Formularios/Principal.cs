@@ -193,10 +193,10 @@ namespace ProyectoIntermodular
 
         private void cbxAula_CheckedChanged(object sender, EventArgs e)
         {
-            cmxAula.Enabled = true;
+            cmxDescripcion.Enabled = true;
             if (!cbxAula.Checked)
             {
-                cmxAula.Enabled = false;
+                cmxDescripcion.Enabled = false;
             }
         }
 
@@ -237,5 +237,33 @@ namespace ProyectoIntermodular
                 dateTimePicker2.Enabled = false;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Capturar los criterios de búsqueda seleccionados por el usuario
+            string descripcion = cmbDescripcion.Text;
+            string estado = cmbEstado.Text;
+            DateTime fechaCreacion = dtpFechaCreacion.Value;
+            DateTime fechaCierre = dtpFechaCierre.Value;
+            string tipo = cmbTipo.Text;
+            int creadorId = ObtenerIdSeleccionado(cmbCreador);
+            int responsableId = ObtenerIdSeleccionado(cmbResponsable);
+
+            try
+            {
+                // Realizar la consulta de búsqueda en la base de datos utilizando los criterios capturados
+                List<Incidencia> resultados = await controladorIncidencias.BuscarIncidencias(descripcion, estado, fechaCreacion, fechaCierre, tipo, creadorId, responsableId);
+
+                // Mostrar los resultados en el DataGridView
+                dataGridView1.DataSource = resultados;
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier error que pueda ocurrir durante la búsqueda
+                MessageBox.Show("Error al buscar incidencias: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        
     }
 }
