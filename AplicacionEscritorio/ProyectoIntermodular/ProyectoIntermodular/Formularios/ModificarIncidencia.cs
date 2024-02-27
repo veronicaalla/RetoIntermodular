@@ -16,27 +16,94 @@ namespace ProyectoIntermodular.Formularios
 {
     public partial class ModificarIncidencia : Form
     {
+        ControladorPersonal controladorPersonal = new ControladorPersonal();
+        ControladorIncidencias controladorIncidencias = new ControladorIncidencias();
+
+        private Incidencias inc;
         private String numeroInci;
         private ControladorComentarios controladorComentarios;
         private List<Comentarios> lista;
         private Comentarios coment;
-        public ModificarIncidencia(String numero,String tipo,String subtipo,String fechaCreacion,String fechaCierre,String profesor,string estado, PerfilesResponse usuario)
+        private HttpClient client;
+        public ModificarIncidencia(String numero,String tipo,String subtipo,String fechaCreacion,String fechaCierre,String profesor,string estado, PerfilesResponse usuario, Incidencias inc)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             gbxEdit.Enabled = false;
            
             this.numeroInci = numero;
-            cmxTipo.Text = tipo;
-            cmxSub.Text = subtipo;
-            dateTimePicker1.Text = fechaCreacion;
-            dateTimePicker2.Text = fechaCierre;
+            dateTimePicker1.Text = fechaCierre;
+
             cmxProfesor.Text=profesor;
             cmxEstado.Text = estado;
 
             controladorComentarios = new ControladorComentarios();
             coment = new Comentarios();
             GetComentarios();
+
+            this.inc = inc;
+
+            CargarComboBoxes();
+        }
+
+        private async void CargarComboBoxes()
+        {
+            try
+            {
+                await CargarComboBoxProfesores();
+
+                await CargarComboBoxEstado();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los ComboBoxes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task CargarComboBoxProfesores()
+        {
+            try
+            {
+                // Obtener la lista de responsables (personal) disponibles
+                List<Personal> listaResponsables = await ObtenerResponsables();
+
+                // Verificar si la lista es válida
+                if (listaResponsables != null)
+                {
+                    // Limpiar el ComboBox antes de agregar los nuevos elementos
+                    cmxProfesor.Items.Clear();
+
+                    // Agregar los nombres de los responsables al ComboBox
+                    foreach (var responsable in listaResponsables)
+                    {
+                        cmxProfesor.Items.Add(responsable.nombre);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener la lista de responsables.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar la lista de responsables: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task CargarComboBoxEstado()
+        {
+            try
+            {
+                // Aquí puedes implementar la lógica para cargar el ComboBox relacionado con el estado de la incidencia
+                // Por ejemplo:
+                List<string> estados = new List<string> { "ABIERTA", "ASIGNADA", "ENPROCESO", "ENVIADA_INFORTEC", "RESUELTA", "CERRADA" };
+                cmxEstado.Items.Clear();
+                cmxEstado.Items.AddRange(estados.ToArray());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar el ComboBox de estados: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private async void GetComentarios()
@@ -109,57 +176,26 @@ namespace ProyectoIntermodular.Formularios
 
         }
 
-        private async void cmxProfesor_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmxProfesor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                // Obtener la lista de responsables (personal) disponibles
-                List<Personal> listaResponsables = await ObtenerResponsables();
-
-                // Verificar si la lista es válida
-                if (listaResponsables != null)
-                {
-                    // Limpiar el ComboBox antes de agregar los nuevos elementos
-                    cmxProfesor.Items.Clear();
-
-                    // Agregar los nombres de los responsables al ComboBox
-                    foreach (var responsable in listaResponsables)
-                    {
-                        cmxProfesor.Items.Add(responsable.nombre);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo obtener la lista de responsables.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar la lista de responsables: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private async Task<List<Personal>> ObtenerResponsables()
         {
             try
             {
-                // Realizar una solicitud HTTP GET al servidor para obtener la lista de responsables (personal)
-                HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/personal");
-                response.EnsureSuccessStatusCode();
+                // Obtener la lista de responsables (personal) desde el controladorPersonal
+                List<Personal> responsables = await controladorPersonal.GetPersonal();
 
-                // Verificar si la solicitud fue exitosa
-                if (response.IsSuccessStatusCode)
+                // Verificar si la lista es válida
+                if (responsables != null)
                 {
-                    // Deserializar la respuesta JSON en una lista de objetos Personal
-                    string jsonResponse = await response.Content.ReadAsStringAsync();
-                    List<Personal> responsables = JsonConvert.DeserializeObject<List<Personal>>(jsonResponse);
-
                     // Devolver la lista de responsables
                     return responsables;
                 }
                 else
                 {
-                    // Si la solicitud no fue exitosa, mostrar un mensaje de error
+                    // Si la lista es nula, mostrar un mensaje de error
                     Console.WriteLine("No se pudo obtener la lista de responsables.");
                     return null;
                 }
@@ -172,6 +208,44 @@ namespace ProyectoIntermodular.Formularios
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            // Crear objeto IncidenciasRequest con los datos del formulario
+
+            inc.fechaCierre = dateTimePicker1.Value;
+            if(Enum.TryParse<EstadoIncidencia>(cmxEstado.SelectedItem.ToString(), out EstadoIncidencia estado))
+            {
+                inc.estado = estado;
+            }
+            else
+            {
+                // Manejar el caso en el que no se puede convertir el valor seleccionado a EstadoIncidencia
+                MessageBox.Show("Error al convertir el estado de la incidencia.");
+            }
+
+            // Intentar agregar la incidencia utilizando el controlador de incidencias
+            bool agregadaExitosamente = await controladorIncidencias.ActualizarIncidencia(Convert.ToInt32(inc.num),inc);
+
+            // Verificar si la incidencia se agregó exitosamente
+            if (agregadaExitosamente)
+            {
+                MessageBox.Show("La incidencia se creó exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Puedes realizar alguna otra acción aquí si es necesario
+            }
+            else
+            {
+                MessageBox.Show("Hubo un error al crear la incidencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
