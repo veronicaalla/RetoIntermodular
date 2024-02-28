@@ -116,7 +116,7 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<PerfilReponse>, t: Throwable) {
                 // Manejar el error de conexión aquí
-                Toast.makeText(this@LoginActivity, "${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "El servidor no está disponible", Toast.LENGTH_SHORT).show()
             }
         })
 
