@@ -83,12 +83,14 @@
             this.Creador,
             this.Responsable,
             this.Equipo});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 205);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 167);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1004, 271);
+            this.dataGridView1.Size = new System.Drawing.Size(753, 220);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Num
             // 
@@ -170,9 +172,10 @@
             // btnSeleccionar
             // 
             this.btnSeleccionar.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSeleccionar.Location = new System.Drawing.Point(12, 512);
+            this.btnSeleccionar.Location = new System.Drawing.Point(9, 416);
+            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(116, 41);
+            this.btnSeleccionar.Size = new System.Drawing.Size(87, 33);
             this.btnSeleccionar.TabIndex = 1;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
@@ -181,9 +184,10 @@
             // btnCrear
             // 
             this.btnCrear.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCrear.Location = new System.Drawing.Point(923, 512);
+            this.btnCrear.Location = new System.Drawing.Point(692, 416);
+            this.btnCrear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(93, 41);
+            this.btnCrear.Size = new System.Drawing.Size(70, 33);
             this.btnCrear.TabIndex = 3;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = false;
@@ -192,9 +196,10 @@
             // btnEli
             // 
             this.btnEli.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnEli.Location = new System.Drawing.Point(814, 512);
+            this.btnEli.Location = new System.Drawing.Point(610, 416);
+            this.btnEli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEli.Name = "btnEli";
-            this.btnEli.Size = new System.Drawing.Size(93, 41);
+            this.btnEli.Size = new System.Drawing.Size(70, 33);
             this.btnEli.TabIndex = 4;
             this.btnEli.Text = "Eliminar";
             this.btnEli.UseVisualStyleBackColor = false;
@@ -219,9 +224,11 @@
             this.gbxCriterios.Controls.Add(this.cbxProfesor);
             this.gbxCriterios.Controls.Add(this.button2);
             this.gbxCriterios.Controls.Add(this.button1);
-            this.gbxCriterios.Location = new System.Drawing.Point(12, 23);
+            this.gbxCriterios.Location = new System.Drawing.Point(9, 19);
+            this.gbxCriterios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbxCriterios.Name = "gbxCriterios";
-            this.gbxCriterios.Size = new System.Drawing.Size(1004, 167);
+            this.gbxCriterios.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxCriterios.Size = new System.Drawing.Size(753, 136);
             this.gbxCriterios.TabIndex = 5;
             this.gbxCriterios.TabStop = false;
             this.gbxCriterios.Text = "Criterios";
@@ -230,18 +237,20 @@
             // 
             this.cmxSub.Enabled = false;
             this.cmxSub.FormattingEnabled = true;
-            this.cmxSub.Location = new System.Drawing.Point(271, 124);
+            this.cmxSub.Location = new System.Drawing.Point(203, 101);
+            this.cmxSub.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmxSub.Name = "cmxSub";
-            this.cmxSub.Size = new System.Drawing.Size(183, 24);
+            this.cmxSub.Size = new System.Drawing.Size(138, 21);
             this.cmxSub.TabIndex = 22;
             this.cmxSub.Text = "Subtipo";
             // 
             // cbxSub
             // 
             this.cbxSub.AutoSize = true;
-            this.cbxSub.Location = new System.Drawing.Point(237, 128);
+            this.cbxSub.Location = new System.Drawing.Point(178, 104);
+            this.cbxSub.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxSub.Name = "cbxSub";
-            this.cbxSub.Size = new System.Drawing.Size(18, 17);
+            this.cbxSub.Size = new System.Drawing.Size(15, 14);
             this.cbxSub.TabIndex = 21;
             this.cbxSub.UseVisualStyleBackColor = true;
             this.cbxSub.CheckedChanged += new System.EventHandler(this.cbxSub_CheckedChanged);
@@ -249,18 +258,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(670, 79);
+            this.label1.Location = new System.Drawing.Point(502, 64);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 16);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 20;
             this.label1.Text = "Hasta:";
             // 
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
-            this.lblDesde.Location = new System.Drawing.Point(670, 38);
+            this.lblDesde.Location = new System.Drawing.Point(502, 31);
+            this.lblDesde.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(51, 16);
+            this.lblDesde.Size = new System.Drawing.Size(41, 13);
             this.lblDesde.TabIndex = 19;
             this.lblDesde.Text = "Desde:";
             // 
@@ -268,26 +279,29 @@
             // 
             this.dateTimePicker2.Enabled = false;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(749, 34);
+            this.dateTimePicker2.Location = new System.Drawing.Point(562, 28);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(151, 20);
             this.dateTimePicker2.TabIndex = 18;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(749, 76);
+            this.dateTimePicker1.Location = new System.Drawing.Point(562, 62);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
             this.dateTimePicker1.TabIndex = 17;
             // 
             // cbxFecha
             // 
             this.cbxFecha.AutoSize = true;
-            this.cbxFecha.Location = new System.Drawing.Point(567, 36);
+            this.cbxFecha.Location = new System.Drawing.Point(425, 29);
+            this.cbxFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxFecha.Name = "cbxFecha";
-            this.cbxFecha.Size = new System.Drawing.Size(74, 20);
+            this.cbxFecha.Size = new System.Drawing.Size(61, 17);
             this.cbxFecha.TabIndex = 16;
             this.cbxFecha.Text = "Fechas";
             this.cbxFecha.UseVisualStyleBackColor = true;
@@ -297,18 +311,20 @@
             // 
             this.cmxTipo.Enabled = false;
             this.cmxTipo.FormattingEnabled = true;
-            this.cmxTipo.Location = new System.Drawing.Point(519, 124);
+            this.cmxTipo.Location = new System.Drawing.Point(389, 101);
+            this.cmxTipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmxTipo.Name = "cmxTipo";
-            this.cmxTipo.Size = new System.Drawing.Size(183, 24);
+            this.cmxTipo.Size = new System.Drawing.Size(138, 21);
             this.cmxTipo.TabIndex = 15;
             this.cmxTipo.Text = "Tipo";
             // 
             // cbxTipo
             // 
             this.cbxTipo.AutoSize = true;
-            this.cbxTipo.Location = new System.Drawing.Point(485, 128);
+            this.cbxTipo.Location = new System.Drawing.Point(364, 104);
+            this.cbxTipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(18, 17);
+            this.cbxTipo.Size = new System.Drawing.Size(15, 14);
             this.cbxTipo.TabIndex = 14;
             this.cbxTipo.UseVisualStyleBackColor = true;
             this.cbxTipo.CheckedChanged += new System.EventHandler(this.cbxTipo_CheckedChanged);
@@ -317,18 +333,20 @@
             // 
             this.cmxEstado.Enabled = false;
             this.cmxEstado.FormattingEnabled = true;
-            this.cmxEstado.Location = new System.Drawing.Point(41, 124);
+            this.cmxEstado.Location = new System.Drawing.Point(31, 101);
+            this.cmxEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmxEstado.Name = "cmxEstado";
-            this.cmxEstado.Size = new System.Drawing.Size(183, 24);
+            this.cmxEstado.Size = new System.Drawing.Size(138, 21);
             this.cmxEstado.TabIndex = 13;
             this.cmxEstado.Text = "Estado";
             // 
             // cbxEstado
             // 
             this.cbxEstado.AutoSize = true;
-            this.cbxEstado.Location = new System.Drawing.Point(7, 128);
+            this.cbxEstado.Location = new System.Drawing.Point(5, 104);
+            this.cbxEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxEstado.Name = "cbxEstado";
-            this.cbxEstado.Size = new System.Drawing.Size(18, 17);
+            this.cbxEstado.Size = new System.Drawing.Size(15, 14);
             this.cbxEstado.TabIndex = 12;
             this.cbxEstado.UseVisualStyleBackColor = true;
             this.cbxEstado.CheckedChanged += new System.EventHandler(this.cbxEstado_CheckedChanged);
@@ -337,18 +355,20 @@
             // 
             this.cmxAula.Enabled = false;
             this.cmxAula.FormattingEnabled = true;
-            this.cmxAula.Location = new System.Drawing.Point(41, 74);
+            this.cmxAula.Location = new System.Drawing.Point(31, 60);
+            this.cmxAula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmxAula.Name = "cmxAula";
-            this.cmxAula.Size = new System.Drawing.Size(183, 24);
+            this.cmxAula.Size = new System.Drawing.Size(138, 21);
             this.cmxAula.TabIndex = 11;
             this.cmxAula.Text = "Aula";
             // 
             // cbxAula
             // 
             this.cbxAula.AutoSize = true;
-            this.cbxAula.Location = new System.Drawing.Point(7, 78);
+            this.cbxAula.Location = new System.Drawing.Point(5, 63);
+            this.cbxAula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxAula.Name = "cbxAula";
-            this.cbxAula.Size = new System.Drawing.Size(18, 17);
+            this.cbxAula.Size = new System.Drawing.Size(15, 14);
             this.cbxAula.TabIndex = 10;
             this.cbxAula.UseVisualStyleBackColor = true;
             this.cbxAula.CheckedChanged += new System.EventHandler(this.cbxAula_CheckedChanged);
@@ -357,18 +377,20 @@
             // 
             this.cmxProfesor.Enabled = false;
             this.cmxProfesor.FormattingEnabled = true;
-            this.cmxProfesor.Location = new System.Drawing.Point(41, 29);
+            this.cmxProfesor.Location = new System.Drawing.Point(31, 24);
+            this.cmxProfesor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmxProfesor.Name = "cmxProfesor";
-            this.cmxProfesor.Size = new System.Drawing.Size(413, 24);
+            this.cmxProfesor.Size = new System.Drawing.Size(311, 21);
             this.cmxProfesor.TabIndex = 9;
             this.cmxProfesor.Text = "Creador";
             // 
             // cbxProfesor
             // 
             this.cbxProfesor.AutoSize = true;
-            this.cbxProfesor.Location = new System.Drawing.Point(7, 33);
+            this.cbxProfesor.Location = new System.Drawing.Point(5, 27);
+            this.cbxProfesor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxProfesor.Name = "cbxProfesor";
-            this.cbxProfesor.Size = new System.Drawing.Size(18, 17);
+            this.cbxProfesor.Size = new System.Drawing.Size(15, 14);
             this.cbxProfesor.TabIndex = 8;
             this.cbxProfesor.UseVisualStyleBackColor = true;
             this.cbxProfesor.CheckedChanged += new System.EventHandler(this.cbxProfesor_CheckedChanged);
@@ -376,9 +398,10 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Location = new System.Drawing.Point(828, 124);
+            this.button2.Location = new System.Drawing.Point(621, 101);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 27);
+            this.button2.Size = new System.Drawing.Size(50, 22);
             this.button2.TabIndex = 7;
             this.button2.Text = "Limpiar";
             this.button2.UseVisualStyleBackColor = false;
@@ -386,9 +409,10 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Location = new System.Drawing.Point(911, 124);
+            this.button1.Location = new System.Drawing.Point(683, 101);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 27);
+            this.button1.Size = new System.Drawing.Size(50, 22);
             this.button1.TabIndex = 6;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
@@ -396,9 +420,10 @@
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnVolver.Location = new System.Drawing.Point(134, 512);
+            this.btnVolver.Location = new System.Drawing.Point(100, 416);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(93, 41);
+            this.btnVolver.Size = new System.Drawing.Size(70, 33);
             this.btnVolver.TabIndex = 6;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -407,9 +432,10 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSalir.Location = new System.Drawing.Point(134, 512);
+            this.btnSalir.Location = new System.Drawing.Point(100, 416);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(93, 41);
+            this.btnSalir.Size = new System.Drawing.Size(70, 33);
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -417,10 +443,10 @@
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1028, 565);
+            this.ClientSize = new System.Drawing.Size(771, 459);
             this.Controls.Add(this.gbxCriterios);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnVolver);
@@ -429,6 +455,7 @@
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Principal";
             this.Text = "Principal";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

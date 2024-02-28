@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ProyectoIntermodular.Clases
@@ -11,6 +13,11 @@ namespace ProyectoIntermodular.Clases
 
         
         public int num { get; set; }
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
+        [JsonConverter(typeof(StringEnumConverter))]
         public string tipo { get; set; }
         public IncidenciasSubtipos incidenciasSubtipo { get; set; }
         public DateTime fechaCreacion { get; set; }
@@ -21,17 +28,24 @@ namespace ProyectoIntermodular.Clases
         public Personal creador { get; set; }
         public Personal responsable { get; set; }
         public Equipo equipo { get; set; }
+        public TimeSpan? tiempo_dec { get; set; }
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
 
 
-
-
-        public Incidencias()
+    public Incidencias()
         {
             
         }
 
+<<<<<<< Updated upstream
         
-        public Incidencias(int num, string tipo, IncidenciasSubtipos subtipo_id, DateTime fecha_creacion, DateTime? fecha_cierre, string descripcion, EstadoIncidencia estado, string adjunto_url, Personal creador_id, Personal responsable_id, Equipo equipo_id)
+=======
+
+>>>>>>> Stashed changes
+        public Incidencias(int num, string tipo, IncidenciasSubtipos subtipo_id, DateTime fecha_creacion, DateTime? fecha_cierre, string descripcion, EstadoIncidencia estado, string adjunto_url, Personal creador_id, Personal responsable_id, Equipo equipo_id, TimeSpan? tiempo_dec)
         {
             this.num = num;
             this.tipo = tipo;
@@ -44,6 +58,7 @@ namespace ProyectoIntermodular.Clases
             this.creador = creador_id;
             this.responsable = responsable_id;
             this.equipo = equipo_id;
+            this.tiempo_dec = tiempo_dec;
         }
     }
 
@@ -61,8 +76,8 @@ namespace ProyectoIntermodular.Clases
     {
         ABIERTA,
         ASIGNADA,
-        ENPROCESO,
-        ENVIADA_INFORTEC,
+        EN_PROCESO,
+        ENVIADA_A_INFORTEC,
         RESUELTA,
         CERRADA
     }

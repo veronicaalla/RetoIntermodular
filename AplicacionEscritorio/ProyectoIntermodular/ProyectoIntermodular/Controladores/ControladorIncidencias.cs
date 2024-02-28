@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProyectoIntermodular.Controladores
 {
@@ -32,29 +33,31 @@ namespace ProyectoIntermodular.Controladores
                 List<Incidencias> incidencias = JsonConvert.DeserializeObject<List<Incidencias>>(responseJson);
                 return incidencias;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
 
-        public async Task<List<Incidencias>> GetTiposIncidencia()
+        /*public async Task<List<Incidencias>> GetTiposIncidencia()
+{
+        try
         {
-            try
-            {
-                HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/incidencias/tipo/{tipo}");
-                response.EnsureSuccessStatusCode();
+            HttpResponseMessage response = await client.GetAsync($"http://localhost:8080/api/incidencias/tipo/{tipo}");
+            response.EnsureSuccessStatusCode();
 
-                string responseJson = await response.Content.ReadAsStringAsync();
+            string responseJson = await response.Content.ReadAsStringAsync();
 
-                List<Incidencias> incidencias = JsonConvert.DeserializeObject<List<Incidencias>>(responseJson);
-                return incidencias;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+            List<Incidencias> incidencias = JsonConvert.DeserializeObject<List<Incidencias>>(responseJson);
+            return incidencias;
         }
+        catch (Exception)
+        {
+            return null;
+        }
+}*/
+
 
         
         public async Task<bool> AgregarIncidencia(IncidenciasRequest incidencia)
@@ -80,6 +83,61 @@ namespace ProyectoIntermodular.Controladores
                 return false;
             }
         }
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
+        public async Task<bool> ActualizarIncidencia(int id, Incidencias incidencia)
+        {
+            try
+            {
+                // Convertir el objeto incidencia a formato JSON
+                string jsonData = JsonConvert.SerializeObject(incidencia);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                // Realizar la solicitud PUT
+                HttpResponseMessage response = await client.PutAsync($"http://localhost:8080/api/incidencias/{id}", content);
+                response.EnsureSuccessStatusCode();
+
+                // La incidencia se actualizó correctamente
+                return true;
+            }
+            catch (Exception)
+            {
+                // Hubo un error al actualizar la incidencia
+                return false;
+            }
+        }
+<<<<<<< Updated upstream
+        
+=======
+
+>>>>>>> Stashed changes
+
+        public async Task<Incidencias> ObtenerIncidenciaPorId(int id)
+        {
+            try
+            {
+                // Formar la URL con el ID de la incidencia
+                string url = $"http://localhost:8080/api/incidencias/{id}";
+
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                string responseJson = await response.Content.ReadAsStringAsync();
+
+                Incidencias incidencia = JsonConvert.DeserializeObject<Incidencias>(responseJson);
+                return incidencia;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
     }
 }
 
