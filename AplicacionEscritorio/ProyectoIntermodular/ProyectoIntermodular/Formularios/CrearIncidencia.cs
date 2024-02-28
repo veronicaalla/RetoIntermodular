@@ -109,7 +109,7 @@ namespace ProyectoIntermodular.Formularios
                     inc.estado = EstadoIncidencia.ABIERTA;
                     inc.descripcion = cajaDesc.Text;
                     inc.tipo = comboBoxTipo.Text;
-                    inc.subtipo = subtipoId.sub_subtipo; // Asignar la ID del subtipo obtenida
+                    inc.incidenciasSubtipo = subtipoId; // Asignar la ID del subtipo obtenida
 
                     // Obtener el equipo por etiqueta
                     Equipo equipo = await ObtenerEquipoPorEtiqueta(CajaEquipo.Text);
@@ -117,7 +117,7 @@ namespace ProyectoIntermodular.Formularios
                     if (equipo != null)
                     {
                         // Asignar el equipo obtenido al objeto IncidenciasRequest
-                        inc.equipo = equipo.tipoEquipo;
+                        inc.equipo = equipo;
 
                         // Obtener el perfil de usuario (Personal) por su ID
                         int creadorId = creador.personal_id; // Suponiendo que tienes el ID del creador

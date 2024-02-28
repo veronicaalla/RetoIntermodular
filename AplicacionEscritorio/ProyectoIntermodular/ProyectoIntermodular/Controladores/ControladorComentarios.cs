@@ -11,32 +11,32 @@ namespace ProyectoIntermodular.Controladores
 {
     internal class ControladorComentarios
     {
-        
 
-            private HttpClient client;
 
-            public ControladorComentarios()
+        private HttpClient client;
+
+        public ControladorComentarios()
+        {
+            client = new HttpClient();
+        }
+
+        public async Task<List<Comentarios>> GetComentarios()
+        {
+            try
             {
-                client = new HttpClient();
-            }
+                HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/comentarios");
+                response.EnsureSuccessStatusCode();
 
-            public async Task<List<Comentarios>> GetComentarios()
+                string responseJson = await response.Content.ReadAsStringAsync();
+
+                List<Comentarios> coment = JsonConvert.DeserializeObject<List<Comentarios>>(responseJson);
+                return coment;
+            }
+            catch (Exception)
             {
-                try
-                {
-                    HttpResponseMessage response = await client.GetAsync("http://localhost:8080/api/comentarios");
-                    response.EnsureSuccessStatusCode();
-
-                    string responseJson = await response.Content.ReadAsStringAsync();
-
-                    List<Comentarios> coment = JsonConvert.DeserializeObject<List<Comentarios>>(responseJson);
-                    return coment;
-                }
-                catch (Exception)
-                {
-                    return null;
-                }
+                return null;
             }
+        }
 
         public async Task<List<Comentarios>> GetComentariosIncidencia(String num)
         {
@@ -56,6 +56,4 @@ namespace ProyectoIntermodular.Controladores
             }
         }
     }
-    }
-
-
+}

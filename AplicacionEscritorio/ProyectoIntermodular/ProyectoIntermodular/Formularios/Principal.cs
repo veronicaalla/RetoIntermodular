@@ -86,10 +86,16 @@ namespace ProyectoIntermodular
                     row.Cells[6].Value = incidencia.estado;
                     row.Cells[7].Value = incidencia.adjuntoUrl;
                     row.Cells[8].Value = incidencia.creador.nombre;
-                    row.Cells[9].Value = incidencia.responsable.nombre;
                     row.Cells[10].Value = incidencia.equipo.tipoEquipo;
 
-
+                    if (incidencia.responsable != null)
+                    {
+                        row.Cells[9].Value = incidencia.responsable.nombre;
+                    }
+                    else
+                    {
+                        row.Cells[9].Value = "No Asignado"; // O asigna un valor por defecto, como una cadena vacía
+                    }
 
                     dataGridView1.Rows.Add(row);
                 }
@@ -164,30 +170,61 @@ namespace ProyectoIntermodular
             crearIncidencia.Show();
         }
 
-        private void btnSeleccionar_Click(object sender, EventArgs e)
+        private async void btnSeleccionar_Click(object sender, EventArgs e)
         {
-
-            if (dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                String numero = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                String tipo = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                String subtipo = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                String fechaCreacion = dataGridView1.CurrentRow.Cells[3].Value != null ? dataGridView1.CurrentRow.Cells[3].Value.ToString() : string.Empty;
-                String fechaCierre = dataGridView1.CurrentRow.Cells[4].Value != null ? dataGridView1.CurrentRow.Cells[4].Value.ToString() : string.Empty;
-                String estado = dataGridView1.CurrentRow.Cells[6].Value != null ? dataGridView1.CurrentRow.Cells[6].Value.ToString() : string.Empty;
-                String profesor = dataGridView1.CurrentRow.Cells[8].Value != null ? dataGridView1.CurrentRow.Cells[8].Value.ToString() : string.Empty;
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    String numero = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    String tipo = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    String subtipo = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    String fechaCreacion = dataGridView1.CurrentRow.Cells[3].Value != null ? dataGridView1.CurrentRow.Cells[3].Value.ToString() : string.Empty;
+                    String fechaCierre = dataGridView1.CurrentRow.Cells[4].Value != null ? dataGridView1.CurrentRow.Cells[4].Value.ToString() : string.Empty;
+                    String estado = dataGridView1.CurrentRow.Cells[6].Value != null ? dataGridView1.CurrentRow.Cells[6].Value.ToString() : string.Empty;
+                    String profesor = dataGridView1.CurrentRow.Cells[8].Value != null ? dataGridView1.CurrentRow.Cells[8].Value.ToString() : string.Empty;
 
-                ModificarIncidencia modificarInci = new ModificarIncidencia(numero, tipo, subtipo, fechaCreacion, fechaCierre, profesor, estado);
-                this.Hide();
-                modificarInci.Show();
+                    // Obtener la incidencia de forma asíncrona
+                    Incidencias incidencia = await ObtenerIncidenciaPorIdAsync(Convert.ToInt32(numero));
 
+                    // Verificar si se obtuvo la incidencia correctamente
+                    if (incidencia != null)
+                    {
+                        // Crear una instancia de ModificarIncidencia con la incidencia obtenida
+                        ModificarIncidencia modificarInci = new ModificarIncidencia(numero, tipo, subtipo, fechaCreacion, fechaCierre, profesor, estado, usuario, incidencia);
 
+                        // Mostrar el formulario de ModificarIncidencia
+                        this.Hide();
+                        modificarInci.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo obtener la incidencia con el ID proporcionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un usuario");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Debe seleccionar un usuario");
+                MessageBox.Show($"Error: {ex.Message}");
             }
 
+        }
+
+        private async Task<Incidencias> ObtenerIncidenciaPorIdAsync(int id)
+        {
+            try
+            {
+                // Llamar al método ObtenerIncidenciaPorId del controlador de incidencias
+                return await controladorIncidencias.ObtenerIncidenciaPorId(id);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         private void btnEli_Click(object sender, EventArgs e)
