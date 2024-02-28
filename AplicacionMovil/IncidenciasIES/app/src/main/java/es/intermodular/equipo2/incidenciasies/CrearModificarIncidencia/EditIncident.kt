@@ -1,9 +1,15 @@
 package es.intermodular.equipo2.incidenciasies.CrearModificarIncidencia
 
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import es.intermodular.equipo2.incidenciasies.databinding.ActivityEditIncidentBinding
 import es.intermodular.equipo2.incidenciasies.datos.Api
@@ -13,10 +19,11 @@ import es.intermodular.equipo2.incidenciasies.modelo.IncidenciaResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.text.SimpleDateFormat
+import java.io.File
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+
 
 class EditIncident : AppCompatActivity() {
 
@@ -82,6 +89,41 @@ class EditIncident : AppCompatActivity() {
 
         //endregion
 
+        binding.imagenViewAdjuntarDoc.setOnClickListener {
+            //cODIGO PARA OBTENER A LOS DOCUMENTOS DEL MOVIL
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "*/*"
+            resultLauncher.launch(intent)
+        }
+    }
+
+    private val resultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val data: Intent? = result.data
+            data?.data?.let { uri ->
+                val file = File(getPath(this, uri))
+                Log.i("Archivo seleccionado", file.absolutePath)
+                // Aquí puedes subir el archivo a tu servidor
+            }
+        } else {
+            Log.i("Archivo seleccionado", "Operación cancelada")
+        }
+    }
+
+    fun getPath(context: Context, uri: Uri): String {
+        val projection = arrayOf(MediaStore.Images.Media.DATA)
+        val cursor = context.contentResolver.query(uri, projection, null, null, null)
+        val columnIndex = cursor?.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+        cursor?.moveToFirst()
+        val path = cursor?.getString(columnIndex!!)
+        cursor?.close()
+
+        //cambiamos la imagen
+        val resourceId = resources.getIdentifier("baseline_attachment_24", "drawable", packageName)
+        binding.imagenViewAdjuntarDoc.setImageResource(resourceId)
+        return path ?: ""
     }
 
     private fun obtenerNuevosDatos(incidencia: IncidenciaResponse) {
@@ -89,7 +131,7 @@ class EditIncident : AppCompatActivity() {
         incidencia.descripcion = binding.editTextDescripcion.text.toString()
         Log.i("descripcion incidencia ", incidencia.descripcion)
 
-       //La fecha no nos hace falta
+        //La fecha no nos hace falta
 
         //Obtenemos todos los posibles cambios del idEquipo
         if (incidencia.equipo == null) {

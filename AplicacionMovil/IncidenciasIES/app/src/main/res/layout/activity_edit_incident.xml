@@ -78,11 +78,11 @@
                         android:id="@+id/txtFechaCreacion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textColor="@color/black"
                         android:layout_marginLeft="10dp"
+                        android:ems="10"
                         android:enabled="false"
-                        android:inputType="date" />
+                        android:inputType="date"
+                        android:textColor="@color/black" />
 
                 </TableRow>
 
@@ -173,11 +173,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="fecha final indeterminada"
                         android:enabled="false"
+                        android:hint="fecha final indeterminada"
                         android:inputType="date" />
 
+
                 </TableRow>
+
+                <ImageView
+                    android:id="@+id/imagenViewAdjuntarDoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="280dp"
+                    android:src="@drawable/baseline_attachment_24_negro" />
 
                 <TableRow
                     android:layout_width="match_parent"
