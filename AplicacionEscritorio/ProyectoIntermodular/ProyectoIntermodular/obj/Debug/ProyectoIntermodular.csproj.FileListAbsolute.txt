@@ -1,0 +1,250 @@
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe.config
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.pdb
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.AssemblyReference.cache
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Properties.Resources.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.GenerateResource.cache
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CoreCompileInputs.cache
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.exe
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.pdb
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe.config
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.pdb
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.AssemblyReference.cache
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Admin.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ControlUsuarios.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Incidencia.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Inicial.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Principal.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Properties.Resources.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.GenerateResource.cache
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CoreCompileInputs.cache
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.exe
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.pdb
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearIncidencia.resources
+D:\The Shadow\Desktop\Nueva carpeta\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearUsuario.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Admin.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ControlUsuarios.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearIncidencia.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearUsuario.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Inicial.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Principal.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.AñadirComentario.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe.config
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.pdb
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.AssemblyReference.cache
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Admin.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.AñadirComentario.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ControlUsuarios.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearIncidencia.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearPerfil.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearUsuario.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.EliminarUsuario.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Inicial.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarUsuario.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Principal.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.SeleccionarUsuario.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Properties.Resources.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.GenerateResource.cache
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CoreCompileInputs.cache
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.exe
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.pdb
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearPerfil.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.EliminarUsuario.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarUsuario.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.SeleccionarUsuario.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CopyComplete
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CopyComplete
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarIncidencia.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarIncidencia.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearDepartamento.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarDepartamento.resources
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.SeleccionarDepartamentos.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearDepartamento.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarDepartamento.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.SeleccionarDepartamentos.resources
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Azure.Core.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Abstractions.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Authentication.Azure.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Http.HttpClientLibrary.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Form.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Json.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Multipart.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Text.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Std.UriTemplate.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Buffers.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.Data.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Net.Http.WinHttpHandler.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Json.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.ValueTuple.dll
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Azure.Core.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Abstractions.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Authentication.Azure.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Http.HttpClientLibrary.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Form.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Json.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Multipart.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Text.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Buffers.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.Data.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Net.Http.WinHttpHandler.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Json.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\jdcg1\Desktop\Clase\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.ValueTuple.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Azure.Core.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Abstractions.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Authentication.Azure.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Http.HttpClientLibrary.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Form.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Json.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Multipart.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Text.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Std.UriTemplate.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Buffers.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.Data.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Net.Http.WinHttpHandler.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Numerics.Vectors.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Encodings.Web.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Json.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.ValueTuple.dll
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Azure.Core.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Abstractions.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Authentication.Azure.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Http.HttpClientLibrary.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Form.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Json.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Multipart.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Text.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Buffers.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.Data.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Net.Http.WinHttpHandler.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Numerics.Vectors.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Encodings.Web.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Json.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\The Shadow\Desktop\ProyectoIntermodular\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.ValueTuple.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe.config
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.exe
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\ProyectoIntermodular.pdb
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Azure.Core.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Abstractions.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Authentication.Azure.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Http.HttpClientLibrary.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Form.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Json.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Multipart.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Text.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Std.UriTemplate.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Buffers.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.Data.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Net.Http.WinHttpHandler.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Numerics.Vectors.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Encodings.Web.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Json.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.ValueTuple.dll
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Azure.Core.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Abstractions.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Authentication.Azure.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Http.HttpClientLibrary.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Form.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Json.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Multipart.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Microsoft.Kiota.Serialization.Text.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\Newtonsoft.Json.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Buffers.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Memory.Data.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Net.Http.WinHttpHandler.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Numerics.Vectors.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Encodings.Web.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Text.Json.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\bin\Debug\System.ValueTuple.xml
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.AssemblyReference.cache
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.Admin.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.AñadirComentario.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ControlUsuarios.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearDepartamento.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearIncidencia.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearPerfil.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.CrearUsuario.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.EliminarUsuario.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarDepartamento.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarIncidencia.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Inicial.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.ModificarUsuario.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Principal.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.SeleccionarDepartamentos.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Formularios.SeleccionarUsuario.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.Properties.Resources.resources
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.GenerateResource.cache
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CoreCompileInputs.cache
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.csproj.CopyComplete
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.exe
+D:\The Shadow\Desktop\Nueva carpeta\Copia3\AplicacionEscritorio\ProyectoIntermodular\ProyectoIntermodular\obj\Debug\ProyectoIntermodular.pdb
