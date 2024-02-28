@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2FECDBEFF35A37E601E520CBD6A88081DD011F88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>97C260B24E713D13B738FE43AABF8FE9EBECD845</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>ProyectoIntermodular_TemporaryKey.pfx</ManifestKeyFile>
