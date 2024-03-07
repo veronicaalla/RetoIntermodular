@@ -1,1 +1,10 @@
 # RetoIntermodular
+
+## Implementacion de seguridad en el reto
+En el reto para asegurar la integridad y la confidencialidad de las aplicaciones desarrolladas, se han adoptado diversas medidas con el objetivo de fortalecer la seguridad de los sistemas. Entre estas medidas se incluye la implementación de un sistema de autenticación mediante un proceso de inicio de sesión, así como la segmentación de los usuarios en función de sus niveles de acceso a los diferentes métodos destinados a modificar los datos almacenados en la base de datos subyacente.
+
+Un componente crítico de esta estrategia de seguridad es la encriptación de las contraseñas de los usuarios utilizando el algoritmo MD5. Esta técnica de encriptación se emplea con el propósito de aumentar la robustez del proceso de inicio de sesión, mitigando así los riesgos asociados con posibles intentos de acceso no autorizado.
+
+Además, se tenía la intención de incorporar una dependencia en la API con el fin de generar tokens para la encriptación de los procesos de inicio de sesión y de las comunicaciones subsiguientes. Sin embargo, se encontró que las dependencias disponibles estaban desactualizadas, lo que planteó un obstáculo significativo para su integración efectiva en el sistema. La búsqueda de alternativas actualizadas resultó ser una tarea que exigió más tiempo del previsto inicialmente, y en consecuencia, esta medida de seguridad adicional no pudo ser implementada en el plazo establecido.
+
+Es fundamental reconocer que el diseño y la implementación de medidas de seguridad en sistemas informáticos son procesos complejos que requieren una atención meticulosa a los detalles y una evaluación continua de las amenazas potenciales. Aunque ciertas limitaciones temporales puedan haber impedido la implementación completa de todas las medidas planificadas, es importante mantener un compromiso constante con la mejora continua de la seguridad de los sistemas para garantizar la protección adecuada de los datos y la información confidencial de los usuarios.
